@@ -1,0 +1,17 @@
+{
+  "name": "shpconverter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^1.5.2",
+    "glob": "^5.0.5",
+    "lambert-wilson": "0.0.1",
+    "shp2json": "^1.1.0",
+    "unzip": "^0.1.11"
+  }
+}
