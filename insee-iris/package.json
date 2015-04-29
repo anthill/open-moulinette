@@ -11,7 +11,8 @@
     "csv-parser": "^1.5.2",
     "glob": "^5.0.5",
     "lambert-wilson": "0.0.1",
-    "shp2json": "^1.1.0",
-    "unzip": "^0.1.11"
+    "node-7z": "^0.3.0",
+    "shapefile": "^0.3.0",
+    "shp2json": "^1.1.0"
   }
 }
