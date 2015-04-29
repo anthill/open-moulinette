@@ -13,6 +13,5 @@
     "lambert-wilson": "0.0.1",
     "node-7z": "^0.3.0",
     "shapefile": "^0.3.0",
-    "shp2json": "^1.1.0"
   }
 }
