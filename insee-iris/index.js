@@ -5,29 +5,22 @@ var fs =  require("fs");
 var glob = require("glob");
 var csv = require('csv-parser');
 var shapefile = require('shapefile');
+var through = require("through");
 
 
-// var departement = 'departement_CC_lambert.csv';
+var departement = 'data/departement_CC_lambert.csv';
 
-// var dep = fs.createReadStream(departement).pipe(csv({separator: ','}));
+var depCcList = [];
 
-// var CC = 45; // CC is the number of the lamber projection 
-// var deltaX = 4177302.562212417;
-// var deltaY = 1297500.1046884255; 
+var dep = fs.createReadStream(departement).pipe(csv({separator: ','})).pipe(through(function(data){ depCcList.push({'departement' : parseInt(data.Departement),'lambertCc' : parseInt(data.lambert_cc)});}));
 
 
+var deltaX = 0;
+var deltaY = 0; 
 
 
 var output = fs.createWriteStream("output.geojson");
 output.write("[");
-
-// fs.createReadStream('data/iris-france.zip').pipe(unzip.Extract({ path: 'data/iris-france' }))
-
-// var readStream = fs.createReadStream('data/iris-france.zip');
-
-// readStream.pipe(unzip.Parse()).pipe().on('entry', function (entry) {console.log(entry.path);});
-
-// fs.createReadStream('data/iris-france.zip').pipe(unzip.Parse()).on('entry', function (entry) {var fileName = entry.path;console.log('fileName');});
  
 var Zip = require('node-7z'); // Name the class as you want!
 var myTask = new Zip();
@@ -63,104 +56,44 @@ glob('data/CONTOURS-IRIS_1-0__SHP_LAMB93_FXX_2013-01-01/CONTOURS-IRIS_1-0__SHP_L
     }); 
 
     function readNextRecord() {
-        reader.readRecord(function(error, record) {
-          if (error) {
-            console.log("error file : ", file)
-            throw error;
-          }
-          if (record === shapefile.end) {
-            output.write("]");
-            console.log("end of file :", file);
-            return reader.close();
-          } else {
-            var coord = record.geometry.coordinates[0];
-            var newCoord = coord.map(function(c) {
-              var lonlat = lw.toLonLat(c[0], c[1]);
-              return [lonlat.lon, lonlat.lat];
-            });
+      reader.readRecord(function(error, record) {
+        if (error) {
+          console.log("error file : ", file)
+          throw error;
+        }
+        if (record === shapefile.end) {
+          output.write("]");
+          console.log("end of file : ", file);
+          return reader.close();
+        } else {
+          console.log("begin of file : ", file);
+          // Departement number (a string with special CORSE number(2A / 2B))
+          var depStr = record.properties.DEPCOM.substring(0, 2);
+
+          // find lambertCc for the departement number
+          depCcList.forEach(function(data) {
+            if(String(data.departement) === depStr) {
+              var lambertCc = data.lambertCc;
+            
+              var lw = require("lambert-wilson")(lambertCc, deltaX, deltaY);
+
+              var coord = record.geometry.coordinates[0];
+
+              var newCoord = coord.map(function(c) {
+                var lonlat = lw.toLonLat(c[0], c[1]);
+                return [lonlat.lon, lonlat.lat];
+              });
             record.geometry.coordinates = [newCoord];
             output.write(JSON.stringify(record));
             output.write(",");
-          };
-          setImmediate(readNextRecord);
-        });
+            }
+          });
+        };
+        setImmediate(readNextRecord);
+      });
     }
+
     console.log(shapefiles)
-  })
+  });
 
 });
-
-// fs.createReadStream('data/iris-france.zip')
-//   .pipe(unzip.Parse())
-  // .on('entry', function (entry) {
-  //   var fileName = entry.path;
-  //   var type = entry.type; // 'Directory' or 'File'
-  //   var size = entry.size;
-  //   console.log(fileName);
-  //   // if (fileName === "this IS the file I'm looking for") {
-  //   //   entry.pipe(fs.createWriteStream('output/path'));
-  //   // } else {
-  //   //   entry.autodrain();
-  //   // }
-  // });
-
-
-
-
-// 		var reader = shapefile.reader(file)
-// 		reader.readHeader(function(error, header) {
-// 		  if (error) throw error;
-// 		  readNextRecord();
-// 		});	
-
-// 		function readNextRecord() {
-// 		  	reader.readRecord(function(error, f) {
-// 			    if (error) {
-// 			    	console.log("error file : ", file)
-// 			    	throw error;
-// 			    }
-// 			    if (record === shapefile.end) {
-// 			    	output.write("]");
-// 			    	console.log("end of file :", file);
-// 			    	return reader.close();
-// 			    } else {
-// 			    	var coord = record.geometry.coordinates[0];
-// 			    	var newCoord = coord.map(function(c) {
-// 			    		var lonlat = lw.toLonLat(c[0], c[1]);
-// 			    		return [lonlat.lon, lonlat.lat];
-// 			    	});
-// 			    	record.geometry.coordinates = [newCoord];
-// 			    	output.write(JSON.stringify(record));
-// 			    	output.write(",");
-// 			    };
-// 			    setImmediate(readNextRecord);
-// 	  		});
-// 		}
-// 		console.log(shapefiles)
-// })
-
-// });
-
-
-
-
-// testing
-
-// dep.forEach(function(value, key){
-// 	o[key] = value;
-// });
-
-// for(key in dep) {
-//     if(data.hasOwnProperty(key)) {
-//         var CC = data[key];
-        
-//     }
-// }
-
-
-// Object.keys(dep).map(function(key){
-// 	return dep[keyIris]
-// });
-
-// readStream.forEach(function(value, key) { console.log(key); });
-
