@@ -1,99 +1,80 @@
 "use strict";
 
-
 var fs =  require("fs");
-var glob = require("glob");
 var csv = require('csv-parser');
 var shapefile = require('shapefile');
 var through = require("through");
+var Map = require('es6-map');
+var proj4 = require('proj4');
 
 
-var departement = 'data/departement_CC_lambert.csv';
-
-var depCcList = [];
-
-var dep = fs.createReadStream(departement).pipe(csv({separator: ','})).pipe(through(function(data){ depCcList.push({'departement' : parseInt(data.Departement),'lambertCc' : parseInt(data.lambert_cc)});}));
-
-
-var deltaX = 0;
-var deltaY = 0; 
+// define projection
+var proj4 = require('proj4');
+proj4.defs["EPSG:2154"] = "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs";
+var epsg2154 = proj4.defs['EPSG:2154'];
+var projector = proj4(epsg2154, proj4.WGS84);
 
 
-var output = fs.createWriteStream("output.geojson");
+var output = fs.createWriteStream("data/output.geojson");
 output.write("[");
  
+
+// unzip files
 var Zip = require('node-7z'); // Name the class as you want!
-var myTask = new Zip();
+var unzipTask = new Zip();
 
-var compteur = 0;
+var shapefiles = [];
 
-myTask.extractFull('data/CONTOURS-IRIS_1-0__SHP_LAMB93_FXX_2013-01-01.7z', 'data/CONTOURS-IRIS_1-0__SHP_LAMB93_FXX_2013-01-01')
-// Equivalent to `on('data', function (files) { // ... });`
-.progress(function (file) {
-  file.forEach(function(fileName) {
-    if (/\.shp$/.test(fileName)) {
-        compteur++;
-    } 
+unzipTask.extractFull('data/iris-france.7z', 'data/iris')
+  .progress(function (file) {
+    file.forEach(function(fileName) {
+      if (/\.shp$/.test(fileName)) {
+        shapefiles.push("data/iris/" + fileName);
+      } 
+    })
   })
-})
-// When all is done
-.then(function () {
-  console.log('Extracting done!');
-  console.log(compteur);
-})
-// On error
-.catch(function (err) {
-  console.error(err);
-})
+  .then(function () {
+    console.log('Done extracting shapefiles: ', shapefiles.length);
 
-glob('data/CONTOURS-IRIS_1-0__SHP_LAMB93_FXX_2013-01-01/CONTOURS-IRIS_1-0__SHP_LAMB93_FXX_2013-01-01/CONTOURS-IRIS/1_DONNEES_LIVRAISON_2014-06-00379/*/*/*.shp', function(err, shapefiles) {
-  shapefiles.forEach(function(file){
-    
-    var reader = shapefile.reader(file)
-    reader.readHeader(function(error, header) {
-      if (error) throw error;
-      readNextRecord();
-    }); 
+    // convert shapefiles to geojson
+    shapefiles.forEach(function(file){
 
-    function readNextRecord() {
-      reader.readRecord(function(error, record) {
-        if (error) {
-          console.log("error file : ", file)
-          throw error;
-        }
-        if (record === shapefile.end) {
-          output.write("]");
-          console.log("end of file : ", file);
-          return reader.close();
-        } else {
-          console.log("begin of file : ", file);
-          // Departement number (a string with special CORSE number(2A / 2B))
-          var depStr = record.properties.DEPCOM.substring(0, 2);
+      var reader = shapefile.reader(file)
+      reader.readHeader(function(error, header) {
+        if (error) throw error;
+        readNextRecord();
+      }); 
 
-          // find lambertCc for the departement number
-          depCcList.forEach(function(data) {
-            if(String(data.departement) === depStr) {
-              var lambertCc = data.lambertCc;
-            
-              var lw = require("lambert-wilson")(lambertCc, deltaX, deltaY);
+      function readNextRecord() {
+        reader.readRecord(function(error, record) {
+          if (error) {
+            console.log("error file : ", file)
+            throw error;
+          }
+          if (record === shapefile.end) {
+            output.write("]");
+            console.log("end of file : ", file);
+            return reader.close();
+          } else {
 
+              // convert coordinates  in WGS
               var coord = record.geometry.coordinates[0];
 
               var newCoord = coord.map(function(c) {
-                var lonlat = lw.toLonLat(c[0], c[1]);
-                return [lonlat.lon, lonlat.lat];
+                return projector.forward(c);
               });
             record.geometry.coordinates = [newCoord];
             output.write(JSON.stringify(record));
             output.write(",");
-            }
-          });
-        };
-        setImmediate(readNextRecord);
-      });
-    }
 
-    console.log(shapefiles)
-  });
+          };
+          setImmediate(readNextRecord);
+        });
+      }
 
-});
+    });
+
+  })
+  .catch(function (err) {
+    console.error(err);
+  })
