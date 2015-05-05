@@ -51,8 +51,10 @@ unzipTask.extractFull('data/iris-france.7z', 'data/iris')
    .then(function () {
       console.log('Done extracting shapefiles: ', shapefiles.length);
 
+      var nbShapeFileProcessed = shapefiles.length;
+
       // convert shapefiles to geojson
-      var promises = shapefiles.slice(0, 2).map(function(file){
+      var promises = shapefiles.map(function(file){
 
          return new Promise(function(resolve, reject){
 
@@ -62,6 +64,9 @@ unzipTask.extractFull('data/iris-france.7z', 'data/iris')
 
                   // write to file
                   output.write(iris.join(",\n"));
+                  if (nbShapeFileProcessed !== 1)
+                     output.write(",\n");
+                  nbShapeFileProcessed--;
                   resolve();
                })
                .catch(function(error){
