@@ -1,5 +1,7 @@
 "use strict";
 
+require("es6-shim");
+
 var fs =  require("fs");
 var csv = require('csv-parser');
 var shapefile = require('shapefile');
@@ -41,77 +43,92 @@ var unzipTask = new Zip();
 var shapefiles = [];
 
 unzipTask.extractFull('data/iris-france.7z', 'data/iris')
-  .progress(function (file) {
-    file.forEach(function(fileName) {
-      if (/\.shp$/.test(fileName)) {
-        shapefiles.push("data/iris/" + fileName);
-      } 
-    })
-  })
-  .then(function () {
-    console.log('Done extracting shapefiles: ', shapefiles.length);
+   .progress(function (file) {
+      file.forEach(function(fileName) {
+         if (/\.shp$/.test(fileName)) {
+            shapefiles.push("data/iris/" + fileName);
+         }   
+      })
+   })
+   .then(function () {
+      console.log('Done extracting shapefiles: ', shapefiles.length);
 
-    // convert shapefiles to geojson
-    shapefiles.slice(0, 1).forEach(function(file){
+      // convert shapefiles to geojson
+      shapefiles.slice(0, 4).forEach(function(file){
+         parseShapeFile(file).then(function(iris){
+            console.log("Nb iris parsed: ", iris.length);
+
+            // write to file
+            output.write(iris.join(",\n"));
+         })
+         
+      });
+
+   })
+  .catch(function (err) {
+      console.error(err);
+   })
+
+
+var parseShapeFile = function(file){
+
+   return new Promise(function(resolve, reject){
+
+      var output = [];
 
       var reader = shapefile.reader(file)
       reader.readHeader(function(error, header) {
-        if (error) throw error;
-        readNextRecord();
+         if (error) reject(error);
+         readNextRecord();
       }); 
 
       function readNextRecord() {
-        reader.readRecord(function(error, record) {
-          if (error) {
-            console.log("error file : ", file)
-            throw error;
-          }
-          if (record === shapefile.end) {
-            output.write("]}");
-            console.log("end of file : ", file);
-            return reader.close();
-          } else {
-              // coordinates to convert
-              var coord = record.geometry.coordinates[0];
-              
-              switch(record.properties.DEPCOM.substring(0, 3)) {
-                // for Guadeloupe, Saint-Barthélemy, Saint-Martin, Martinique 
-                case [971, 977, 978, 972]: // Guadeloupe, Saint-Barthélemy, Saint-Martin, Martinique
-                  var newCoord = coord.map(function(c) {
-                    return projectorUTM20.forward(c);
-                  });
-                  break;
+         reader.readRecord(function(error, record) {
+            if (error)  reject(error);
+            if (record === shapefile.end) {
+               console.log("end of file : ", file);
+               resolve(output);
+               return reader.close();
+            } else {
+               // coordinates to convert
+               if(record){
+                  var coord = record.geometry.coordinates[0];
+                 
+                  switch(record.properties.DEPCOM.substring(0, 3)) {
+                     // for Guadeloupe, Saint-Barthélemy, Saint-Martin, Martinique 
+                     case [971, 977, 978, 972]: // Guadeloupe, Saint-Barthélemy, Saint-Martin, Martinique
+                        var newCoord = coord.map(function(c) {
+                           return projectorUTM20.forward(c);
+                        });
+                     break;
 
-                // for Guyane
-                case 973:
-                  var newCoord = coord.map(function(c) {
-                    return projectorUTM22.forward(c);
-                  });
-                  break;
+                     // for Guyane
+                     case 973:
+                        var newCoord = coord.map(function(c) {
+                           return projectorUTM22.forward(c);
+                        });
+                     break;
 
-                // for Réunion
-                case 974:
-                  var newCoord = coord.map(function(c) {
-                    return projectorUTM40.forward(c);
-                  });
-                  break;
+                     // for Réunion
+                     case 974:
+                        var newCoord = coord.map(function(c) {
+                           return projectorUTM40.forward(c);
+                        });
+                        break;
 
-                default:
-                  var newCoord = coord.map(function(c) {
-                    return projector.forward(c);
-                  });
-              }
-            record.geometry.coordinates = [newCoord];
-            output.write(JSON.stringify(record));
-            output.write(",\n");
-          };
-          setImmediate(readNextRecord);
-        });
+                     default:
+                        var newCoord = coord.map(function(c) {
+                           return projector.forward(c);
+                        });
+                  }  
+                  record.geometry.coordinates = [newCoord];
+                  output.push(JSON.stringify(record));
+               }
+            };
+            setImmediate(readNextRecord);
+         });
       }
+  });
+};
 
-    });
 
-  })
-  .catch(function (err) {
-    console.error(err);
-  })
