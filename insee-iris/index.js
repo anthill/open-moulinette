@@ -3,9 +3,7 @@
 require("es6-shim");
 
 var fs =  require("fs");
-var csv = require('csv-parser');
 var shapefile = require('shapefile');
-var through = require("through");
 var Map = require('es6-map');
 var proj4 = require('proj4');
 
@@ -33,7 +31,7 @@ var projectorUTM40 = proj4(UTM40, proj4.WGS84);
 
 
 var output = fs.createWriteStream("data/iris.json");
-output.write('{ "type": "FeatureCollection", "features": [\n');
+output.write('{"type": "FeatureCollection", "features": [\n');
  
 
 // unzip files
@@ -53,16 +51,43 @@ unzipTask.extractFull('data/iris-france.7z', 'data/iris')
    .then(function () {
       console.log('Done extracting shapefiles: ', shapefiles.length);
 
-      // convert shapefiles to geojson
-      shapefiles.slice(0, 4).forEach(function(file){
-         parseShapeFile(file).then(function(iris){
-            console.log("Nb iris parsed: ", iris.length);
+      var nbShapeFileProcessed = shapefiles.length;
 
-            // write to file
-            output.write(iris.join(",\n"));
-         })
+      // convert shapefiles to geojson
+      var promises = shapefiles.map(function(file){
+
+         return new Promise(function(resolve, reject){
+
+            parseShapeFile(file)
+               .then(function(iris){
+                  console.log("Nb iris parsed: ", iris.length);
+
+                  // write to file
+                  output.write(iris.join(",\n"));
+                  if (nbShapeFileProcessed !== 1)
+                     output.write(",\n");
+                  nbShapeFileProcessed--;
+                  resolve();
+               })
+               .catch(function(error){
+                  console.log("Error in parseShapeFile. : ", error);
+                  reject();
+               })
+         });
          
       });
+
+      var allFilesProcessed = Promise.all(promises);
+
+      // close the file
+      allFilesProcessed
+         .then(function(){
+            console.log("Finishing")
+            output.write("]}");
+         })
+         .catch(function(error){
+            console.log("Could not finish correctly.", error)
+         })
 
    })
   .catch(function (err) {
