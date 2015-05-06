@@ -121,21 +121,24 @@ var parseShapeFile = function(file){
                  
                   switch(record.properties.DEPCOM.substring(0, 3)) {
                      // for Guadeloupe, Saint-Barthélemy, Saint-Martin, Martinique 
-                     case [971, 977, 978, 972]: // Guadeloupe, Saint-Barthélemy, Saint-Martin, Martinique
+                     case '971': // Guadeloupe
+                     case '977': // Saint-Barthélemy
+                     case '978': // Saint-Martin
+                     case '972': // Martinique
                         var newCoord = coord.map(function(c) {
                            return projectorUTM20.forward(c);
                         });
                      break;
 
                      // for Guyane
-                     case 973:
+                     case '973':
                         var newCoord = coord.map(function(c) {
                            return projectorUTM22.forward(c);
                         });
                      break;
 
                      // for Réunion
-                     case 974:
+                     case '974':
                         var newCoord = coord.map(function(c) {
                            return projectorUTM40.forward(c);
                         });
