@@ -73,8 +73,7 @@ unzipTask.extractFull('data/iris-france.7z', 'data/iris')
                   console.log("Error in parseShapeFile. : ", error);
                   reject();
                })
-         });
-         
+         });  
       });
 
       var allFilesProcessed = Promise.all(promises);
@@ -117,38 +116,38 @@ var parseShapeFile = function(file){
             } else {
                // coordinates to convert
                if(record){
-                  var coord = record.geometry.coordinates[0];
                  
+                  var adaptedProjection;
                   switch(record.properties.DEPCOM.substring(0, 3)) {
                      // for Guadeloupe, Saint-Barthélemy, Saint-Martin, Martinique 
                      case '971': // Guadeloupe
                      case '977': // Saint-Barthélemy
                      case '978': // Saint-Martin
                      case '972': // Martinique
-                        var newCoord = coord.map(function(c) {
-                           return projectorUTM20.forward(c);
-                        });
+                           adaptedProjection = projectorUTM20;
                      break;
 
                      // for Guyane
                      case '973':
-                        var newCoord = coord.map(function(c) {
-                           return projectorUTM22.forward(c);
-                        });
+                           adaptedProjection = projectorUTM22;
                      break;
 
                      // for Réunion
                      case '974':
-                        var newCoord = coord.map(function(c) {
-                           return projectorUTM40.forward(c);
-                        });
+                           adaptedProjection = projectorUTM40;
                         break;
 
                      default:
-                        var newCoord = coord.map(function(c) {
-                           return projector.forward(c);
-                        });
-                  }  
+                           adaptedProjection = projector;
+                  }
+
+                  var coord = record.geometry.coordinates[0];
+                  
+                  if(record.geometry.type === 'Polygon') {
+                     var newCoord = coord.map(function(c){return adaptedProjection.forward(c)});
+                  } else { // for MultiPolygon
+                     var newCoord = coord.map(function(p){return p.map(function(c){return adaptedProjection.forward(c)})});
+                  }
                   record.geometry.coordinates = [newCoord];
                   output.push(JSON.stringify(record));
                }
