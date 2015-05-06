@@ -15,17 +15,17 @@ var projector = proj4(epsg2154, proj4.WGS84);
 
 
 // for Guadeloupe, Saint-Barthélemy, Saint-Martin, Martinique 
-proj4.defs["EPSG:32620"] = "+proj=utm +zone=20";
+proj4.defs["EPSG:32620"] = "+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +units=m +no_defs ";
 var UTM20 = proj4.defs["EPSG:32620"];
 var projectorUTM20 = proj4(UTM20, proj4.WGS84);
 
 // for Guyane
-proj4.defs["EPSG:2972"] = "+proj=utm +zone=22";
+proj4.defs["EPSG:2972"] = "+proj=utm +zone=22 +ellps=GRS80 +towgs84=2,2,-2,0,0,0,0 +units=m +no_defs ";
 var UTM22 = proj4.defs["EPSG:2972"];
 var projectorUTM22 = proj4(UTM22, proj4.WGS84);
 
 // for Réunion
-proj4.defs["EPSG:2975"] = "+proj=utm +zone=40";
+proj4.defs["EPSG:2975"] = "+proj=utm +zone=40 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs ";
 var UTM40 = proj4.defs["EPSG:2975"];
 var projectorUTM40 = proj4(UTM40, proj4.WGS84);
 
@@ -121,21 +121,24 @@ var parseShapeFile = function(file){
                  
                   switch(record.properties.DEPCOM.substring(0, 3)) {
                      // for Guadeloupe, Saint-Barthélemy, Saint-Martin, Martinique 
-                     case [971, 977, 978, 972]: // Guadeloupe, Saint-Barthélemy, Saint-Martin, Martinique
+                     case '971': // Guadeloupe
+                     case '977': // Saint-Barthélemy
+                     case '978': // Saint-Martin
+                     case '972': // Martinique
                         var newCoord = coord.map(function(c) {
                            return projectorUTM20.forward(c);
                         });
                      break;
 
                      // for Guyane
-                     case 973:
+                     case '973':
                         var newCoord = coord.map(function(c) {
                            return projectorUTM22.forward(c);
                         });
                      break;
 
                      // for Réunion
-                     case 974:
+                     case '974':
                         var newCoord = coord.map(function(c) {
                            return projectorUTM40.forward(c);
                         });
