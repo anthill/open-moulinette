@@ -27,6 +27,11 @@ download:
 	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-action-sociale
 	@wget -O data/equip-serv-action-sociale-infra-13.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/equip-serv-action-sociale/equip-serv-action-sociale-infra-13.zip
 	@unzip data/equip-serv-action-sociale-infra-13.zip -d data/	
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-sante
+	@wget -O data/equip-serv-sante-infra-13.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/equip-serv-sante/equip-serv-sante-infra-13.zip
+	@unzip data/equip-serv-sante-infra-13.zip -d data/	
+	
+
 
 convert:
 	#@node index.js
