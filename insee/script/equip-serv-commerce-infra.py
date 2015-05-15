@@ -135,3 +135,22 @@ features.append('CODGEO')
 print "il y a  %d iris différentes pour le revenu par unité de consomation et %d features" % (len(revenu_uc.CODGEO.unique()), len(features) - 1)
 
 data = pd.merge(data, revenu_uc[features], on='CODGEO', how='outer')
+
+## Revenu % imposé + détails (% ménage imposé, dont traitement salaire etc..)
+revenu_impose = pd.read_excel('../data/RFST2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
+# creating header from file
+header = revenu_impose.loc[5].tolist()
+revenu_impose.columns = header
+revenu_impose.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+revenu_impose = revenu_impose[6:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','LIBIRIS','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010']] # special list for this file
+# No need to sum features here (% and quantile)
+features.append('CODGEO')
+print "il y a  %d iris différentes pour le revenu par ménage imposé et %d features" % (len(revenu_impose.CODGEO.unique()), len(features) - 1)
+
+data = pd.merge(data, revenu_impose[features], on='CODGEO', how='outer')
+
+
+
