@@ -220,4 +220,21 @@ print "il y a  %d iris différentes pour les services aux particulier et %d feat
 data = pd.merge(data, service_particulier[features], on='CODGEO', how='outer')
 
 
+## Transport touristique
+transport_tourisme = pd.read_excel('../data/equip-tour-transp-infra.xls', sheetname='IRIS')
+# creating header from file
+header = transport_tourisme.loc[4].tolist()
+transport_tourisme.columns = header
+# to get real values
+transport_tourisme = transport_tourisme[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
+transport_tourisme['nb_transport_tourisme'] =  transport_tourisme[features].applymap(lambda x: float(x)).sum(axis=1)
+[features.append(i) for i in ['nb_transport_tourisme', 'CODGEO']]
+print "il y a  %d iris différentes pour le transport touristique et %d features" % (len(transport_tourisme.CODGEO.unique()), len(features) - 1)
+
+data = pd.merge(data, transport_tourisme[features], on='CODGEO', how='outer')
+
+
+
 

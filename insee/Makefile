@@ -36,6 +36,10 @@ download:
 	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-particuliers
 	@wget -O data/equip-serv-particuliers-infra-13.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/equip-serv-particuliers/equip-serv-particuliers-infra-13.zip
 	@unzip data/equip-serv-particuliers-infra-13.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-tour-transp
+	@wget -O data/equip-tour-transp-infra-13.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/equip-tour-transp/equip-tour-transp-infra-13.zip
+	@unzip data/equip-tour-transp-infra-13.zip -d data/
+	
 
 
 convert:
