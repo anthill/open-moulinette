@@ -1,6 +1,6 @@
 ECHO_SUCCESS=@echo " \033[1;32m✔\033[0m  "
 
-all: download
+all: download convert
 
 download:
 	@rm -rf data
@@ -39,8 +39,6 @@ download:
 	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-tour-transp
 	@wget -O data/equip-tour-transp-infra-13.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/equip-tour-transp/equip-tour-transp-infra-13.zip
 	@unzip data/equip-tour-transp-infra-13.zip -d data/
-	
-
 
 convert:
-	#@node index.js
+	python mk_data.py

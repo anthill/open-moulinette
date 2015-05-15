@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
-import numpy as np
+
+print "Initialisation..."
 
 ## Commerce
-commerce = pd.read_excel('../data/equip-serv-commerce-infra.xls', sheetname='IRIS')
+commerce = pd.read_excel('data/equip-serv-commerce-infra.xls', sheetname='IRIS')
 # creating header from file
 header = commerce.loc[4].tolist()
 commerce.columns = header
@@ -22,7 +23,7 @@ print "il y a  %d iris différentes pour le commerce et %d features" % (len(comm
 
 
 ## Sport
-sport = pd.read_excel('../data/equip-sport-loisir-socio-infra-13.xls', sheetname='IRIS')
+sport = pd.read_excel('data/equip-sport-loisir-socio-infra-13.xls', sheetname='IRIS')
 # creating header from file
 header = sport.loc[4].tolist()
 sport.columns = header
@@ -38,7 +39,7 @@ data = pd.merge(data, sport[features], on='CODGEO', how='outer')
 
 
 ## Enseignement 1er degré 
-enseignement_1 = pd.read_excel('../data/equip-serv-ens-1er-degre-infra.xls', sheetname='IRIS')
+enseignement_1 = pd.read_excel('data/equip-serv-ens-1er-degre-infra.xls', sheetname='IRIS')
 # creating header from file
 header = enseignement_1.loc[4].tolist()
 enseignement_1.columns = header
@@ -54,7 +55,7 @@ data = pd.merge(data, enseignement_1[features], on='CODGEO', how='outer')
 
 
 ## Enseignement du second degré 
-enseignement_2 = pd.read_excel('../data/equip-serv-ens-2eme-degre-infra.xls', sheetname='IRIS')
+enseignement_2 = pd.read_excel('data/equip-serv-ens-2eme-degre-infra.xls', sheetname='IRIS')
 # creating header from file
 header = enseignement_2.loc[4].tolist()
 enseignement_2.columns = header
@@ -70,7 +71,7 @@ data = pd.merge(data, enseignement_2[features], on='CODGEO', how='outer')
 
 
 ## Enseignement supérieur 
-enseignement_sup = pd.read_excel('../data/equip-serv-ens-sup-form-serv-infra.xls', sheetname='IRIS')
+enseignement_sup = pd.read_excel('data/equip-serv-ens-sup-form-serv-infra.xls', sheetname='IRIS')
 # creating header from file
 header = enseignement_sup.loc[4].tolist()
 enseignement_sup.columns = header
@@ -89,7 +90,7 @@ data = pd.merge(data, enseignement_sup[features], on='CODGEO', how='outer')
 #-------------------------------------------------------------------------
 
 ## Revenu Ménage
-revenu_menage = pd.read_excel('../data/RFDM2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
+revenu_menage = pd.read_excel('data/RFDM2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
 # creating header from file
 header = revenu_menage.loc[5].tolist()
 revenu_menage.columns = header
@@ -105,7 +106,7 @@ print "il y a  %d iris différentes pour le revenu par ménage et %d features" %
 data = pd.merge(data, revenu_menage[features], on='CODGEO', how='outer')
 
 ## Revenu par personne
-revenu_personne = pd.read_excel('../data/RFDP2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
+revenu_personne = pd.read_excel('data/RFDP2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
 # creating header from file
 header = revenu_personne.loc[5].tolist()
 revenu_personne.columns = header
@@ -122,7 +123,7 @@ data = pd.merge(data, revenu_personne[features], on='CODGEO', how='outer')
 
 
 ## Revenu par unité de consomation
-revenu_uc = pd.read_excel('../data/RFDU2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
+revenu_uc = pd.read_excel('data/RFDU2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
 # creating header from file
 header = revenu_uc.loc[5].tolist()
 revenu_uc.columns = header
@@ -138,7 +139,7 @@ print "il y a  %d iris différentes pour le revenu par unité de consomation et 
 data = pd.merge(data, revenu_uc[features], on='CODGEO', how='outer')
 
 ## Revenu % imposé + détails (% ménage imposé, dont traitement salaire etc..)
-revenu_impose = pd.read_excel('../data/RFST2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
+revenu_impose = pd.read_excel('data/RFST2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
 # creating header from file
 header = revenu_impose.loc[5].tolist()
 revenu_impose.columns = header
@@ -158,7 +159,7 @@ data = pd.merge(data, revenu_impose[features], on='CODGEO', how='outer')
 
 
 ## Equipement social 
-equipement_social = pd.read_excel('../data/equip-serv-action-sociale-infra.xls', sheetname='IRIS')
+equipement_social = pd.read_excel('data/equip-serv-action-sociale-infra.xls', sheetname='IRIS')
 # creating header from file
 header = equipement_social.loc[4].tolist()
 equipement_social.columns = header
@@ -174,7 +175,7 @@ data = pd.merge(data, equipement_social[features], on='CODGEO', how='outer')
 
 
 ## Equipement santé
-equipement_sante = pd.read_excel('../data/equip-serv-sante-infra.xls', sheetname='IRIS')
+equipement_sante = pd.read_excel('data/equip-serv-sante-infra.xls', sheetname='IRIS')
 # creating header from file
 header = equipement_sante.loc[4].tolist()
 equipement_sante.columns = header
@@ -190,7 +191,7 @@ data = pd.merge(data, equipement_sante[features], on='CODGEO', how='outer')
 
 
 ## Fonction médical
-fonction_medical = pd.read_excel('../data/equip-serv-medical-para-infra.xls', sheetname='IRIS')
+fonction_medical = pd.read_excel('data/equip-serv-medical-para-infra.xls', sheetname='IRIS')
 # creating header from file
 header = fonction_medical.loc[4].tolist()
 fonction_medical.columns = header
@@ -205,7 +206,7 @@ print "il y a  %d iris différentes pour les fonctions médical et %d features" 
 data = pd.merge(data, fonction_medical[features], on='CODGEO', how='outer')
 
 ## Service pour les particuliers
-service_particulier = pd.read_excel('../data/equip-serv-particuliers-infra.xls', sheetname='IRIS')
+service_particulier = pd.read_excel('data/equip-serv-particuliers-infra.xls', sheetname='IRIS')
 # creating header from file
 header = service_particulier.loc[4].tolist()
 service_particulier.columns = header
@@ -221,7 +222,7 @@ data = pd.merge(data, service_particulier[features], on='CODGEO', how='outer')
 
 
 ## Transport touristique
-transport_tourisme = pd.read_excel('../data/equip-tour-transp-infra.xls', sheetname='IRIS')
+transport_tourisme = pd.read_excel('data/equip-tour-transp-infra.xls', sheetname='IRIS')
 # creating header from file
 header = transport_tourisme.loc[4].tolist()
 transport_tourisme.columns = header
@@ -234,6 +235,11 @@ transport_tourisme['nb_transport_tourisme'] =  transport_tourisme[features].appl
 print "il y a  %d iris différentes pour le transport touristique et %d features" % (len(transport_tourisme.CODGEO.unique()), len(features) - 1)
 
 data = pd.merge(data, transport_tourisme[features], on='CODGEO', how='outer')
+
+
+# Extract 
+print "Extracting file in /data/output.csv"
+data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
 
 
 
