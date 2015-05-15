@@ -103,4 +103,20 @@ print "il y a  %d iris différentes pour le revenu par ménage et %d features" %
 
 data = pd.merge(data, revenu_menage[features], on='CODGEO', how='outer')
 
+## Revenu par personne
+revenu_personne = pd.read_excel('../data/RFDP2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
+# creating header from file
+header = revenu_personne.loc[5].tolist()
+revenu_personne.columns = header
+revenu_personne.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+revenu_personne = revenu_personne[6:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','LIBIRIS','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010']] # special list for this file
+# No need to sum features here (% and quantile)
+features.append('CODGEO')
+print "il y a  %d iris différentes pour le revenu par personne et %d features" % (len(revenu_personne.CODGEO.unique()), len(features) - 1)
+
+data = pd.merge(data, revenu_personne[features], on='CODGEO', how='outer')
+
 
