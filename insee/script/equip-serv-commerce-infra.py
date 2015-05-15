@@ -86,6 +86,7 @@ data = pd.merge(data, enseignement_sup[features], on='CODGEO', how='outer')
 
 
 ### Revenu have 4 files [ménage, personne, unité de consomation, ensemble]
+#-------------------------------------------------------------------------
 
 ## Revenu Ménage
 revenu_menage = pd.read_excel('../data/RFDM2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
@@ -151,6 +152,26 @@ features.append('CODGEO')
 print "il y a  %d iris différentes pour le revenu par ménage imposé et %d features" % (len(revenu_impose.CODGEO.unique()), len(features) - 1)
 
 data = pd.merge(data, revenu_impose[features], on='CODGEO', how='outer')
+
+### Fin de revenu
+#-------------------------------------------------------------------------
+
+
+## Equipement social 
+equipement_social = pd.read_excel('../data/equip-serv-action-sociale-infra.xls', sheetname='IRIS')
+# creating header from file
+header = equipement_social.loc[4].tolist()
+equipement_social.columns = header
+# to get real values
+equipement_social = enseignement_sup[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
+equipement_social['nb_equipement_social'] =  equipement_social[features].applymap(lambda x: float(x)).sum(axis=1)
+[features.append(i) for i in ['nb_equipement_social', 'CODGEO']]
+print "il y a  %d iris différentes pour l'équipement social et %d features" % (len(equipement_social.CODGEO.unique()), len(features) - 1)
+
+data = pd.merge(data, equipement_social[features], on='CODGEO', how='outer')
+
 
 
 
