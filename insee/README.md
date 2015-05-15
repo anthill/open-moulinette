@@ -2,7 +2,7 @@
 
 This script will dowload and concatenate all the features from many Insee's files in one clean csv.
 
-For some files, we add a feature "nb_name_of_feature" witch is an aggregate all feature in file (example : sum all médical fonction).
+For some files, we add a feature `nb_name_of_feature` witch is an aggregate all feature (example : sum all médical fonction).
 
 ## Dependency
 
