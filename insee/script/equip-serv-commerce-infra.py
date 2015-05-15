@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
+import numpy as np
 
 ## Commerce
 commerce = pd.read_excel('../data/equip-serv-commerce-infra.xls', sheetname='IRIS')
@@ -82,5 +83,24 @@ enseignement_sup['nb_enseignement_sup'] =  enseignement_sup[features].applymap(l
 print "il y a  %d iris différentes pour l'enseignement du supérieur et %d features" % (len(enseignement_sup.CODGEO.unique()), len(features) - 1)
 
 data = pd.merge(data, enseignement_sup[features], on='CODGEO', how='outer')
+
+
+### Revenu have 4 files [ménage, personne, unité de consomation, ensemble]
+
+## Revenu Ménage
+revenu_menage = pd.read_excel('../data/RFDM2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
+# creating header from file
+header = revenu_menage.loc[5].tolist()
+revenu_menage.columns = header
+revenu_menage.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+revenu_menage = revenu_menage[6:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','LIBIRIS','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010']] # special list for this file
+# No need to sum features here (% and quantile)
+features.append('CODGEO')
+print "il y a  %d iris différentes pour le revenu par ménage et %d features" % (len(revenu_menage.CODGEO.unique()), len(features) - 1)
+
+data = pd.merge(data, revenu_menage[features], on='CODGEO', how='outer')
 
 
