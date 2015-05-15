@@ -204,7 +204,20 @@ print "il y a  %d iris différentes pour les fonctions médical et %d features" 
 
 data = pd.merge(data, fonction_medical[features], on='CODGEO', how='outer')
 
+## Service pour les particuliers
+service_particulier = pd.read_excel('../data/equip-serv-particuliers-infra.xls', sheetname='IRIS')
+# creating header from file
+header = service_particulier.loc[4].tolist()
+service_particulier.columns = header
+# to get real values
+service_particulier = service_particulier[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
+service_particulier['nb_service_particulier'] =  service_particulier[features].applymap(lambda x: float(x)).sum(axis=1)
+[features.append(i) for i in ['nb_service_particulier', 'CODGEO']]
+print "il y a  %d iris différentes pour les services aux particulier et %d features" % (len(service_particulier.CODGEO.unique()), len(features) - 1)
 
+data = pd.merge(data, service_particulier[features], on='CODGEO', how='outer')
 
 
 
