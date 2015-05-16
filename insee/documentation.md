@@ -348,9 +348,32 @@ Le revenu fiscal exprimé par UC présente l'avantage de prendre en compte les d
  - NB_D704 : **Centre provisoire d'hébergement**
  - NB_D705 : **Centre accueil demandeur d'asile**
  - NB_D709 : **Autres établissements pour adultes et familles en difficulté**. Aire de stationnement pour nomades, foyer d'hébergement de travailleurs migrants, foyer de jeunes travailleurs, hébergement des familles de malades, logement-foyer non-spécialisé.
- - nb_equipement_social :  Somme de l'ensemble des indicateurs non détaillés.
+ - nb_equipement_social :  Somme de l'ensemble des indicateurs.
 
 
+## Nombre d'équipements et de services de santé en 2013 : 
+
+ - NB_D101 : **Etablissement santé court séjour**. Etablissement hospitalier (y compris cliniques privées) exerçant des soins de courte durée en médecine et/ou chirurgie. Contient centres hospitaliers et hôpitaux locaux, hôpitaux des armées. Les syndicats inter-hospitalier avec discipline de soins et les autres établissements de la loi hospitalière figurent dans ce groupe. Les établissements de soins du Service de santé des armées ne sont pas suivis (cat 115). Non compris les maternités autonomes classées en NB_D107. On trouve à la même adresse établissements hospitaliers et syndicat inter-hospitalier ou unités de médecine et de chirurgie ou unités avec adresse "administrative" commune.
+ - NB_D102 : **Etablissement santé moyen séjour**. Etablissement hospitalier (y compris cliniques privées) exerçant des soins de suite et de réadaptation (ou moyen séjour). Contient les mêmes établissements que NB_D101 s'ils disposent d'un tel service de soins, plus les maisons de régime (cat=119) et les établissements de lutte contre la tuberculose (cat=144), les établissements de convalescence et de repos et ceux de réadaptation fonctionnelle. Sont rajoutés les établissements d'enfants à caractère sanitaire, estimés de moyen séjour (Maisons d'enfants et pouponnières). Pour la catégorie 114 -Hôpital des armées, il n'y a pas moyen de savoir s'il y a du moyen séjour. Ils n'ont été retenus qu'en court séjour (variable NB_D101).
+ - NB_D103 : **Etablissement santé long séjour**. Etablissement hospitalier (y compris cliniques privées) exerçant des soins de longue durée.
+ - NB_D104 : **Etablissement psychiatrique**. Centre hospitalier spécialisé contre les maladies mentales (CHS) ou établissements hospitaliers (y compris cliniques privées) exerçant des soins de psychiatrie adulte et/ou infanto juvénile. Structures avec hébergement : y compris les maisons de santé pour maladies mentales et les centres de postcure pour malades mentaux.
+ - NB_D105 : **Centre lutte cancer**. Etablissement hospitalier non regroupé autre part.
+ - NB_D106 : **Urgences**. Services d'intervention (SAMU -SMUR) et d'accueil des urgences.
+ - NB_D107 : **Maternité**. Soins en gynécologie et obstétrique. Etablissements autonomes ou activité parmi d'autres au sein d'un établissement hospitalier.
+ - NB_D108 : **Centre de santé**. Dispensaires ou centres de soins dentaires, médicaux, infirmiers ou polyvalents. Les centres d'examen ne peuvent être assimilés à des centres de soins et ont été classés en NB_D110. On trouve à la même adresse centre médical et centre dentaire ou centre infirmier.
+ - NB_D109 : **Structures psychiatriques en ambulatoire**. Centre médico psychologique, atelier ou appartement thérapeutique, accueil thérapeutique à temps partiel, centre de crise. Structures sans hébergement. Ce sont aussi des établissements relevant de la loi hospitalière. On trouve à la même adresse des unités soumises à des gestions différentes (tarification, tutelle ...).
+ - NB_D110 : **Centre médecine préventive**. Dispensaires antituberculeux, antivénériens, antihansénien, centre de vaccination BCG, de consultation pour le cancer, d'examens de santé et polyvalents. Pour ces catégories, il n'y a pas d'autorisation.
+ - NB_D111 : **Dialyse**. Relève de la loi hospitalière. Centres de dialyse ambulatoire, qu'ils soient autonomes ou que ce soit une activité parmi d'autres au sein d'un établissement. On trouve à la même adresse le centre de dialyse et la structure alternative de dialyse à domicile.
+ - NB_D112 : **Hospitalisation à domicile**. Relève de la loi hospitalière. Hors dialyse. Il y a très peu d'établissements pratiquant uniquement l'hospitalisation à domicile.
+ - NB_D113 : **Maison de santé Pluridisciplinaires**. Elles regroupent dans un cadre d’exercice libéral des professionnels médicaux et paramédicaux
+ - NB_D301 : **Pharmacie** y compris commerce de produits vétérinaires, herboristerie.
+ - NB_D302 : **Laboratoire d'analyses médicales**. Laboratoires ouverts au public ; les services d'analyses biologiques des établissements hospitaliers n'y figurent pas.
+ - NB_D303 : **Ambulance**. Activité pouvant être exercée avec celle de taxi en milieu rural.
+ - NB_D304 : **Transfusion sanguine**. Etablissements autonomes.
+ - NB_D305 : **Etablissement thermal**. Relève de la loi hospitalière.
+ - NB_D306 : **Etablissement lutte contre l'alcoolisme**. Centre de postcure pour alcooliques et centres de soins spécialisés pour toxicomanes.
+ - nb_equipement_sante : Somme de l'ensemble des indicateurs.
+ 
 
 
 
