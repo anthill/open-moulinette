@@ -29,9 +29,12 @@ header = sport.loc[4].tolist()
 sport.columns = header
 # to get real values
 sport = sport[5:]
-# creating new feature : sum of all feature
+# creating new feature : sum all features non aggregated
 features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
-sport['nb_sport'] =  sport[features].applymap(lambda x: float(x)).sum(axis=1)
+sport['nb_sport'] =  sport[['NB_F101', 'NB_F102', 'NB_F103', 'NB_F104', 'NB_F105',
+                            'NB_F106', 'NB_F107', 'NB_F108', 'NB_F109', 'NB_F110', 
+                            'NB_F111', 'NB_F112', 'NB_F113', 'NB_F114', 'NB_F115',
+                            'NB_F117', 'NB_F118']].applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_sport', 'CODGEO']]
 print "il y a  %d iris différentes pour le sport et %d features" % (len(sport.CODGEO.unique()), len(features) - 1)
 
