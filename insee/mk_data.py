@@ -48,9 +48,10 @@ header = enseignement_1.loc[4].tolist()
 enseignement_1.columns = header
 # to get real values
 enseignement_1 = enseignement_1[5:]
-# creating new feature : sum of all feature
+# creating new feature : sum all features non aggregated
 features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
-enseignement_1['nb_enseignement_1'] =  enseignement_1[features].applymap(lambda x: float(x)).sum(axis=1)
+enseignement_1['nb_enseignement_1'] =  enseignement_1[['NB_C101', 'NB_C102', 'NB_C104',
+                                                        'NB_C105']].applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_enseignement_1', 'CODGEO']]
 print "il y a  %d iris différentes pour l'enseignement du 1er degré et %d features" % (len(enseignement_1.CODGEO.unique()), len(features) - 1)
 
