@@ -150,7 +150,7 @@ Ne comprend plus la vente d'instruments de musique ou de disques, bandes et cass
  - NB_F301 : **Cinéma **. Projection en salle de cinéma, en plein air ou autres. Implantations physiques, qu'il y ait une seule salle de projection ou plusieurs au sein d'un complexe. Il n'y a ni le nombre de salles présentes, ni leur nombre de places offertes.
  - NB_F302 : **Théâtre**. Ensemble des lieux gérés par le Centre National du Théâtre où une représentation de théâtre peut se tenir. Ces lieux peuvent être labellisés (théâtres nationaux et privés, scènes nationales et conventionnées, compagnies avec lieux d’accueil, compagnies dramatiques nationales et régionales, pôles cirque, centres chorégraphiques) ou non. 
  - NB_F302_NB_SALLES : **Théâtre - nombre de salles**
- - nb_sport : Somme de l'ensemble des indicateurs non détaillé : uniquement les **NB_F..**  (cf ci-dessous)
+ - nb_sport : Somme de l'ensemble des indicateurs non détaillés : uniquement les **NB_F..**  (cf ci-dessous)
 
 
 **Note :** Pour chacune des installations sportives, on dispose de plusieurs informations : 
@@ -162,3 +162,29 @@ exemple pour les bassins de natation de la commune de Marseille
 - NB_F101_NB_ECL    : 27  installations sur les 38 possèdant un éclairage
 
 Il en va de même pour les autres installations sportive **NB_F1..**
+
+
+## Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013 :
+
+ - NB_C101 : **Ecole maternelle**. Ecole  assurant tous les niveaux de maternelle. Y compris annexe d'IUFM, maternelle d'application et spécialisée. Y compris écoles en Regroupement Pédagogique Intercommunal (RPI) concentré (soit toutes les classes regroupées), non compris  classes de RPI dispersés (cf. NB_C102). Le RPI concentré est la spécificité d'une école, maternelle ou élémentaire, possédant toutes les classes, qui accueille les élèves de plusieurs communes adhérant au RPI.
+ - NB_C101_NB_CANT : **Ecole maternelle avec cantine** 
+ - NB_C101_NB_EP : **Ecole maternelle appartenant à un réseau d'éducation prioritaire**. Uniquement pour les écoles maternelles et élémentaires, les collèges (sauf C203) et les lycées (sauf agricoles et C304 et C305)
+Appartenance à un réseau d’éducation prioritaire (définition Éducation nationale). En lieu et place des anciennes ZEP (zones d’éducation prioritaire), un REP est constitué. Il s’agit soit d’un : RAR (réseau ambition réussite) : chaque réseau est constitué d’un collège ambition réussite -il devient l’unité de référence du réseau- et des écoles élémentaires et maternelles de son secteur. Chaque collège est reconnu par une spécialité de haut niveau d’ordre culturel, scientifique, linguistique, sportif ou environnemental. Il dispose de moyens supplémentaires. soit d’un  RES (réseau de réussite scolaire) : les autres réseaux (anciens ZEP et non RAR). 
+ - NB_C101_NB_RPIC : **Ecole maternelle en RPIC**. Ecole maternelle en RPIC. Le RPI concentré est la spécificité d'une école, maternelle ou élémentaire, possédant toutes les classes, qui accueille les élèves de plusieurs communes adhérant au RPI.
+ - NB_C102 : **Classe maternelle de RPI dispersé**. Classe maternelle de RPI dispersé. Tous les niveaux de maternelle ne sont pas assurés dans l'établissement. Le RPI dispersé est la structure d'un groupe scolaire dont les classes sont "dispersées" dans les communes faisant partie du RPI dit dispersé. 
+ - NB_C102_NB_CANT : **Classe maternelle de RPI dispersé avec cantine**
+ - NB_C102_NB_EP : **Ecole maternelle de RPI dispersé appartenant à un réseau d'éducation prioritaire**. Uniquement pour les écoles maternelles et élémentaires, les collèges (sauf C203) et les lycées (sauf agricoles et C304 et C305)
+Appartenance à un réseau d’éducation prioritaire (définition Éducation nationale). En lieu et place des anciennes ZEP (zones d’éducation prioritaire), un REP est constitué. Il s’agit soit d’un :RAR (réseau ambition réussite) : chaque réseau est constitué d’un collège ambition réussite -il devient l’unité de référence du réseau- et des écoles élémentaires et maternelles de son secteur. Chaque collège est reconnu par une spécialité de haut niveau d’ordre culturel, scientifique, linguistique, sportif ou environnemental. Il dispose de moyens supplémentaires. soit d’un  RES (réseau de réussite scolaire) : les autres réseaux (anciens ZEP et non RAR). 
+ - NB_C104 : **Ecole élémentaire**. Ecole assurant tous les niveaux d'école élémentaire. Y compris annexe d'IUFM, élémentaire d'application, spécialisée ou régionale. Y compris écoles en regroupement pédagogique intercommunal (RPI) concentré (soit toutes les classes regroupées), non compris classes de RPI dispersés (cf. NB_ C105). Le RPI concentré est la spécificité d'une école, maternelle ou élémentaire, possédant toutes les classes, qui accueille les élèves de plusieurs communes adhérant au RPI.
+ - NB_C104_NB_CANT : **Ecole élémentaire avec cantine**. 
+ - NB_C104_NB_CL_PELEM : **Ecole élémentaire avec classe pré-élémentaire**
+ - NB_C104_NB_EP : **Ecole élémentaire appartenant à un réseau d'éducation prioritaire**. Uniquement pour les écoles maternelles et élémentaires, les collèges (sauf C203) et les lycées (sauf agricoles et C304 et C305)
+Appartenance à un réseau d’éducation prioritaire (définition Éducation nationale). En lieu et place des anciennes ZEP (zones d’éducation prioritaire), un REP est constitué. Il s’agit soit d’un :RAR (réseau ambition réussite) : chaque réseau est constitué d’un collège ambition réussite -il devient l’unité de référence du réseau- et des écoles élémentaires et maternelles de son secteur. Chaque collège est reconnu par une spécialité de haut niveau d’ordre culturel, scientifique, linguistique, sportif ou environnemental. Il dispose de moyens supplémentaires. Soit d’un  RES (réseau de réussite scolaire) : les autres réseaux (anciens ZEP et non RAR).
+ - NB_C104_NB_RPIC : **Ecole élémentaire en RPIC**. Ecole élémentaire en RPIC. Le RPI concentré est la spécificité d'une école, maternelle ou élémentaire, possédant toutes les classes, qui accueille les élèves de plusieurs communes adhérant au RPI.
+ - NB_C105 : **Classe élémentaire de RPI dispersé**. Classe élémentaire de RPI dispersé. Tous les niveaux d'école élémentaire ne sont pas assurés dans l'établissement. Le RPI dispersé est la structure d'un groupe scolaire dont les classes sont "dispersées" dans les communes faisant partie du RPI dit dispersé. 
+ - NB_C105_NB_CANT : **Classe élémentaire de RPI avec cantine**. 
+ - NB_C105_NB_CL_PELEM : **Classe élémentaire de RPI dispersé avec classe pré-élémentaire**
+ - NB_C105_NB_EP : **Classe élémentaire de RPI dispersé appartenant à un réseau d'éducation prioritaire**.Uniquement pour les écoles maternelles et élémentaires, les collèges (sauf C203) et les lycées (sauf agricoles et C304 et C305)
+Appartenance à un réseau d’éducation prioritaire (définition Éducation nationale). En lieu et place des anciennes ZEP (zones d’éducation prioritaire), un REP est constitué. Il s’agit soit d’un : RAR (réseau ambition réussite) : chaque réseau est constitué d’un collège ambition réussite -il devient l’unité de référence du réseau- et des écoles élémentaires et maternelles de son secteur. Chaque collège est reconnu par une spécialité de haut niveau d’ordre culturel, scientifique, linguistique, sportif ou environnemental. Il dispose de moyens supplémentaires. Soit d’un  RES (réseau de réussite scolaire) : les autres réseaux (anciens ZEP et non RAR).
+- nb_enseignement_1 : Somme de l'ensemble des indicateurs non détaillés : uniquement les **NB_C1..**
+
