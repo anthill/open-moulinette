@@ -67,7 +67,8 @@ enseignement_2.columns = header
 enseignement_2 = enseignement_2[5:]
 # creating new feature : sum of all feature
 features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
-enseignement_2['nb_enseignement_2'] =  enseignement_2[features].applymap(lambda x: float(x)).sum(axis=1)
+enseignement_2['nb_enseignement_2'] =  enseignement_2[['NB_C201', 'NB_C301', 'NB_C302',
+                                                        'NB_C303', 'NB_C304', 'NB_C305']].applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_enseignement_2', 'CODGEO']]
 print "il y a  %d iris différentes pour l'enseignement du second degré et %d features" % (len(enseignement_2.CODGEO.unique()), len(features) - 1)
 
