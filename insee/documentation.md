@@ -166,6 +166,8 @@ Il en va de même pour les autres installations sportive **NB_F1..**
 
 ## Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013 :
 
+**Note** : Le fichier contient 3 onglets, un onglet général et deux onglet publique et privé afin de faire la distinction de secteur. Actuellement seulement les données générales (publiques + privées) sont présent.
+
  - NB_C101 : **Ecole maternelle**. Ecole  assurant tous les niveaux de maternelle. Y compris annexe d'IUFM, maternelle d'application et spécialisée. Y compris écoles en Regroupement Pédagogique Intercommunal (RPI) concentré (soit toutes les classes regroupées), non compris  classes de RPI dispersés (cf. NB_C102). Le RPI concentré est la spécificité d'une école, maternelle ou élémentaire, possédant toutes les classes, qui accueille les élèves de plusieurs communes adhérant au RPI.
  - NB_C101_NB_CANT : **Ecole maternelle avec cantine** 
  - NB_C101_NB_EP : **Ecole maternelle appartenant à un réseau d'éducation prioritaire**. Uniquement pour les écoles maternelles et élémentaires, les collèges (sauf C203) et les lycées (sauf agricoles et C304 et C305)
@@ -186,5 +188,33 @@ Appartenance à un réseau d’éducation prioritaire (définition Éducation na
  - NB_C105_NB_CL_PELEM : **Classe élémentaire de RPI dispersé avec classe pré-élémentaire**
  - NB_C105_NB_EP : **Classe élémentaire de RPI dispersé appartenant à un réseau d'éducation prioritaire**.Uniquement pour les écoles maternelles et élémentaires, les collèges (sauf C203) et les lycées (sauf agricoles et C304 et C305)
 Appartenance à un réseau d’éducation prioritaire (définition Éducation nationale). En lieu et place des anciennes ZEP (zones d’éducation prioritaire), un REP est constitué. Il s’agit soit d’un : RAR (réseau ambition réussite) : chaque réseau est constitué d’un collège ambition réussite -il devient l’unité de référence du réseau- et des écoles élémentaires et maternelles de son secteur. Chaque collège est reconnu par une spécialité de haut niveau d’ordre culturel, scientifique, linguistique, sportif ou environnemental. Il dispose de moyens supplémentaires. Soit d’un  RES (réseau de réussite scolaire) : les autres réseaux (anciens ZEP et non RAR).
-- nb_enseignement_1 : Somme de l'ensemble des indicateurs non détaillés : uniquement les **NB_C1..**
+ - nb_enseignement_1 : Somme de l'ensemble des indicateurs non détaillés : uniquement sur les **NB_C1..**
 
+
+## Nombre d'équipements et de services dans le domaine de l'enseignement du second degré en 2013 : 
+
+**Note** : Le fichier contient 3 onglets, un onglet général et deux onglet publique et privé afin de faire la distinction de secteur. Actuellement seulement les données générales (publiques + privées) sont présent.
+
+ - NB_C201 : **Collège** y compris collège climatique ou spécialisé.. 
+ - NB_C201_NB_CANT : **Collège avec cantine**
+ - NB_C201_NB_INT : **Collège avec internat**
+ - NB_C201_NB_EP : **Collège appartenant à un réseau d'éducation prioritaire**. Uniquement pour les écoles maternelles et élémentaires, les collèges (sauf C203) et les lycées (sauf agricoles et C304 et C305)
+Appartenance à un réseau d’éducation prioritaire (définition Éducation nationale). En lieu et place des anciennes ZEP (zones d’éducation prioritaire), un REP est constitué. Il s’agit soit d’un RAR (réseau ambition réussite) : chaque réseau est constitué d’un collège ambition réussite -il devient l’unité de référence du réseau- et des écoles élémentaires et maternelles de son secteur. Chaque collège est reconnu par une spécialité de haut niveau d’ordre culturel, scientifique, linguistique, sportif ou environnemental. Il dispose de moyens supplémentaires. Soit d’un  RES (réseau de réussite scolaire) : les autres réseaux (anciens ZEP et non RAR).
+ - NB_C301 : **Lycée d'enseignement général et/ou technologique** y compris lycée polyvalent ou climatique et école secondaire spécialisée. Hors tutelle du ministère de l'agriculture
+ - NB_C301_NB_CANT : **Lycée d'enseignement général et/ou technologique avec cantine**
+ - NB_301_NB_CL_PGE : **Lycée d'enseignement général et/ou technologique avec présence de classe préparatoire aux grandes écoles**
+ - NB_C301_NB_INT : **Lycée d'enseignement général et/ou technologique avec internat**
+ - NB_C301_NB_EP : **Lycée d'enseignement général et/ou technologique appartenant à un réseau d'éducation prioritaire**. Uniquement pour les écoles maternelles et élémentaires, les collèges (sauf C203) et les lycées (sauf agricoles et C304 et C305)
+Appartenance à un réseau d’éducation prioritaire (définition Éducation nationale). En lieu et place des anciennes ZEP (zones d’éducation prioritaire), un REP est constitué. Il s’agit soit d’un : RAR (réseau ambition réussite) : chaque réseau est constitué d’un collège ambition réussite -il devient l’unité de référence du réseau- et des écoles élémentaires et maternelles de son secteur. Chaque collège est reconnu par une spécialité de haut niveau d’ordre culturel, scientifique, linguistique, sportif ou environnemental. Il dispose de moyens supplémentaires. Soit d’un  RES (réseau de réussite scolaire) : les autres réseaux (anciens ZEP et non RAR).
+ - NB_C302 : **Lycée d'enseignement professionnel** y compris école de métiers et école professionnelle spécialisée. Hors tutelle du ministère de l'agriculture. 
+ - NB_C302_NB_CANT : **Lycée d'enseignement professionnel avec cantine**
+ - NB_C302_NB_INT : **Lycée d'enseignement professionnel avec internat**
+ - NB_C302_NB_EP : **Lycée d'enseignement professionnel appartenant à un réseau d'éducation prioritaire**. Uniquement pour les écoles maternelles et élémentaires, les collèges (sauf C203) et les lycées (sauf agricoles et C304 et C305)
+Appartenance à un réseau d’éducation prioritaire (définition Éducation nationale). En lieu et place des anciennes ZEP (zones d’éducation prioritaire), un REP est constitué. Il s’agit soit d’un RAR (réseau ambition réussite) : chaque réseau est constitué d’un collège ambition réussite -il devient l’unité de référence du réseau- et des écoles élémentaires et maternelles de son secteur. Chaque collège est reconnu par une spécialité de haut niveau d’ordre culturel, scientifique, linguistique, sportif ou environnemental. Il dispose de moyens supplémentaires. Soit d’un  RES (réseau de réussite scolaire) : les autres réseaux (anciens ZEP et non RAR).
+ - NB_C303 : **Lycée technique et/ou professionnel agricole**. Sous tutelle du ministère de l'agriculture. Y compris maison rurale et autre enseignement agricole privé.
+ - NB_C303_NB_INT : **Lycée technique et/ou professionnel agricole avec internat**
+ - NB_C304 : **SGT : Section d'enseignement général et technologique**. Présence d'enseignement général et technologique au sein d'un lycée professionnel
+ - NB_C304_NB_CANT : **SGT avec cantine**
+ - NB_C305 : **SEP : Section d'enseignement professionnel**. Présence d'enseignement professionnel au sein d'un lycée d’enseignement général et/ou technologique
+ - NB_C305_NB_CANT : **SEP avec cantine**
+ - nb_enseignement_2 : Somme de l'ensemble des indicateurs non détaillés : uniquement sur les **NB_C2..** et **NB_C3..**
