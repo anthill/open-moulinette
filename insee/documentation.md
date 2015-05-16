@@ -65,6 +65,7 @@ Ne comprend plus la vente d'instruments de musique ou de disques, bandes et cass
  - NB_B312 : **Fleuriste** y compris commerce de plants, arbres et arbustes.
  - NB_B313 : **Magasin d'optique** y compris activité des opticiens
  - NB_B314 : **Station service**. Commerce de détail de carburant ayant vendu au moins 500 000 litres de carburant au cours de l’année. 
+- nb_commerce : somme de l'ensemble des indicateurs du fichiers.
 
 ## Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013 :
 
@@ -149,6 +150,7 @@ Ne comprend plus la vente d'instruments de musique ou de disques, bandes et cass
  - NB_F301 : **Cinéma **. Projection en salle de cinéma, en plein air ou autres. Implantations physiques, qu'il y ait une seule salle de projection ou plusieurs au sein d'un complexe. Il n'y a ni le nombre de salles présentes, ni leur nombre de places offertes.
  - NB_F302 : **Théâtre**. Ensemble des lieux gérés par le Centre National du Théâtre où une représentation de théâtre peut se tenir. Ces lieux peuvent être labellisés (théâtres nationaux et privés, scènes nationales et conventionnées, compagnies avec lieux d’accueil, compagnies dramatiques nationales et régionales, pôles cirque, centres chorégraphiques) ou non. 
  - NB_F302_NB_SALLES : **Théâtre - nombre de salles**
+ - nb_sport : Somme de l'ensemble des indicateurs non détaillé : uniquement les **NB_F..**  (cf ci-dessous)
 
 
 **Note :** Pour chacune des installations sportives, on dispose de plusieurs informations : 
