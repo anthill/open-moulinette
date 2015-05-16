@@ -331,23 +331,26 @@ Le revenu fiscal exprimé par UC présente l'avantage de prendre en compte les d
 
 ## Nombre d'équipements et de services dans le domaine de l'action sociale en 2013 :
 
- - NB_D401 : **Personnes âgées : hébergement**
- - NB_D402 : **Personnes âgées : soins à domicile**
- - NB_D403 : **Personnes âgées : services d'aide**
- - NB_D404 : **Personnes âgées : foyer restaurant**
- - NB_D405 : **Personnes âgées : services de repas à domicile**
- - NB_D501 : **Garde d'enfant d'âge préscolaire**
- - NB_D601 : **Enfants handicapés : hébergement**
- - NB_D602 : **Enfants handicapés :services à domicile ou ambulatoires**
- - NB_D603 : **Adultes handicapés : hébergement**
- - NB_D604 : **Adultes handicapés : services**
- - NB_D605 : **Travail protégé**
- - NB_D701 : **Aide sociale à l'enfance : hébergement**
- - NB_D702 : **Aide sociale à l'enfance : action éducative**
+ - NB_D401 : **Personnes âgées : hébergement**. Etablissement d'hébergement pour personnes âgées. Hospices, maisons de retraite, logements foyers et résidences d'hébergement temporaire. 
+ - NB_D402 : **Personnes âgées : soins à domicile**. Services de soins à domicile et centres de jour pour personnes âgées. Localisé au siège du service.
+ - NB_D403 : **Personnes âgées : services d'aide**. Services d'aide ménagère à domicile, alarme médico-sociale et services d'aide aux personnes âgées. Localisé au siège du service.
+ - NB_D404 : **Personnes âgées : foyer restaurant**. Foyer club restaurant.
+ - NB_D405 : **Personnes âgées : services de repas à domicile**. Localisé au siège du service.
+ - NB_D501 : **Garde d'enfant d'âge préscolaire**. Crèches collectives ou parentales, haltes-garderie y compris parentales, garderies et jardins d'enfants, établissement d'accueil collectif et/ou familial y compris parental.
+ - NB_D601 : **Enfants handicapés : hébergement**. Institut médico-éducatif, médico-pédagogique, médico-professionnel, jardin d'enfants spécialisé, institut de rééducation, établissement pour déficients moteurs et/ou cérébraux, visuels et/ou auditifs, centre d'accueil familial spécialisé et foyer d'hébergement.
+ - NB_D602 : **Enfants handicapés :services à domicile ou ambulatoires**. Service d'éducation spéciale et de soins à domicile, centre médico-psycho-pédagogique (CMPP), centre action médico-sociale précoce (CAMSP), bureau d'aide psychologique universitaire (BAPU).
+ - NB_D603 : **Adultes handicapés : hébergement**. Centre de placement familial, foyer d'hébergement, maison d’accueil spécialisée (MAS), foyer occupationnel, foyer d'accueil médicalisé (FAM)
+ - NB_D604 : **Adultes handicapés : services**. Centre de pré-orientation, de rééducation professionnelle, service auxiliaire de vie, service d'accompagnement à la vie sociale (SAVS).
+ - NB_D605 : **Travail protégé**. Centre d’aide par le travail (CAT) et atelier protégé.
+ - NB_D701 : **Aide sociale à l'enfance : hébergement**. Etablissement d'accueil mère-enfant, pouponnière à caractère social, foyer de l'enfance, village et maison d'enfants à caractère social, centre de placement familial socio-éducatif. Tutelle des conseils généraux. 
+ - NB_D702 : **Aide sociale à l'enfance : action éducative**. Foyer d'action éducative (FAE), service éducatif auprès des tribunaux (SEAT), centre d'action éducative (CAE), service d'action éducative en milieu ouvert (AEMO).
  - NB_D703 : **CHRS : centre d'hébergement et de réadaptation sociale**
  - NB_D704 : **Centre provisoire d'hébergement**
  - NB_D705 : **Centre accueil demandeur d'asile**
- - NB_D709 : **Autres établissements pour adultes et familles en difficulté**
+ - NB_D709 : **Autres établissements pour adultes et familles en difficulté**. Aire de stationnement pour nomades, foyer d'hébergement de travailleurs migrants, foyer de jeunes travailleurs, hébergement des familles de malades, logement-foyer non-spécialisé.
+ - nb_equipement_social :  Somme de l'ensemble des indicateurs non détaillés.
+
+
 
 
 
