@@ -374,9 +374,38 @@ Le revenu fiscal exprimé par UC présente l'avantage de prendre en compte les d
  - NB_D306 : **Etablissement lutte contre l'alcoolisme**. Centre de postcure pour alcooliques et centres de soins spécialisés pour toxicomanes.
  - nb_equipement_sante : Somme de l'ensemble des indicateurs.
  
+## Nombre de fonctions médicales et paramédicales en 2013 :
 
+**Note** : 
+- NB_D201 à NB_D213 sont retenus les praticiens exerçant leur activité en dehors d'un établissement sanitaire, puisque ceux-ci sont appréhendés dans FINESS. Sont donc exclus par exemple les médecins fonctionnaires et les médecins salariés exerçant en établissement sanitaire ou leur partie d'activité y est exercée. Dans la source peuvent être mentionnées plusieurs adresses d'exercice. Sont seules retenues celles répondant aux critères en tête de colonne. Ainsi un salarié hospitalier exerçant aussi en cabinet libéral à une autre adresse que celle de l'hôpital (ou de la clinique) ne sera retenu qu'à l'adresse(s) du cabinet. 
+Ne sont retenues que les spécialités proposées par la DREES, les plus importantes en effectifs de libéraux et où au moins la moitié des praticiens exercent sous forme libérale. Si le praticien exerce dans plusieurs spécialités, seule la principale a été retenue. 
+- NB_D231 à NB_D240 : Auxiliaires médicaux. N'ont pas été retenues les catégories Infirmiers psychiatriques et Psychologues, non présentées par la DREES dans ses publications. Certaines professions sont peu nombreuses et/ou n'exercent pas en libéral, par exemple les psychomotriciens et les ergothérapeutes.
 
-
+ - NB_D201 : **Médecin omnipraticien**. Médecin "généraliste", y compris compris médecins non-spécialistes ayant une compétence particulière (acupuncteurs, homéopathes, allergologues, gynécologues ...)
+ - NB_D202 : **Spécialiste en cardiologie**
+ - NB_D203 : **Spécialiste en dermatologie vénéréologie**
+ - NB_D204 : **Spécialiste en gynécologie médicale**
+ - NB_D205 : **Spécialiste en gynécologie obstétrique**
+ - NB_D206 : **Spécialiste en gastro-entérologie hépatologie**
+ - NB_D207 : **Spécialiste en psychiatrie**
+ - NB_D208 : **Spécialiste en ophtalmologie**
+ - NB_D209 : **Spécialiste en oto-rhino-laryngologie**
+ - NB_D210 : **Spécialiste en pédiatrie**
+ - NB_D211 : **Spécialiste en pneumologie**
+ - NB_D212 : **Spécialiste en radiodiagnostic et imagerie médicale**
+ - NB_D213 : **Spécialiste en stomatologie**
+ - NB_D221 : **Chirurgien dentiste**
+ - NB_D231 : **Sage-femme**
+ - NB_D232 : **Infirmier**
+ - NB_D233 : **Masseur kinésithérapeute**
+ - NB_D235 : **Orthophoniste**
+ - NB_D236 : **Orthoptiste**
+ - NB_D237 : **Pédicure-podologue**
+ - NB_D238 : **Audio prothésiste**. Pour appréhender tous les lieux où le service est rendu, ont été retenus tous les professionnels exerçant à titre libéral ou comme salariés du privé, à l'exclusion des structures ne recevant pas habituellement du public (étab. d'enseignement, administration, entreprises ...). Possibilité d'avoir un ou plusieurs libéraux et/ou un ou plusieurs salariés à la même adresse.
+ - NB_D239 : **Ergothérapeute**
+ - NB_D240 : **Psychomotricien**
+ - nb_fonction_medical : Somme de l'ensemble des indicateurs.
+ 
 
 
 
