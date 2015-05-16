@@ -4,7 +4,7 @@ Open-moulinette insee is an open data cleaner who concatene each Insee's files i
 
 `NB_B314` is the number of gas station by iris.
 
-The goal of this documentation is to enumerate each feature and explain it. Decription is in French as all the data concerne French'city.
+**The goal of this documentation is to enumerate each feature and explain it. Decription is in French as all the data concerne French's city.**
 
 
 ## List of file :
@@ -218,3 +218,150 @@ Appartenance à un réseau d’éducation prioritaire (définition Éducation na
  - NB_C305 : **SEP : Section d'enseignement professionnel**. Présence d'enseignement professionnel au sein d'un lycée d’enseignement général et/ou technologique
  - NB_C305_NB_CANT : **SEP avec cantine**
  - nb_enseignement_2 : Somme de l'ensemble des indicateurs non détaillés : uniquement sur les **NB_C2..** et **NB_C3..**
+
+
+## Nombre d'équipements et de services dans le domaine de l'enseignement supérieur, de la formation et des services de l'éducation en 2013 : 
+
+**Note** : Le fichier contient 3 onglets, un onglet général et deux onglet publique et privé afin de faire la distinction de secteur. Actuellement seulement les données générales (publiques + privées) sont présent.
+
+ - NB_C401 : **Section Technicien Supérieur, Classe Préparatoire aux Grandes Ecoles**. Seules formations au diplôme de technicien supérieur, et classes préparatoires aux grandes écoles.
+ - NB_C402 : **Formation santé**.  Ecoles de formation sanitaire et sociale (y compris établissements sous tutelle du ministère de la santé) publiques ou privées : formation de personnels médicaux et para-médicaux, techniques (laborantins), sanitaires (aides-soignants, ambulanciers), sociaux (service social, éducateurs ...).
+ - NB_C403 : **Formation commerce**. Ecoles de commerce, gestion, administration d'entreprises, comptabilité, vente. Comprend notamment les réseaux d'écoles des CCI.
+ - NB_C409 : **Autre formation post bac non universitaire**. Ecoles de formation d'enseignants non IUFM, d'administration publique (y compris de fonctionnaires), technico professionnelles des services, de formation artistique, d'architecture, de formation agricole ou halieutique, technico professionnelles industrielles, juridiques.
+ - NB_C501 : **Unité de Formation et de Recherche** y compris UFR de médecine, odontologie, pharmacie. Y compris antennes délocalisées des UFR ou autres composantes.
+ - NB_C502 : **Institut universitaire**. IUP, IUT yc antennes délocalisées, IUFM ycompris antennes d'IUFM.
+ - NB_C503 : **Ecole d'ingénieurs**. Ecoles d'ingénieurs publiques sous tutelle du ministère de l'enseignement supérieur et de la recherche ou d'un autre ministère, et écoles privées.
+ - NB_C504 : **Enseignement général supérieur privé**. Etablissements privés d'enseignement universitaire, centres ou facultés privés, instituts catholiques.
+ - NB_C509 : **Autre enseignement supérieur**. Ecoles normales supérieures, instituts nationaux polytechniques, instituts d'administration des entreprises, instituts de préparation à l'administration générale, instituts d'études politiques, institut du travail, centres régionaux associés aux CNAM, Universite de technologie et centre univ formation et recherche.
+ - NB_C601 : **Centre de formation d'apprentis**. Centre de formation d'apprentis avec convention régionale ou nationale, y compris antennes et sections d'apprentissage, non compris l'apprentissage agricole. 
+ - NB_C602 : **GRETA**. Groupements d'établissements pour la formation continue. Les annexes de GRETA ne sont pas immatriculées. Ils sont toujours rattachés à un EPLE (Etablissement public local d'enseignement).
+ - NB_C603 : **CFPPA**. Centres de formation professionnelle et de promotion agricole (toujours rattachés à un EPLE agricole).
+ - NB_C604 : **Formation aux métiers du sport**. Etablissements de formation aux métiers du sport : écoles et instituts nationaux de la jeunesse et des sports (INSEP, INJEP, ENSA, ENEV, ENSFS, ENE), centres d'éducation populaire et de sport (CREPS). Ils sont sous la tutelle du ministère de la jeunesse et des sports.
+ - NB_C605 : **Centre de formation d'apprentis agricole**. Créé à compter de 2010 : les CFA agricoles sont séparés des autres classés en NB_C601.
+ - NB_C605_NB_INT : **Centre de formation d'apprentis agricole avec internat**
+ - NB_C609 : **Autre formation continue**. Etablissements de formation continue autres : regroupe les centres d'enseignement à distance (CNED et ses centres d'enseignement, centres privés soumis à déclaration), les établissements de formation continue hors Education nationale ou hors agriculture.
+ - NB_C701 : **Résidence universitaire**. L'insse ne fournit pas la différence entre NB_C701 et NB_C702, mais en regardant les chiffres on peux constater des différences.
+ - NB_C702 : **Restaurant universitaire**.
+ - nb_enseignement_sup : Somme de l'ensemble des indicateurs non détaillés (NB_C605_NB_INT est exclu).
+
+## Indicateurs de structure et de distribution des revenus
+
+Les revenus fiscaux localisés des ménages sont établis à partir des fichiers exhaustifs des déclarations de revenus des personnes physiques, de la taxe d'habitation et du fichier d’imposition des personnes physiques fournis à l'Insee par la Direction générale des finances publiques.
+
+**Note** : La liste des indicateurs disponibles varie selon les seuils de population (nombre de ménages fiscaux ou population fiscale). Is se peux donc que certain des indicateurs soient vide :
+ - aucun indicateur pour les zones de moins de 50 ménages fiscaux.
+ - 2 indicateurs pour les zones de 50 ménages fiscaux à moins de 2 000 personnes au sens du ménage fiscal.
+ - 23 indicateurs pour les zones de 2 000 personnes ou plus au sens du ménage fiscal
+
+### Par ménage :
+
+Le revenu fiscal par ménage correspond à l'ensemble des revenus déclarés par les foyers fiscaux qui composent le ménage fiscal. Cette unité d'observation permet de raisonner en termes de "masse" des revenus déclarés au sein d'une zone.
+
+ - NBMEN11 : **Nb de ménages fiscaux**
+ - RFMQ111 : **1er quartile (€)**
+ - RFMQ211 : **Médiane (€)**
+ - RFMQ311 : **3ème quartile (€)**
+ - RFMIQ11 : **Écart interquartile (€)**
+ - RFMD111 : **1er décile (€)**
+ - RFMD211 : **2ème décile (€)**
+ - RFMD311 : **3ème décile (€)**
+ - RFMD411 : **4ème décile (€)**
+ - RFMD611 : **6ème décile (€)**
+ - RFMD711 : **7ème décile (€)**
+ - RFMD811 : **8ème décile (€)**
+ - RFMD911 : **9ème décile (€)**
+ - RFMRD11 : **Rapport interdécile**
+ - RFMET11 : **Ecart-type (€)**
+
+### Par personne :
+
+Le revenu fiscal par personne est le revenu du ménage rapporté au nombre de personnes qui le composent. Le nombre de personnes du ménage fiscal est obtenu par cumul des personnes inscrites sur les déclarations de revenus qui le composent. On adopte le terme de personne et non celui d'habitant pour marquer le fait que toute personne rattachée fiscalement à un ménage ne vit pas forcément au sein de celui-ci : elle peut habiter ailleurs, cas fréquent chez les étudiants (rattachés fiscalement à leurs parents tout en occupant un logement indépendant).
+
+ - NBPERS11 : **Nb de ménages fiscaux**
+ - RFPQ111 : **1er quartile (€)**
+ - RFPQ211 : **Médiane (€)**
+ - RFPQ311 : **3ème quartile (€)**
+ - RFPIQ11 : **Écart interquartile (€)**
+ - RFPD111 : **1er décile (€)**
+ - RFPD211 : **2ème décile (€)**
+ - RFPD311 : **3ème décile (€)**
+ - RFPD411 : **4ème décile (€)**
+ - RFPD611 : **6ème décile (€)**
+ - RFPD711 : **7ème décile (€)**
+ - RFPD811 : **8ème décile (€)**
+ - RFPD911 : **9ème décile (€)**
+ - RFPRD11 : **Rapport interdécile**
+ - RFPET11 : **Ecart-type (€)**
+
+### Par Unité de consommation :
+
+Le revenu fiscal par unité de consommation (UC) est le revenu du ménage rapporté au nombre d'unités de consommation qui le composent. Par convention, le nombre d'unités de consommation d'un " ménage fiscal " est évalué de la manière suivante :
+- le premier adulte du ménage compte pour une unité de consommation ; 
+- les autres personnes de 14 ans ou plus comptent chacune pour 0,5 ; 
+- les enfants de moins de 14 ans comptent chacun pour 0,3. 
+Cette échelle d'équivalence est utilisée couramment par l'Insee et Eurostat pour étudier les revenus ainsi exprimés par  "équivalent adulte".
+
+Le revenu fiscal exprimé par UC présente l'avantage de prendre en compte les diverses compositions des ménages et donc les économies d'échelle liées à la vie en groupe. Dans de nombreux cas, l'étude des revenus se place dans une problématique de comparaison des niveaux de revenu entre plusieurs zones ou d'analyse des inégalités de revenus entre les ménages au sein d'une zone. L'utilisation du revenu rapporté au nombre d'unités de consommation du ménage est alors préconisé car il devient un revenu par équivalent adulte, comparable d'un lieu à un autre et entre ménages de compositions différentes.
+
+ - NBUC11 : **Nombre d'UC**
+ - RFUCQ111 : **1er quartile (€)**
+ - RFUCQ211 : **Médiane (€)**
+ - RFUCQ311 : **3ème quartile (€)**
+ - RFUCIQ11 : **Écart interquartile (€)**
+ - RFUCD111 : **1er décile (€)**
+ - RFUCD211 : **2ème décile (€)**
+ - RFUCD311 : **3ème décile (€)**
+ - RFUCD411 : **4ème décile (€)**
+ - RFUCD611 : **6ème décile (€)**
+ - RFUCD711 : **7ème décile (€)**
+ - RFUCD811 : **8ème décile (€)**
+ - RFUCD911 : **9ème décile (€)**
+ - RFUCRD11 : **Rapport interdécile**
+ - RFUCET11 : **Ecart-type (€)**
+ - RFUCGI11 : **Indice de Gini**. Indicateur du degré de concentration des revenus fiscaux par UC parmi les personnes de la zone étudiée. Il est compris entre 0 (concentration minimale lorsque toutes les personnes présentent un revenu identique) et 1 (concentration maximale lorsqu’une seule personne concentre la totalité des revenus de la zone).
+
+### Indicateur de structure :
+
+ - PMIMP11 : **Part des ménages imposés (%)**
+ - PTSA11 : **Part des traitements/ salaires (%)**. Pourcentage que représentent les revenus d'activités salariées dans le total des revenus fiscaux de la zone. Les revenus d'activités salariées incluent les salaires, indemnités journalières de maladie, indemnités de chômage, avantages en nature, certaines préretraites mais aussi les revenus perçus à l’étranger par des résidents en France (ces revenus sont comptés par défaut dans les revenus d'activités salariées car la déclaration de revenus ne permet pas de les ventiler par catégorie)
+ - PCHO11 : **dont indemnités de chômage (%)**. Donne la part de ces indemnités dans le revenu total.
+ - PPEN11 : **Part des pensions/retraites/rentes (%)**. Pourcentage que représentent les pensions, retraites et rentes dans le total des revenus fiscaux de la zone, net des pensions alimentaires versées. Les pensions, retraites et rentes incluent les retraites mais aussi les pensions d’invalidité et les pensions alimentaires nettes (déduction faites des pensions versées) et les rentes viagères (à titre gratuit et onéreux).
+ - PBEN11 : **Part des bénéfices (%)**. Pourcentage que représentent les revenus des activités non salariées dans le total des revenus fiscaux de la zone, net de déficits. Il s’agit des revenus nets de déficits et hors plus-values des indépendants. Ils comprennent les Bénéfices Agricoles (BA), les Bénéfices Industriels et Commerciaux professionnels (BIC) et les Bénéfices Non Commerciaux professionnels (BNC). Sur la déclaration, les indépendants relevant du régime micro-entreprise pour les BIC et du régime déclaratif spécial pour les BNC reportent le montant hors taxes du chiffre d’affaires ou des recettes. Pour les autres régimes, c’est un bénéfice net de déficit qui est reporté.
+ - PAUT11 : **Part des autres revenus (%)**. Pourcentage que représentent les revenus du patrimoine déclarés et autres revenus dans le total des revenus fiscaux de la zone. Ils comprennent essentiellement des revenus du patrimoine : les revenus des valeurs et capitaux mobiliers imposables au titre de l’IRPP ainsi que les produits de placement soumis à prélèvement libératoire indiqués sur la déclaration de revenus (ce qui exclut les revenus défiscalisés comme le livret A et une partie des produits de placements soumis à prélèvement libératoire non déclarés), les revenus fonciers nets (loyers, fermages, parts de SCI, affichage), les revenus accessoires (Bénéfices Industriels et Commerciaux (BIC) non professionnels, des Bénéfices Non Commerciaux (BNC) non professionnels, et recettes brutes de locations meublées non professionnelles).
+
+## Nombre d'équipements et de services dans le domaine de l'action sociale en 2013 :
+
+ - NB_D401 : **Personnes âgées : hébergement**
+ - NB_D402 : **Personnes âgées : soins à domicile**
+ - NB_D403 : **Personnes âgées : services d'aide**
+ - NB_D404 : **Personnes âgées : foyer restaurant**
+ - NB_D405 : **Personnes âgées : services de repas à domicile**
+ - NB_D501 : **Garde d'enfant d'âge préscolaire**
+ - NB_D601 : **Enfants handicapés : hébergement**
+ - NB_D602 : **Enfants handicapés :services à domicile ou ambulatoires**
+ - NB_D603 : **Adultes handicapés : hébergement**
+ - NB_D604 : **Adultes handicapés : services**
+ - NB_D605 : **Travail protégé**
+ - NB_D701 : **Aide sociale à l'enfance : hébergement**
+ - NB_D702 : **Aide sociale à l'enfance : action éducative**
+ - NB_D703 : **CHRS : centre d'hébergement et de réadaptation sociale**
+ - NB_D704 : **Centre provisoire d'hébergement**
+ - NB_D705 : **Centre accueil demandeur d'asile**
+ - NB_D709 : **Autres établissements pour adultes et familles en difficulté**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
