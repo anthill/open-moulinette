@@ -11,7 +11,6 @@ Open-moulinette insee is an open data cleaner who concatene each Insee's files i
 
 - [Nombre d'équipements et de services dans le domaine du commerce en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-commerce)
 - [Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-sport-loisir-socio)
-- [Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-sport-loisir-socio)
 - [Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013] (http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-ens-1er-degre)
 -  [Nombre d'équipements et de services dans le domaine de l'enseignement du second degré en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-ens-2eme-degre)
 -  [Nombre d'équipements et de services dans le domaine de l'enseignement supérieur, de la formation et des services de l'éducation en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-ens-sup-form-serv)
@@ -164,7 +163,7 @@ exemple pour les bassins de natation de la commune de Marseille
 Il en va de même pour les autres installations sportive **NB_F1..**
 
 
-## Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013 :
+## Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013 :
 
 **Note** : Le fichier contient 3 onglets, un onglet général et deux onglet publique et privé afin de faire la distinction de secteur. Actuellement seulement les données générales (publiques + privées) sont présent.
 
