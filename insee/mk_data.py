@@ -29,9 +29,12 @@ header = sport.loc[4].tolist()
 sport.columns = header
 # to get real values
 sport = sport[5:]
-# creating new feature : sum of all feature
+# creating new feature : sum all features non aggregated
 features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
-sport['nb_sport'] =  sport[features].applymap(lambda x: float(x)).sum(axis=1)
+sport['nb_sport'] =  sport[['NB_F101', 'NB_F102', 'NB_F103', 'NB_F104', 'NB_F105',
+                            'NB_F106', 'NB_F107', 'NB_F108', 'NB_F109', 'NB_F110', 
+                            'NB_F111', 'NB_F112', 'NB_F113', 'NB_F114', 'NB_F115',
+                            'NB_F117', 'NB_F118']].applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_sport', 'CODGEO']]
 print "il y a  %d iris différentes pour le sport et %d features" % (len(sport.CODGEO.unique()), len(features) - 1)
 
@@ -45,9 +48,10 @@ header = enseignement_1.loc[4].tolist()
 enseignement_1.columns = header
 # to get real values
 enseignement_1 = enseignement_1[5:]
-# creating new feature : sum of all feature
+# creating new feature : sum all features non aggregated
 features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
-enseignement_1['nb_enseignement_1'] =  enseignement_1[features].applymap(lambda x: float(x)).sum(axis=1)
+enseignement_1['nb_enseignement_1'] =  enseignement_1[['NB_C101', 'NB_C102', 'NB_C104',
+                                                        'NB_C105']].applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_enseignement_1', 'CODGEO']]
 print "il y a  %d iris différentes pour l'enseignement du 1er degré et %d features" % (len(enseignement_1.CODGEO.unique()), len(features) - 1)
 
@@ -61,9 +65,10 @@ header = enseignement_2.loc[4].tolist()
 enseignement_2.columns = header
 # to get real values
 enseignement_2 = enseignement_2[5:]
-# creating new feature : sum of all feature
+# creating new feature : sum all features non aggregated
 features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
-enseignement_2['nb_enseignement_2'] =  enseignement_2[features].applymap(lambda x: float(x)).sum(axis=1)
+enseignement_2['nb_enseignement_2'] =  enseignement_2[['NB_C201', 'NB_C301', 'NB_C302',
+                                                        'NB_C303', 'NB_C304', 'NB_C305']].applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_enseignement_2', 'CODGEO']]
 print "il y a  %d iris différentes pour l'enseignement du second degré et %d features" % (len(enseignement_2.CODGEO.unique()), len(features) - 1)
 
@@ -77,9 +82,14 @@ header = enseignement_sup.loc[4].tolist()
 enseignement_sup.columns = header
 # to get real values
 enseignement_sup = enseignement_sup[5:]
-# creating new feature : sum of all feature
+# creating new feature : sum all features non aggregated
 features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
-enseignement_sup['nb_enseignement_sup'] =  enseignement_sup[features].applymap(lambda x: float(x)).sum(axis=1)
+enseignement_sup['nb_enseignement_sup'] =  enseignement_sup[['NB_C401', 'NB_C402', 'NB_C403',
+                                                            'NB_C409', 'NB_C501', 'NB_C502', 
+                                                            'NB_C503', 'NB_C504', 'NB_C509', 
+                                                            'NB_C601', 'NB_C602', 'NB_C603', 
+                                                            'NB_C604', 'NB_C605', 'NB_C609', 
+                                                            'NB_C701', 'NB_C702']].applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_enseignement_sup', 'CODGEO']]
 print "il y a  %d iris différentes pour l'enseignement du supérieur et %d features" % (len(enseignement_sup.CODGEO.unique()), len(features) - 1)
 
