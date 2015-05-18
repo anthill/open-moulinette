@@ -10,16 +10,16 @@ Open-moulinette insee is an open data cleaner who concatene each Insee's files i
 ## List of file :
 
 - [Nombre d'équipements et de services dans le domaine du commerce en 2013](#Nombre-d'équipements-et-de-services-dans-le-domaine-du-commerce-en-2013)
-- [Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-sport-loisir-socio)
-- [Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013] (http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-ens-1er-degre)
--  [Nombre d'équipements et de services dans le domaine de l'enseignement du second degré en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-ens-2eme-degre)
--  [Nombre d'équipements et de services dans le domaine de l'enseignement supérieur, de la formation et des services de l'éducation en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-ens-sup-form-serv)
--  [Indicateurs de structure et de distribution des revenus](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=structure-distrib-revenus-2011)
--  [Nombre d'équipements et de services dans le domaine de l'action sociale en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-action-sociale)
--  [Nombre d'équipements et de services de santé en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-sante)
--  [Nombre de fonctions médicales et paramédicales en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-medical-para)
--   [Nombre d'équipements des services aux particuliers en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-particuliers)
--   [Nombre d'équipements et de services dans le domaine du tourisme et du transport en 2013](##Nombre d'équipements et de services dans le domaine du tourisme et du transport en 2013 :)
+- [Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013](#Nombre-d'équipements-et-de-services-dans-le-domaine-du-sport,-des-loisirs-et-de-la-culture-en-2013)
+- [Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013] (#Nombre-d'équipements-et-de-services-dans-le-domaine-de-l'enseignement-du-1er-degré-en-2013)
+-  [Nombre d'équipements et de services dans le domaine de l'enseignement du second degré en 2013](#Nombre-d'équipements-et-de-services-dans-le-domaine-de-l'enseignement-du-second-degré-en-2013)
+-  [Nombre d'équipements et de services dans le domaine de l'enseignement supérieur, de la formation et des services de l'éducation en 2013](#Nombre-d'équipements-et-de-services-dans-le-domaine-de-l'enseignement-supérieur,-de-la-formation-et-des-services-de-l'éducation-en-2013)
+-  [Indicateurs de structure et de distribution des revenus](#Indicateurs-de-structure-et-de-distribution-des-revenus)
+-  [Nombre d'équipements et de services dans le domaine de l'action sociale en 2013](#Nombre-d'équipements-et-de—services-dans-le-domaine-de-l'action-sociale-en-2013)
+-  [Nombre d'équipements et de services de santé en 2013](#Nombre-d'équipements-et-de-services-de-santé-en-2013)
+-  [Nombre de fonctions médicales et paramédicales en 2013](#Nombre-de-fonctions-médicales-et-paramédicales-en-2013)
+-   [Nombre d'équipements des services aux particuliers en 2013](#Nombre-d'équipements-des-services-aux-particuliers-en 2013)
+-   [Nombre d'équipements et de services dans le domaine du tourisme et du transport en 2013](#Nombre-d'équipements-et-de-services-dans-le-domaine-du-tourisme-et-du-transport-en-2013)
 -   [Test](#test)
 
 ## Description géographique
