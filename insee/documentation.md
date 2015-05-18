@@ -9,7 +9,7 @@ Open-moulinette insee is an open data cleaner who concatene each Insee's files i
 
 ## List of file :
 
-- [Nombre d'équipements et de services dans le domaine du commerce en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-commerce)
+- [Nombre d'équipements et de services dans le domaine du commerce en 2013](#Nombre d'équipements et de services dans le domaine du commerce en 2013 :)
 - [Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-sport-loisir-socio)
 - [Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013] (http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-ens-1er-degre)
 -  [Nombre d'équipements et de services dans le domaine de l'enseignement du second degré en 2013](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-serv-ens-2eme-degre)
