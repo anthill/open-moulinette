@@ -457,10 +457,20 @@ Elle offre une grande partie des produits et services délivrés à la populatio
 - NB_A507 : **Soins de beauté**. Soins esthétiques, de manucure et de pédicure.
 - nb_service_particulier : Somme de l'ensemble des indicateurs.
 
+## Nombre d'équipements et de services dans le domaine du tourisme et du transport en 2013 :
 
-
-
-
+ - NB_E101 : **Taxi**
+ - NB_E102 : **Aéroport** en activité avec plus de 1 000 passagers (mouvement commercial au départ ou à l’arrivée de l’aéroport hors transit).
+ - NB_E103 : **Gare avec train TAGV (train à grande vitesse)**. Gare desservie par au moins un train à grande vitesse
+ - NB_E104 : **Gare sous convention avec l’État**. Gare desservie par au moins un train sous convention avec l’État (sans TAGV)
+ - NB_E105 : **Gare sous convention avec les conseils régionaux ou les STIF**. Gare desservie par au moins un train sous convention avec les conseils régionaux ou les STIF (transport Île de France) (sans TAGV et sans convention État)
+ - NB_G101 : **Agence de voyage **. Agences de voyage et voyagistes. Ne comprend plus les services de réservation et d'information touristique suite au passage à la NAF rév.2. Différence de -2 800 à compter de 2009.
+ - NB_G102 : **Hôtel homologué**. Hôtels homologués, auxquels sont rajoutés les hôtels de chaîne à 0 étoile. Ne sont donc pas pris en compte les anciens "hôtels de préfecture". Avec ou sans restaurant.
+ - NB_G103 : **Camping homologué**. Campings homologués, classés de 0 à 4 étoiles.  Donc y compris campings des comités d'entreprise, à clientèle spécifique (ouvriers, colonies de vacances, forains…) si  cette clientèle est de passage - c'est à dire ne restant pas pendant toute la période d'ouverture du camping - et campings de VVF. 
+Non compris services de réservation et activités liées.
+ - NB_G104 : **Information Touristique**. Comprend les services de réservation et d'information touristique.
+ - nb_transport_tourisme : Somme de l'ensemble des indicateurs.
+ 
 
 
 
