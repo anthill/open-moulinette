@@ -77,7 +77,7 @@ Ne comprend plus la vente d'instruments de musique ou de disques, bandes et cass
  - NB_F102_NB_COU : **Boulodrome avec au moins un terrain couvert**
  - NB_F102_NB_ECL : **Boulodrome avec au moins un terrain éclairé**
  - NB_F103 : **Tennis**
- - NB_F103_NB_AIREJEU : **Tennis - nombre de courts **
+ - NB_F103_NB_AIREJEU : **Tennis - nombre de courts**
  - NB_F103_NB_COU : **Tennis avec au moins un court couvert**
  - NB_F103_NB_ECL : **Tennis avec au moins un court éclairé**
  - NB_F104 : **Équipement de cyclisme**
@@ -146,7 +146,7 @@ Ne comprend plus la vente d'instruments de musique ou de disques, bandes et cass
  - NB_F202_NB_AIREJEU : **Port de plaisance - Mouillage - nombre de ports, de zones**. Port de plaisance, zone de mouillage
  - NB_F203 : **Boucle de randonnée**
  - NB_F203_NB_AIREJEU : **Boucle de randonnée - nombre de circuits**. Uniquement les boucles de randonnée dont les points de départ et d'arrivée se situent sur la même commune
- - NB_F301 : **Cinéma **. Projection en salle de cinéma, en plein air ou autres. Implantations physiques, qu'il y ait une seule salle de projection ou plusieurs au sein d'un complexe. Il n'y a ni le nombre de salles présentes, ni leur nombre de places offertes.
+ - NB_F301 : **Cinéma**. Projection en salle de cinéma, en plein air ou autres. Implantations physiques, qu'il y ait une seule salle de projection ou plusieurs au sein d'un complexe. Il n'y a ni le nombre de salles présentes, ni leur nombre de places offertes.
  - NB_F302 : **Théâtre**. Ensemble des lieux gérés par le Centre National du Théâtre où une représentation de théâtre peut se tenir. Ces lieux peuvent être labellisés (théâtres nationaux et privés, scènes nationales et conventionnées, compagnies avec lieux d’accueil, compagnies dramatiques nationales et régionales, pôles cirque, centres chorégraphiques) ou non. 
  - NB_F302_NB_SALLES : **Théâtre - nombre de salles**
  - nb_sport : Somme de l'ensemble des indicateurs non détaillés : uniquement les **NB_F..**  (cf ci-dessous)
@@ -410,7 +410,7 @@ Ne sont retenues que les spécialités proposées par la DREES, les plus importa
 
 - NB_A101 : **Police**. Ces services de la sécurité publique (hors CRS, police de l'air et des frontières, services régionaux des renseignements généraux, services de contrôle de l'immigration, services généraux d'administration de la police) ne comprennent pas les services nationaux, et non plus les services de police municipale (peu nombreux).
 - NB_A104 : **Gendarmerie**. Unité de gendarmerie recevant du public. Comprend les brigades territoriales autonomes, les brigades territoriales de proximité, les communautés de brigades.
-- NB_A105 : **Cour d’appel **. La cour d'appel réexamine les affaires déjà jugées en premier degré (1er ressort ou 1ère instance) en matière civile, commerciale, sociale ou pénale. Seule exception : les appels des décisions des cours d'assises sont jugés par une autre cour d'assises.
+- NB_A105 : **Cour d’appel**. La cour d'appel réexamine les affaires déjà jugées en premier degré (1er ressort ou 1ère instance) en matière civile, commerciale, sociale ou pénale. Seule exception : les appels des décisions des cours d'assises sont jugés par une autre cour d'assises.
 La cour d’appel est composée uniquement de magistrats professionnels.
 - NB_A106 : **Tribunal de grande instance**. Le tribunal de grande instance a large compétence en matière civile. Il tranche ; les litiges civils opposant des personnes privées (physiques ou morales) qui ne sont pas attribués par la loi à une autre juridiction civile ; les litiges civils portant sur des sommes supérieures à 10 000 euros. 
 Le tribunal de grande instance a aussi compétence exclusive pour de nombreuses affaires quel que soit le montant de la demande : état des personnes, famille, rectifications d’actes civils, successions, actions civiles pour diffamation ou injures, immobilier, brevets d’invention, droit des marques, … Il est composé d’un ou plusieurs juges professionnels
@@ -420,11 +420,11 @@ Il est composé d’un ou plusieurs juges professionnels.
 - NB_A108 : **Conseil de prud’hommes**. Le conseil de prud'hommes règle les litiges individuels (congés payés, salaires, primes, licenciement, clause de non-concurrence, durée du préavis) qui surviennent entre salariés ou apprentis et employeurs, à l'occasion du contrat de travail ou d'apprentissage…, à l'exception des litiges collectifs, comme l'exercice du droit de grève. Ce tribunal est composé de juges non professionnels élus, représentant, en nombre égal et pour moitié, les employeurs et les salariés. Chaque conseil de prud’hommes est divisé en 5 sections, représentant les principaux secteurs du monde du travail : encadrement, industrie, commerce et services commerciaux, agriculture, activités diverses.
 - NB_A109 : **Tribunal de commerce**. Le tribunal de commerce tranche, de manière générale, les litiges entre commerçants ou entre commerçants et sociétés commerciales, et ceux qui portent sur les actes de commerce.
 Il est composé de juges non professionnels, des commerçants bénévoles, élus pour 2 ou 4 ans par d’autres commerçants.
-- NB_A110 : ** Agence de proximité**. Elle constitue la majorité des unités opérationnelles du réseau de proximité. Elle rend tous les services de Pôle Emploi. 
-- NB_A111 : ** Relais pôle emploi**. Il appartient au réseau de proximité et se situe dans des communes à plus de 30 minutes ou 30 kilomètres de l’agence de proximité et a suffisamment de demandeurs d’emploi concernés pour justifier la présence d’au moins 7 conseillers de pôle emploi en permanence.
-- NB_A112 : ** Permanence pôle emploi**. Elle appartient au réseau de proximité et se caractérise par la présence planifiée et régulière d’un conseiller, une demi-journée par mois au moins pour des entretiens de suivi sur rendez-vous. Ce lieu est porté par un partenaire.
-- NB_A115 : ** Agence spécialisée**. Elle intervient sur des segments spécifiques de public : cadre, spectacle, emploi à l’international, etc.
-- NB_A116 : ** Relais et maison de service publicAgence thématique**. Ce sont des lieux d’accueil, d’information et d’orientation à destination des usagers des services publics, et regroupant, en particulier, l’ensemble des services sur l’emploi. Ils permettent d’améliorer la proximité et l’accessibilité des services.
+- NB_A110 : **Agence de proximité**. Elle constitue la majorité des unités opérationnelles du réseau de proximité. Elle rend tous les services de Pôle Emploi. 
+- NB_A111 : **Relais pôle emploi**. Il appartient au réseau de proximité et se situe dans des communes à plus de 30 minutes ou 30 kilomètres de l’agence de proximité et a suffisamment de demandeurs d’emploi concernés pour justifier la présence d’au moins 7 conseillers de pôle emploi en permanence.
+- NB_A112 : **Permanence pôle emploi**. Elle appartient au réseau de proximité et se caractérise par la présence planifiée et régulière d’un conseiller, une demi-journée par mois au moins pour des entretiens de suivi sur rendez-vous. Ce lieu est porté par un partenaire.
+- NB_A115 : **Agence spécialisée**. Elle intervient sur des segments spécifiques de public : cadre, spectacle, emploi à l’international, etc.
+- NB_A116 : **Relais et maison de service publicAgence thématique**. Ce sont des lieux d’accueil, d’information et d’orientation à destination des usagers des services publics, et regroupant, en particulier, l’ensemble des services sur l’emploi. Ils permettent d’améliorer la proximité et l’accessibilité des services.
 - NB_A117 : **Point d'information et de médiation multiservices**. Ces services sont liés à la politique de la ville. Animés par une équipe de professionnels,  ils proposent des services de proximité à la disposition des habitants et facilitent ainsi l’utilisation des services publics. 
 - NB_A118 : **Espace public numérique et autres**. Il propose un accompagnement à la recherche d’emploi : recherche sur internet, mise en page de CV, lettres de motivation, etc …
 - NB_A119 : **DGFiP**. Elle scelle la fusion de la Direction Générale des Impôts (DGI) et de la Direction Générale de la Comptabilité Publique (DGCP) au niveau national.
@@ -464,7 +464,7 @@ Elle offre une grande partie des produits et services délivrés à la populatio
  - NB_E103 : **Gare avec train TAGV (train à grande vitesse)**. Gare desservie par au moins un train à grande vitesse
  - NB_E104 : **Gare sous convention avec l’État**. Gare desservie par au moins un train sous convention avec l’État (sans TAGV)
  - NB_E105 : **Gare sous convention avec les conseils régionaux ou les STIF**. Gare desservie par au moins un train sous convention avec les conseils régionaux ou les STIF (transport Île de France) (sans TAGV et sans convention État)
- - NB_G101 : **Agence de voyage **. Agences de voyage et voyagistes. Ne comprend plus les services de réservation et d'information touristique suite au passage à la NAF rév.2. Différence de -2 800 à compter de 2009.
+ - NB_G101 : **Agence de voyage**. Agences de voyage et voyagistes. Ne comprend plus les services de réservation et d'information touristique suite au passage à la NAF rév.2. Différence de -2 800 à compter de 2009.
  - NB_G102 : **Hôtel homologué**. Hôtels homologués, auxquels sont rajoutés les hôtels de chaîne à 0 étoile. Ne sont donc pas pris en compte les anciens "hôtels de préfecture". Avec ou sans restaurant.
  - NB_G103 : **Camping homologué**. Campings homologués, classés de 0 à 4 étoiles.  Donc y compris campings des comités d'entreprise, à clientèle spécifique (ouvriers, colonies de vacances, forains…) si  cette clientèle est de passage - c'est à dire ne restant pas pendant toute la période d'ouverture du camping - et campings de VVF. 
 Non compris services de réservation et activités liées.
