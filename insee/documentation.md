@@ -470,8 +470,8 @@ Elle offre une grande partie des produits et services délivrés à la populatio
 Non compris services de réservation et activités liées.
  - NB_G104 : **Information Touristique**. Comprend les services de réservation et d'information touristique.
  - nb_transport_tourisme : Somme de l'ensemble des indicateurs.
- 
-##test
+
+
 
 
 
