@@ -404,7 +404,63 @@ Ne sont retenues que les spécialités proposées par la DREES, les plus importa
 - NB_D239 : **Ergothérapeute**
 - NB_D240 : **Psychomotricien**
 - nb_fonction_medical : Somme de l'ensemble des indicateurs.
- 
+
+
+## Nombre d'équipements des services aux particuliers en 2013 : 
+
+- NB_A101 : **Police**. Ces services de la sécurité publique (hors CRS, police de l'air et des frontières, services régionaux des renseignements généraux, services de contrôle de l'immigration, services généraux d'administration de la police) ne comprennent pas les services nationaux, et non plus les services de police municipale (peu nombreux).
+- NB_A104 : **Gendarmerie**. Unité de gendarmerie recevant du public. Comprend les brigades territoriales autonomes, les brigades territoriales de proximité, les communautés de brigades.
+- NB_A105 : **Cour d’appel **. La cour d'appel réexamine les affaires déjà jugées en premier degré (1er ressort ou 1ère instance) en matière civile, commerciale, sociale ou pénale. Seule exception : les appels des décisions des cours d'assises sont jugés par une autre cour d'assises.
+La cour d’appel est composée uniquement de magistrats professionnels.
+- NB_A106 : **Tribunal de grande instance**. Le tribunal de grande instance a large compétence en matière civile. Il tranche ; les litiges civils opposant des personnes privées (physiques ou morales) qui ne sont pas attribués par la loi à une autre juridiction civile ; les litiges civils portant sur des sommes supérieures à 10 000 euros. 
+Le tribunal de grande instance a aussi compétence exclusive pour de nombreuses affaires quel que soit le montant de la demande : état des personnes, famille, rectifications d’actes civils, successions, actions civiles pour diffamation ou injures, immobilier, brevets d’invention, droit des marques, … Il est composé d’un ou plusieurs juges professionnels
+- NB_A107 : **Tribunal d’instance**. Le tribunal d’instance a une compétence générale pour tous les petits délits civils. Il juge toutes les affaires conflictuelles (accidents de la circulation, charges de copropriétés, dettes, malfaçons, crédits à la consommation, …) où les demandes portent sur des sommes inférieures à 10 000 euros.
+ Il juge des tutelles et statue sur les demandes d’ouverture d’un régime de protection. Il juge également les conflits non réglés par le juge de proximité.
+Il est composé d’un ou plusieurs juges professionnels.
+- NB_A108 : **Conseil de prud’hommes**. Le conseil de prud'hommes règle les litiges individuels (congés payés, salaires, primes, licenciement, clause de non-concurrence, durée du préavis) qui surviennent entre salariés ou apprentis et employeurs, à l'occasion du contrat de travail ou d'apprentissage…, à l'exception des litiges collectifs, comme l'exercice du droit de grève. Ce tribunal est composé de juges non professionnels élus, représentant, en nombre égal et pour moitié, les employeurs et les salariés. Chaque conseil de prud’hommes est divisé en 5 sections, représentant les principaux secteurs du monde du travail : encadrement, industrie, commerce et services commerciaux, agriculture, activités diverses.
+- NB_A109 : **Tribunal de commerce**. Le tribunal de commerce tranche, de manière générale, les litiges entre commerçants ou entre commerçants et sociétés commerciales, et ceux qui portent sur les actes de commerce.
+Il est composé de juges non professionnels, des commerçants bénévoles, élus pour 2 ou 4 ans par d’autres commerçants.
+- NB_A110 : ** Agence de proximité**. Elle constitue la majorité des unités opérationnelles du réseau de proximité. Elle rend tous les services de Pôle Emploi. 
+- NB_A111 : ** Relais pôle emploi**. Il appartient au réseau de proximité et se situe dans des communes à plus de 30 minutes ou 30 kilomètres de l’agence de proximité et a suffisamment de demandeurs d’emploi concernés pour justifier la présence d’au moins 7 conseillers de pôle emploi en permanence.
+- NB_A112 : ** Permanence pôle emploi**. Elle appartient au réseau de proximité et se caractérise par la présence planifiée et régulière d’un conseiller, une demi-journée par mois au moins pour des entretiens de suivi sur rendez-vous. Ce lieu est porté par un partenaire.
+- NB_A115 : ** Agence spécialisée**. Elle intervient sur des segments spécifiques de public : cadre, spectacle, emploi à l’international, etc.
+- NB_A116 : ** Relais et maison de service publicAgence thématique**. Ce sont des lieux d’accueil, d’information et d’orientation à destination des usagers des services publics, et regroupant, en particulier, l’ensemble des services sur l’emploi. Ils permettent d’améliorer la proximité et l’accessibilité des services.
+- NB_A117 : **Point d'information et de médiation multiservices**. Ces services sont liés à la politique de la ville. Animés par une équipe de professionnels,  ils proposent des services de proximité à la disposition des habitants et facilitent ainsi l’utilisation des services publics. 
+- NB_A118 : **Espace public numérique et autres**. Il propose un accompagnement à la recherche d’emploi : recherche sur internet, mise en page de CV, lettres de motivation, etc …
+- NB_A119 : **DGFiP**. Elle scelle la fusion de la Direction Générale des Impôts (DGI) et de la Direction Générale de la Comptabilité Publique (DGCP) au niveau national.
+- NB_A120 : **DRFiP**. Elle s’inscrit dans la démarche nationale de rapprochement des deux administrations,  des impôts et de la comptabilité publique dans chaque région.
+- NB_A121 : **DDFiP**. La création des DDFiP s’inscrit dans la démarche nationale de rapprochement des deux administrations des impôts et de la comptabilité publique. Dans les départements, les trésoreries générales et les directions des services fiscaux ont fusionné au sein d’une direction départementale avec à leur tête un responsable unique.
+- NB_A203 : **Banque, Caisse d'Epargne**. Etablissements de crédit agréés, y compris banques mutualistes ou coopératives et caisses d'épargne et de prévoyance. Ne comprend pas les guichets financiers de La Poste.
+Fait apparaître, en plus des agences recherchées, des services administratifs ou des Points-contacts que l'on ne peut pas distinguer des guichets.
+- NB_A205 : **Pompes funèbres**. Comprend les activités de pompes funèbres quelle que soit la forme juridique (mise en bière, transport, services d'inhumation ou de crémation).
+- NB_A206 : **Bureau de poste**. Le bureau de poste, en gestion directe par La Poste, offre la totalité des produits et services délivrés à la population tant pour ce qui concerne le courrier et les colis (courrier simple, recommandé, réexpédition, prêt à poster, …) que pour les services financiers (ouverture de comptes, dépôts, retraits, assurances-vie, PEL, actions, …).
+- NB_A207 : **Relais poste commerçant**. Le relais poste commerçant est géré principalement par des commerçants dans le cadre de conventions de partenariat signées entre La Poste et des partenaires privés.
+Il offre une grande partie des produits et services de proximité délivrés à la population concernant le courrier et les colis (courrier simple, recommandé, prêt à poster, à l’exception de l’établissement d’une procuration postale…).  Les services financiers sont limités au retrait d’espèces (maximum 150 euros par semaine) et au paiement de mandat cash.
+- NB_A208 : **Agence postale communale**. L’agence postale communale est gérée par des agents territoriaux dans le cadre de conventions de partenariat signées entre La Poste et les communes concernées. 
+Elle offre une grande partie des produits et services délivrés à la population tant pour ce qui concerne le courrier et les colis (comparable aux prestations des bureaux de poste) que pour les services financiers (légèrement moindre aux prestations des bureaux de poste : ouverture de compte et produits financiers d’assurance-vie, PEL ou actions impossibles).
+- NB_A301 : **Réparation auto et de matériel agricole**.  Le code APE principal ne suffit pas pour distinguer l'activité, notamment en zone rurale. On complète la recherche sur le code APRM (activité artisanale), cette activité étant souvent exercée derrière une activité principale de commerce. On n'a retenu dans ce cas que les unités exerçant une activité de réparation complémentaire du commerce de véhicules automobiles, du commerce de détail de carburants et du commerce de gros de matériel agricole.
+- NB_A302 : **Contrôle technique automobile**. Contrôle périodique des véhicules avec délivrance d'un certificat.
+- NB_A303 : **Location auto-utilitaires légers**. Location sans chauffeur, y compris d'utilitaires légers.
+- NB_A304 : **Ecole de conduite**.  Inclus les écoles de formation à la conduite sportive, au pilotage (autre que professionnel) de bateaux et d'avions.
+- NB_A401 : **Maçon**. Il s'agit de l'activité principale déclarée. Il y a souvent multi-activité chez les artisans.
+- NB_A402 : **Plâtrier peintre**.  Il s'agit de l'activité principale déclarée. Possibilité d'une seule des activités citées ou de multi-activité.
+- NB_A403 : **Menuisier, charpentier, serrurier**.  Il s'agit de l'activité principale déclarée. Possibilité d'une seule des activités citées ou de multi-activité.
+- NB_A404 : **Plombier, couvreur, chauffagiste**. Il s'agit de l'activité principale déclarée. Possibilité d'une seule des activités citées ou de multi-activité.
+- NB_A405 : **Electricien**.  Il s'agit de l'activité principale déclarée. Possibilité d'une seule des activités citées ou de multi-activité.
+- NB_A406 : **Entreprise générale du bâtiment**.  Il s'agit de l'activité principale déclarée. Possibilité d'une seule des activités citées ou de multi-activité.
+- NB_A501 : **Coiffure**. Comprend les salons et la coiffure à domicile.
+- NB_A502 : **Vétérinaire**. Services en clinique, en cabinet ou en visite pour animaux d'élevage ou de compagnie.
+- NB_A503 : **Agence de travail temporaire**.  Fourniture, sur une base temporaire, de personnel intérimaire.
+- NB_A504 : **Restaurant**. Ne comprend plus tous les hôtels-restaurants en raison du passage à la NAF rév.2 qui sépare les 2 activités. Différence d'environ 17 000 hôtels-restaurants à compter de 2009
+- NB_A505 : **Agence immobilière**. Activités intermédiaires en achat, vente et location de biens immobiliers, fonciers et commerciaux.
+- NB_A506 : **Blanchisserie-Teinturerie**. Comprend l'activité des blanchisseries de détail, y compris les dépôts, le service des laveries automatiques en libre service, le nettoyage des vêtements (pressing).
+- NB_A507 : **Soins de beauté**. Soins esthétiques, de manucure et de pédicure.
+- nb_service_particulier : Somme de l'ensemble des indicateurs.
+
+
+
+
+
 
 
 
