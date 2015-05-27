@@ -1,6 +1,6 @@
 ## Data for IRIS
 
-This script will dowload and concatenate all the features from many Insee's files in one clean csv.
+This script dowload and concatenate all the features from many Insee's files in one clean csv (more than 650 actually).
 
 For some files, we add a feature `nb_name_of_feature` witch is an aggregate all feature (example : sum all médical fonction).
 
