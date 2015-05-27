@@ -247,6 +247,90 @@ print "il y a  %d iris différentes pour le transport touristique et %d features
 data = pd.merge(data, transport_tourisme[features], on='CODGEO', how='outer')
 
 
+## Logement
+logement = pd.read_excel('data/base-ic-logement-2011.xls', sheetname='IRIS')
+# creating header from file
+header = logement.loc[4].tolist()
+logement.columns = header
+logement.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+logement = logement[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','REG','DEP','UU2010','COM','LIBCOM','TRIRIS',
+                                           'GRD_QUART','LIBIRIS','TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']]
+features.append('CODGEO')
+print "il y a  %d iris différentes pour le logement et %d features" % (len(logement.CODGEO.unique()), len(features) - 1)
+
+data = pd.merge(data, logement[features], on='CODGEO', how='outer')
+
+
+## Diplome
+diplome = pd.read_excel('data/base-ic-diplomes-formation-2011.xls', sheetname='IRIS')
+# creating header from file
+header = diplome.loc[4].tolist()
+diplome.columns = header
+diplome.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+diplome = diplome[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','REG','DEP','UU2010','COM','LIBCOM','TRIRIS',
+                                           'GRD_QUART','LIBIRIS','TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']]
+features.append('CODGEO')
+print "il y a  %d iris différentes pour les diplomes et %d features" % (len(diplome.CODGEO.unique()), len(features) - 1)
+
+data = pd.merge(data, diplome[features], on='CODGEO', how='outer')
+
+
+## Famille
+famille = pd.read_excel('data/base-ic-couples-familles-menages-2011.xls', sheetname='IRIS')
+# creating header from file
+header = famille.loc[4].tolist()
+famille.columns = header
+famille.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+famille = famille[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','REG','DEP','UU2010','COM','LIBCOM','TRIRIS',
+                                           'GRD_QUART','LIBIRIS','TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']]
+features.append('CODGEO')
+print "il y a  %d iris différentes pour les familles et %d features" % (len(famille.CODGEO.unique()), len(features) - 1)
+
+data = pd.merge(data, famille[features], on='CODGEO', how='outer')
+
+
+## Population
+population = pd.read_excel('data/base-ic-evol-struct-pop-2011.xls', sheetname='IRIS')
+# creating header from file
+header = population.loc[4].tolist()
+population.columns = header
+population.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+population = population[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','REG','DEP','UU2010','COM','LIBCOM','TRIRIS',
+                                           'GRD_QUART','LIBIRIS','TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']]
+features.append('CODGEO')
+print "il y a  %d iris différentes pour le population et %d features" % (len(population.CODGEO.unique()), len(features) - 1)
+data = pd.merge(data, population[features], on='CODGEO', how='outer')
+
+
+
+## Activité
+activite = pd.read_excel('data/base-ic-activite-residents-2011.xls', sheetname='IRIS')
+# creating header from file
+header = activite.loc[4].tolist()
+activite.columns = header
+activite.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+activite = activite[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','REG','DEP','UU2010','COM','LIBCOM','TRIRIS',
+                                           'GRD_QUART','LIBIRIS','TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']]
+features.append('CODGEO')
+print "il y a  %d iris différentes pour l'activité et %d features" % (len(activite.CODGEO.unique()), len(features) - 1)
+data = pd.merge(data, activite[features], on='CODGEO', how='outer')
+
+
 # Extract 
 print "Extracting file in /data/output.csv"
 data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
