@@ -1,6 +1,6 @@
 # Documentation
 
-Insee Open-moulinette is an open data cleaner who concatene each Insee's files in one csv. Beacause Insee's files are often in xls format and not easy to reuse. Actualy we have more than 330 features, but they are not friendly-user :
+Insee Open-moulinette is an open data cleaner who concatene each Insee's files in one csv. Beacause Insee's files are often in xls format and not easy to reuse. Actualy we have more than 650 features, but they are not friendly-user :
 
 `NB_B314` is the number of gas station by iris.
 
