@@ -314,7 +314,6 @@ print "il y a  %d iris différentes pour le population et %d features" % (len(po
 data = pd.merge(data, population[features], on='CODGEO', how='outer')
 
 
-
 ## Activité
 activite = pd.read_excel('data/base-ic-activite-residents-2011.xls', sheetname='IRIS')
 # creating header from file
