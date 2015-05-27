@@ -1,17 +1,17 @@
 # Documentation
 
-Open-moulinette insee is an open data cleaner who concatene each Insee's files in one csv. Beacause Insee's file are often in xls format and not easy to reuse. Actualy we have more than 330 features, but they are not friendly-user :
+Insee Open-moulinette is an open data cleaner who concatene each Insee's files in one csv. Beacause Insee's files are often in xls format and not easy to reuse. Actualy we have more than 330 features, but they are not friendly-user :
 
 `NB_B314` is the number of gas station by iris.
 
-**The goal of this documentation is to enumerate each feature and explain it. Decription is in French as all the data concerne French's city.**
+**The propose of this document is to enumerate each feature and explain it. Decription is in French as all the data concerne French's city.**
 
 
 ## List of file :
 
 - [Nombre d'équipements et de services dans le domaine du commerce en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-du-commerce-en-2013)
 - [Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-du-sport-des-loisirs-et-de-la-culture-en-2013)
-- [Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013] (https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-de-lenseignement-du-1er-degr%C3%A9-en-2013)
+- [Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-de-lenseignement-du-1er-degr%C3%A9-en-2013)
 -  [Nombre d'équipements et de services dans le domaine de l'enseignement du second degré en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-de-lenseignement-du-second-degr%C3%A9-en-2013)
 -  [Nombre d'équipements et de services dans le domaine de l'enseignement supérieur, de la formation et des services de l'éducation en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-de-lenseignement-sup%C3%A9rieur-de-la-formation-et-des-services-de-l%C3%A9ducation-en-2013)
 -  [Indicateurs de structure et de distribution des revenus](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#indicateurs-de-structure-et-de-distribution-des-revenus)
