@@ -564,44 +564,44 @@ Non compris services de réservation et activités liées.
 Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs résidant dans une cité universitaire sont recensés dans le logement de leurs parents contrairement au recensement de 1999 où ils étaient comptabilisés dans les communautés de la commune de la cité universitaire. Les élèves mineurs vivant en internat sont comptés au lieu de résidence de leurs parents comme au recensement de 1999. Les élèves ou étudiants majeurs résidant dans une cité universitaire sont comptabilisés dans les communautés de la commune de la cité universitaire comme au recensement de 1999. Les élèves ou étudiants majeurs vivant en internat (lycée agricole, école militaire, ...) sont recensés au lieu où est situé l'internat contrairement au recensement de 1999 où ils étaient comptabilisés au lieu de résidence de leurs parents.
 
 
- - P11_POP0205 : **Pop 2-5 ans en 2011 (princ)**
- - P11_POP0610 : **Pop 6-10 ans en 2011 (princ)**
- - P11_POP1114 : **Pop 11-14 ans en 2011 (princ)**
- - P11_POP1517 : **Pop 15-17 ans en 2011 (princ)**
- - P11_POP1824 : **Pop 18-24 ans en 2011 (princ)**
- - P11_POP2529 : **Pop 25-29 ans en 2011 (princ)**
- - P11_POP30P : **Pop 30 ans ou plus en 2011 (princ)**
- - P11_SCOL0205 : **Pop scolarisée 2-5 ans en 2011 (princ)**
- - P11_SCOL0610 : **Pop scolarisée 6-10 ans en 2011 (princ)**
- - P11_SCOL1114 : **Pop scolarisée 11-14 ans en 2011 (princ)**
- - P11_SCOL1517 : **Pop scolarisée 15-17 ans en 2011 (princ)**
- - P11_SCOL1824 : **Pop scolarisée 18-24 ans en 2011 (princ)**
- - P11_SCOL2529 : **Pop scolarisée 25-29 ans en 2011 (princ)**
- - P11_SCOL30P : **Pop scolarisée 30 ans ou plus en 2011 (princ)**
- - P11_NSCOL15P : **Pop 15 ans ou plus non scolarisée en 2011 (princ)**
- - P11_NSCOL15P_DIPL0 : **Pop 15 ans ou plus non scol. Sans diplôme en 2011 (princ)**
- - P11_NSCOL15P_CEP : **Pop 15 ans ou plus non scol. CEP en 2011 (princ)**
- - P11_NSCOL15P_BEPC : **Pop 15 ans ou plus non scol. BEPC, brevet collèges en 2011 (princ)**
- - P11_NSCOL15P_CAPBEP : **Pop 15 ans ou plus non scol. CAP-BEP en 2011 (princ)**
- - P11_NSCOL15P_BAC : **Pop 15 ans ou plus non scol. BAC-BP en 2011 (princ)**
- - P11_NSCOL15P_BACP2 : **Pop 15 ans ou plus non scol. Enseignement sup court en 2011 (princ)**
- - P11_NSCOL15P_SUP : **Pop 15 ans ou plus non scol. Enseignement sup long en 2011 (princ)**
- - P11_HNSCOL15P : **Hommes 15 ans ou plus non scolarisés en 2011 (princ)**
- - P11_HNSCOL15P_DIPL0 : **Hommes 15 ans ou plus non scol. Sans diplôme en 2011 (princ)**
- - P11_HNSCOL15P_CEP : **Hommes 15 ans ou plus non scol. CEP en 2011 (princ)**
- - P11_HNSCOL15P_BEPC : **Hommes 15 ans ou plus non scol. BEPC, brevet collèges en 2011 (princ)**
- - P11_HNSCOL15P_CAPBEP : **Hommes 15 ans ou plus non scol. CAP-BEP en 2011 (princ)**
- - P11_HNSCOL15P_BAC : **Hommes 15 ans ou plus non scol. BAC-BP en 2011 (princ)**
- - P11_HNSCOL15P_BACP2 : **Hommes 15 ans ou plus non scol. Enseignement sup court en 2011 (princ)**
- - P11_HNSCOL15P_SUP : **Hommes 15 ans ou plus non scol. Enseignement sup long en 2011 (princ)**
- - P11_FNSCOL15P : **Femmes 15 ans ou plus non scolarisées en 2011 (princ)**
- - P11_FNSCOL15P_DIPL0 : **Femmes 15 ans ou plus non scol. Sans diplôme en 2011 (princ)**
- - P11_FNSCOL15P_CEP : **Femmes 15 ans ou plus non scol. CEP en 2011 (princ)**
- - P11_FNSCOL15P_BEPC : **Femmes 15 ans ou plus non scol. BEPC, brevet collèges en 2011 (princ)**
- - P11_FNSCOL15P_CAPBEP : **Femmes 15 ans ou plus non scol. CAP-BEP en 2011 (princ)**
- - P11_FNSCOL15P_BAC : **Femmes 15 ans ou plus non scol. BAC-BP en 2011 (princ)**
- - P11_FNSCOL15P_BACP2 : **Femmes 15 ans ou plus non scol. Enseignement sup court en 2011 (princ)**
- - P11_FNSCOL15P_SUP : **Femmes 15 ans ou plus non scol. Enseignement sup long en 2011 (princ)**
+- P11_POP0205 : **Pop 2-5 ans en 2011 (princ)**
+- P11_POP0610 : **Pop 6-10 ans en 2011 (princ)**
+- P11_POP1114 : **Pop 11-14 ans en 2011 (princ)**
+- P11_POP1517 : **Pop 15-17 ans en 2011 (princ)**
+- P11_POP1824 : **Pop 18-24 ans en 2011 (princ)**
+- P11_POP2529 : **Pop 25-29 ans en 2011 (princ)**
+- P11_POP30P : **Pop 30 ans ou plus en 2011 (princ)**
+- P11_SCOL0205 : **Pop scolarisée 2-5 ans en 2011 (princ)**
+- P11_SCOL0610 : **Pop scolarisée 6-10 ans en 2011 (princ)**
+- P11_SCOL1114 : **Pop scolarisée 11-14 ans en 2011 (princ)**
+- P11_SCOL1517 : **Pop scolarisée 15-17 ans en 2011 (princ)**
+- P11_SCOL1824 : **Pop scolarisée 18-24 ans en 2011 (princ)**
+- P11_SCOL2529 : **Pop scolarisée 25-29 ans en 2011 (princ)**
+- P11_SCOL30P : **Pop scolarisée 30 ans ou plus en 2011 (princ)**
+- P11_NSCOL15P : **Pop 15 ans ou plus non scolarisée en 2011 (princ)**
+- P11_NSCOL15P_DIPL0 : **Pop 15 ans ou plus non scol. Sans diplôme en 2011 (princ)**
+- P11_NSCOL15P_CEP : **Pop 15 ans ou plus non scol. CEP en 2011 (princ)**
+- P11_NSCOL15P_BEPC : **Pop 15 ans ou plus non scol. BEPC, brevet collèges en 2011 (princ)**
+- P11_NSCOL15P_CAPBEP : **Pop 15 ans ou plus non scol. CAP-BEP en 2011 (princ)**
+- P11_NSCOL15P_BAC : **Pop 15 ans ou plus non scol. BAC-BP en 2011 (princ)**
+- P11_NSCOL15P_BACP2 : **Pop 15 ans ou plus non scol. Enseignement sup court en 2011 (princ)**
+- P11_NSCOL15P_SUP : **Pop 15 ans ou plus non scol. Enseignement sup long en 2011 (princ)**
+- P11_HNSCOL15P : **Hommes 15 ans ou plus non scolarisés en 2011 (princ)**
+- P11_HNSCOL15P_DIPL0 : **Hommes 15 ans ou plus non scol. Sans diplôme en 2011 (princ)**
+- P11_HNSCOL15P_CEP : **Hommes 15 ans ou plus non scol. CEP en 2011 (princ)**
+- P11_HNSCOL15P_BEPC : **Hommes 15 ans ou plus non scol. BEPC, brevet collèges en 2011 (princ)**
+- P11_HNSCOL15P_CAPBEP : **Hommes 15 ans ou plus non scol. CAP-BEP en 2011 (princ)**
+- P11_HNSCOL15P_BAC : **Hommes 15 ans ou plus non scol. BAC-BP en 2011 (princ)**
+- P11_HNSCOL15P_BACP2 : **Hommes 15 ans ou plus non scol. Enseignement sup court en 2011 (princ)**
+- P11_HNSCOL15P_SUP : **Hommes 15 ans ou plus non scol. Enseignement sup long en 2011 (princ)**
+- P11_FNSCOL15P : **Femmes 15 ans ou plus non scolarisées en 2011 (princ)**
+- P11_FNSCOL15P_DIPL0 : **Femmes 15 ans ou plus non scol. Sans diplôme en 2011 (princ)**
+- P11_FNSCOL15P_CEP : **Femmes 15 ans ou plus non scol. CEP en 2011 (princ)**
+- P11_FNSCOL15P_BEPC : **Femmes 15 ans ou plus non scol. BEPC, brevet collèges en 2011 (princ)**
+- P11_FNSCOL15P_CAPBEP : **Femmes 15 ans ou plus non scol. CAP-BEP en 2011 (princ)**
+- P11_FNSCOL15P_BAC : **Femmes 15 ans ou plus non scol. BAC-BP en 2011 (princ)**
+- P11_FNSCOL15P_BACP2 : **Femmes 15 ans ou plus non scol. Enseignement sup court en 2011 (princ)**
+- P11_FNSCOL15P_SUP : **Femmes 15 ans ou plus non scol. Enseignement sup long en 2011 (princ)**
 
 ##Base de données infracommunales : couples - familles - ménages en 2011
 
