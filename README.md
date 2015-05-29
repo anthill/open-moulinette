@@ -10,4 +10,6 @@ Don't hesitate to contribute.
 
 ## Cleaned datasets
 
-- **insee-iris** is a script to convert all the Insee IRIS shapefiles encoded in Lambert 93 into a single geojson file encoded with Lngitude/latitudes.
+- **insee-iris** converts all the Insee IRIS shapefiles encoded in Lambert 93 into a single geojson file encoded with longitude/latitude.
+
+- **insee** will download all the datasets of the INSEE at the iris level and cleanly aggregate them in on single csv file.
