@@ -68,8 +68,8 @@ Ne comprend plus la vente d'instruments de musique ou de disques, bandes et cass
  - NB_B311 : **Horlogerie Bijouterie**. Montres et autres articles d'horlogerie, articles de bijouterie et d’orfèvrerie.
  - NB_B312 : **Fleuriste** y compris commerce de plants, arbres et arbustes.
  - NB_B313 : **Magasin d'optique** y compris activité des opticiens
- - NB_B314 : **Station service**. Commerce de détail de carburant ayant vendu au moins 500 000 litres de carburant au cours de l’année. 
-- nb_commerce : somme de l'ensemble des indicateurs du fichiers.
+ - NB_B314 : **Station service**. Commerce de détail de carburant ayant vendu au moins 500 000 litres de carburant au cours de l’année.
+ - - nb_commerce : somme de l'ensemble des indicateurs du fichiers.
 
 ##Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013
 
