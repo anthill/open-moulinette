@@ -247,7 +247,7 @@ Appartenance à un réseau d’éducation prioritaire (définition Éducation na
  - NB_C609 : **Autre formation continue**. Etablissements de formation continue autres : regroupe les centres d'enseignement à distance (CNED et ses centres d'enseignement, centres privés soumis à déclaration), les établissements de formation continue hors Education nationale ou hors agriculture.
  - NB_C701 : **Résidence universitaire**. L'insse ne fournit pas la différence entre NB_C701 et NB_C702, mais en regardant les chiffres on peux constater des différences.
  - NB_C702 : **Restaurant universitaire**.
- - nb_enseignement_sup : Somme de l'ensemble des indicateurs non détaillés (NB_C605_NB_INT est exclu).
+ - nb_enseignement_sup : Somme de l'ensemble des indicateurs non détaillés (NB_C605_NB_INT, NB_C701, NB_C702 sont exclus).
 
 ##Indicateurs de structure et de distribution des revenus
 
