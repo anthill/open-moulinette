@@ -74,7 +74,7 @@ Ne comprend plus la vente d'instruments de musique ou de disques, bandes et cass
 ##Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013
 
  - NB_F101 : **Bassin de natation**. Bassins de natation, sportive et/ou ludique
- - NB_F101_NB_AIREJEU : **Bassin de natation - nombre de bassins **
+ - NB_F101_NB_AIREJEU : **Bassin de natation - nombre de bassins**
  - NB_F101_NB_COU : **Bassin de natation avec au moins un bassin couvert**
  - NB_F101_NB_ECL : **Bassin de natation avec au moins un bassin éclairé**
  - NB_F102 : **Boulodrome**
