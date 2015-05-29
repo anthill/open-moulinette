@@ -1,17 +1,17 @@
 # Documentation
 
-Open-moulinette insee is an open data cleaner who concatene each Insee's files in one csv. Beacause Insee's file are often in xls format and not easy to reuse. Actualy we have more than 330 features, but they are not friendly-user :
+Insee Open-moulinette is an open data cleaner who concatene each Insee's files in one csv. Beacause Insee's files are often in xls format and not easy to reuse. Actualy we have more than 650 features, but they are not friendly-user :
 
 `NB_B314` is the number of gas station by iris.
 
-**The goal of this documentation is to enumerate each feature and explain it. Decription is in French as all the data concerne French's city.**
+**The propose of this document is to enumerate each feature and explain it. Decription is in French as all the data concerne French's city.**
 
 
 ## List of file :
 
 - [Nombre d'équipements et de services dans le domaine du commerce en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-du-commerce-en-2013)
 - [Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-du-sport-des-loisirs-et-de-la-culture-en-2013)
-- [Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013] (https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-de-lenseignement-du-1er-degr%C3%A9-en-2013)
+- [Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-de-lenseignement-du-1er-degr%C3%A9-en-2013)
 -  [Nombre d'équipements et de services dans le domaine de l'enseignement du second degré en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-de-lenseignement-du-second-degr%C3%A9-en-2013)
 -  [Nombre d'équipements et de services dans le domaine de l'enseignement supérieur, de la formation et des services de l'éducation en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-de-lenseignement-sup%C3%A9rieur-de-la-formation-et-des-services-de-l%C3%A9ducation-en-2013)
 -  [Indicateurs de structure et de distribution des revenus](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#indicateurs-de-structure-et-de-distribution-des-revenus)
@@ -20,6 +20,11 @@ Open-moulinette insee is an open data cleaner who concatene each Insee's files i
 -  [Nombre de fonctions médicales et paramédicales en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-de-fonctions-m%C3%A9dicales-et-param%C3%A9dicales-en-2013)
 -   [Nombre d'équipements des services aux particuliers en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-des-services-aux-particuliers-en-2013)
 -   [Nombre d'équipements et de services dans le domaine du tourisme et du transport en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-du-tourisme-et-du-transport-en-2013)
+-	[Base de données infracommunales : logement en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--logement-en-2011)
+-	[Base de données infracommunales : diplômes - formation en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--diplômes---formation-en-2011)
+-	[Base de données infracommunales : couples - familles - ménages en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--couples---familles---ménages-en-2011)
+-	[Base de données infracommunales : population en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--population-en-2011)
+-	[Base de données infracommunales : activité des résidents en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--activité-des-résidents-en-2011)
 
 ## Description géographique
 
@@ -63,13 +68,13 @@ Ne comprend plus la vente d'instruments de musique ou de disques, bandes et cass
  - NB_B311 : **Horlogerie Bijouterie**. Montres et autres articles d'horlogerie, articles de bijouterie et d’orfèvrerie.
  - NB_B312 : **Fleuriste** y compris commerce de plants, arbres et arbustes.
  - NB_B313 : **Magasin d'optique** y compris activité des opticiens
- - NB_B314 : **Station service**. Commerce de détail de carburant ayant vendu au moins 500 000 litres de carburant au cours de l’année. 
-- nb_commerce : somme de l'ensemble des indicateurs du fichiers.
+ - NB_B314 : **Station service**. Commerce de détail de carburant ayant vendu au moins 500 000 litres de carburant au cours de l’année.
+ - - nb_commerce : somme de l'ensemble des indicateurs du fichiers.
 
 ##Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013
 
  - NB_F101 : **Bassin de natation**. Bassins de natation, sportive et/ou ludique
- - NB_F101_NB_AIREJEU : **Bassin de natation - nombre de bassins **
+ - NB_F101_NB_AIREJEU : **Bassin de natation - nombre de bassins**
  - NB_F101_NB_COU : **Bassin de natation avec au moins un bassin couvert**
  - NB_F101_NB_ECL : **Bassin de natation avec au moins un bassin éclairé**
  - NB_F102 : **Boulodrome**
@@ -149,7 +154,8 @@ Ne comprend plus la vente d'instruments de musique ou de disques, bandes et cass
  - NB_F301 : **Cinéma**. Projection en salle de cinéma, en plein air ou autres. Implantations physiques, qu'il y ait une seule salle de projection ou plusieurs au sein d'un complexe. Il n'y a ni le nombre de salles présentes, ni leur nombre de places offertes.
  - NB_F302 : **Théâtre**. Ensemble des lieux gérés par le Centre National du Théâtre où une représentation de théâtre peut se tenir. Ces lieux peuvent être labellisés (théâtres nationaux et privés, scènes nationales et conventionnées, compagnies avec lieux d’accueil, compagnies dramatiques nationales et régionales, pôles cirque, centres chorégraphiques) ou non. 
  - NB_F302_NB_SALLES : **Théâtre - nombre de salles**
- - nb_sport : Somme de l'ensemble des indicateurs non détaillés : uniquement les **NB_F..**  (cf ci-dessous)
+ - nb_sport : Somme de l'ensemble des indicateurs non détaillés : uniquement les **NB_F1.**  (cf ci-dessous)
+ - nb_nb_airjeu_sport : Somme de l'ensemble des indicateurs air de jeux : uniquement les **NB_F1.._NB_AIREJEU**
 
 
 **Note :** Pour chacune des installations sportives, on dispose de plusieurs informations : 
@@ -241,7 +247,7 @@ Appartenance à un réseau d’éducation prioritaire (définition Éducation na
  - NB_C609 : **Autre formation continue**. Etablissements de formation continue autres : regroupe les centres d'enseignement à distance (CNED et ses centres d'enseignement, centres privés soumis à déclaration), les établissements de formation continue hors Education nationale ou hors agriculture.
  - NB_C701 : **Résidence universitaire**. L'insse ne fournit pas la différence entre NB_C701 et NB_C702, mais en regardant les chiffres on peux constater des différences.
  - NB_C702 : **Restaurant universitaire**.
- - nb_enseignement_sup : Somme de l'ensemble des indicateurs non détaillés (NB_C605_NB_INT est exclu).
+ - nb_enseignement_sup : Somme de l'ensemble des indicateurs non détaillés (NB_C605_NB_INT, NB_C701, NB_C702 sont exclus).
 
 ##Indicateurs de structure et de distribution des revenus
 
@@ -276,7 +282,7 @@ Le revenu fiscal par ménage correspond à l'ensemble des revenus déclarés par
 
 Le revenu fiscal par personne est le revenu du ménage rapporté au nombre de personnes qui le composent. Le nombre de personnes du ménage fiscal est obtenu par cumul des personnes inscrites sur les déclarations de revenus qui le composent. On adopte le terme de personne et non celui d'habitant pour marquer le fait que toute personne rattachée fiscalement à un ménage ne vit pas forcément au sein de celui-ci : elle peut habiter ailleurs, cas fréquent chez les étudiants (rattachés fiscalement à leurs parents tout en occupant un logement indépendant).
 
- - NBPERS11 : **Nb de ménages fiscaux**
+ - NBPERS11 : **Nb de personnes des ménages fiscaux**
  - RFPQ111 : **1er quartile (€)**
  - RFPQ211 : **Médiane (€)**
  - RFPQ311 : **3ème quartile (€)**
@@ -471,16 +477,377 @@ Non compris services de réservation et activités liées.
  - NB_G104 : **Information Touristique**. Comprend les services de réservation et d'information touristique.
  - nb_transport_tourisme : Somme de l'ensemble des indicateurs.
 
+##Base de données infracommunales : logement en 2011
+
+ - P11_LOG : **Logements en 2011 (princ)**
+ - P11_RP : **Résidences principales en 2011 (princ)**
+ - P11_RSECOCC : **Rés secondaires et logts occasionnels en 2011 (princ)**
+ - P11_LOGVAC : **Logements vacants en 2011 (princ)**
+ - P11_MAISON : **Maisons en 2011 (princ)**
+ - P11_APPART : **Appartements en 2011 (princ)**
+ - P11_RP_1P : **Rés princ 1 pièce en 2011 (princ)**
+ - P11_RP_2P : **Rés princ 2 pièces en 2011 (princ)**
+ - P11_RP_3P : **Rés princ 3 pièces en 2011 (princ)**
+ - P11_RP_4P : **Rés princ 4 pièces en 2011 (princ)**
+ - P11_RP_5PP : **Rés princ 5 pièces ou plus en 2011 (princ)**
+ - P11_NBPI_RP : **Pièces rés princ en 2011 (princ)**
+ - P11_RPMAISON : **Rés princ type maison en 2011 (princ)**
+ - P11_NBPI_RPMAISON : **Pièces rés princ type maison en 2011 (princ)**
+ - P11_RPAPPART : **Rés princ type appartement en 2011 (princ)**
+ - P11_NBPI_RPAPPART : **Pièces rés princ type appartement en 2011 (princ)**
+ - P11_RP_M40M2 : **Rés princ de moins de 40 m2 en 2011 (princ)**
+ - P11_RP_4099M2 : **Rés princ de 40 à 99 m2 en 2011 (princ)**
+ - P11_RP_100M2P : **Rés princ de 100 m2 ou plus en 2011 (princ)**
+ - P11_RP_ACHTT  : **Rés princ avt 2009 en 2011 (princ)**
+ - P11_RP_ACHT1  : **Rés princ avt 1946 en 2011 (princ)**
+ - P11_RP_ACHT2  : **Rés princ 1946 à 1990 en 2011 (princ)**
+ - P11_RP_ACHT3  : **Rés princ 1991 à 2008 en 2011 (princ)**
+ - P11_RPMAISON_ACHTT : **Rés princ Type maison avt 2009 en 2011 (princ)**
+ - P11_RPMAISON_ACHT1  : **Rés princ Type maison avt 1946 en 2011 (princ)**
+ - P11_RPMAISON_ACHT2  : **Rés princ Type maison 1946 à 1990 en 2011 (princ)**
+ - P11_RPMAISON_ACHT3  : **Rés princ Type maison 1991 à 2008 en 2011 (princ)**
+ - P11_RPAPPART_ACHTT  : **Rés princ Type appart avt 2009 en 2011 (princ)**
+ - P11_RPAPPART_ACHT1  : **Rés princ Type appart avt 1946 en 2011 (princ)**
+ - P11_RPAPPART_ACHT2  : **Rés princ Type appart 1946 à 1990 en 2011 (princ)**
+ - P11_RPAPPART_ACHT3  : **Rés princ Type appart 1991 à 2008 en 2011 (princ)**
+ - P11_MEN : **Ménages en 2011 (princ)**
+ - P11_MEN_ANEM0002 : **Ménages emménagés moins 2 ans en 2011 (princ)**
+ - P11_MEN_ANEM0204 : **Ménages emménagés entre 2-4 ans en 2011 (princ)**
+ - P11_MEN_ANEM0509 : **Ménages emménagés entre 5-9 ans en 2011 (princ)**
+ - P11_MEN_ANEM10P : **Ménages emménagés depuis 10 ans ou plus en 2011 (princ)**
+ - P11_PMEN : **Pop ménages en 2011 (princ)**
+ - P11_PMEN_ANEM0002 : **Pop mén emménagés moins 2 ans en 2011 (princ)**
+ - P11_PMEN_ANEM0204 : **Pop mén emménagés entre 2-4 ans en 2011 (princ)**
+ - P11_PMEN_ANEM0509 : **Pop mén emménagés entre 5-9 ans en 2011 (princ)**
+ - P11_PMEN_ANEM10P : **Pop mén emménagés depuis 10 ans ou plus en 2011 (princ)**
+ - P11_NBPI_RP_ANEM0002 : **Pièces Rés princ Mén. emménagés moins 2 ans en 2011 (princ)**
+ - P11_NBPI_RP_ANEM0204 : **Pièces Rés princ Mén. emménagés entre 2-4 ans en 2011 (princ)**
+ - P11_NBPI_RP_ANEM0509 : **Pièces Rés princ Mén. emménagés entre 5-9 ans en 2011 (princ)**
+ - P11_NBPI_RP_ANEM10P : **Pièces Rés princ Mén. emménagés depuis 10 ans ou plus en 2011 (princ)**
+ - P11_RP_PROP : **Rés princ occupées Propriétaires en 2011 (princ)**
+ - P11_RP_LOC : **Rés princ occupées Locataires en 2011 (princ)**
+ - P11_RP_LOCHLMV : **Rés princ HLM louée vide en 2011 (princ)**
+ - P11_RP_GRAT : **Rés princ logé gratuit en 2011 (princ)**
+ - P11_NPER_RP : **Personnes Rés princ en 2011 (princ)**
+ - P11_NPER_RP_PROP : **Pers Rés princ occupées Propriétaires en 2011 (princ)**
+ - P11_NPER_RP_LOC : **Pers Rés princ occupées Locataires en 2011 (princ)**
+ - P11_NPER_RP_LOCHLMV : **Pers Rés princ HLM louées vides en 2011 (princ)**
+ - P11_NPER_RP_GRAT : **Pers Rés princ occupées gratuit en 2011 (princ)**
+ - P11_ANEM_RP : **Anc tot Emméngt Rés princ (années) en 2011 (princ)**
+ - P11_ANEM_RP_PROP : **Anc tot Emméngt Rés princ occ par Propriétaires (années) en 2011 (princ)**
+ - P11_ANEM_RP_LOC : **Anc tot Emméngt Rés princ occ par Locataires (années) en 2011 (princ)**
+ - P11_ANEM_RP_LOCHLMV : **Anc tot Emméngt Rés princ HLM louées vides (années) en 2011 (princ)**
+ - P11_ANEM_RP_GRAT : **Anc tot Emméngt Rés princ occ gratuit (années) en 2011 (princ)**
+ - P11_RP_SDB : **Rés princ SDB baignoire douche (MET) en 2011 (princ)**
+ - P11_RP_CCCOLL : **Rés princ Chauffage Central Collectif (MET) en 2011 (princ)**
+ - P11_RP_CCIND : **Rés princ Chauffage Central Individuel (MET) en 2011 (princ)**
+ - P11_RP_CINDELEC : **Rés princ Chauffage Individuel Electrique (MET) en 2011 (princ)**
+ - P11_RP_GARL : **Ménages au moins un parking en 2011 (princ)**
+ - P11_RP_VOIT1P : **Ménages au moins une voiture en 2011 (princ)**
+ - P11_RP_VOIT1 : **Ménages une voiture en 2011 (princ)**
+ - P11_RP_VOIT2P : **Ménages deux voitures ou plus en 2011 (princ)**
+ - P11_RP_ELEC : **Rés princ avec électricité (DOM) en 2011 (princ)**
+ - P11_RP_EAUCH : **Rés princ avec eau chaude (DOM) en 2011 (princ)**
+ - P11_RP_BDWC : **Rés princ avec Bain/Douche WC (DOM) en 2011 (princ)**
+ - P11_RP_CHOS : **Rés princ avec chauffe-eau solaire (DOM) en 2011 (princ)**
+ - P11_RP_CLIM : **Rés princ avec pièce climatisée (DOM) en 2011 (princ)**
+ - P11_RP_TTEGOU : **Rés princ avec tout à l'égout (DOM) en 2011 (princ)**
+ - P11_RP_HABFOR : **Habitations de fortune (DOM) en 2011 (princ)**
+ - P11_RP_CASE : **Cases traditionnelles (DOM) en 2011 (princ)**
+ - P11_RP_MIBOIS : **Maisons ou Immeubles en bois (DOM) en 2011 (princ)**
+ - P11_RP_MIDUR : **Maisons ou Immeubles en dur (DOM) en 2011 (princ)**
+
+##Base de données infracommunales : diplômes - formation en 2011
+
+- **La population non scolarisée** comprend les personnes non inscrites dans un établissement d'enseignement.
+
+- **Population scolarisée** est scolarisé tout individu inscrit, au moment de la collecte du recensement, dans un établissement d'enseignement (y compris apprentissage) pour l'année scolaire en cours.
+Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs résidant dans une cité universitaire sont recensés dans le logement de leurs parents contrairement au recensement de 1999 où ils étaient comptabilisés dans les communautés de la commune de la cité universitaire. Les élèves mineurs vivant en internat sont comptés au lieu de résidence de leurs parents comme au recensement de 1999. Les élèves ou étudiants majeurs résidant dans une cité universitaire sont comptabilisés dans les communautés de la commune de la cité universitaire comme au recensement de 1999. Les élèves ou étudiants majeurs vivant en internat (lycée agricole, école militaire, ...) sont recensés au lieu où est situé l'internat contrairement au recensement de 1999 où ils étaient comptabilisés au lieu de résidence de leurs parents.
 
 
+- P11_POP0205 : **Pop 2-5 ans en 2011 (princ)**
+- P11_POP0610 : **Pop 6-10 ans en 2011 (princ)**
+- P11_POP1114 : **Pop 11-14 ans en 2011 (princ)**
+- P11_POP1517 : **Pop 15-17 ans en 2011 (princ)**
+- P11_POP1824 : **Pop 18-24 ans en 2011 (princ)**
+- P11_POP2529 : **Pop 25-29 ans en 2011 (princ)**
+- P11_POP30P : **Pop 30 ans ou plus en 2011 (princ)**
+- P11_SCOL0205 : **Pop scolarisée 2-5 ans en 2011 (princ)**
+- P11_SCOL0610 : **Pop scolarisée 6-10 ans en 2011 (princ)**
+- P11_SCOL1114 : **Pop scolarisée 11-14 ans en 2011 (princ)**
+- P11_SCOL1517 : **Pop scolarisée 15-17 ans en 2011 (princ)**
+- P11_SCOL1824 : **Pop scolarisée 18-24 ans en 2011 (princ)**
+- P11_SCOL2529 : **Pop scolarisée 25-29 ans en 2011 (princ)**
+- P11_SCOL30P : **Pop scolarisée 30 ans ou plus en 2011 (princ)**
+- P11_NSCOL15P : **Pop 15 ans ou plus non scolarisée en 2011 (princ)**
+- P11_NSCOL15P_DIPL0 : **Pop 15 ans ou plus non scol. Sans diplôme en 2011 (princ)**
+- P11_NSCOL15P_CEP : **Pop 15 ans ou plus non scol. CEP en 2011 (princ)**
+- P11_NSCOL15P_BEPC : **Pop 15 ans ou plus non scol. BEPC, brevet collèges en 2011 (princ)**
+- P11_NSCOL15P_CAPBEP : **Pop 15 ans ou plus non scol. CAP-BEP en 2011 (princ)**
+- P11_NSCOL15P_BAC : **Pop 15 ans ou plus non scol. BAC-BP en 2011 (princ)**
+- P11_NSCOL15P_BACP2 : **Pop 15 ans ou plus non scol. Enseignement sup court en 2011 (princ)**
+- P11_NSCOL15P_SUP : **Pop 15 ans ou plus non scol. Enseignement sup long en 2011 (princ)**
+- P11_HNSCOL15P : **Hommes 15 ans ou plus non scolarisés en 2011 (princ)**
+- P11_HNSCOL15P_DIPL0 : **Hommes 15 ans ou plus non scol. Sans diplôme en 2011 (princ)**
+- P11_HNSCOL15P_CEP : **Hommes 15 ans ou plus non scol. CEP en 2011 (princ)**
+- P11_HNSCOL15P_BEPC : **Hommes 15 ans ou plus non scol. BEPC, brevet collèges en 2011 (princ)**
+- P11_HNSCOL15P_CAPBEP : **Hommes 15 ans ou plus non scol. CAP-BEP en 2011 (princ)**
+- P11_HNSCOL15P_BAC : **Hommes 15 ans ou plus non scol. BAC-BP en 2011 (princ)**
+- P11_HNSCOL15P_BACP2 : **Hommes 15 ans ou plus non scol. Enseignement sup court en 2011 (princ)**
+- P11_HNSCOL15P_SUP : **Hommes 15 ans ou plus non scol. Enseignement sup long en 2011 (princ)**
+- P11_FNSCOL15P : **Femmes 15 ans ou plus non scolarisées en 2011 (princ)**
+- P11_FNSCOL15P_DIPL0 : **Femmes 15 ans ou plus non scol. Sans diplôme en 2011 (princ)**
+- P11_FNSCOL15P_CEP : **Femmes 15 ans ou plus non scol. CEP en 2011 (princ)**
+- P11_FNSCOL15P_BEPC : **Femmes 15 ans ou plus non scol. BEPC, brevet collèges en 2011 (princ)**
+- P11_FNSCOL15P_CAPBEP : **Femmes 15 ans ou plus non scol. CAP-BEP en 2011 (princ)**
+- P11_FNSCOL15P_BAC : **Femmes 15 ans ou plus non scol. BAC-BP en 2011 (princ)**
+- P11_FNSCOL15P_BACP2 : **Femmes 15 ans ou plus non scol. Enseignement sup court en 2011 (princ)**
+- P11_FNSCOL15P_SUP : **Femmes 15 ans ou plus non scol. Enseignement sup long en 2011 (princ)**
 
+##Base de données infracommunales : couples - familles - ménages en 2011
 
+ - C11_MEN : **Ménages en 2011 (compl)**
+ - C11_MENPSEUL : **Ménages 1 personne en 2011 (compl)**
+ - C11_MENHSEUL : **Ménages Hommes seuls en 2011 (compl)**
+ - C11_MENFSEUL : **Ménages Femmes seules en 2011 (compl)**
+ - C11_MENSFAM : **Ménages Autres sans famille en 2011 (compl)**
+ - C11_MENFAM : **Ménages avec famille(s) en 2011 (compl)**
+ - C11_MENCOUPSENF : **Mén fam princ Couple sans enfant en 2011 (compl)**
+ - C11_MENCOUPAENF : **Mén fam princ Couple avec enfant(s) en 2011 (compl)**
+ - C11_MENFAMMONO : **Mén fam princ Famille mono en 2011 (compl)**
+ - C11_PMEN : **Pop Ménages en 2011 (compl)**
+ - C11_PMEN_MENPSEUL : **Pop mén Personnes seules en 2011 (compl)**
+ - C11_PMEN_MENHSEUL : **Pop mén Hommes seuls en 2011 (compl)**
+ - C11_PMEN_MENFSEUL : **Pop mén Femmes seules en 2011 (compl)**
+ - C11_PMEN_MENSFAM : **Pop mén Autres sans famille en 2011 (compl)**
+ - C11_PMEN_MENFAM : **Pop mén avec famille(s) en 2011 (compl)**
+ - C11_PMEN_MENCOUPSENF : **Pop mén fam princ Couple sans enfant en 2011 (compl)**
+ - C11_PMEN_MENCOUPAENF : **Pop mén fam princ Couple avec enfant(s) en 2011 (compl)**
+ - C11_PMEN_MENFAMMONO : **Pop mén fam princ Famille mono en 2011 (compl)**
+ - P11_POP15P : **Pop 15 ans ou plus en 2011 (princ)**
+ - P11_POP1524 : **Pop 15-24 ans en 2011 (princ)**
+ - P11_POP2554 : **Pop 25-54 ans en 2011 (princ)**
+ - P11_POP5579 : **Pop 55-79 ans en 2011 (princ)**
+ - P11_POP80P : **Pop 80 ans ou plus en 2011 (princ)**
+ - P11_POPMEN15P : **Pop mén 15 ans ou plus en 2011 (princ)**
+ - P11_POPMEN1524 : **Pop mén 15-24 ans en 2011 (princ)**
+ - P11_POPMEN2554 : **Pop mén 25-54 ans en 2011 (princ)**
+ - P11_POPMEN5579 : **Pop mén 55-79 ans en 2011 (princ)**
+ - P11_POPMEN80P : **Pop mén 80 ans ou plus en 2011 (princ)**
+ - P11_POP15P_PSEUL : **Pop 15 ans ou plus ans vivant seule en 2011 (princ)**
+ - P11_POP1524_PSEUL : **Pop 15-24 ans vivant seule en 2011 (princ)**
+ - P11_POP2554_PSEUL : **Pop 25-54 ans vivant seule en 2011 (princ)**
+ - P11_POP5579_PSEUL : **Pop 55-79 ans vivant seule en 2011 (princ)**
+ - P11_POP80P_PSEUL : **Pop 80 ans ou plus vivant seule en 2011 (princ)**
+ - P11_POP15P_MARIE : **Pop 15 ans ou plus Marié en 2011 (princ)**
+ - P11_POP15P_CELIB : **Pop 15 ans ou plus Célibataire en 2011 (princ)**
+ - P11_POP15P_VEUF : **Pop 15 ans ou plus Veuf en 2011 (princ)**
+ - P11_POP15P_DIVOR : **Pop 15 ans ou plus Divorcé en 2011 (princ)**
+ - C11_MEN_CS1 : **Ménages Pers Réf Agri. expl. en 2011 (compl)**
+ - C11_MEN_CS2 : **Ménages Pers Réf Art. Comm. Chefs entr. en 2011 (compl)**
+ - C11_MEN_CS3 : **Ménages Pers Réf Cadres Prof int sup en 2011 (compl)**
+ - C11_MEN_CS4 : **Ménages Pers Réf Prof intermédiaire en 2011 (compl)**
+ - C11_MEN_CS5 : **Ménages Pers Réf Employé en 2011 (compl)**
+ - C11_MEN_CS6 : **Ménages Pers Réf Ouvrier en 2011 (compl)**
+ - C11_MEN_CS7 : **Ménages Pers Réf Retraité en 2011 (compl)**
+ - C11_MEN_CS8 : **Ménages Pers Réf Autre en 2011 (compl)**
+ - C11_PMEN_CS1 : **Pop mén Pers Réf Agri. expl. en 2011 (compl)**
+ - C11_PMEN_CS2 : **Pop mén Pers Réf Art Com Chef ent en 2011 (compl)**
+ - C11_PMEN_CS3 : **Pop mén Pers Réf Cadres Prof int sup en 2011 (compl)**
+ - C11_PMEN_CS4 : **Pop mén Pers Réf Prof intermédiaire en 2011 (compl)**
+ - C11_PMEN_CS5 : **Pop mén Pers Réf Employé en 2011 (compl)**
+ - C11_PMEN_CS6 : **Pop mén Pers Réf Ouvrier en 2011 (compl)**
+ - C11_PMEN_CS7 : **Pop mén Pers Réf Retraité en 2011 (compl)**
+ - C11_PMEN_CS8 : **Pop mén Pers Réf Autre en 2011 (compl)**
+ - C11_FAM : **Familles en 2011 (compl)**
+ - C11_COUPAENF : **Fam Couple avec enfant(s) en 2011 (compl)**
+ - C11_FAMMONO : **Fam Monoparentales en 2011 (compl)**
+ - C11_COUPSENF : **Fam Couple sans enfant en 2011 (compl)**
+ - C11_NE24F0 : **Fam 0 enfant moins 25 ans en 2011 (compl)**
+ - C11_NE24F1 : **Fam 1 enfant moins 25 ans en 2011 (compl)**
+ - C11_NE24F2 : **Fam 2 enfants moins 25 ans en 2011 (compl)**
+ - C11_NE24F3 : **Fam 3 enfants moins 25 ans en 2011 (compl)**
+ - C11_NE24F4P : **Fam 4 enfants ou plus moins 25 ans en 2011 (compl)**
 
+ ##Base de données infracommunales : population en 2011
 
+ - P11_POP : **Population en 2011 (princ)**
+ - P11_POP0002 : **Pop 0-2 ans en 2011 (princ)**
+ - P11_POP0305 : **Pop 3-5 ans en 2011 (princ)**
+ - P11_POP0610 : **Pop 6-10 ans en 2011 (princ)**
+ - P11_POP1117 : **Pop 11-17 ans en 2011 (princ)**
+ - P11_POP1824 : **Pop 18-24 ans en 2011 (princ)**
+ - P11_POP2539 : **Pop 25-39 ans en 2011 (princ)**
+ - P11_POP4054 : **Pop 40-54 ans en 2011 (princ)**
+ - P11_POP5564 : **Pop 55-64 ans en 2011 (princ)**
+ - P11_POP6579 : **Pop 65-79 ans en 2011 (princ)**
+ - P11_POP80P : **Pop 80 ans ou plus en 2011 (princ)**
+ - P11_POP0014 : **Pop 0-14 ans en 2011 (princ)**
+ - P11_POP1529 : **Pop 15-29 ans en 2011 (princ)**
+ - P11_POP3044 : **Pop 30-44 ans en 2011 (princ)**
+ - P11_POP4559 : **Pop 45-59 ans en 2011 (princ)**
+ - P11_POP6074 : **Pop 60-74 ans en 2011 (princ)**
+ - P11_POP75P : **Pop 75 ans ou plus en 2011 (princ)**
+ - P11_POP0019 : **Pop 0-19 ans en 2011 (princ)**
+ - P11_POP2064 : **Pop 20-64 ans en 2011 (princ)**
+ - P11_POP65P : **Pop 65 ans ou plus en 2011 (princ)**
+ - P11_POPH : **Pop Hommes en 2011 (princ)**
+ - P11_H0014 : **Pop Hommes 0-14 ans en 2011 (princ)**
+ - P11_H1529 : **Pop Hommes 15-29 ans en 2011 (princ)**
+ - P11_H3044 : **Pop Hommes 30-44 ans en 2011 (princ)**
+ - P11_H4559 : **Pop Hommes 45-59 ans en 2011 (princ)**
+ - P11_H6074 : **Pop Hommes 60-74 ans en 2011 (princ)**
+ - P11_H75P : **Pop Hommes 75 ans ou plus en 2011 (princ)**
+ - P11_H0019 : **Pop Hommes 0-19 ans en 2011 (princ)**
+ - P11_H2064 : **Pop Hommes 20-64 ans en 2011 (princ)**
+ - P11_H65P : **Pop Hommes 65 ans ou plus en 2011 (princ)**
+ - P11_POPF : **Pop Femmes en 2011 (princ)**
+ - P11_F0014 : **Pop Femmes 0-14 ans en 2011 (princ)**
+ - P11_F1529 : **Pop Femmes 15-29 ans en 2011 (princ)**
+ - P11_F3044 : **Pop Femmes 30-44 ans en 2011 (princ)**
+ - P11_F4559 : **Pop Femmes 45-59 ans en 2011 (princ)**
+ - P11_F6074 : **Pop Femmes 60-74 ans en 2011 (princ)**
+ - P11_F75P : **Pop Femmes 75 ans ou plus en 2011 (princ)**
+ - P11_F0019 : **Pop Femmes 0-19 ans en 2011 (princ)**
+ - P11_F2064 : **Pop Femmes 20-64 ans en 2011 (princ)**
+ - P11_F65P : **Pop Femmes 65 ans ou plus en 2011 (princ)**
+ - C11_POP15P : **Pop 15 ans ou plus en 2011 (compl)**
+ - C11_POP15P_CS1 : **Pop 15 ans ou plus Agriculteurs exploitants en 2011 (compl)**
+ - C11_POP15P_CS2 : **Pop 15 ans ou plus Artisans, Comm., Chefs entr. en 2011 (compl)**
+ - C11_POP15P_CS3 : **Pop 15 ans ou plus Cadres, Prof. intel. sup. en 2011 (compl)**
+ - C11_POP15P_CS4 : **Pop 15 ans ou plus Prof. intermédiaires en 2011 (compl)**
+ - C11_POP15P_CS5 : **Pop 15 ans ou plus Employés en 2011 (compl)**
+ - C11_POP15P_CS6 : **Pop 15 ans ou plus Ouvriers en 2011 (compl)**
+ - C11_POP15P_CS7 : **Pop 15 ans ou plus Retraités en 2011 (compl)**
+ - C11_POP15P_CS8 : **Pop 15 ans ou plus Autres en 2011 (compl)**
+ - C11_H15P : **Pop 15 ans ou plus Hommes en 2011 (compl)**
+ - C11_H15P_CS1 : **Pop 15 ans ou plus Hommes Agriculteurs exploitants en 2011 (compl)**
+ - C11_H15P_CS2 : **Pop 15 ans ou plus Hommes Artisans, Comm., Chefs entr. en 2011 (compl)**
+ - C11_H15P_CS3 : **Pop 15 ans ou plus Hommes Cadres, Prof. intel. sup. en 2011 (compl)**
+ - C11_H15P_CS4 : **Pop 15 ans ou plus Hommes Prof. intermédiaires en 2011 (compl)**
+ - C11_H15P_CS5 : **Pop 15 ans ou plus Hommes Employés en 2011 (compl)**
+ - C11_H15P_CS6 : **Pop 15 ans ou plus Hommes Ouvriers en 2011 (compl)**
+ - C11_H15P_CS7 : **Pop 15 ans ou plus Hommes Retraités en 2011 (compl)**
+ - C11_H15P_CS8 : **Pop 15 ans ou plus Hommes Autres en 2011 (compl)**
+ - C11_F15P : **Pop 15 ans ou plus Femmes en 2011 (compl)**
+ - C11_F15P_CS1 : **Pop 15 ans ou plus Femmes Agriculteurs exploitants en 2011 (compl)**
+ - C11_F15P_CS2 : **Pop 15 ans ou plus Femmes Artisans, Comm., Chefs entr. en 2011 (compl)**
+ - C11_F15P_CS3 : **Pop 15 ans ou plus Femmes Cadres, Prof. intel. sup. en 2011 (compl)**
+ - C11_F15P_CS4 : **Pop 15 ans ou plus Femmes Prof. intermédiaires en 2011 (compl)**
+ - C11_F15P_CS5 : **Pop 15 ans ou plus Femmes Employés en 2011 (compl)**
+ - C11_F15P_CS6 : **Pop 15 ans ou plus Femmes Ouvriers en 2011 (compl)**
+ - C11_F15P_CS7 : **Pop 15 ans ou plus Femmes Retraités en 2011 (compl)**
+ - C11_F15P_CS8 : **Pop 15 ans ou plus Femmes Autres en 2011 (compl)**
+ - P11_POP_FR : **Pop Français en 2011 (princ)**
+ - P11_POP_ETR : **Pop Etrangers en 2011 (princ)**
+ - P11_POP_IMM : **Pop Immigrés en 2011 (princ)**
+ - P11_PMEN : **Pop ménages en 2011 (princ)**
+ - P11_PHORMEN : **Pop hors ménages en 2011 (princ)**
 
+##Base de données infracommunales : activité des résidents en 2011
 
-
-
+ - P11_POP1564 : **Pop 15-64 ans en 2011 (princ)**
+ - P11_POP1524 : **Pop 15-24 ans en 2011 (princ)**
+ - P11_POP2554 : **Pop 25-54 ans en 2011 (princ)**
+ - P11_POP5564 : **Pop 55-64 ans en 2011 (princ)**
+ - P11_H1564 : **Pop 15-64 ans Hommes en 2011 (princ)**
+ - P11_H1524 : **Pop 15-24 ans Hommes en 2011 (princ)**
+ - P11_H2554 : **Pop 25-54 ans Hommes en 2011 (princ)**
+ - P11_H5564 : **Pop 55-64 ans Hommes en 2011 (princ)**
+ - P11_F1564 : **Pop 15-64 ans Femmes en 2011 (princ)**
+ - P11_F1524 : **Pop 15-24 ans Femmes en 2011 (princ)**
+ - P11_F2554 : **Pop 25-54 ans Femmes en 2011 (princ)**
+ - P11_F5564 : **Pop 55-64 ans Femmes en 2011 (princ)**
+ - P11_ACT1564 : **Actifs 15-64 ans en 2011 (princ)**
+ - P11_ACT1524 : **Actifs 15-24 ans en 2011 (princ)**
+ - P11_ACT2554 : **Actifs 25-54 ans en 2011 (princ)**
+ - P11_ACT5564 : **Actifs 55-64 ans en 2011 (princ)**
+ - P11_HACT1564 : **Actifs 15-64 ans Hommes en 2011 (princ)**
+ - P11_HACT1524 : **Actifs 15-24 ans Hommes en 2011 (princ)**
+ - P11_HACT2554 : **Actifs 25-54 ans Hommes en 2011 (princ)**
+ - P11_HACT5564 : **Actifs 55-64 ans Hommes en 2011 (princ)**
+ - P11_FACT1564 : **Actifs 15-64 ans Femmes en 2011 (princ)**
+ - P11_FACT1524 : **Actifs 15-24 ans Femmes en 2011 (princ)**
+ - P11_FACT2554 : **Actifs 25-54 ans Femmes en 2011 (princ)**
+ - P11_FACT5564 : **Actifs 55-64 ans Femmes en 2011 (princ)**
+ - P11_ACTOCC1564 : **Actifs occupés 15-64 ans en 2011 (princ)**
+ - P11_ACTOCC1524 : **Actifs occupés 15-24 ans en 2011 (princ)**
+ - P11_ACTOCC2554 : **Actifs occupés 25-54 ans en 2011 (princ)**
+ - P11_ACTOCC5564 : **Actifs occupés 55-64 ans en 2011 (princ)**
+ - P11_HACTOCC1564 : **Actifs occupés 15-64 ans Hommes en 2011 (princ)**
+ - P11_HACTOCC1524 : **Actifs occupés 15-24 ans Hommes en 2011 (princ)**
+ - P11_HACTOCC2554 : **Actifs occupés 25-54 ans Hommes en 2011 (princ)**
+ - P11_HACTOCC5564 : **Actifs occupés 55-64 ans Hommes en 2011 (princ)**
+ - P11_FACTOCC1564 : **Actifs occupés 15-64 ans Femmes en 2011 (princ)**
+ - P11_FACTOCC1524 : **Actifs occupés 15-24 ans Femmes en 2011 (princ)**
+ - P11_FACTOCC2554 : **Actifs occupés 25-54 ans Femmes en 2011 (princ)**
+ - P11_FACTOCC5564 : **Actifs occupés 55-64 ans Femmes en 2011 (princ)**
+ - P11_CHOM1564 : **Chômeurs 15-64 ans en 2011 (princ)**
+ - P11_CHOM1524 : **Chômeurs 15-24 ans en 2011 (princ)**
+ - P11_CHOM2554 : **Chômeurs 25-54 ans en 2011 (princ)**
+ - P11_CHOM5564 : **Chômeurs 55-64 ans en 2011 (princ)**
+ - P11_HCHOM1564 : **Chômeurs 15-64 ans Hommes en 2011 (princ)**
+ - P11_FCHOM1564 : **Chômeurs 15-64 ans Femmes en 2011 (princ)**
+ - P11_INACT1564 : **Inactifs 15-64 ans en 2011 (princ)**
+ - P11_HINACT1564 : **Inactifs 15-64 ans Hommes en 2011 (princ)**
+ - P11_FINACT1564 : **Inactifs 15-64 ans Femmes en 2011 (princ)**
+ - P11_ETUD1564 : **Elèv. Etud. Stag. non rémunérés 15-64 ans en 2011 (princ)**
+ - P11_HETUD1564 : **Elèv. Etud. Stag. non rémunérés 15-64 ans Hommes en 2011 (princ)**
+ - P11_FETUD1564 : **Elèv. Etud. Stag. non rémunérés 15-64 ans Femmes en 2011 (princ)**
+ - P11_RETR1564 : **Retraités Préretraités 15-64 ans en 2011 (princ)**
+ - P11_HRETR1564 : **Retraités Préretraités 15-64 ans Hommes en 2011 (princ)**
+ - P11_FRETR1564 : **Retraités Préretraités 15-64 ans Femmes en 2011 (princ)**
+ - P11_AINACT1564 : **Autres inactifs 15-64 ans en 2011 (princ)**
+ - P11_HAINACT1564 : **Autres inactifs 15-64 ans Hommes en 2011 (princ)**
+ - P11_FAINACT1564 : **Autres inactifs 15-64 ans Femmes en 2011 (princ)**
+ - C11_ACT1564 : **Actifs 15-64 ans en 2011 (compl)**
+ - C11_ACT1564_CS1 : **Actifs 15-64 ans Agriculteurs exploitants en 2011 (compl)**
+ - C11_ACT1564_CS2 : **Actifs 15-64 ans Artisans, Comm., Chefs entr. en 2011 (compl)**
+ - C11_ACT1564_CS3 : **Actifs 15-64 ans Cadres, Prof. intel. sup. en 2011 (compl)**
+ - C11_ACT1564_CS4 : **Actifs 15-64 ans Prof. intermédiaires en 2011 (compl)**
+ - C11_ACT1564_CS5 : **Actifs 15-64 ans Employés en 2011 (compl)**
+ - C11_ACT1564_CS6 : **Actifs 15-64 ans Ouvriers en 2011 (compl)**
+ - C11_ACTOCC1564 : **Actifs occupés 15-64 ans en 2011 (compl)**
+ - C11_ACTOCC1564_CS1 : **Actifs occ 15-64 ans Agriculteurs exploitants en 2011 (compl)**
+ - C11_ACTOCC1564_CS2 : **Actifs occ 15-64 ans Artisans, Comm., Chefs entr. en 2011 (compl)**
+ - C11_ACTOCC1564_CS3 : **Actifs occ 15-64 ans Cadres Prof. intel. sup. en 2011 (compl)**
+ - C11_ACTOCC1564_CS4 : **Actifs occ 15-64 ans Prof. intermédiaires en 2011 (compl)**
+ - C11_ACTOCC1564_CS5 : **Actifs occupés 15-64 ans Employés en 2011 (compl)**
+ - C11_ACTOCC1564_CS6 : **Actifs occupés 15-64 ans Ouvriers en 2011 (compl)**
+ - P11_ACTOCC15P : **Actifs occupés 15 ans ou plus en 2011 (princ)**
+ - P11_HACTOCC15P : **Actifs occupés 15 ans ou plus Hommes en 2011 (princ)**
+ - P11_FACTOCC15P : **Actifs occupés 15 ans ou plus Femmes en 2011 (princ)**
+ - P11_SAL15P : **Salariés 15 ans ou plus en 2011 (princ)**
+ - P11_HSAL15P : **Salariés 15 ans ou plus Hommes en 2011 (princ)**
+ - P11_FSAL15P : **Salariés 15 ans ou plus Femmes en 2011 (princ)**
+ - P11_NSAL15P : **Non-salariés 15 ans ou plus en 2011 (princ)**
+ - P11_HNSAL15P : **Non-salariés 15 ans ou plus Hommes en 2011 (princ)**
+ - P11_FNSAL15P : **Non-salariés 15 ans ou plus Femmes en 2011 (princ)**
+ - P11_ACTOCC15P_TP : **Actifs occ 15 ans ou plus TP en 2011 (princ)**
+ - P11_SAL15P_TP : **Salariés 15 ans ou plus TP en 2011 (princ)**
+ - P11_HSAL15P_TP : **Salariés 15 ans ou plus TP Hommes en 2011 (princ)**
+ - P11_FSAL15P_TP : **Salariés 15 ans ou plus TP Femmes en 2011 (princ)**
+ - P11_NSAL15P_TP : **Non-salariés 15 ans ou plus TP en 2011 (princ)**
+ - P11_SAL15P_CDI : **Salariés 15 ans ou plus Fonct publ, CDI en 2011 (princ)**
+ - P11_SAL15P_CDD : **Salariés 15 ans ou plus CDD en 2011 (princ)**
+ - P11_SAL15P_INTERIM : **Salariés 15 ans ou plus Intérim en 2011 (princ)**
+ - P11_SAL15P_EMPAID : **Salariés 15 ans ou plus Emplois aidés en 2011 (princ)**
+ - P11_SAL15P_APPR : **Salariés 15 ans ou plus Apprentissage - Stage en 2011 (princ)**
+ - P11_NSAL15P_INDEP : **Non-salariés 15 ans ou plus Indépendants en 2011 (princ)**
+ - P11_NSAL15P_EMPLOY : **Non-salariés 15 ans ou plus Employeurs en 2011 (princ)**
+ - P11_NSAL15P_AIDFAM : **Non-salariés 15 ans ou plus Aides familiaux en 2011 (princ)**
+ - P11_ACTOCC15P_ILT1 : **Actif occ 15 ans ou plus travaille commune résidence en 2011 (princ)**
+ - P11_ACTOCC15P_ILT2P : **Actif occ 15 ans ou plus travaille autre commune que commune résidence en 2011 (princ)**
+ - P11_ACTOCC15P_ILT2 : **Actif occ 15 ans ou plus travaille autre commune même dépt résidence en 2011 (princ)**
+ - P11_ACTOCC15P_ILT3 : **Actif occ 15 ans ou plus travaille autre dépt même région résidence en 2011 (princ)**
+ - P11_ACTOCC15P_ILT4 : **Actif occ 15 ans ou plus travaille autre région en métropole en 2011 (princ)**
+ - P11_ACTOCC15P_ILT5 : **Actif occ 15 ans ou plus travaille autre région hors métropole en 2011 (princ)**
+ - C11_ACTOCC15P : **Actif occ 15 ans ou plus en 2011 (compl)**
+ - C11_ACTOCC15P_PAS : **Actif occ 15 ans ou plus pas de transport en 2011 (compl)**
+ - C11_ACTOCC15P_MAR : **Actif occ 15 ans ou plus marche à pied en 2011 (compl)**
+ - C11_ACTOCC15P_DROU : **Actif occ 15 ans ou plus deux roues en 2011 (compl)**
+ - C11_ACTOCC15P_VOIT : **Actif occ 15 ans ou plus voiture, camion en 2011 (compl)**
+ - C11_ACTOCC15P_TCOM : **Actif occ 15 ans ou plus transport en commun en 2011 (compl)**
 
 
 

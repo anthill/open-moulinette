@@ -35,6 +35,12 @@ sport['nb_sport'] =  sport[['NB_F101', 'NB_F102', 'NB_F103', 'NB_F104', 'NB_F105
                             'NB_F106', 'NB_F107', 'NB_F108', 'NB_F109', 'NB_F110', 
                             'NB_F111', 'NB_F112', 'NB_F113', 'NB_F114', 'NB_F115',
                             'NB_F117', 'NB_F118']].applymap(lambda x: float(x)).sum(axis=1)
+sport['nb_airjeu_sport'] =  sport[['NB_F101_NB_AIREJEU', 'NB_F102_NB_AIREJEU', 'NB_F103_NB_AIREJEU',
+                                    'NB_F104_NB_AIREJEU', 'NB_F105_NB_AIREJEU', 'NB_F106_NB_AIREJEU', 
+                                    'NB_F107_NB_AIREJEU', 'NB_F108_NB_AIREJEU', 'NB_F108_NB_AIREJEU', 
+                                    'NB_F110_NB_AIREJEU', 'NB_F111_NB_AIREJEU', 'NB_F112_NB_AIREJEU', 
+                                    'NB_F113_NB_AIREJEU', 'NB_F114_NB_AIREJEU', 'NB_F115_NB_AIREJEU', 
+                                    'NB_F116_NB_AIREJEU', 'NB_F117_NB_AIREJEU', 'NB_F118_NB_AIREJEU']].applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_sport', 'CODGEO']]
 print "il y a  %d iris différentes pour le sport et %d features" % (len(sport.CODGEO.unique()), len(features) - 1)
 
@@ -88,8 +94,7 @@ enseignement_sup['nb_enseignement_sup'] =  enseignement_sup[['NB_C401', 'NB_C402
                                                             'NB_C409', 'NB_C501', 'NB_C502', 
                                                             'NB_C503', 'NB_C504', 'NB_C509', 
                                                             'NB_C601', 'NB_C602', 'NB_C603', 
-                                                            'NB_C604', 'NB_C605', 'NB_C609', 
-                                                            'NB_C701', 'NB_C702']].applymap(lambda x: float(x)).sum(axis=1)
+                                                            'NB_C604', 'NB_C605', 'NB_C609']].applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_enseignement_sup', 'CODGEO']]
 print "il y a  %d iris différentes pour l'enseignement du supérieur et %d features" % (len(enseignement_sup.CODGEO.unique()), len(features) - 1)
 
@@ -247,9 +252,92 @@ print "il y a  %d iris différentes pour le transport touristique et %d features
 data = pd.merge(data, transport_tourisme[features], on='CODGEO', how='outer')
 
 
+## Logement
+logement = pd.read_excel('data/base-ic-logement-2011.xls', sheetname='IRIS')
+# creating header from file
+header = logement.loc[4].tolist()
+logement.columns = header
+logement.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+logement = logement[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','REG','DEP','UU2010','COM','LIBCOM','TRIRIS',
+                                           'GRD_QUART','LIBIRIS','TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']]
+features.append('CODGEO')
+print "il y a  %d iris différentes pour le logement et %d features" % (len(logement.CODGEO.unique()), len(features) - 1)
+
+data = pd.merge(data, logement[features], on='CODGEO', how='outer')
+
+
+## Diplome
+diplome = pd.read_excel('data/base-ic-diplomes-formation-2011.xls', sheetname='IRIS')
+# creating header from file
+header = diplome.loc[4].tolist()
+diplome.columns = header
+diplome.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+diplome = diplome[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','REG','DEP','UU2010','COM','LIBCOM','TRIRIS',
+                                           'GRD_QUART','LIBIRIS','TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']]
+features.append('CODGEO')
+print "il y a  %d iris différentes pour les diplomes et %d features" % (len(diplome.CODGEO.unique()), len(features) - 1)
+
+data = pd.merge(data, diplome[features], on='CODGEO', how='outer')
+
+
+## Famille
+famille = pd.read_excel('data/base-ic-couples-familles-menages-2011.xls', sheetname='IRIS')
+# creating header from file
+header = famille.loc[4].tolist()
+famille.columns = header
+famille.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+famille = famille[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','REG','DEP','UU2010','COM','LIBCOM','TRIRIS',
+                                           'GRD_QUART','LIBIRIS','TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']]
+features.append('CODGEO')
+print "il y a  %d iris différentes pour les familles et %d features" % (len(famille.CODGEO.unique()), len(features) - 1)
+
+data = pd.merge(data, famille[features], on='CODGEO', how='outer')
+
+
+## Population
+population = pd.read_excel('data/base-ic-evol-struct-pop-2011.xls', sheetname='IRIS')
+# creating header from file
+header = population.loc[4].tolist()
+population.columns = header
+population.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+population = population[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','REG','DEP','UU2010','COM','LIBCOM','TRIRIS',
+                                           'GRD_QUART','LIBIRIS','TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']]
+features.append('CODGEO')
+print "il y a  %d iris différentes pour le population et %d features" % (len(population.CODGEO.unique()), len(features) - 1)
+data = pd.merge(data, population[features], on='CODGEO', how='outer')
+
+
+## Activité
+activite = pd.read_excel('data/base-ic-activite-residents-2011.xls', sheetname='IRIS')
+# creating header from file
+header = activite.loc[4].tolist()
+activite.columns = header
+activite.rename(columns={'IRIS':'CODGEO'}, inplace=True)
+# to get real values
+activite = activite[5:]
+# creating new feature : sum of all feature
+features = [x for x in header if x not in ['IRIS','REG','DEP','UU2010','COM','LIBCOM','TRIRIS',
+                                           'GRD_QUART','LIBIRIS','TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']]
+features.append('CODGEO')
+print "il y a  %d iris différentes pour l'activité et %d features" % (len(activite.CODGEO.unique()), len(features) - 1)
+data = pd.merge(data, activite[features], on='CODGEO', how='outer')
+
+
 # Extract 
 print "Extracting file in /data/output.csv"
-data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
+#data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
 
 
 
