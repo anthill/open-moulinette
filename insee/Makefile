@@ -39,6 +39,22 @@ download:
 	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=equip-tour-transp
 	@wget -O data/equip-tour-transp-infra-13.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/equip-tour-transp/equip-tour-transp-infra-13.zip
 	@unzip data/equip-tour-transp-infra-13.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-logement-11
+	@wget -O data/infra-logement-2011.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2011/infracommunal/infra-logement-11/infra-logement-2011.zip
+	@unzip data/infra-logement-2011.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-formation-11
+	@wget -O data/infra-formation-2011.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2011/infracommunal/infra-formation-11/infra-formation-2011.zip
+	@unzip data/infra-formation-2011.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-famille-11
+	@wget -O data/infra-famille-2011.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2011/infracommunal/infra-famille-11/infra-famille-2011.zip
+	@unzip data/infra-famille-2011.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-population-11
+	@wget -O data/infra-population-2011.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2011/infracommunal/infra-population-11/infra-population-2011.zip
+	@unzip data/infra-population-2011.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-activite-resident-11
+	@wget -O data/infra-activite-resident-2011.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2011/infracommunal/infra-activite-resident-11/infra-activite-resident-2011.zip
+	@unzip data/infra-activite-resident-2011.zip -d data/
+	
 
 convert:
 	python mk_data.py
