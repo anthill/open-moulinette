@@ -282,7 +282,7 @@ Le revenu fiscal par ménage correspond à l'ensemble des revenus déclarés par
 
 Le revenu fiscal par personne est le revenu du ménage rapporté au nombre de personnes qui le composent. Le nombre de personnes du ménage fiscal est obtenu par cumul des personnes inscrites sur les déclarations de revenus qui le composent. On adopte le terme de personne et non celui d'habitant pour marquer le fait que toute personne rattachée fiscalement à un ménage ne vit pas forcément au sein de celui-ci : elle peut habiter ailleurs, cas fréquent chez les étudiants (rattachés fiscalement à leurs parents tout en occupant un logement indépendant).
 
- - NBPERS11 : **Nb de ménages fiscaux**
+ - NBPERS11 : **Nb de personnes des ménages fiscaux**
  - RFPQ111 : **1er quartile (€)**
  - RFPQ211 : **Médiane (€)**
  - RFPQ311 : **3ème quartile (€)**
