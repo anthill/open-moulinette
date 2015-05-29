@@ -1,10 +1,8 @@
 # Documentation
 
-Insee Open-moulinette is an open data cleaner who concatene each Insee's files in one csv. Beacause Insee's files are often in xls format and not easy to reuse. Actualy we have more than 650 features, but they are not friendly-user :
+Insee's files are often in xls format and not easy to reuse (with different pages, header lines etc). This script aggregates the 650 indicators available for each Iris in one single clean file.
 
-`NB_B314` is the number of gas station by iris.
-
-**The propose of this document is to enumerate each feature and explain it. Decription is in French as all the data concerne French's city.**
+In the `output.csv` the column names are like `NB_B314`  (which is the number of gas station by iris) so **this document enumerates each column and explains it**. Decription is in French as all the data concerne French's city.
 
 
 ## List of file :
