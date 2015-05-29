@@ -154,7 +154,8 @@ Ne comprend plus la vente d'instruments de musique ou de disques, bandes et cass
  - NB_F301 : **Cinéma**. Projection en salle de cinéma, en plein air ou autres. Implantations physiques, qu'il y ait une seule salle de projection ou plusieurs au sein d'un complexe. Il n'y a ni le nombre de salles présentes, ni leur nombre de places offertes.
  - NB_F302 : **Théâtre**. Ensemble des lieux gérés par le Centre National du Théâtre où une représentation de théâtre peut se tenir. Ces lieux peuvent être labellisés (théâtres nationaux et privés, scènes nationales et conventionnées, compagnies avec lieux d’accueil, compagnies dramatiques nationales et régionales, pôles cirque, centres chorégraphiques) ou non. 
  - NB_F302_NB_SALLES : **Théâtre - nombre de salles**
- - nb_sport : Somme de l'ensemble des indicateurs non détaillés : uniquement les **NB_F..**  (cf ci-dessous)
+ - nb_sport : Somme de l'ensemble des indicateurs non détaillés : uniquement les **NB_F1.**  (cf ci-dessous)
+ - nb_nb_airjeu_sport : Somme de l'ensemble des indicateurs air de jeux : uniquement les **NB_F1.._NB_AIREJEU**
 
 
 **Note :** Pour chacune des installations sportives, on dispose de plusieurs informations : 
