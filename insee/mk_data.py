@@ -94,8 +94,7 @@ enseignement_sup['nb_enseignement_sup'] =  enseignement_sup[['NB_C401', 'NB_C402
                                                             'NB_C409', 'NB_C501', 'NB_C502', 
                                                             'NB_C503', 'NB_C504', 'NB_C509', 
                                                             'NB_C601', 'NB_C602', 'NB_C603', 
-                                                            'NB_C604', 'NB_C605', 'NB_C609', 
-                                                            'NB_C701', 'NB_C702']].applymap(lambda x: float(x)).sum(axis=1)
+                                                            'NB_C604', 'NB_C605', 'NB_C609']].applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_enseignement_sup', 'CODGEO']]
 print "il y a  %d iris différentes pour l'enseignement du supérieur et %d features" % (len(enseignement_sup.CODGEO.unique()), len(features) - 1)
 
