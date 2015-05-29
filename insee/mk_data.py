@@ -337,7 +337,7 @@ data = pd.merge(data, activite[features], on='CODGEO', how='outer')
 
 # Extract 
 print "Extracting file in /data/output.csv"
-#data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
+data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
 
 
 
