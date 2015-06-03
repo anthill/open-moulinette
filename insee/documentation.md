@@ -247,7 +247,7 @@ Appartenance à un réseau d’éducation prioritaire (définition Éducation na
  - NB_C609 : **Autre formation continue**. Etablissements de formation continue autres : regroupe les centres d'enseignement à distance (CNED et ses centres d'enseignement, centres privés soumis à déclaration), les établissements de formation continue hors Education nationale ou hors agriculture.
  - NB_C701 : **Résidence universitaire**. L'insse ne fournit pas la différence entre NB_C701 et NB_C702, mais en regardant les chiffres on peux constater des différences.
  - NB_C702 : **Restaurant universitaire**.
- - nb_enseignement_sup : Somme de l'ensemble des indicateurs non détaillés (NB_C605_NB_INT est exclu).
+ - nb_enseignement_sup : Somme de l'ensemble des indicateurs non détaillés (NB_C605_NB_INT, NB_C701, NB_C702 sont exclus).
 
 ##Indicateurs de structure et de distribution des revenus
 
@@ -282,7 +282,7 @@ Le revenu fiscal par ménage correspond à l'ensemble des revenus déclarés par
 
 Le revenu fiscal par personne est le revenu du ménage rapporté au nombre de personnes qui le composent. Le nombre de personnes du ménage fiscal est obtenu par cumul des personnes inscrites sur les déclarations de revenus qui le composent. On adopte le terme de personne et non celui d'habitant pour marquer le fait que toute personne rattachée fiscalement à un ménage ne vit pas forcément au sein de celui-ci : elle peut habiter ailleurs, cas fréquent chez les étudiants (rattachés fiscalement à leurs parents tout en occupant un logement indépendant).
 
- - NBPERS11 : **Nb de ménages fiscaux**
+ - NBPERS11 : **Nb de personnes des ménages fiscaux**
  - RFPQ111 : **1er quartile (€)**
  - RFPQ211 : **Médiane (€)**
  - RFPQ311 : **3ème quartile (€)**
