@@ -1,0 +1,11 @@
+#How to use it :
+# pip install -r requirements.txt
+
+# pandas
+pandas==0.16.2
+
+# nominatim
+nominatim==0.1
+
+# argparse
+argparse == 1.1
