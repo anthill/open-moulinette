@@ -1,6 +1,6 @@
 ## Weather forecast
 
-This script give you the weather forecast on a city (4 days forecast) using prevision-meteo.ch. Only for Switzerland, France and Belgium.
+This script give you the weather forecast every hour on a city (4 days forecast) using prevision-meteo.ch. Only for Switzerland, France and Belgium.
 
 ## Dependency
 
