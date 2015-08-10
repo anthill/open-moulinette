@@ -20,7 +20,7 @@ parser.add_argument('-l','--location',
                     type=str, required=True)
 parser.add_argument('-f','--format', 
                     help="type of output you want. 'json' and 'csv' are alowed (default: 'csv')", 
-                    type=str, required=True, default="csv")
+                    type=str, default="csv")
 parser.add_argument('-p', '--path', default="./",
                     help="You can indicate the path. Example : '../../my_meteo.json').(default: will be the localisation in the directory)",
                     type=str)
