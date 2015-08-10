@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 There are some arguments:
 
-- ```--location``` or ```-l``` : City where you want the weather [required]
+- ```--location``` or ```-l``` : City where you want the weather **[required]**
 - ```--format``` or ```-f```: JSON or CSV (default: csv)
 - ```--path``` or ```-p```: Output path (default: current directory)
 
