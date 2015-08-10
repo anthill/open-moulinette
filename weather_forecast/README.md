@@ -22,7 +22,7 @@ Try to be explicit for the location, you can add postal code and / or country.
 
 Example :
 
-```python  weather_forecast.py -l "Bordeaux 33000" -f "json" -p "../data/my_weather.csv"```
+```python  weather_forecast.py -l "Bordeaux 33000" -f "json" -p "../data/my_weather.json"```
 
 or 
 
