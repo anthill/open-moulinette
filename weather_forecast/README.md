@@ -16,21 +16,21 @@ There are some arguments:
 
 - ```--location``` or ```-l``` : City where you want the weather [required]
 - ```--format``` or ```-f```: JSON or CSV (default: csv)
-- ```--path``` or ```-p```: output path (default: current directory)
+- ```--path``` or ```-p```: Output path (default: current directory)
 
-Try to be explicit for the location, you can add Postal code or country.
+Try to be explicit for the location, you can add postal code and / or country.
 
 Example :
 
-```python get_weather.py -l "bordeaux 33000" -f "json" -p "../data/my_weather.csv"```
+```python  weather_forecast.py -l "Bordeaux 33000" -f "json" -p "../data/my_weather.csv"```
 
 or 
 
-```python get_weather.py -l "bordeaux 33000"```
+```python weather_forecast.py -l "Bordeaux 33000"```
 
 will give you bordeaux_33000.csv.
 
-## Property 
+## Properties 
 
 - date : 2015-08-12 09:00:00
 - date_day : 2015-08-12
