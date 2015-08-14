@@ -18,11 +18,9 @@ In the terminal
 python weather_forecast.py -l "Bordeaux 33000"
 ```
 
-Create file in the current directory
+will create in the current directory : ```bordeaux_33000.csv```
 
-```
-bordeaux_33000.csv
-```
+
 
 Python :
 
