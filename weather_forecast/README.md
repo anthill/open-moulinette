@@ -40,7 +40,7 @@ weather[['temperature', 'relative_humidity', 'precipitation', 'speed_wind']].plo
 
 ## Usage
 
-There are some arguments:
+There are 3 arguments:
 
 - ```--location``` or ```-l``` : City where you want the weather **[required]**
 - ```--format``` or ```-f```: JSON or CSV (default: csv)
