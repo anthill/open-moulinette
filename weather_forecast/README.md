@@ -1,6 +1,6 @@
 ## Weather forecast
 
-This script gives you the weather forecast every hour on a city (4 days forecast) using prevision-meteo.ch. Only for Switzerland, France and Belgium.
+This script gives you the weather forecast every hour on a city (4 days forecast) using [prevision-meteo.ch](http://www.prevision-meteo.ch/) . Only for Switzerland, France and Belgium.
 
 ## Dependency
 
@@ -22,16 +22,19 @@ will create in the current directory : ```bordeaux_33000.csv```
 
 
 
-Python :
+In Python
 
 ```
 import pandas as pd
 
 weather = pd.read_csv("bordeaux_33000.csv", parse_dates=['date'], index_col='date')
 weather.shape # (120, 25)
+
 weather[['temperature', 'relative_humidity', 'precipitation', 'speed_wind']].plot()
 ```
 
+
+![Alt text](https://cloud.githubusercontent.com/assets/8374843/9269341/db518444-4268-11e5-8dc4-de2e185679a8.png "Optional title")
 
 
 
@@ -49,11 +52,7 @@ Example :
 
 ```python weather_forecast.py -l "Bordeaux 33000" -f "json" -p "../data/my_weather.json"```
 
-or 
-
-```python weather_forecast.py -l "Bordeaux 33000"```
-
-will give you ```bordeaux_33000.csv.```
+will give you a json file in ```../data/my_weather.json```
 
 ## Properties 
 
