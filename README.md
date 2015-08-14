@@ -13,3 +13,6 @@ Don't hesitate to contribute.
 - **insee-iris** converts all the Insee IRIS shapefiles encoded in Lambert 93 into a single geojson file encoded with longitude/latitude.
 
 - **insee** will download all the datasets of the INSEE at the iris level and cleanly aggregate them in on single csv file.
+
+- **weather_forecast** to have four days of weather prediction (only for Switzerland, France and Belgium) asked for a city.
+
