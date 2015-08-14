@@ -26,8 +26,9 @@ Python :
 
 ```
 import pandas as pd
-weather.shape # (120, 25)
+
 weather = pd.read_csv("bordeaux_33000.csv", parse_dates=['date'], index_col='date')
+weather.shape # (120, 25)
 weather[['temperature', 'relative_humidity', 'precipitation', 'speed_wind']].plot()
 ```
 
