@@ -2,6 +2,12 @@
 
 This script will dowload and convert Insee's datafile concerning IRIS zones in France and create a single json.
 
+## Prerequisites
+
+You need to have `wget` and `p7zip` installed. On mac:
+```
+brew install wget p7zip
+```
 
 ## Usage
 
