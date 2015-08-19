@@ -8,6 +8,9 @@ For some files, we add a feature `nb_name_of_feature` which is an aggregate of a
 
 - Python
 - Pandas
+- xlrd
+
+You can install the dependencies with `pip install pandas xlrd`.
 
 ## Usage
 
