@@ -9,7 +9,8 @@ module.exports = function(client){
 
                 "iris": {
                     properties : {
-                        "geometry":     {"type" : "geo_point",  "store" : true }
+                        "geometry":     {"type" : "geo_shape",  "store" : true },
+                        "center":     {"type" : "geo_point",  "store" : true }
                     }
                 }
             }

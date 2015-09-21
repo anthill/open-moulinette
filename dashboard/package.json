@@ -19,6 +19,7 @@
   "dependencies": {
     "csv-parser": "^1.7.0",
     "elasticsearch": "^8.2.0",
-    "through": "^2.3.8"
+    "through": "^2.3.8",
+    "turf": "^2.0.2"
   }
 }

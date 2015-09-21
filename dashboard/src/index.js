@@ -3,6 +3,7 @@
 var fs = require('fs');
 var csv = require('csv-parser');
 var through = require('through');
+var turf = require('turf');
 
 var connectEs = require('./connectEs.js');
 var saveEntry = require('./saveEntry.js');
@@ -13,7 +14,7 @@ var createindexmapping = require('./createindexmapping.js');
 var iris = require("../../insee-iris/data/iris.json");
 var irisMap = new Map();
 iris.features.forEach(feature => {
-    irisMap.set(feature.properties.DEPCOM, feature.geometry);
+    irisMap.set(feature.properties.DEPCOM, feature);
 })
 
 connectEs()
@@ -31,7 +32,10 @@ connectEs()
 
                 if(irisMap.get(row.COM)) {
                     
-                    row["geometry"] = irisMap.get(row.COM);
+                    row["geometry"] = irisMap.get(row.COM).geometry;
+                    var center = turf.centroid(irisMap.get(row.COM));
+
+                    row["center"] = center.geometry.coordinates;
 
                     saveEntry(client, {body: row})
                     .catch(function(err){
