@@ -64,7 +64,7 @@ connectEs()
                     stream.pause();
                     saveEntry(client, batch)
                     .then(() => {
-                        console.log("batch saved");
+                        console.log(batch.length, " entries saved");
                         batch = [];
                         stream.resume();
                     })
