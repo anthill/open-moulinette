@@ -10,6 +10,14 @@ var saveEntry = require('./saveEntry.js');
 var deleteIndex = require('./deleteIndex.js');
 var createindexmapping = require('./createindexmapping.js');
 
+
+var toKeep = {
+    "NB_F102_NB_AIREJEU": "boulodromes",
+    "NB_G103": "campings",
+    "NB_D306": "alcoolisme",
+    "NB_B101": "hypermarches"
+}
+
 // load all iris geometry and create a map
 var iris = require("../../insee-iris/data/iris.json");
 var irisMap = new Map();
@@ -18,7 +26,6 @@ iris.features.forEach(feature => {
 })
 
 var batch = [];
-var nbEntries = 0;
 
 connectEs()
 .then(function(client){
@@ -31,25 +38,35 @@ connectEs()
             // steam through the csv and load to ES
             fs.createReadStream("../../insee/data/output.csv")
             .pipe(csv({separator: ';'}))
-            .pipe(through(row => {
+            .pipe(through(function toEs(row) {
+
+                var stream = this;
 
                 if(irisMap.get(row.COM)) {
-                    
-                    row["geometry"] = irisMap.get(row.COM).geometry;
+
                     var center = turf.centroid(irisMap.get(row.COM));
 
-                    row["center"] = center.geometry.coordinates;
+                    var data = {
+                        geometry: irisMap.get(row.COM).geometry,
+                        center: center.geometry.coordinates
+                    }
+
+                    Object.keys(toKeep).map(label => {
+                        data[toKeep[label]] = row[label];
+                    })                    
+                    
                     batch.push({index: {_index: 'iris', _type: 'iris'}});
-                    batch.push(row)
-                    nbEntries++;
+                    batch.push(data)
 
                 } 
 
-                if (nbEntries % 1000) {
+                if (batch.length === 1000) {
+                    stream.pause();
                     saveEntry(client, batch)
                     .then(() => {
-                        console.log("batch saved");
+                        console.log(batch.length, " entries saved");
                         batch = [];
+                        stream.resume();
                     })
                     .catch(function(err){
                         console.error('Es store error', err);
