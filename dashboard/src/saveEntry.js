@@ -3,12 +3,7 @@
 module.exports = function(client, data){
     return new Promise(function(resolve, reject){
 
-        client.index(
-            {
-                index: 'iris',
-                type: 'iris',
-                body: data.body
-            }
+        client.bulk({body: data}
             , function (error) {
                 if (error) {
                     reject(error);

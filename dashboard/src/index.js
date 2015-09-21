@@ -17,6 +17,9 @@ iris.features.forEach(feature => {
     irisMap.set(feature.properties.DEPCOM, feature);
 })
 
+var batch = [];
+var nbEntries = 0;
+
 connectEs()
 .then(function(client){
     deleteIndex(client)
@@ -36,12 +39,22 @@ connectEs()
                     var center = turf.centroid(irisMap.get(row.COM));
 
                     row["center"] = center.geometry.coordinates;
+                    batch.push({index: {_index: 'iris', _type: 'iris'}});
+                    batch.push(row)
+                    nbEntries++;
 
-                    saveEntry(client, {body: row})
+                } 
+
+                if (nbEntries % 1000) {
+                    saveEntry(client, batch)
+                    .then(() => {
+                        console.log("batch saved");
+                        batch = [];
+                    })
                     .catch(function(err){
                         console.error('Es store error', err);
                     });
-                } 
+                }
 
             }))
             .on('close', function(){
