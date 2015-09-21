@@ -1,0 +1,25 @@
+loader:
+   build: .
+   command: npm run dev
+   links:
+      - elasticsearch
+   environment:
+      - ELASTICSEARCH_HOST=elasticsearch
+   volumes:
+      - dashboard:/dashboard
+      - data/:/data
+
+elasticsearch:
+   image: elasticsearch
+   environment:
+      - ELASTICSEARCH_USER=dashboard
+      - ELASTICSEARCH_PASS=dashboard
+   ports:
+      - "9200:9200"
+
+kibana:
+   image: kibana
+   ports:
+      - "5601:5601"
+   links:
+      - elasticsearch
