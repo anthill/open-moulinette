@@ -18,4 +18,4 @@ Don't hesitate to contribute.
 
 ## Dashboard
 
-We made a workshop to show haw we can visualise and query these dataset with elastic search and kibana.
+We made a workshop to show how we can visualize and query these datasets with elastic search and kibana.
