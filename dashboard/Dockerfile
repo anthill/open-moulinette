@@ -27,8 +27,11 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     /bin/bash /Anaconda-2.3.0-Linux-x86_64.sh -b -p /opt/conda && \
     rm /Anaconda-2.3.0-Linux-x86_64.sh && \
     /opt/conda/bin/conda install --yes conda==3.14.1
+RUN mkdir -p ~/.config/fish/
+RUN touch ~/.config/fish/config.fish
 RUN echo "set -gx PATH /opt/conda/bin $PATH" >  ~/.config/fish/config.fish
 
 
 CMD su root
 
+WORKDIR /open-moulinette/dashboard/src

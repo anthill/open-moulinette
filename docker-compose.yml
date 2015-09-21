@@ -1,13 +1,12 @@
 loader:
-   build: .
-   command: npm run dev
+   build: dashboard
+   command: node index.js
    links:
       - elasticsearch
    environment:
       - ELASTICSEARCH_HOST=elasticsearch
    volumes:
-      - dashboard:/dashboard
-      - data/:/data
+      - ./:/open-moulinette
 
 elasticsearch:
    image: elasticsearch
