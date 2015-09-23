@@ -15,6 +15,7 @@ elasticsearch:
       - ELASTICSEARCH_PASS=dashboard
    ports:
       - "9200:9200"
+   log_driver: "none" 
 
 kibana:
    image: kibana
@@ -22,3 +23,4 @@ kibana:
       - "5601:5601"
    links:
       - elasticsearch
+   log_driver: "none" 

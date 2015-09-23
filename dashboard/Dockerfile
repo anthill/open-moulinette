@@ -13,8 +13,6 @@ RUN apt-get update && apt-get install -y \
     fish \
     build-essential
 
-RUN chsh -s `which fish`
-
 # install nodejs 4.1
 RUN curl --silent --location https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get install -y nodejs
@@ -27,11 +25,15 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     /bin/bash /Anaconda-2.3.0-Linux-x86_64.sh -b -p /opt/conda && \
     rm /Anaconda-2.3.0-Linux-x86_64.sh && \
     /opt/conda/bin/conda install --yes conda==3.14.1
-RUN mkdir -p ~/.config/fish/
-RUN touch ~/.config/fish/config.fish
-RUN echo "set -gx PATH /opt/conda/bin $PATH" >  ~/.config/fish/config.fish
+ENV PATH /opt/conda/bin:$PATH
+
+# setup the shell
+# RUN chsh -s `which fish`
+# RUN mkdir -p ~/.config/fish/
+# RUN touch ~/.config/fish/config.fish
+# # RUN echo "set -gx PATH /opt/conda/bin $PATH" >  ~/.config/fish/config.fish
+# CMD su root 
 
 
-CMD su root
 
 WORKDIR /open-moulinette/dashboard/src
