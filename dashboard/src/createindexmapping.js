@@ -10,9 +10,9 @@ module.exports = function(client){
                 "iris": {
                     properties : {
                         "boulodromes": {"type" : "float",     "store" : true },
-                        "campings": {"type" : "float",    "store" : true },
-                        "alcoolisme": {"type" : "float",    "store" : true },
-                        "hypermarches": {"type" : "float",    "store" : true },
+                        "skate": {"type" : "float",    "store" : true },
+                        "golf": {"type" : "float",    "store" : true },
+                        "departement": {"type" : "string",    "store" : true, "index": "not_analyzed"},
                         "geometry": {"type" : "geo_shape", "store" : true },
                         "center": {"type" : "geo_point", "store" : true }
                     }

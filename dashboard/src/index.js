@@ -13,9 +13,9 @@ var createindexmapping = require('./createindexmapping.js');
 
 var toKeep = {
     "NB_F102_NB_AIREJEU": "boulodromes",
-    "NB_G103": "campings",
-    "NB_D306": "alcoolisme",
-    "NB_B101": "hypermarches"
+    "NB_F117_NB_AIREJEU": "skate",
+    "NB_F108_NB_AIREJEU": "golf",
+    "DEP": "departement"
 }
 
 // load all iris geometry and create a map
@@ -75,7 +75,11 @@ connectEs()
 
             }))
             .on('close', function(){
-                console.log("Finished loading in ES.")
+                console.log("Finished loading in ES.");
+                // to prevent the container from exiting which make all other exit.
+                setTimeout(function(){
+                    console.log("Enough playing.")
+                }, 100000000)
             })
 
         })
