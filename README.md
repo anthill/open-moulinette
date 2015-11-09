@@ -16,6 +16,8 @@ Don't hesitate to contribute.
 
 - **weather_forecast** to have four days of weather prediction (only for Switzerland, France and Belgium) asked for a city.
 
+- **caf** will download all the datasets from caf open-data at the city level and cleanly aggregate them in on single csv file. 
+
 ## Dashboard
 
 We made a workshop to show how we can visualize and query these datasets with elastic search and kibana.
