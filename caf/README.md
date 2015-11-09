@@ -3,7 +3,7 @@
 
 This script dowload and concatenate all the features from [CAF open-data](http://data.caf.fr/site/) files in one clean csv (more than 550 actually) at city level.
 
-For a better reuse, we had geo-shape (Polygon of all city).
+For a better reuse, we add geo spatial and city's features.
 
 Documentation are coming...
 
