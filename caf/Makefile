@@ -133,22 +133,22 @@ download_commune:
 
 
 data_commune:
-	python DependancePrestaCom.py
-	python BasrevnuCom.py
-	python NivComTotal.py
-	python ConfigFamiliale.py
-	python TrancheAge.py
-	python LOGCom.py
-	python PajeCom.py
-	python RsaPersCom.py
-	python AAHCom.py
-	python EnfantAgeCom.py
-	python EnfantAEEH.py
-	python RSACom.py
-	python EJCom.py
-	python LogPersPrestaCom.py
-	python EnfantARS.py
+	python scripts/DependancePrestaCom.py
+	python scripts/BasrevnuCom.py
+	python scripts/NivComTotal.py
+	python scripts/ConfigFamiliale.py
+	python scripts/TrancheAge.py
+	python scripts/LOGCom.py
+	python scripts/PajeCom.py
+	python scripts/RsaPersCom.py
+	python scripts/AAHCom.py
+	python scripts/EnfantAgeCom.py
+	python scripts/EnfantAEEH.py
+	python scripts/RSACom.py
+	python scripts/EJCom.py
+	python scripts/LogPersPrestaCom.py
+	python scripts/EnfantARS.py
 
 merging:
 	@wget -O source/commune_insee.csv  "http://public.opendatasoft.com/explore/dataset/correspondance-code-insee-code-postal/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true"
-	python Merging.py
+	python scripts/Merging.py

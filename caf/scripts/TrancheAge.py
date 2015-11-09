@@ -9,7 +9,6 @@ import pandas as pd
 import glob
 
 df = pd.read_csv('source/TrancheAge2009.csv', sep=";")
-origin_count = df.shape[0]
 
 df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009', 
               'ALL0A19_2009', 'ALL20A24_2009', 'ALL25A29_2009', 'ALL30A39_2009',
@@ -43,14 +42,6 @@ for col in df.columns:
     else:
         list_col.append(col)
 df.columns = list_col
-
-final_count = df.shape[0]
-
-if (origin_count == final_count):
-    print "File TrancheAge is OK"
-else:
-    print "Hey we lost some lines in TrancheAge"
-
 
 df.to_csv('data/full_TrancheAge.csv', encoding='utf-8', index=False)
 

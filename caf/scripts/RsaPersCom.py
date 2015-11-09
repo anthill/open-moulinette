@@ -9,7 +9,6 @@ import pandas as pd
 import glob
 
 df = pd.read_csv('source/RsaPersCom2009.csv', sep=";")
-origin_count = df.shape[0]
 
 df.columns = ['Communes', 'Codes_Insee', 'NB_Pers_par_Foyer_Alloc_2009', 
               'NB_Pers_couv_RSA_2009', 'RSA_SOCLE_non_Majore_Pers_couv_2009',
@@ -43,14 +42,6 @@ for col in df.columns:
     else:
         list_col.append(col)
 df.columns = list_col
-
-final_count = df.shape[0]
-
-if (origin_count == final_count):
-    print "File RsaPersCom is OK"
-else:
-    print "Hey we lost some lines in RsaPersCom"
-
 
 df.to_csv('data/full_RsaPersCom.csv', encoding='utf-8', index=False)
 
