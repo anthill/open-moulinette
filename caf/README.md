@@ -1,12 +1,17 @@
-## Hackathon des allocs
+## Caf
 
-- Le [wiki](https://wiki-agd.data.gouv.fr/index.php/L%27Hackathon_des_allocs)
-- [Document](https://bimestriel.framapad.org/p/Hackathon_Allocs) collaboratif
-- [Portail](http://data.caf.fr/site/) de la CAF
 
-## City's Files :
+This script dowload and concatenate all the features from [CAF open-data](http://data.caf.fr/site/) files in one clean csv (more than 550 actually).
 
-[Liste](https://gist.github.com/armgilles/e1205984462fc6120ce3)
+Documentation are coming...
+
+## Dependency
+
+- Python
+- Pandas
+- glob
+- pyprind
+
 
 ## Getting started
 
@@ -14,7 +19,18 @@
 Make
 ```
 
+- Install Dependency
 - Download commune's files
 - Run script
+- Merging process
+
+## Reuse
+
+```
+import pandas as pd
+data = pd.read_csv('data/caf_data.csv')
+```
+
+
 
 
