@@ -1,0 +1,26 @@
+loader:
+   build: dashboard
+   command: node index.js
+   links:
+      - elasticsearch
+   environment:
+      - ELASTICSEARCH_HOST=elasticsearch
+   volumes:
+      - ./:/open-moulinette
+
+elasticsearch:
+   image: elasticsearch
+   environment:
+      - ELASTICSEARCH_USER=dashboard
+      - ELASTICSEARCH_PASS=dashboard
+   ports:
+      - "9200:9200"
+   log_driver: "none" 
+
+kibana:
+   image: kibana
+   ports:
+      - "5601:5601"
+   links:
+      - elasticsearch
+   log_driver: "none" 

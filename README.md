@@ -16,3 +16,6 @@ Don't hesitate to contribute.
 
 - **weather_forecast** to have four days of weather prediction (only for Switzerland, France and Belgium) asked for a city.
 
+## Dashboard
+
+We made a workshop to show how we can visualize and query these datasets with elastic search and kibana.

@@ -1,6 +1,6 @@
 ## Weather forecast
 
-This script give you the weather forecast every hour on a city (4 days forecast) using prevision-meteo.ch. Only for Switzerland, France and Belgium.
+This script gives you the weather forecast every hour on a city (4 days forecast) using [prevision-meteo.ch](http://www.prevision-meteo.ch/) . Only for Switzerland, France and Belgium.
 
 ## Dependency
 
@@ -10,9 +10,37 @@ You just have to
 pip install -r requirements.txt
 ```
 
+## Getting started
+
+In the terminal
+
+```
+python weather_forecast.py -l "Bordeaux 33000"
+```
+
+will create in the current directory : ```bordeaux_33000.csv```
+
+
+
+In Python
+
+```
+import pandas as pd
+
+weather = pd.read_csv("bordeaux_33000.csv", parse_dates=['date'], index_col='date')
+weather.shape # (120, 25)
+
+weather[['temperature', 'relative_humidity', 'precipitation', 'speed_wind']].plot()
+```
+
+
+![Alt text](https://cloud.githubusercontent.com/assets/8374843/9269341/db518444-4268-11e5-8dc4-de2e185679a8.png "Optional title")
+
+
+
 ## Usage
 
-There are some arguments:
+There are 3 arguments:
 
 - ```--location``` or ```-l``` : City where you want the weather **[required]**
 - ```--format``` or ```-f```: JSON or CSV (default: csv)
@@ -22,13 +50,9 @@ Try to be explicit for the location, you can add postal code and / or country.
 
 Example :
 
-```python  weather_forecast.py -l "Bordeaux 33000" -f "json" -p "../data/my_weather.json"```
+```python weather_forecast.py -l "Bordeaux 33000" -f "json" -p "../data/my_weather.json"```
 
-or 
-
-```python weather_forecast.py -l "Bordeaux 33000"```
-
-will give you bordeaux_33000.csv.
+will give you a json file in ```../data/my_weather.json```
 
 ## Properties 
 
