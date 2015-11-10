@@ -12,7 +12,7 @@ import glob
 df = pd.read_csv('source/NivComTotal2009.csv', sep=";")
 
 df.columns = ['Communes', 'Codes_Insee', 'NB_Pers_par_Foyer_Alloc_2009', 
-              'NB_Enfants_0_2_ans', 'NB_Enfants_3_5_ans', 'NB_Enfants']
+              'NB_Enfants_0_2_ans_2009', 'NB_Enfants_3_5_ans_2009', 'NB_Enfants_2009']
 
 files = glob.glob('source/NivComTotal*')
 
@@ -48,7 +48,7 @@ df.to_csv('data/full_NivComTotal.csv', encoding='utf-8', index=False)
 
 ## Features 
 #u'NB_Pers_par_Foyer_Alloc_2009_NCT',
-#       u'NB_Enfants_0_2_ans_NCT', u'NB_Enfants_3_5_ans_NCT', u'NB_Enfants_NCT',
+#       u'NB_Enfants_0_2_ans_NCT_2009', u'NB_Enfants_3_5_ans_NCT_2009', u'NB_Enfants_NCT_2009',
 #       u'NB_Pers_par_Foyer_Alloc_2010_NCT', u'NB_Enfants_2010_NCT',
 #       u'NB_Pers_par_Foyer_Alloc_2011_NCT', u'NB_Enfants_2011_NCT',
 #       u'NB_Pers_par_Foyer_Alloc_2012_NCT', u'NB_Enfants_2012_NCT',
