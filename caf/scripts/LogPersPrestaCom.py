@@ -59,4 +59,3 @@ df.to_csv('data/full_LogPersPrestaCom.csv', encoding='utf-8', index=False)
 #       u'Pers_Couv_Al_APL_2013', u'NB_Pers_Couv_Al_2014',
 #       u'Pers_Couv_Al_ALF_2014', u'Pers_Couv_Al_ALS_2014',
 #       u'Pers_Couv_Al_APL_2014'
-

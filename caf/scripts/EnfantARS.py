@@ -46,7 +46,7 @@ df.columns = list_col
 df.to_csv('data/full_EnfantARS.csv', encoding='utf-8', index=False)
 
 ## Features 
-#u'NB_enfant_ARS_2009', u'ARS_5A10_2009',
+#NB_enfant_ARS_2009', u'ARS_5A10_2009',
 #       u'ARS_11A14_2009', u'ARS_15A17_2009', u'NB_enfant_ARS_2010',
 #       u'ARS_5A10_2010', u'ARS_11A14_2010', u'ARS_15A17_2010',
 #       u'NB_enfant_ARS_2011', u'ARS_5A10_2011', u'ARS_11A14_2011',

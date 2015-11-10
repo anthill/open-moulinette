@@ -12,35 +12,35 @@ install:
 download_commune:
 	# DependancePrestaCom : http://data.caf.fr/dataset/indicateur-sur-la-part-des-prestations-dans-les-ressources-des-foyers-allocataires-par-commune
 	@wget -O source/DependancePrestaCom2009.csv http://data.caf.fr/dataset/87fd090b-956a-4d57-b8eb-c03b08f22b4c/resource/75189698-90ce-44f7-aa4f-aa4e23161010/download/DependancePrestaCom2009.csv
-	@wget -O source/DependancePrestaCom2010.csv http://data.caf.fr/dataset/87fd090b-956a-4d57-b8eb-c03b08f22b4c/resource/75189698-90ce-44f7-aa4f-aa4e23161010/download/DependancePrestaCom2010.csv
-	@wget -O source/DependancePrestaCom2011.csv http://data.caf.fr/dataset/87fd090b-956a-4d57-b8eb-c03b08f22b4c/resource/75189698-90ce-44f7-aa4f-aa4e23161010/download/DependancePrestaCom2011.csv
-	@wget -O source/DependancePrestaCom2012.csv http://data.caf.fr/dataset/87fd090b-956a-4d57-b8eb-c03b08f22b4c/resource/75189698-90ce-44f7-aa4f-aa4e23161010/download/DependancePrestaCom2012.csv
-	@wget -O source/DependancePrestaCom2013.csv http://data.caf.fr/dataset/87fd090b-956a-4d57-b8eb-c03b08f22b4c/resource/75189698-90ce-44f7-aa4f-aa4e23161010/download/DependancePrestaCom2013.csv
-	@wget -O source/DependancePrestaCom2014.csv http://data.caf.fr/dataset/87fd090b-956a-4d57-b8eb-c03b08f22b4c/resource/75189698-90ce-44f7-aa4f-aa4e23161010/download/DependancePrestaCom2014.csv
+	@wget -O source/DependancePrestaCom2010.csv http://data.caf.fr/dataset/87fd090b-956a-4d57-b8eb-c03b08f22b4c/resource/6a10f992-700b-4b91-992a-5bf8c7fe5eba/download/DependancePrestaCom2010.csv
+	@wget -O source/DependancePrestaCom2011.csv http://data.caf.fr/dataset/87fd090b-956a-4d57-b8eb-c03b08f22b4c/resource/08afcec2-308c-49fd-b549-a3a7256b49c8/download/DependancePrestatCom2011.csv
+	@wget -O source/DependancePrestaCom2012.csv http://data.caf.fr/dataset/87fd090b-956a-4d57-b8eb-c03b08f22b4c/resource/8e08685c-1c2d-47dd-be59-c88447c0f7d5/download/DependancePrestaCom2012.csv
+	@wget -O source/DependancePrestaCom2013.csv http://data.caf.fr/dataset/87fd090b-956a-4d57-b8eb-c03b08f22b4c/resource/cf0c4874-7490-4eab-a3cd-db5c33ff9f72/download/DependanceprestaCom2013.csv
+	@wget -O source/DependancePrestaCom2014.csv http://data.caf.fr/dataset/87fd090b-956a-4d57-b8eb-c03b08f22b4c/resource/f6cd0adb-2cc8-4c2f-8603-235b11c205ac/download/DependancePrestaCom2014.csv
 
 	# BasrevnuCom : http://data.caf.fr/dataset/beneficiaire-bas-revenus
 	@wget -O source/BasrevenuCom2009.csv http://data.caf.fr/dataset/79250fae-53f6-4d7c-91da-218e79bdcb60/resource/c51b0621-9b2a-4031-9859-553b06731ec3/download/BasrevenuCom2009.csv
-	@wget -O source/BasrevenuCom2010.csv http://data.caf.fr/dataset/79250fae-53f6-4d7c-91da-218e79bdcb60/resource/c51b0621-9b2a-4031-9859-553b06731ec3/download/BasrevenuCom2010.csv
-	@wget -O source/BasrevenuCom2011.csv http://data.caf.fr/dataset/79250fae-53f6-4d7c-91da-218e79bdcb60/resource/c51b0621-9b2a-4031-9859-553b06731ec3/download/BasrevenuCom2011.csv
-	@wget -O source/BasrevenuCom2012.csv http://data.caf.fr/dataset/79250fae-53f6-4d7c-91da-218e79bdcb60/resource/c51b0621-9b2a-4031-9859-553b06731ec3/download/BasrevenuCom2012.csv
-	@wget -O source/BasrevenuCom2013.csv http://data.caf.fr/dataset/79250fae-53f6-4d7c-91da-218e79bdcb60/resource/c51b0621-9b2a-4031-9859-553b06731ec3/download/BasrevenuCom2013.csv
-	@wget -O source/BasrevenuCom2014.csv http://data.caf.fr/dataset/79250fae-53f6-4d7c-91da-218e79bdcb60/resource/c51b0621-9b2a-4031-9859-553b06731ec3/download/BasrevenuCom2014.csv
+	@wget -O source/BasrevenuCom2010.csv http://data.caf.fr/dataset/79250fae-53f6-4d7c-91da-218e79bdcb60/resource/4a9e6c6d-0f36-4e1c-897a-e7801a0b35d0/download/BasrevenuCom2010.csv
+	@wget -O source/BasrevenuCom2011.csv http://data.caf.fr/dataset/79250fae-53f6-4d7c-91da-218e79bdcb60/resource/29796950-288c-4d25-b3d5-d365dd14a712/download/BasrevenuCom2011.csv
+	@wget -O source/BasrevenuCom2012.csv http://data.caf.fr/dataset/79250fae-53f6-4d7c-91da-218e79bdcb60/resource/cbb003eb-46da-4ce2-98ad-e617dfef4e2b/download/BasrevenuCom2012.csv
+	@wget -O source/BasrevenuCom2013.csv http://data.caf.fr/dataset/79250fae-53f6-4d7c-91da-218e79bdcb60/resource/c45d1b54-17be-4a80-89a0-5ec832e82599/download/BasrevenuCom2013.csv
+	@wget -O source/BasrevenuCom2014.csv http://data.caf.fr/dataset/79250fae-53f6-4d7c-91da-218e79bdcb60/resource/a2e0ac46-d4ac-42cc-a28c-bd6b067004b0/download/BasrevenuCom2014.csv
 
 	# NIVCOMTOTAL2009 : http://data.caf.fr/dataset/population-des-foyers-allocataires-par-commune
 	@wget -O source/NivComTotal2009.csv http://data.caf.fr/dataset/32cc7f8a-f15a-4372-b862-dcb247b1bfb6/resource/dfc08b49-20fe-4a58-8e3f-96cfa3f02e2c/download/NIVCOMTOTAL2009.csv
-	@wget -O source/NivComTotal2010.csv http://data.caf.fr/dataset/32cc7f8a-f15a-4372-b862-dcb247b1bfb6/resource/dfc08b49-20fe-4a58-8e3f-96cfa3f02e2c/download/NIVCOMTOTAL2010.csv
-	@wget -O source/NivComTotal2011.csv http://data.caf.fr/dataset/32cc7f8a-f15a-4372-b862-dcb247b1bfb6/resource/dfc08b49-20fe-4a58-8e3f-96cfa3f02e2c/download/NIVCOMTOTAL2011.csv
-	@wget -O source/NivComTotal2012.csv http://data.caf.fr/dataset/32cc7f8a-f15a-4372-b862-dcb247b1bfb6/resource/dfc08b49-20fe-4a58-8e3f-96cfa3f02e2c/download/NIVCOMTOTAL2012.csv
-	@wget -O source/NivComTotal2013.csv http://data.caf.fr/dataset/32cc7f8a-f15a-4372-b862-dcb247b1bfb6/resource/dfc08b49-20fe-4a58-8e3f-96cfa3f02e2c/download/NIVCOMTOTAL2013.csv
-	@wget -O source/NivComTotal2014.csv http://data.caf.fr/dataset/32cc7f8a-f15a-4372-b862-dcb247b1bfb6/resource/dfc08b49-20fe-4a58-8e3f-96cfa3f02e2c/download/NIVCOMTOTAL2014.csv
+	@wget -O source/NivComTotal2010.csv http://data.caf.fr/dataset/32cc7f8a-f15a-4372-b862-dcb247b1bfb6/resource/1327c4f0-f417-4513-b908-18e90a543b40/download/NIVCOMTOTAL2010.csv
+	@wget -O source/NivComTotal2011.csv http://data.caf.fr/dataset/32cc7f8a-f15a-4372-b862-dcb247b1bfb6/resource/25a1ee5c-d4c5-4bbf-a3a4-74e107e222a5/download/NIVCOMTOTAL2011.csv
+	@wget -O source/NivComTotal2012.csv http://data.caf.fr/dataset/32cc7f8a-f15a-4372-b862-dcb247b1bfb6/resource/a4e53a7b-c489-44f2-90a0-2e0ca375932b/download/NIVCOMTOTAL2012.csv
+	@wget -O source/NivComTotal2013.csv http://data.caf.fr/dataset/32cc7f8a-f15a-4372-b862-dcb247b1bfb6/resource/0390c41c-6f07-4a34-b9f6-9ecd8c7335d6/download/NIVCOMTOTAL2013.csv
+	@wget -O source/NivComTotal2014.csv http://data.caf.fr/dataset/32cc7f8a-f15a-4372-b862-dcb247b1bfb6/resource/928c52da-21ef-49be-88b6-0835b5fb40ec/download/NIVCOMTOTAL2014.csv
 
 	# ConfigFamiliale : http://data.caf.fr/dataset/repartition-des-foyers-allocataires-selon-le-type-de-famille-par-commune
 	@wget -O source/ConfigFamiliale2009.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/59ea1a6a-a02b-4b3d-bfed-ccf17db2048c/download/configfamiliale2009.csv
-	@wget -O source/ConfigFamiliale2010.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/59ea1a6a-a02b-4b3d-bfed-ccf17db2048c/download/configfamiliale2010.csv
-	@wget -O source/ConfigFamiliale2011.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/59ea1a6a-a02b-4b3d-bfed-ccf17db2048c/download/configfamiliale2011.csv
-	@wget -O source/ConfigFamiliale2012.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/59ea1a6a-a02b-4b3d-bfed-ccf17db2048c/download/configfamiliale2012.csv
-	@wget -O source/ConfigFamiliale2013.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/59ea1a6a-a02b-4b3d-bfed-ccf17db2048c/download/configfamiliale2013.csv
-	@wget -O source/ConfigFamiliale2014.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/59ea1a6a-a02b-4b3d-bfed-ccf17db2048c/download/configfamiliale2014.csv
+	@wget -O source/ConfigFamiliale2010.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/64f6bf65-df32-470d-b35c-c4954336b6de/download/configfamiliale2010.csv
+	@wget -O source/ConfigFamiliale2011.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/97528a0a-658d-48d2-9229-cf5b4f3ad85b/download/configfamiliale2011.csv
+	@wget -O source/ConfigFamiliale2012.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/051439cc-bbd1-4500-bc56-f067bf4a2a00/download/configfamiliale2012.csv
+	@wget -O source/ConfigFamiliale2013.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/e8dfc5a1-1589-4a8b-a006-b77d7ad8d3d2/download/configfamiliale2013.csv
+	@wget -O source/ConfigFamiliale2014.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/12762e3a-f4e1-4b64-8956-7cdedf7e56e8/download/configfamiliale2014.csv
 
 	# TrancheAge : http://data.caf.fr/dataset/denombrement-et-repartition-des-foyers-allocataires-selon-l-age-du-responsable
 	@wget -O source/TrancheAge2009.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/3b326055-b1b5-4aa3-a4d2-18e895cb7e7d/download/trancheage2009.csv

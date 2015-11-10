@@ -24,7 +24,7 @@ for path_file in files:
         # Rename Col with year
         year_col = ['Communes', 'Codes_Insee']
         features_col = []
-        for col in df_temp.columns[-4:]:
+        for col in df_temp.columns[2:]:
             year_col.append(col +"_"+ year)
             features_col.append(col +"_"+ year)
         
@@ -47,16 +47,11 @@ df.columns = list_col
 df.to_csv('data/full_NivComTotal.csv', encoding='utf-8', index=False)
 
 ## Features 
-#[u'NB_Pers_par_Foyer_Alloc_2009_NCT',
-#   u'NB_Enfants_0_2_ans', u'NB_Enfants_3_5_ans', u'NB_Enfants',
-#   u'NB_Pers_par_Foyer_Alloc_2010_NCT', u'NB_Enfants_0_2_ans_2010',
-#   u'NB_Enfants_3_5_ans_2010', u'NB_Enfants_2010',
-#   u'NB_Pers_par_Foyer_Alloc_2011_NCT', u'NB_Enfants_0_2_ans_2011',
-#   u'NB_Enfants_3_5_ans_2011', u'NB_Enfants_2011',
-#   u'NB_Pers_par_Foyer_Alloc_2012_NCT', u'NB_Enfants_0_2_ans_2012',
-#   u'NB_Enfants_3_5_ans_2012', u'NB_Enfants_2012',
-#   u'NB_Pers_par_Foyer_Alloc_2013_NCT', u'NB_Enfants_0_2_ans_2013',
-#   u'NB_Enfants_3_5_ans_2013', u'NB_Enfants_2013',
-#   u'NB_Pers_par_Foyer_Alloc_2014_NCT', u'NB_Enfants_0_2_ans_2014',
-#   u'NB_Enfants_3_5_ans_2014', u'NB_Enfants_2014']
+#u'NB_Pers_par_Foyer_Alloc_2009_NCT',
+#       u'NB_Enfants_0_2_ans_NCT', u'NB_Enfants_3_5_ans_NCT', u'NB_Enfants_NCT',
+#       u'NB_Pers_par_Foyer_Alloc_2010_NCT', u'NB_Enfants_2010_NCT',
+#       u'NB_Pers_par_Foyer_Alloc_2011_NCT', u'NB_Enfants_2011_NCT',
+#       u'NB_Pers_par_Foyer_Alloc_2012_NCT', u'NB_Enfants_2012_NCT',
+#       u'NB_Pers_par_Foyer_Alloc_2013_NCT', u'NB_Enfants_2013_NCT',
+#       u'NB_Pers_par_Foyer_Alloc_2014_NCT', u'NB_Enfants_2014_NCT
 

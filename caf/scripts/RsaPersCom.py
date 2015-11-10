@@ -46,22 +46,22 @@ df.columns = list_col
 df.to_csv('data/full_RsaPersCom.csv', encoding='utf-8', index=False)
 
 ## Features 
-#u'NB_Pers_par_Foyer_Alloc_2009',
+#u'NB_Pers_par_Foyer_Alloc_2009_RPC',
 #       u'NB_Pers_couv_RSA_2009', u'RSA_SOCLE_non_Majore_Pers_couv_2009',
 #       u'RSA_SOCLE_Majore_Pers_couv_2009', u'RSA_activite_Pers_couv_2009',
-#       u'NB_Pers_par_Foyer_Alloc_2010', u'NB_Pers_couv_RSA_2010',
+#       u'NB_Pers_par_Foyer_Alloc_2010_RPC', u'NB_Pers_couv_RSA_2010',
 #       u'RSA_SOCLE_non_Majore_Pers_couv_2010',
 #       u'RSA_SOCLE_Majore_Pers_couv_2010', u'RSA_activite_Pers_couv_2010',
-#       u'NB_Pers_par_Foyer_Alloc_2011', u'NB_Pers_couv_RSA_2011',
+#       u'NB_Pers_par_Foyer_Alloc_2011_RPC', u'NB_Pers_couv_RSA_2011',
 #       u'RSA_SOCLE_non_Majore_Pers_couv_2011',
 #       u'RSA_SOCLE_Majore_Pers_couv_2011', u'RSA_activite_Pers_couv_2011',
-#       u'NB_Pers_par_Foyer_Alloc_2012', u'NB_Pers_couv_RSA_2012',
+#       u'NB_Pers_par_Foyer_Alloc_2012_RPC', u'NB_Pers_couv_RSA_2012',
 #       u'RSA_SOCLE_non_Majore_Pers_couv_2012',
 #       u'RSA_SOCLE_Majore_Pers_couv_2012', u'RSA_activite_Pers_couv_2012',
-#       u'NB_Pers_par_Foyer_Alloc_2013', u'NB_Pers_couv_RSA_2013',
+#       u'NB_Pers_par_Foyer_Alloc_2013_RPC', u'NB_Pers_couv_RSA_2013',
 #       u'RSA_SOCLE_non_Majore_Pers_couv_2013',
 #       u'RSA_SOCLE_Majore_Pers_couv_2013', u'RSA_activite_Pers_couv_2013',
-#       u'NB_Pers_par_Foyer_Alloc_2014', u'NB_Pers_couv_RSA_2014',
+#       u'NB_Pers_par_Foyer_Alloc_2014_RPC', u'NB_Pers_couv_RSA_2014',
 #       u'RSA_SOCLE_non_Majore_Pers_couv_2014',
-#       u'RSA_SOCLE_Majore_Pers_couv_2014', u'RSA_activite_Pers_couv_2014']
+#       u'RSA_SOCLE_Majore_Pers_couv_2014', u'RSA_activite_Pers_couv_2014'
 

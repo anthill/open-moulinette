@@ -46,9 +46,9 @@ df.columns = list_col
 df.to_csv('data/full_AAHCom.csv', encoding='utf-8', index=False)
 
 ## Features 
-# u'NB_Pers_par_Foyer_Alloc_2009',
+# u'NB_Allocataires_2009_AAHC',
 #       u'ALL_AAH_2009', u'NB_Allocataires_2010_AAHC', u'ALL_AAH_2010',
 #       u'NB_Allocataires_2011_AAHC', u'ALL_AAH_2011',
 #       u'NB_allocataires_2012_AAHC', u'ALL_AAH_2012',
 #       u'NB_allocataires_2013_AAHC', u'ALL_AAH_2013',
-#       u'NB_Allocataires_2014_AAHC', u'ALL_AAH_2014']
+#       u'NB_Allocataires_2014_AAHC', u'ALL_AAH_2014'

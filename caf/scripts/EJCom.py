@@ -56,7 +56,7 @@ final_count = df.shape[0]
 df.to_csv('data/full_EJCom.csv', encoding='utf-8', index=False)
 
 ## Features 
-#uNB_allocataires_2009_EJC',
+#u'NB_allocataires_2009_EJC',
 #       u'ALL_AF_2009', u'ALL_CF_2009', u'ALL_ARS_2009', u'ALL_ASF_2009',
 #       u'ALL_AEEH_2009', u'NB_Allocataires_2010_EJC', u'ALL_AF_2010',
 #       u'ALL_CF_2010', u'ALL_ARS_2010', u'ALL_ASF_2010', u'ALL_AEEH_2010',
@@ -67,5 +67,5 @@ df.to_csv('data/full_EJCom.csv', encoding='utf-8', index=False)
 #       u'NB_Allocataires_2013_EJC', u'ALL_AF_2013', u'ALL_CF_2013',
 #       u'ALL_ARS_2013', u'ALL_ASF_2013', u'ALL_AEEH_2013',
 #       u'NB_Allocataires_2014_EJC', u'ALL_AF_2014', u'ALL_CF_2014',
-#       u'ALL_ARS_2014', u'ALL_ASF_2014', u'ALL_AEEH_2014
+#       u'ALL_ARS_2014', u'ALL_ASF_2014', u'ALL_AEEH_2014'
 

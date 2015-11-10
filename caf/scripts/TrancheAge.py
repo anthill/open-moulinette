@@ -46,7 +46,7 @@ df.columns = list_col
 df.to_csv('data/full_TrancheAge.csv', encoding='utf-8', index=False)
 
 ## Features 
-#[u'NB_Allocataires_2009_TA',
+#u'NB_Allocataires_2009_TA',
 #       u'ALL0A19_2009', u'ALL20A24_2009', u'ALL25A29_2009', u'ALL30A39_2009',
 #       u'ALL40A49_2009', u'ALL50A59_2009', u'ALL60AX_2009', u'ALLAGEX_2009',
 #       u'NB_allocataires_2010_TA', u'ALL0A19_2010', u'ALL20A24_2010',
@@ -64,5 +64,4 @@ df.to_csv('data/full_TrancheAge.csv', encoding='utf-8', index=False)
 #       u'ALL70AX_2013', u'ALLAGEX_2013', u'NB_allocataires_2014_TA',
 #       u'ALL0A19_2014', u'ALL20A24_2014', u'ALL25A29_2014', u'ALL30A39_2014',
 #       u'ALL40A49_2014', u'ALL50A54_2014', u'ALL55A59_2014', u'ALL60A64_2014',
-#       u'ALL65A69_2014', u'ALL70AX_2014', u'ALLAGEX_2014']
-
+#       u'ALL65A69_2014', u'ALL70AX_2014', u'ALLAGEX_2014'
