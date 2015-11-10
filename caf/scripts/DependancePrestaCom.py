@@ -47,11 +47,11 @@ final_count = df.shape[0]
 df.to_csv('data/full_DependancePrestaCom.csv', encoding='utf-8', index=False)
 
 ## Features 
-#[u'NB_Allocataires_2009_DPC',
-#u'TR50PFRB_2009', u'TR100PFRB_2009', u'NB_Allocataires_2010_DPC',
-#u'TR50PFRB_2010', u'TR100PFRB_2010', u'NB_Allocataires_2011_DPC',
-#u'TR50PFRB_2011', u'TR100PFRB_2011', u'NB_Allocataires_2012_DPC',
-#u'TR50PFRB_2012', u'TR100PFRB_2012', u'NB_Allocataires_2013_DPC',
-#u'TR50PFRB_2013', u'TR100PFRB_2013', u'NB_Allocataires_2014_DPC',
-#u'TR50PFRB_2014', u'TR100PFRB_2014']
+#u'NB_Allocataires_2009_DPC',
+#       u'TR50PFRB_2009', u'TR100PFRB_2009', u'NB_Allocataires_2010_DPC',
+#       u'TR50PFRB_2010', u'TR100PFRB_2010', u'NB_Allocataires_2011_DPC',
+#       u'TR50PFRB_2011', u'TR100PFRB_2011', u'NB_Allocataires_2012_DPC',
+#       u'TR50PFRB_2012', u'TR100PFRB_2012', u'NB_Allocataires_2013_DPC',
+#       u'TR50PFRB_2013', u'TR100PFRB_2013', u'NB_Allocataires_2014_DPC',
+#       u'TR50PFRB_2014', u'TR100PFRB_2014'
 

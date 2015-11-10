@@ -40,7 +40,7 @@ for path_file in files:
 # Rename col to have unique name in futur merge
 list_col = []
 for col in df.columns:
-    if "NB_Allocataires" in col.lower():
+    if "nb_allocataires" in col.lower():
         list_col.append(col+"_LC") # LC = LogCom
     else:
         list_col.append(col)

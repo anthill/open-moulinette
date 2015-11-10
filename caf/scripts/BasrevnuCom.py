@@ -37,7 +37,7 @@ for path_file in files:
 # Rename col to have unique name in futur merge
 list_col = []
 for col in df.columns:
-    if "NB_Allocataires" in col:
+    if "nb_allocataires" in col.lower(): 
         list_col.append(col+"_BC") # BC = BasrevnuCOM
     else:
         list_col.append(col)
@@ -46,14 +46,14 @@ df.columns = list_col
 df.to_csv('data/full_BasrevenuCom.csv', encoding='utf-8', index=False)
 
 ## Features 
-#[ u'NB_Allocataires_2009_BC',
-#   u'ALL_bas_revenu_2009', u'Pers_bas_revenu_2009',
-#   u'NB_allocataires_2010', u'ALL_bas_revenu_2010',
-#   u'Pers_bas_revenu_2010', u'NB_allocataires_2011',
-#   u'ALL_bas_revenu_2011', u'Pers_bas_revenu_2011',
-#   u'NB_allocataires_2012', u'ALL_bas_revenu_2012',
-#   u'Pers_bas_revenu_2012', u'NB_allocataires_2013',
-#   u'ALL_bas_revenu_2013', u'Pers_bas_revenu_2013',
-#   u'NB_allocataires_2014', u'ALL_bas_revenu_2014',
-#   u'Pers_bas_revenu_2014']
+#u'NB_Allocataires_2009_BC',
+#       u'ALL_bas_revenu_2009', u'Pers_bas_revenu_2009',
+#       u'NB_allocataires_2010_BC', u'ALL_bas_revenu_2010',
+#       u'Pers_bas_revenu_2010', u'NB_allocataires_2011_BC',
+#       u'ALL_bas_revenu_2011', u'Pers_bas_revenu_2011',
+#       u'NB_allocataires_2012_BC', u'ALL_bas_revenu_2012',
+#       u'Pers_bas_revenu_2012', u'NB_allocataires_2013_BC',
+#       u'ALL_bas_revenu_2013', u'Pers_bas_revenu_2013',
+#       u'NB_allocataires_2014_BC', u'ALL_bas_revenu_2014',
+#       u'Pers_bas_revenu_2014'
 

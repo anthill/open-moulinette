@@ -10,7 +10,7 @@ import glob
 
 df = pd.read_csv('source/AAHCom2009.csv', sep=";")
 
-df.columns = ['Communes', 'Codes_Insee', 'NB_Pers_par_Foyer_Alloc_2009', 
+df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009', 
               'ALL_AAH_2009']
 
 files = glob.glob('source/AAHCom*')
