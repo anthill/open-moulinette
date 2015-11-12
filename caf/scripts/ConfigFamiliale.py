@@ -9,14 +9,14 @@ Created on Fri Oct  2 15:08:22 2015
 import pandas as pd
 import glob
 
-df = pd.read_csv('../source/ConfigFamiliale2009.csv', sep=";")
+df = pd.read_csv('source/ConfigFamiliale2009.csv', sep=";")
 
 df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009', 
               'COUP_0_ENF_2009', 'COUP_1_ENF_2009', 'COUP_2_ENF_2009', 'COUP_3_ENF_2009', 'COUP_4plus_ENF_2009',
               'Homme_Isole_2009', 'Femme_Isolee_2009', 'MONO_1_ENF_2009', 'MONO_2_ENF_2009',
               'MONO_3_ENF_2009', 'MONO_4plus_ENF_2009']
 
-files = glob.glob('../source/ConfigFamiliale*')
+files = glob.glob('source/ConfigFamiliale*')
 
 for path_file in files:
     year = str(path_file[-8:-4])
@@ -45,7 +45,7 @@ for col in df.columns:
         list_col.append(col)
 df.columns = list_col
 
-df.to_csv('../data/full_ConfigFamiliale.csv', encoding='utf-8', index=False)
+df.to_csv('data/full_ConfigFamiliale.csv', encoding='utf-8', index=False)
 
 ## Features 
 #u'NB_Allocataires_2009_CF',
