@@ -332,4 +332,4 @@ Ces trois aides ne sont pas cumulables. L’ordre de priorité d’attribution e
 
 L'ARS est une prestation versée sous conditions de ressources en une seule fois (généralement en septembre) et les enfants ouvrant droit à l'ARS doivent être scolarisés et agés de 6 à 18 ans.
 
-
+[source](http://data.caf.fr/dataset/nombre-denfants-couverts-par-l-allocation-de-rentree-scolaire-ars-par-commune)
