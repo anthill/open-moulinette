@@ -9,14 +9,14 @@ Created on Fri Oct  2 15:08:22 2015
 import pandas as pd
 import glob
 
-df = pd.read_csv('source/ConfigFamiliale2009.csv', sep=";")
+df = pd.read_csv('../source/ConfigFamiliale2009.csv', sep=";")
 
 df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009', 
-              'COUP_0_ENF', 'COUP_1_ENF', 'COUP_2_ENF', 'COUP_3_ENF', 'COUP_4plus_ENF',
-              'Homme_Isole', 'Femme_Isolee', 'MONO_1_ENF', 'MONO_2_ENF',
-              'MONO_3_ENF', 'MONO_4plus_ENF']
+              'COUP_0_ENF_2009', 'COUP_1_ENF_2009', 'COUP_2_ENF_2009', 'COUP_3_ENF_2009', 'COUP_4plus_ENF_2009',
+              'Homme_Isole_2009', 'Femme_Isolee_2009', 'MONO_1_ENF_2009', 'MONO_2_ENF_2009',
+              'MONO_3_ENF_2009', 'MONO_4plus_ENF_2009']
 
-files = glob.glob('source/ConfigFamiliale*')
+files = glob.glob('../source/ConfigFamiliale*')
 
 for path_file in files:
     year = str(path_file[-8:-4])
@@ -45,13 +45,14 @@ for col in df.columns:
         list_col.append(col)
 df.columns = list_col
 
-df.to_csv('data/full_ConfigFamiliale.csv', encoding='utf-8', index=False)
+df.to_csv('../data/full_ConfigFamiliale.csv', encoding='utf-8', index=False)
 
 ## Features 
-#u'NB_Allocataires_2009_CF', u'COUP_0_ENF',
-#       u'COUP_1_ENF', u'COUP_2_ENF', u'COUP_3_ENF', u'COUP_4plus_ENF',
-#       u'Homme_Isole', u'Femme_Isolee', u'MONO_1_ENF', u'MONO_2_ENF',
-#       u'MONO_3_ENF', u'MONO_4plus_ENF', u'NB_allocataires_2010_CF',
+#u'NB_Allocataires_2009_CF',
+#       u'COUP_0_ENF_2009', u'COUP_1_ENF_2009', u'COUP_2_ENF_2009',
+#       u'COUP_3_ENF_2009', u'COUP_4plus_ENF_2009', u'Homme_Isole_2009',
+#       u'Femme_Isolee_2009', u'MONO_1_ENF_2009', u'MONO_2_ENF_2009',
+#       u'MONO_3_ENF_2009', u'MONO_4plus_ENF_2009', u'NB_allocataires_2010_CF',
 #       u'COUP_0_ENF_2010', u'COUP_1_ENF_2010', u'COUP_2_ENF_2010',
 #       u'COUP_3_ENF_2010', u'COUP_4plus_ENF_2010', u'Homme_Isole_2010',
 #       u'Femme_Isolee_2010', u'MONO_1_ENF_2010', u'MONO_2_ENF_2010',
