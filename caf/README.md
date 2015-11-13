@@ -31,7 +31,7 @@ Make
 ```
 import pandas as pd
 data = pd.read_csv('data/caf_data.csv')
-data.iloc[5953][0:25] #Bordeaux
+data.iloc[5953][0:30] #Bordeaux
 
 Codes_Insee                                                         33063
 Code_Postal                                 33000/33100/33200/33300/33800
@@ -58,6 +58,11 @@ NB_Allocataires_2013                                                73846
 NB_Allocataires_2014                                                73622
 ALL_AAH_2009                                                         5376
 ALL_AAH_2010                                                         5491
+ALL_AAH_2011                                                         5722
+ALL_AAH_2012                                                         5839
+ALL_AAH_2013                                                         5736
+ALL_AAH_2014                                                         5566
+ALL_bas_revenu_2009                                                 22382
 ```
 
 
