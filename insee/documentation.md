@@ -39,6 +39,19 @@ In the `output.csv` the column names are like `NB_B314`  (which is the number of
 
 **Attention :** Un équipement  est défini comme un service rendu par un établissement. Ainsi, un établissement peut être compté plusieurs fois dans la base, s’il rend plusieurs services.
 
+## Précisions
+
+Certains indicateurs sont en doublons (ils apparaissent dans plusieurs fichiers) :
+- P11_PMEN
+- P11_POP0610
+- P11_POP1824
+- P11_POP1524
+- P11_POP2554
+- P11_POP80P
+- P11_POP5564
+
+Ils ont été dédoublonner dans le fichier final car ils ont strictement les même valeurs suivant leurs fichiers d'origines. Cependant ces doublons ont été garder dans cette documentation pour une meilleur compréhension.
+
 ##Nombre d'équipements et de services dans le domaine du commerce en 2013
 
  - NB_B101 : **Hypermarché**. Surface de vente déclarée supérieure à 2500 m²
