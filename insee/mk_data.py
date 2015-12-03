@@ -360,6 +360,93 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
 print "il y a  %d iris différentes pour l'activité 2011 et %d features" % (len(activite11.CODGEO.unique()), len(features) - 1)
 data = pd.merge(data, activite11[features], on=key, how='outer')
 
+
+
+# 110 rows are NaN for this label
+data.dropna(subset=[u'LIBGEO',
+                     u'COM',
+                     u'LIBCOM',
+                     u'REG',
+                     u'DEP',
+                     u'UU2010'], how='all', inplace=True)
+
+############################################################
+####                CENSUS FILES 2012
+############################################################
+
+# New Region Code (REG2016)
+
+new_reg_dict = {'01' : '01',
+                '02' : '02',
+                '03' : '03',
+                '04' : '04',
+                '11' : '11',
+                '21' : '44',
+                '22' : '32',
+                '23' : '28',
+                '24' : '24',
+                '25' : '28',
+                '26' : '27',
+                '31' : '32',
+                '41' : '44',
+                '42' : '44',
+                '43' : '27',
+                '52' : '52',
+                '53' : '53',
+                '54' : '75',
+                '72' : '75',
+                '73' : '76',
+                '74' : '75',
+                '82' : '84',
+                '83' : '84',
+                '91' : '76',
+                '93' : '93',
+                '94' : '94'}
+                
+data['REG2016'] = data.REG.map(new_reg_dict)
+
+def fix_LIBGEO_12(x):
+    """
+    LIBGEO change between 2011 & 2012. It prevent merge (LIBGEO is a key)
+    2011 : "Awala-Yalimapo"
+    2012 : "Awala-Yalimapo (commune non irisée)"
+    
+    input: string
+    output : Return string without " (commune non irisée)".
+    """
+    try:
+        return x.encode('utf-8').replace(" (commune non irisée)", '').decode('utf-8')
+    except Exception as er:
+        print "Erreur : " + x + str(er)
+        return x
+
+
+# Logement 2012
+logement12 = pd.read_excel('data/base-ic-logement-2012.xls', sheetname='IRIS')
+# creating header from file
+header = logement12.loc[4].tolist()
+logement12.columns = header
+logement12.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+# to get real values
+logement12 = logement12[5:]
+
+# Adding CODGEO (iris ID) and other geo features witch are not in data
+features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+#features.remove('P11_PMEN') # P11_PMEN is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
+[features.append(i) for i in ['CODGEO', 'LIBGEO']]
+
+key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'REG2016', 'LAB_IRIS',
+       'DEP', 'UU2010', 'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS']       
+print "il y a  %d iris différentes pour le logement 2012 et %d features" % (len(logement12.CODGEO.unique()), len(features) - 1)
+
+logement12.LIBGEO = logement12.LIBGEO.apply(fix_LIBGEO_12)
+new_iris = list(set(logement12.CODGEO.unique().tolist()) - set(data.CODGEO.unique().tolist()))
+print "%s nouvelles iris" % (len(new_iris))
+
+data = pd.merge(data, logement12[features], on=key, how='outer')
+
+
+
 # Extract 
 print "Extracting file in /data/output.csv"
 data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')

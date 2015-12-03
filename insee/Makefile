@@ -54,7 +54,9 @@ download:
 	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-activite-resident-11
 	@wget -O data/infra-activite-resident-2011.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2011/infracommunal/infra-activite-resident-11/infra-activite-resident-2011.zip
 	@unzip data/infra-activite-resident-2011.zip -d data/
-	
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-logement-12
+	@wget -O data/infra-activite-resident-2012.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2012/infracommunal/infra-logement-12/infra-logement-2012.zip
+	@unzip data/infra-activite-resident-2012.zip -d data/
 
 convert:
 	python mk_data.py
