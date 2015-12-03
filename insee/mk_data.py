@@ -265,6 +265,7 @@ logement = logement[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P11_PMEN') # P11_PMEN is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010']       
@@ -284,6 +285,8 @@ diplome = diplome[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P11_POP0610') # P11_POP0610 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
+features.remove('P11_POP1824') # P11_POP1824 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
@@ -304,6 +307,9 @@ famille = famille[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P11_POP1524') # P11_POP1524 is already in Activité file (https://github.com/anthill/open-moulinette/issues/18)
+features.remove('P11_POP2554') # P11_POP2554 is already in Activité file (https://github.com/anthill/open-moulinette/issues/18)
+features.remove('P11_POP80P') # P11_POP80P is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
@@ -345,6 +351,7 @@ activite = activite[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P11_POP5564') # P11_POP5564 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
