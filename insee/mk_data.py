@@ -509,8 +509,31 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 print "il y a  %d iris différentes pour le population 2012 et %d features" % (len(population12.CODGEO.unique()), len(features) - 1)
 
 population12.LIBGEO = population12.LIBGEO.apply(fix_LIBGEO_12)
+
 data = pd.merge(data, population12[features], on=key, how='outer')
 
+
+## Activité 2012
+activite12 = pd.read_excel('data/base-ic-activite-residents-2012.xls', sheetname='IRIS')
+# creating header from file
+header = activite12.loc[4].tolist()
+activite12.columns = header
+activite12.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+# to get real values
+activite12 = activite12[5:]
+
+# Adding CODGEO (iris ID) and other geo features witch are not in data
+features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+[features.append(i) for i in ['CODGEO', 'LIBGEO']]
+
+key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
+                 
+print "il y a  %d iris différentes pour l'activité 2012 et %d features" % (len(activite12.CODGEO.unique()), len(features) - 1)
+
+activite12.LIBGEO = activite12.LIBGEO.apply(fix_LIBGEO_12)
+
+data = pd.merge(data, activite12[features], on=key, how='outer')
 
 # Extract 
 print "Extracting file in /data/output.csv"

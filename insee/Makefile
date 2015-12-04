@@ -66,6 +66,10 @@ download:
 	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-population-12
 	@wget -O data/infra-population-2012.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2012/infracommunal/infra-population-12/infra-population-2012.zip
 	@unzip data/infra-population-2012.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-activite-resident-12
+	@wget -O data/infra-activite-resident-2012.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2012/infracommunal/infra-activite-resident-12/infra-activite-resident-2012.zip
+	@unzip data/infra-activite-resident-2012.zip -d data/
+	
 
 convert:
 	python mk_data.py
