@@ -18,11 +18,22 @@ In the `output.csv` the column names are like `NB_B314`  (which is the number of
 -  [Nombre de fonctions médicales et paramédicales en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-de-fonctions-m%C3%A9dicales-et-param%C3%A9dicales-en-2013)
 -   [Nombre d'équipements des services aux particuliers en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-des-services-aux-particuliers-en-2013)
 -   [Nombre d'équipements et de services dans le domaine du tourisme et du transport en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-du-tourisme-et-du-transport-en-2013)
+
+### Recensement 2011
+
 -	[Base de données infracommunales : logement en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--logement-en-2011)
 -	[Base de données infracommunales : diplômes - formation en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--diplômes---formation-en-2011)
 -	[Base de données infracommunales : couples - familles - ménages en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--couples---familles---ménages-en-2011)
 -	[Base de données infracommunales : population en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--population-en-2011)
 -	[Base de données infracommunales : activité des résidents en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--activité-des-résidents-en-2011)
+
+### Recensement 2012
+
+-	Base de données infracommunales : logement en 2012
+-	Base de données infracommunales : diplômes - formation en 2012
+-	Base de données infracommunales : couples - familles - ménages en 2012
+-	Base de données infracommunales : population en 2012
+-	Base de données infracommunales : activité des résidents en 2012
 
 ## Description géographique
 
@@ -36,21 +47,42 @@ In the `output.csv` the column names are like `NB_B314`  (which is the number of
 - CV : Canton ville
 - ZE2010 : Zone d'emploi
 - UU2010 : Unité urbaine
+- REG2016 : [Code région 2016](http://www.insee.fr/fr/methodes/default.asp?page=nomenclatures/cog/codes_regions_2016.htm)
+- TRIRIS : Code du département suivi d'un numéro d'ordre à l'intérieur du département sur trois positions puis d'un indicateur de TRIRIS
+- GRD_QUART : Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille suivi du numéro de grand quartier
+- TYP_IRIS :  le type d'IRIS qui permet de distinguer les IRIS d'habitat 'H' des IRIS d'activité 'A' et des IRIS divers 'D'. Le type d'IRIS est 'Z' pour les communes non découpées en IRIS. Le type d'IRIS a été déterminé lors de la création des IRIS, en 1999. Depuis, les caractéristiques de l'IRIS ont pu évoluer (population, nombre d'emplois, …) sans que le type
+d'IRIS n'ait toujours été modifié.
+- MODIF_IRIS : 
+- LAB_IRIS : Label de qualité de l'IRIS
 
 **Attention :** Un équipement  est défini comme un service rendu par un établissement. Ainsi, un établissement peut être compté plusieurs fois dans la base, s’il rend plusieurs services.
 
 ## Précisions
 
 Certains indicateurs sont en doublons (ils apparaissent dans plusieurs fichiers) :
-- P11_PMEN
-- P11_POP0610
-- P11_POP1824
-- P11_POP1524
-- P11_POP2554
-- P11_POP80P
-- P11_POP5564
+- PYY_PMEN
+- PYY_POP0610
+- PYY_POP1824
+- PYY_POP1524
+- PYY_POP2554
+- PYY_POP80P
+- PYY_POP5564
 
-Ils ont été dédoublonner dans le fichier final car ils ont strictement les même valeurs suivant leurs fichiers d'origines. Cependant ces doublons ont été garder dans cette documentation pour une meilleur compréhension.
+*YY : Pour l'année (11 : 2011, 12 : 2012)*. Ils ont été dédoublonner dans le fichier final car ils ont strictement les même valeurs suivant leurs fichiers d'origines. Cependant ces doublons ont été garder dans cette documentation pour une meilleur compréhension.
+
+**Doublon sur le code Iris :**
+
+Il y a 143 doublons (code Iris), cela provient des changements effectuer entre 2011 et 2012 (nom, type d'Iris...) :
+
+```
+CODGEO      LIBGEO     COM     LIBCOM    REG DEP   UU2010  REG2016  TRIRIS  GRD_QUART \
+591831301  Dessinguez  59183  Dunkerque  31  59    59602      32    590381  5918313     
+591831301  Dessinguez  59183  Dunkerque  31  59    59602      32    590381  5918313   
+TYP_IRIS  MODIF_IRIS LAB_IRIS
+   H         00         1
+   H         00         2
+```
+
 
 ##Nombre d'équipements et de services dans le domaine du commerce en 2013
 
@@ -860,5 +892,369 @@ Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs ré
  - C11_ACTOCC15P_VOIT : **Actif occ 15 ans ou plus voiture, camion en 2011 (compl)**
  - C11_ACTOCC15P_TCOM : **Actif occ 15 ans ou plus transport en commun en 2011 (compl)**
 
+##Base de données infracommunales : logement en 2012
 
+- P12_LOG : **Nombre de logements**
+- P12_RP : **Nombre de résidences principales**
+- P12_RSECOCC : **Nombre de résidences secondaires et logements occasionnels**
+- P12_LOGVAC : **Nombre de logements vacants**
+- P12_MAISON : **Nombre de maisons**
+- P12_APPART : **Nombre d'appartements**
+- P12_RP_1P : **Nombre de résidences principales d'1 pièce**
+- P12_RP_2P : **Nombre de résidences principales de 2 pièces**
+- P12_RP_3P : **Nombre de résidences principales de 3 pièces**
+- P12_RP_4P : **Nombre de résidences principales de 4 pièces**
+- P12_RP_5PP : **Nombre de résidences principales de 5 pièces ou plus**
+- P12_NBPI_RP : **Nombre de pièces des résidences principales**
+- P12_RPMAISON : **Nombre de résidences principales de type maison**
+- P12_NBPI_RPMAISON : **Nombre de pièces des résidences principales de type maison**
+- P12_RPAPPART : **Nombre de résidences principales de type appartement**
+- P12_NBPI_RPAPPART : **Nombre de pièces des résidences principales de type appartement**
+- P12_RP_M40M2 : **Nombre de résidences principales de moins de 40 m2**
+- P12_RP_4099M2 : **Nombre de résidences principales de 40 à 99 m2**
+- P12_RP_100M2P : **Nombre de résidences principales de 100 m2 ou plus**
+- P12_RP_ACHTT : **Nombre de résidences principales construites avant 2010**
+- P12_RP_ACHT1 : **Nombre de résidences principales construites avant 1946**
+- P12_RP_ACHT2 : **Nombre de résidences principales construites de 1946 à 1990**
+- P12_RP_ACHT3 : **Nombre de résidences principales construites de 1991 à 2009**
+- P12_RPMAISON_ACHTT : **Nombre de résidences principales de type maison construites avant 2010**
+- P12_RPMAISON_ACHT1 : **Nombre de résidences principales de type maison construites avant 1946**
+- P12_RPMAISON_ACHT2 : **Nombre de résidences principales de type maison construites de 1946 à 1990**
+- P12_RPMAISON_ACHT3 : **Nombre de résidences principales de type maison construites de 1991 à 2009**
+- P12_RPAPPART_ACHTT : **Nombre de résidences principales de type appartement construites avant 2010**
+- P12_RPAPPART_ACHT1 : **Nombre de résidences principales de type appartement construites avant 1946**
+- P12_RPAPPART_ACHT2 : **Nombre de résidences principales de type appartement construites de 1946 à 1990**
+- P12_RPAPPART_ACHT3 : **Nombre de résidences principales de type appartement construites de 1991 à 2009**
+- P12_MEN : **Nombre de ménages**
+- P12_MEN_ANEM0002 : **Nombre de ménages ayant emménagé depuis moins de 2 ans**
+- P12_MEN_ANEM0204 : **Nombre de ménages ayant emménagé entre 2 et 4 ans**
+- P12_MEN_ANEM0509 : **Nombre de ménages ayant emménagé entre 5 et 9 ans**
+- P12_MEN_ANEM10P : **Nombre de ménages ayant emménagé depuis 10 ans ou plus**
+- P12_PMEN : **Population des ménages**
+- P12_PMEN_ANEM0002 : **Population des ménages ayant emménagé depuis moins de 2 ans**
+- P12_PMEN_ANEM0204 : **Population des ménages ayant emménagé entre 2 et 4 ans**
+- P12_PMEN_ANEM0509 : **Population des ménages ayant emménagé entre 5 et 9 ans**
+- P12_PMEN_ANEM10P : **Population des ménages ayant emménagé depuis 10 ans ou plus**
+P12_NBPI_RP_ANEM0002 : **Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis moins de 2 ans**
+- P12_NBPI_RP_ANEM0204 : **Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 2 et 4 ans**
+- P12_NBPI_RP_ANEM0509 : **Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 5 et 9 ans**
+- P12_NBPI_RP_ANEM10P : **Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis 10 ans ou plus**
+- P12_RP_PROP : **Nombre de résidences principales occupées par des propriétaires**
+- P12_RP_LOC : **Nombre de résidences principales occupées par des locataires**
+- P12_RP_LOCHLMV : **Nombre de résidences principales HLM loué vide**
+- P12_RP_GRAT : **Nombre de résidences principales occupées gratuitement**
+- P12_NPER_RP : **Nombre de personnes des résidences principales**
+- P12_NPER_RP_PROP : **Nombre de personnes des résidences principales occupées par des propriétaires**
+- P12_NPER_RP_LOC : **Nombre de personnes des résidences principales occupées par des locataires**
+- P12_NPER_RP_LOCHLMV : **Nombre de personnes des résidences principales HLM louées vides**
+- P12_NPER_RP_GRAT : **Nombre de personnes des résidences principales occupées gratuitement**
+- P12_ANEM_RP : **Ancienneté totale d'emménagement dans les résidences principales en années**
+- P12_ANEM_RP_PROP : **Ancienneté totale d'emménagement dans les résidences principales occupées par des propriétaires en années**
+- P12_ANEM_RP_LOC : **Ancienneté totale d'emménagement dans les résidences principales occupées par des locataires en années**
+- P12_ANEM_RP_LOCHLMV : **Ancienneté totale d'emménagement dans les résidences principales HLM louées vides en années**
+- P12_ANEM_RP_GRAT : **Ancienneté totale d'emménagement dans les résidences principales occupées gratuitement en années**
+- P12_RP_SDB : **Nombre de résidences principales avec salle de bain dotée de baignoire ou douche**
+- P12_RP_CCCOLL : **Nombre de résidences principales avec chauffage central collectif**
+- P12_RP_CCIND : **Nombre de résidences principales avec chauffage central individuel**
+- P12_RP_CINDELEC : **Nombre de résidences principales avec chauffage individuel électrique**
+- P12_RP_ELEC : **Nombre de résidences principales avec électricité dans le logement**
+- P12_RP_EAUCH : **Nombre de résidences principales avec eau chaude dans le logement**
+- P12_RP_BDWC : **Nombre de résidences principales avec baignoire ou douche et WC à l'intérieur du logement**
+- P12_RP_CHOS : **Nombre de résidences principales avec chauffe-eau solaire**
+- P12_RP_CLIM : **Nombre de résidences principales avec pièce climatisée**
+- P12_RP_TTEGOU : **Nombre de résidences principales avec tout à l'égout**
+- P12_RP_GARL : **Nombre de ménages disposant au moins d'un emplacement réservé au stationnement**
+- P12_RP_VOIT1P : **Nombre de ménages disposant au moins d'une voiture**
+- P12_RP_VOIT1 : **Nombre de ménages disposant d'une voiture**
+- P12_RP_VOIT2P : **Nombre de ménages disposant de deux voitures ou plus**
+- P12_RP_HABFOR : **Nombre de résidences principales habitations de fortune**
+- P12_RP_CASE : **Nombre de résidences principales cases traditionnelles**
+- P12_RP_MIBOIS : **Nombre de résidences principales maisons ou immeubles en bois**
+- P12_RP_MIDUR : **Nombre de résidences principales maisons ou immeubles en dur**
 
+##Base de données infracommunales : diplômes - formation en 2012
+
+- P12_POP0205 : **Nombre de personnes de 2 à 5 ans**
+- P12_POP0610 : **Nombre de personnes de 6 à 10 ans**
+- P12_POP1114 : **Nombre de personnes de 11 à 14 ans**
+- P12_POP1517 : **Nombre de personnes de 15 à 17 ans**
+- P12_POP1824 : **Nombre de personnes de 18 à 24 ans**
+- P12_POP2529 : **Nombre de personnes de 25 à 29 ans**
+- P12_POP30P : **Nombre de personnes de 30 ans ou plus**
+- P12_SCOL0205 : **Nombre de personnes scolarisées de 2 à 5 ans**
+- P12_SCOL0610 : **Nombre de personnes scolarisées de 6 à 10 ans**
+- P12_SCOL1114 : **Nombre de personnes scolarisées de 11 à 14 ans**
+- P12_SCOL1517 : **Nombre de personnes scolarisées de 15 à 17 ans**
+- P12_SCOL1824 : **Nombre de personnes scolarisées de 18 à 24 ans**
+- P12_SCOL2529 : **Nombre de personnes scolarisées de 25 à 29 ans**
+- P12_SCOL30P : **Nombre de personnes scolarisées de 30 ans ou plus**
+- P12_NSCOL15P : **Nombre de personnes non scolarisées de 15 ans ou plus**
+- P12_NSCOL15P_DIPL0 : **Nombre de personnes non scolarisées de 15 ans ou plus titulaires d'aucun diplôme**
+- P12_NSCOL15P_CEP : **Nombre de personnes non scolarisées de 15 ans ou plus titulaires du certificat d'études primaires**
+- P12_NSCOL15P_BEPC : **Nombre de personnes non scolarisées de 15 ans ou plus titulaires du BEPC, brevet des collèges**
+- P12_NSCOL15P_CAPBEP : **Nombre de personnes non scolarisées de 15 ans ou plus titulaires d'un CAP ou d'un BEP**
+- P12_NSCOL15P_BAC : **Nombre de personnes non scolarisées de 15 ans ou plus titulaires d'un baccalauréat ou d'un brevet professionnel**
+- P12_NSCOL15P_BACP2 : **Nombre de personnes non scolarisées de 15 ans ou plus titulaires d'un diplôme de l'enseignement supérieur court**
+- P12_NSCOL15P_SUP : **Nombre de personnes non scolarisées de 15 ans ou plus titulaires d'un diplôme de l'enseignement supérieur long**
+- P12_HNSCOL15P : **Nombre d'hommes non scolarisés de 15 ans ou plus**
+- P12_HNSCOL15P_DIPL0 : **Nombre d'hommes non scolarisés de 15 ans ou plus titulaires d'aucun diplôme**
+- P12_HNSCOL15P_CEP : **Nombre d'hommes non scolarisés de 15 ans ou plus titulaires du certificat d'études primaires**
+- P12_HNSCOL15P_BEPC : **Nombre d'hommes non scolarisés de 15 ans ou plus titulaires du BEPC, brevet des collèges**
+- P12_HNSCOL15P_CAPBEP : **Nombre d'hommes non scolarisés de 15 ans ou plus titulaires d'un CAP ou d'un BEP**
+- P12_HNSCOL15P_BAC : **Nombre d'hommes non scolarisés de 15 ans ou plus titulaires d'un baccalauréat ou d'un brevet professionnel**
+- P12_HNSCOL15P_BACP2 : **Nombre d'hommes non scolarisés de 15 ans ou plus titulaires d'un diplôme de l'enseignement supérieur court**
+- P12_HNSCOL15P_SUP : **Nombre d'hommes non scolarisés de 15 ans ou plus titulaires d'un diplôme de l'enseignement supérieur long**
+- P12_FNSCOL15P : **Nombre de femmes non scolarisées de 15 ans ou plus**
+- P12_FNSCOL15P_DIPL0 : **Nombre de femmes non scolarisées de 15 ans ou plus titulaires d'aucun diplôme**
+- P12_FNSCOL15P_CEP : **Nombre de femmes non scolarisées de 15 ans ou plus titulaires du certificat d'études primaires**
+- P12_FNSCOL15P_BEPC : **Nombre de femmes non scolarisées de 15 ans ou plus titulaires du BEPC, brevet des collèges**
+- P12_FNSCOL15P_CAPBEP : **Nombre de femmes non scolarisées de 15 ans ou plus titulaires d'un CAP ou d'un BEP**
+- P12_FNSCOL15P_BAC : **Nombre de femmes non scolarisées de 15 ans ou plus titulaires d'un baccalauréat ou d'un brevet professionnel**
+- P12_FNSCOL15P_BACP2 : **Nombre de femmes non scolarisées de 15 ans ou plus titulaires d'un diplôme de l'enseignement supérieur court**
+- P12_FNSCOL15P_SUP : **Nombre de femmes non scolarisées de 15 ans ou plus titulaires d'un diplôme de l'enseignement supérieur long**
+
+##Base de données infracommunales : couples - familles - ménages en 2012
+
+- C12_MEN : **Nombre de ménages**
+- C12_MENPSEUL : **Nombre de ménages d'une personne**
+- C12_MENHSEUL : **Nombre de ménages composés d'hommes seuls**
+- C12_MENFSEUL : **Nombre de ménages composés de femmes seules**
+- C12_MENSFAM : **Nombre de ménages autres sans famille**
+- C12_MENFAM : **Nombre de ménages avec famille(s)**
+- C12_MENCOUPSENF : **Nombre de ménages dont la famille principale est formée d'un couple sans enfant**
+- C12_MENCOUPAENF : **Nombre de ménages dont la famille principale est formée d'un couple avec enfant(s)**
+- C12_MENFAMMONO : **Nombre de ménages dont la famille principale est une famille monoparentale**
+- C12_PMEN : **Nombre de personnes des ménages**
+- C12_PMEN_MENPSEUL : **Nombre de personnes des ménages d'une personne**
+- C12_PMEN_MENHSEUL : **Nombre de personnes des ménages composés d'hommes seuls**
+- C12_PMEN_MENFSEUL : **Nombre de personnes des ménages composés de femmes seules**
+- C12_PMEN_MENSFAM : **Nombre de personnes des ménages Autres sans famille**
+- C12_PMEN_MENFAM : **Nombre de personnes des ménages avec famille(s)**
+- C12_PMEN_MENCOUPSENF : **Nombre de personnes des ménages dont la famille principale est un couple sans enfant**
+- C12_PMEN_MENCOUPAENF : **Nombre de personnes des ménages dont la famille principale est un couple avec enfant(s)**
+- C12_PMEN_MENFAMMONO : **Nombre de personnes des ménages dont la famille principale est une famille monoparentale**
+- P12_POP15P : **Nombre de personnes de 15 ans ou plus**
+- P12_POP1524 : **Nombre de personnes de 15 à 24 ans**
+- P12_POP2554 : **Nombre de personnes de 25 à 54 ans**
+- P12_POP5579 : **Nombre de personnes de 55 à 79 ans**
+- P12_POP80P : **Nombre de personnes de 80 ans ou plus**
+- P12_POPMEN15P : **Nombre de personnes des ménages de 15 ans ou plus**
+- P12_POPMEN1524 : **Nombre de personnes des ménages de 15 à 24 ans**
+- P12_POPMEN2554 : **Nombre de personnes des ménages de 25 à 54 ans**
+- P12_POPMEN5579 : **Nombre de personnes des ménages de 55 à 79 ans**
+- P12_POPMEN80P : **Nombre de personnes des ménages de 80 ans ou plus**
+- P12_POP15P_PSEUL : **Nombre de personnes de 15 ans ou plus vivant seules**
+- P12_POP1524_PSEUL : **Nombre de personnes de 15 à 24 ans vivant seules**
+- P12_POP2554_PSEUL : **Nombre de personnes de 25 à 54 ans vivant seules**
+- P12_POP5579_PSEUL : **Nombre de personnes de 55 à 79 ans vivant seules**
+- P12_POP80P_PSEUL : **Nombre de personnes de 80 ans ou plus vivant seules**
+- P12_POP15P_MARIE : **Nombre de personnes de 15 ans ou plus mariées**
+- P12_POP15P_CELIB : **Nombre de personnes de 15 ans ou plus célibataires**
+- P12_POP15P_VEUF : **Nombre de personnes de 15 ans ou plus veuves**
+- P12_POP15P_DIVOR : **Nombre de personnes de 15 ans ou plus divorcées**
+- C12_MEN_CS1 : **Nombre de ménages dont la personne de référence est Agriculteur exploitant**
+- C12_MEN_CS2 : **Nombre de ménages dont la personne de référence est Artisan, Commerçant, Chef d'entreprise**
+C12_MEN_CS3 : **Nombre de ménages dont la personne de référence est Cadre ou exerce une Profession intellectuelle - supérieure**
+- C12_MEN_CS4 : **Nombre de ménages dont la personne de référence exerce une Profession intermédiaire**
+- C12_MEN_CS5 : **Nombre de ménages dont la personne de référence est Employé**
+- C12_MEN_CS6 : **Nombre de ménages dont la personne de référence est Ouvrier**
+- C12_MEN_CS7 : **Nombre de ménages dont la personne de référence est Retraité**
+- C12_MEN_CS8 : **Nombre de ménages dont la personne de référence est Autre sans activité professionnelle**
+- C12_PMEN_CS1 : **Nombre de personnes des ménages dont la personne de référence est Agriculteur exploitant**
+- C12_PMEN_CS2 : **Nombre de personnes des ménages dont la personne de référence est Artisan, Commerçant, Chef d'entreprise**
+C12_PMEN_CS3 : **Nombre de personnes des ménages dont la personne de référence est Cadre ou exerce une Profession - intellectuelle supérieure**
+- C12_PMEN_CS4 : **Nombre de personnes des ménages dont la personne de référence exerce une Profession intermédiaire**
+- C12_PMEN_CS5 : **Nombre de personnes des ménages dont la personne de référence est Employé**
+- C12_PMEN_CS6 : **Nombre de personnes des ménages dont la personne de référence est Ouvrier**
+- C12_PMEN_CS7 : **Nombre de personnes des ménages dont la personne de référence est Retraité**
+- C12_PMEN_CS8 : **Nombre de personnes des ménages dont la personne de référence est Autre sans activité professionnelle**
+- C12_FAM : **Nombre de familles**
+- C12_COUPAENF : **Nombre de familles formées d'un couple avec enfant(s)**
+- C12_FAMMONO : **Nombre de familles monoparentales**
+- C12_COUPSENF : **Nombre de familles formées d'un couple sans enfant**
+- C12_NE24F0 : **Nombre de familles avec 0 enfant de moins de 25 ans**
+- C12_NE24F1 : **Nombre de familles avec 1 enfant de moins de 25 ans**
+- C12_NE24F2 : **Nombre de familles avec 2 enfants de moins de 25 ans**
+- C12_NE24F3 : **Nombre de familles avec 3 enfants de moins de 25 ans**
+- C12_NE24F4P : **Nombre de familles avec 4 enfants ou plus de moins de 25 ans**
+ 
+##Base de données infracommunales : population en 2012
+
+- P12_POP : **Population**
+- P12_POP0002 : **Nombre de personnes de 0 à 2 ans**
+- P12_POP0305 : **Nombre de personnes de 3 à 5 ans**
+- P12_POP0610 : **Nombre de personnes de 6 à 10 ans**
+- P12_POP1117 : **Nombre de personnes de 11 à 17 ans**
+- P12_POP1824 : **Nombre de personnes de 18 à 24 ans**
+- P12_POP2539 : **Nombre de personnes de 25 à 39 ans**
+- P12_POP4054 : **Nombre de personnes de 40 à 54 ans**
+- P12_POP5564 : **Nombre de personnes de 55 à 64 ans**
+- P12_POP6579 : **Nombre de personnes de 65 à 79 ans**
+- P12_POP80P : **Nombre de personnes de 80 ans ou plus**
+- P12_POP0014 : **Nombre de personnes de 0 à 14 ans**
+- P12_POP1529 : **Nombre de personnes de 15 à 29 ans**
+- P12_POP3044 : **Nombre de personnes de 30 à 44 ans**
+- P12_POP4559 : **Nombre de personnes de 45 à 59 ans**
+- P12_POP6074 : **Nombre de personnes de 60 à 74 ans**
+- P12_POP75P : **Nombre de personnes de 75 ans ou plus**
+- P12_POP0019 : **Nombre de personnes de 0 à 19 ans**
+- P12_POP2064 : **Nombre de personnes de 20 à 64 ans**
+- P12_POP65P : **Nombre de personnes de 65 ans ou plus**
+- P12_POPH : **Nombre d'hommes**
+- P12_H0014 : **Nombre d'hommes de 0 à 14 ans**
+- P12_H1529 : **Nombre d'hommes de 15 à 29 ans**
+- P12_H3044 : **Nombre d'hommes de 30 à 44 ans**
+- P12_H4559 : **Nombre d'hommes de 45 à 59 ans**
+- P12_H6074 : **Nombre d'hommes de 60 à 74 ans**
+- P12_H75P : **Nombre d'hommes de 75 ans ou plus**
+- P12_H0019 : **Nombre d'hommes de 0 à 19 ans**
+- P12_H2064 : **Nombre d'hommes de 20 à 64 ans**
+- P12_H65P : **Nombre d'hommes de 65 ans ou plus**
+- P12_POPF : **Nombre de femmes**
+- P12_F0014 : **Nombre de femmes de 0 à 14 ans**
+- P12_F1529 : **Nombre de femmes de 15 à 29 ans**
+- P12_F3044 : **Nombre de femmes de 30 à 44 ans**
+- P12_F4559 : **Nombre de femmes de 45 à 59 ans**
+- P12_F6074 : **Nombre de femmes de 60 à 74 ans**
+- P12_F75P : **Nombre de femmes de 75 ans ou plus**
+- P12_F0019 : **Nombre de femmes de 0 à 19 ans**
+- P12_F2064 : **Nombre de femmes de 20 à 64 ans**
+- P12_F65P : **Nombre de femmes de 65 ans ou plus**
+- C12_POP15P : **Nombre de personnes de 15 ans ou plus**
+- C12_POP15P_CS1 : **Nombre de personnes de 15 ans ou plus Agriculteurs exploitants**
+- C12_POP15P_CS2 : **Nombre de personnes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise**
+- C12_POP15P_CS3 : **Nombre de personnes de 15 ans ou plus Cadres et Professions intellectuelles supérieures**
+- C12_POP15P_CS4 : **Nombre de personnes de 15 ans ou plus Professions intermédiaires**
+- C12_POP15P_CS5 : **Nombre de personnes de 15 ans ou plus Employés**
+- C12_POP15P_CS6 : **Nombre de personnes de 15 ans ou plus Ouvriers**
+- C12_POP15P_CS7 : **Nombre de personnes de 15 ans ou plus Retraités**
+- C12_POP15P_CS8 : **Nombre de personnes de 15 ans ou plus Autres sans activité professionnelle**
+- C12_H15P : **Nombre d'hommes de 15 ans ou plus**
+- C12_H15P_CS1 : **Nombre d'hommes de 15 ans ou plus Agriculteurs exploitants**
+- C12_H15P_CS2 : **Nombre d'hommes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise**
+- C12_H15P_CS3 : **Nombre d'hommes de 15 ans ou plus Cadres et Professions intellectuelles supérieures**
+- C12_H15P_CS4 : **Nombre d'hommes de 15 ans ou plus Professions intermédiaires**
+- C12_H15P_CS5 : **Nombre d'hommes de 15 ans ou plus Employés**
+- C12_H15P_CS6 : **Nombre d'hommes de 15 ans ou plus Ouvriers**
+- C12_H15P_CS7 : **Nombre d'hommes de 15 ans ou plus Retraités**
+- C12_H15P_CS8 : **Nombre d'hommes de 15 ans ou plus Autres sans activité professionnelle**
+- C12_F15P : **Nombre de femmes de 15 ans ou plus**
+- C12_F15P_CS1 : **Nombre de femmes de 15 ans ou plus Agriculteurs exploitants**
+- C12_F15P_CS2 : **Nombre de femmes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise**
+- C12_F15P_CS3 : **Nombre de femmes de 15 ans ou plus Cadres et Professions intellectuelles supérieures**
+- C12_F15P_CS4 : **Nombre de femmes de 15 ans ou plus Professions intermédiaires**
+- C12_F15P_CS5 : **Nombre de femmes de 15 ans ou plus Employés**
+- C12_F15P_CS6 : **Nombre de femmes de 15 ans ou plus Ouvriers**
+- C12_F15P_CS7 : **Nombre de femmes de 15 ans ou plus Retraités**
+- C12_F15P_CS8 : **Nombre de femmes de 15 ans ou plus Autres sans activité professionnelle**
+- P12_POP_FR : **Nombre de personnes de nationalité française**
+- P12_POP_ETR : **Nombre de personnes étrangères**
+- P12_POP_IMM : **Nombres de personnes immigrées**
+- P12_PMEN : **Population des ménages**
+- P12_PHORMEN : **Population hors ménages**
+
+##Base de données infracommunales : activité des résidents en 2012
+
+- P12_POP1564 : **Nombre de personnes de 15 à 64 ans**
+- P12_POP1524 : **Nombre de personnes de 15 à 24 ans**
+- P12_POP2554 : **Nombre de personnes de 25 à 54 ans**
+- P12_POP5564 : **Nombre de personnes de 55 à 64 ans**
+- P12_H1564 : **Nombre d'hommes de 15 à 64 ans**
+- P12_H1524 : **Nombre d'hommes de 15 à 24 ans**
+- P12_H2554 : **Nombre d'hommes de 25 à 54 ans**
+- P12_H5564 : **Nombre d'hommes de 55 à 64 ans**
+- P12_F1564 : **Nombre de femmes de 15 à 64 ans**
+- P12_F1524 : **Nombre de femmes de 15 à 24 ans**
+- P12_F2554 : **Nombre de femmes de 25 à 54 ans**
+- P12_F5564 : **Nombre de femmes de 55 à 64 ans**
+- P12_ACT1564 : **Nombre de personnes actives de 15 à 64 ans**
+- P12_ACT1524 : **Nombre de personnes actives de 15 à 24 ans**
+- P12_ACT2554 : **Nombre de personnes actives de 25 à 54 ans**
+- P12_ACT5564 : **Nombre de personnes actives de 55 à 64 ans**
+- P12_HACT1564 : **Nombre d'hommes actifs de 15 à 64 ans**
+- P12_HACT1524 : **Nombre d'hommes actifs de 15 à 24 ans**
+- P12_HACT2554 : **Nombre d'hommes actifs de 25 à 54 ans**
+- P12_HACT5564 : **Nombre d'hommes actifs de 55 à 64 ans**
+- P12_FACT1564 : **Nombre de femmes actives de 15 à 64 ans**
+- P12_FACT1524 : **Nombre de femmes actives de 15 à 24 ans**
+- P12_FACT2554 : **Nombre de femmes actives de 25 à 54 ans**
+- P12_FACT5564 : **Nombre de femmes actives de 55 à 64 ans**
+- P12_ACTOCC1564 : **Nombre de personnes actives occupées de 15 à 64 ans**
+- P12_ACTOCC1524 : **Nombre de personnes actives occupées de 15 à 24 ans**
+- P12_ACTOCC2554 : **Nombre de personnes actives occupées de 25 à 54 ans**
+- P12_ACTOCC5564 : **Nombre de personnes actives occupées de 55 à 64 ans**
+- P12_HACTOCC1564 : **Nombre d'hommes actifs occupés de 15 à 64 ans**
+- P12_HACTOCC1524 : **Nombre d'hommes actifs occupés de 15 à 24 ans**
+- P12_HACTOCC2554 : **Nombre d'hommes actifs occupés de 25 à 54 ans**
+- P12_HACTOCC5564 : **Nombre d'hommes actifs occupés de 55 à 64 ans**
+- P12_FACTOCC1564 : **Nombre de femmes actives occupées de 15 à 64 ans**
+- P12_FACTOCC1524 : **Nombre de femmes actives occupées de 15 à 24 ans**
+- P12_FACTOCC2554 : **Nombre de femmes actives occupées de 25 à 54 ans**
+- P12_FACTOCC5564 : **Nombre de femmes actives occupées de 55 à 64 ans**
+- P12_CHOM1564 : **Nombre de chômeurs de 15 à 64 ans**
+- P12_CHOM1524 : **Nombre de chômeurs de 15 à 24 ans**
+- P12_CHOM2554 : **Nombre de chômeurs de 25 à 54 ans**
+- P12_CHOM5564 : **Nombre de chômeurs de 55 à 64 ans**
+- P12_HCHOM1564 : **Nombre de chômeurs hommes de 15 à 64 ans**
+- P12_FCHOM1564 : **Nombre de chômeurs femmes de 15 à 64 ans**
+- P12_INACT1564 : **Nombre de personnes inactives de 15 à 64 ans**
+- P12_HINACT1564 : **Nombre d'hommes inactifs de 15 à 64 ans**
+- P12_FINACT1564 : **Nombre de femmes inactives de 15 à 64 ans**
+- P12_ETUD1564 : **Nombre d'élèves, étudiants et stagiaires non rémunérés de 15 à 64 ans**
+- P12_HETUD1564 : **Nombre d'élèves, étudiants et stagiaires non rémunérés hommes de 15 à 64 ans**
+- P12_FETUD1564 : **Nombre d'élèves, étudiants et stagiaires non rémunérés femmes de 15 à 64 ans**
+- P12_RETR1564 : **Nombre de retraités ou préretraités de 15 à 64 ans**
+- P12_HRETR1564 : **Nombre de retraités ou préretraités hommes de 15 à 64 ans**
+- P12_FRETR1564 : **Nombre de retraités ou préretraités femmes de 15 à 64 ans**
+- P12_AINACT1564 : **Nombre d'autres inactifs de 15 à 64 ans**
+- P12_HAINACT1564 : **Nombre d'autres inactifs hommes de 15 à 64 ans**
+- P12_FAINACT1564 : **Nombre d'autres inactifs femmes de 15 à 64 ans**
+- C12_ACT1564 : **Nombre de personnes actives de 15 à 64 ans**
+- C12_ACT1564_CS1 : **Nombre d'agriculteurs exploitants actifs de 15 à 64 ans**
+- C12_ACT1564_CS2 : **Nombre d'artisans, commerçants, chefs d'entreprise actifs de 15 à 64 ans**
+- C12_ACT1564_CS3 : **Nombre de cadres et professions intellectuelles supérieures actifs de 15 à 64 ans**
+- C12_ACT1564_CS4 : **Nombre de professions intermédiaires actifs de 15 à 64 ans**
+- C12_ACT1564_CS5 : **Nombre d'employés actifs de 15 à 64 ans**
+- C12_ACT1564_CS6 : **Nombre d'ouvriers actifs de 15 à 64 ans**
+- C12_ACTOCC1564 : **Nombre de personnes actives occupées de 15 à 64 ans**
+- C12_ACTOCC1564_CS1 : **Nombre d'agriculteurs exploitants actifs occupés de 15 à 64 ans**
+- C12_ACTOCC1564_CS2 : **Nombre d'artisans, commerçants, chefs d'entreprise actifs occupés de 15 à 64 ans**
+- C12_ACTOCC1564_CS3 : **Nombre de cadres, professions intellectuelles supérieures actifs occupés de 15 à 64 ans**
+- C12_ACTOCC1564_CS4 : **Nombre de professions intermédiaires actifs occupés de 15 à 64 ans**
+- C12_ACTOCC1564_CS5 : **Nombre d'employés actifs occupés de 15 à 64 ans**
+- C12_ACTOCC1564_CS6 : **Nombre d'ouvriers actifs occupés de 15 à 64 ans**
+- P12_ACTOCC15P : **Nombre de personnes actives occupées de 15 ans ou plus**
+- P12_HACTOCC15P : **Nombre d'hommes actifs occupés de 15 ans ou plus**
+- P12_FACTOCC15P : **Nombre de femmes actives occupées de 15 ans ou plus**
+- P12_SAL15P : **Nombre de personnes salariées de 15 ans ou plus**
+- P12_HSAL15P : **Nombre d'hommes salariés de 15 ans ou plus**
+- P12_FSAL15P : **Nombre de femmes salariées de 15 ans ou plus**
+- P12_NSAL15P : **Nombre de personnes non-salariées de 15 ans ou plus**
+- P12_HNSAL15P : **Nombre d'hommes non-salariés de 15 ans ou plus**
+- P12_FNSAL15P : **Nombre de femmes non-salariées de 15 ans ou plus**
+- P12_ACTOCC15P_TP : **Nombre de personnes actives occupées de 15 ans ou plus à temps partiel**
+- P12_SAL15P_TP : **Nombre de personnes salariées de 15 ans ou plus à temps partiel**
+- P12_HSAL15P_TP : **Nombre d'hommes salariés de 15 ans ou plus à temps partiel**
+- P12_FSAL15P_TP : **Nombre de femmes salariées de 15 ans ou plus à temps partiel**
+- P12_NSAL15P_TP : **Nombre de personnes non-salariées de 15 ans ou plus à temps partiel**
+- P12_SAL15P_CDI : **Nombre de personnes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée**
+- P12_SAL15P_CDD : **Nombre de personnes salariées de 15 ans ou plus ayant un contrat à durée déterminée**
+- P12_SAL15P_INTERIM : **Nombre de personnes salariées de 15 ans ou plus intérimaires**
+- P12_SAL15P_EMPAID : **Nombre de personnes salariées de 15 ans ou plus Emplois aidés**
+- P12_SAL15P_APPR : **Nombre de personnes salariées de 15 ans ou plus en apprentissage ou stagiaires**
+- P12_NSAL15P_INDEP : **Nombre de personnes non-salariées de 15 ans ou plus indépendants**
+- P12_NSAL15P_EMPLOY : **Nombre de personnes non-salariées de 15 ans ou plus employeurs**
+- P12_NSAL15P_AIDFAM : **Nombre de personnes non-salariées de 15 ans ou plus aides familiaux**
+- P12_ACTOCC15P_ILT1 : **Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence**
+- P12_ACTOCC15P_ILT2P : **Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence**
+- P12_ACTOCC15P_ILT2 : **Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence**
+- P12_ACTOCC15P_ILT3 : **Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence**
+- P12_ACTOCC15P_ILT4 : **Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une commune située dans une autre région en France métropolitaine**
+- P12_ACTOCC15P_ILT5 : **Nombre d'actifs occupés de 15 ans ou plus qui travaillent ailleurs, hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger)**
+- P12_ACTOCC15P_ILT45D : **Nombre d'actifs occupés de 15 ans ou plus dans les DOM qui travaillent dans une autre région**
+- C12_ACTOCC15P : **Nombre d'actifs occupés de 15 ans ou plus**
+- C12_ACTOCC15P_PAS : **Nombre d'actifs occupés de 15 ans ou plus qui n'utilisent pas de moyen de transport pour aller travailler**
+- C12_ACTOCC15P_MAR : **Nombre d'actifs occupés de 15 ans ou plus qui vont travailler principalement à pied**
+- C12_ACTOCC15P_DROU : **Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un deux roues pour aller travailler**
+- C12_ACTOCC15P_VOIT : **Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement une voiture ou un camion pour aller travailler**
+- C12_ACTOCC15P_TCOM : **Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement les transports en commun pour aller travailler**
