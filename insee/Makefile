@@ -60,5 +60,10 @@ download:
 	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-formation-12
 	@wget -O data/infra-formation-2012.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2012/infracommunal/infra-formation-12/infra-formation-2012.zip
 	@unzip data/infra-formation-2012.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-famille-12
+	@wget -O data/infra-famille-2012.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2012/infracommunal/infra-famille-12/infra-famille-2012.zip
+	@unzip data/infra-famille-2012.zip -d data/
+
+
 convert:
 	python mk_data.py

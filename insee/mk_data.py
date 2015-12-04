@@ -467,6 +467,29 @@ diplome12.LIBGEO = diplome12.LIBGEO.apply(fix_LIBGEO_12)
 data = pd.merge(data, diplome12[features], on=key, how='outer')
 
 
+## Famille 2012
+famille12 = pd.read_excel('data/base-ic-couples-familles-menages-2012.xls', sheetname='IRIS')
+# creating header from file
+header = famille12.loc[4].tolist()
+famille12.columns = header
+famille12.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+# to get real values
+famille12 = famille12[5:]
+
+# Adding CODGEO (iris ID) and other geo features witch are not in data
+features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+[features.append(i) for i in ['CODGEO', 'LIBGEO']]
+
+key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
+               
+print "il y a  %d iris différentes pour les familles 2012 et %d features" % (len(famille12.CODGEO.unique()), len(features) - 1)
+
+#save = data.copy()
+famille12.LIBGEO = famille12.LIBGEO.apply(fix_LIBGEO_12)
+
+data = pd.merge(data, famille12[features], on=key, how='outer')
+
 # Extract 
 print "Extracting file in /data/output.csv"
 data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
