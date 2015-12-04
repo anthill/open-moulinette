@@ -440,11 +440,31 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'REG2016', 'LAB_IRIS',
 print "il y a  %d iris différentes pour le logement 2012 et %d features" % (len(logement12.CODGEO.unique()), len(features) - 1)
 
 logement12.LIBGEO = logement12.LIBGEO.apply(fix_LIBGEO_12)
-new_iris = list(set(logement12.CODGEO.unique().tolist()) - set(data.CODGEO.unique().tolist()))
-print "%s nouvelles iris" % (len(new_iris))
 
 data = pd.merge(data, logement12[features], on=key, how='outer')
 
+
+## Diplome 2012
+diplome12 = pd.read_excel('data/base-ic-diplomes-formation-2012.xls', sheetname='IRIS')
+# creating header from file
+header = diplome12.loc[4].tolist()
+diplome12.columns = header
+diplome12.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+# to get real values
+diplome12 = diplome12[5:]
+
+# Adding CODGEO (iris ID) and other geo features witch are not in data
+features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+[features.append(i) for i in ['CODGEO', 'LIBGEO']]
+
+key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
+
+print "il y a  %d iris différentes pour le diplome 2012 et %d features" % (len(diplome12.CODGEO.unique()), len(features) - 1)
+
+diplome12.LIBGEO = diplome12.LIBGEO.apply(fix_LIBGEO_12)
+
+data = pd.merge(data, diplome12[features], on=key, how='outer')
 
 
 # Extract 
