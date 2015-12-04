@@ -23,7 +23,6 @@ In the `output.csv` the column names are like `NB_B314`  (which is the number of
 -	[Base de données infracommunales : couples - familles - ménages en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--couples---familles---ménages-en-2011)
 -	[Base de données infracommunales : population en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--population-en-2011)
 -	[Base de données infracommunales : activité des résidents en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--activité-des-résidents-en-2011)
--	[Base de données infracommunales : logement en 2012](https://github.com/armgilles/open-moulinette/blob/master/insee/documentation.md#base-de-donn%C3%A9es-infracommunales--logement-en-2012)
 
 ## Description géographique
 
