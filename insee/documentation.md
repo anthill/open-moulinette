@@ -47,6 +47,13 @@ In the `output.csv` the column names are like `NB_B314`  (which is the number of
 - CV : Canton ville
 - ZE2010 : Zone d'emploi
 - UU2010 : Unité urbaine
+- REG2016 : [Code région 2016](http://www.insee.fr/fr/methodes/default.asp?page=nomenclatures/cog/codes_regions_2016.htm)
+- TRIRIS : Code du département suivi d'un numéro d'ordre à l'intérieur du département sur trois positions puis d'un indicateur de TRIRIS
+- GRD_QUART : Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille suivi du numéro de grand quartier
+- TYP_IRIS :  le type d'IRIS qui permet de distinguer les IRIS d'habitat 'H' des IRIS d'activité 'A' et des IRIS divers 'D'. Le type d'IRIS est 'Z' pour les communes non découpées en IRIS. Le type d'IRIS a été déterminé lors de la création des IRIS, en 1999. Depuis, les caractéristiques de l'IRIS ont pu évoluer (population, nombre d'emplois, …) sans que le type
+d'IRIS n'ait toujours été modifié.
+- MODIF_IRIS : 
+- LAB_IRIS : Label de qualité de l'IRIS
 
 **Attention :** Un équipement  est défini comme un service rendu par un établissement. Ainsi, un établissement peut être compté plusieurs fois dans la base, s’il rend plusieurs services.
 
@@ -63,7 +70,7 @@ Certains indicateurs sont en doublons (ils apparaissent dans plusieurs fichiers)
 
 *YY : Pour l'année (11 : 2011, 12 : 2012)*. Ils ont été dédoublonner dans le fichier final car ils ont strictement les même valeurs suivant leurs fichiers d'origines. Cependant ces doublons ont été garder dans cette documentation pour une meilleur compréhension.
 
-Doublon sur le code Iris :
+**Doublon sur le code Iris :**
 
 Il y a 143 doublons (code Iris), cela provient des changements effectuer entre 2011 et 2012 (nom, type d'Iris...) :
 
