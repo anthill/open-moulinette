@@ -53,15 +53,20 @@ In the `output.csv` the column names are like `NB_B314`  (which is the number of
 ## Précisions
 
 Certains indicateurs sont en doublons (ils apparaissent dans plusieurs fichiers) :
-- P11_PMEN
-- P11_POP0610
-- P11_POP1824
-- P11_POP1524
-- P11_POP2554
-- P11_POP80P
-- P11_POP5564
+- PYY_PMEN
+- PYY_POP0610
+- PYY_POP1824
+- PYY_POP1524
+- PYY_POP2554
+- PYY_POP80P
+- PYY_POP5564
 
-Ils ont été dédoublonner dans le fichier final car ils ont strictement les même valeurs suivant leurs fichiers d'origines. Cependant ces doublons ont été garder dans cette documentation pour une meilleur compréhension.
+*YY : Pour l'année (11 : 2011, 12 : 2012)*. Ils ont été dédoublonner dans le fichier final car ils ont strictement les même valeurs suivant leurs fichiers d'origines. Cependant ces doublons ont été garder dans cette documentation pour une meilleur compréhension.
+
+Doublon sur le code Iris :
+
+Il y a 143 doublons (code Iris), cela provient des changements effectuer entre 2011 et 2012 (nom, type d'Iris) :
+
 
 ##Nombre d'équipements et de services dans le domaine du commerce en 2013
 
