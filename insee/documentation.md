@@ -65,7 +65,16 @@ Certains indicateurs sont en doublons (ils apparaissent dans plusieurs fichiers)
 
 Doublon sur le code Iris :
 
-Il y a 143 doublons (code Iris), cela provient des changements effectuer entre 2011 et 2012 (nom, type d'Iris) :
+Il y a 143 doublons (code Iris), cela provient des changements effectuer entre 2011 et 2012 (nom, type d'Iris...) :
+
+```
+CODGEO      LIBGEO     COM     LIBCOM    REG DEP   UU2010  REG2016  TRIRIS  GRD_QUART \
+591831301  Dessinguez  59183  Dunkerque  31  59    59602      32    590381  5918313     
+591831301  Dessinguez  59183  Dunkerque  31  59    59602      32    590381  5918313   
+TYP_IRIS  MODIF_IRIS LAB_IRIS
+   H         00         1
+   H         00         2
+```
 
 
 ##Nombre d'équipements et de services dans le domaine du commerce en 2013
