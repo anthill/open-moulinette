@@ -432,7 +432,7 @@ logement12 = logement12[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
-#features.remove('P11_PMEN') # P11_PMEN is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
+features.remove('P12_PMEN') # P12_PMEN is already in Population file
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'REG2016', 'LAB_IRIS',
@@ -455,6 +455,8 @@ diplome12 = diplome12[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P12_POP0610') # P12_POP0610 is already in PopPulation file
+features.remove('P12_POP1824') # P12_POP1824 is already in Population file
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
@@ -478,6 +480,9 @@ famille12 = famille12[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P12_POP1524') # P12_POP1524 is already in Activité file
+features.remove('P12_POP2554') # P12_POP2554 is already in Activité file
+features.remove('P12_POP80P') # P12_POP80P is already in Population file
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
@@ -524,6 +529,7 @@ activite12 = activite12[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P12_POP5564') # P12_POP5564 is already in Population file
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
