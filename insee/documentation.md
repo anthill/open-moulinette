@@ -23,6 +23,7 @@ In the `output.csv` the column names are like `NB_B314`  (which is the number of
 -	[Base de données infracommunales : couples - familles - ménages en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--couples---familles---ménages-en-2011)
 -	[Base de données infracommunales : population en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--population-en-2011)
 -	[Base de données infracommunales : activité des résidents en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--activité-des-résidents-en-2011)
+-	[Base de données infracommunales : logement en 2012](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--logement-en-2012)
 
 ## Description géographique
 
@@ -860,5 +861,82 @@ Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs ré
  - C11_ACTOCC15P_VOIT : **Actif occ 15 ans ou plus voiture, camion en 2011 (compl)**
  - C11_ACTOCC15P_TCOM : **Actif occ 15 ans ou plus transport en commun en 2011 (compl)**
 
+##Base de données infracommunales : logement en 2012
 
-
+- P12_LOG : **Nombre de logements**
+- P12_RP : **Nombre de résidences principales**
+- P12_RSECOCC : **Nombre de résidences secondaires et logements occasionnels**
+- P12_LOGVAC : **Nombre de logements vacants**
+- P12_MAISON : **Nombre de maisons**
+- P12_APPART : **Nombre d'appartements**
+- P12_RP_1P : **Nombre de résidences principales d'1 pièce**
+- P12_RP_2P : **Nombre de résidences principales de 2 pièces**
+- P12_RP_3P : **Nombre de résidences principales de 3 pièces**
+- P12_RP_4P : **Nombre de résidences principales de 4 pièces**
+- P12_RP_5PP : **Nombre de résidences principales de 5 pièces ou plus**
+- P12_NBPI_RP : **Nombre de pièces des résidences principales**
+- P12_RPMAISON : **Nombre de résidences principales de type maison**
+- P12_NBPI_RPMAISON : **Nombre de pièces des résidences principales de type maison**
+- P12_RPAPPART : **Nombre de résidences principales de type appartement**
+- P12_NBPI_RPAPPART : **Nombre de pièces des résidences principales de type appartement**
+- P12_RP_M40M2 : **Nombre de résidences principales de moins de 40 m2**
+- P12_RP_4099M2 : **Nombre de résidences principales de 40 à 99 m2**
+- P12_RP_100M2P : **Nombre de résidences principales de 100 m2 ou plus**
+- P12_RP_ACHTT : **Nombre de résidences principales construites avant 2010**
+- P12_RP_ACHT1 : **Nombre de résidences principales construites avant 1946**
+- P12_RP_ACHT2 : **Nombre de résidences principales construites de 1946 à 1990**
+- P12_RP_ACHT3 : **Nombre de résidences principales construites de 1991 à 2009**
+- P12_RPMAISON_ACHTT : **Nombre de résidences principales de type maison construites avant 2010**
+- P12_RPMAISON_ACHT1 : **Nombre de résidences principales de type maison construites avant 1946**
+- P12_RPMAISON_ACHT2 : **Nombre de résidences principales de type maison construites de 1946 à 1990**
+- P12_RPMAISON_ACHT3 : **Nombre de résidences principales de type maison construites de 1991 à 2009**
+- P12_RPAPPART_ACHTT : **Nombre de résidences principales de type appartement construites avant 2010**
+- P12_RPAPPART_ACHT1 : **Nombre de résidences principales de type appartement construites avant 1946**
+- P12_RPAPPART_ACHT2 : **Nombre de résidences principales de type appartement construites de 1946 à 1990**
+- P12_RPAPPART_ACHT3 : **Nombre de résidences principales de type appartement construites de 1991 à 2009**
+- P12_MEN : **Nombre de ménages**
+- P12_MEN_ANEM0002 : **Nombre de ménages ayant emménagé depuis moins de 2 ans**
+- P12_MEN_ANEM0204 : **Nombre de ménages ayant emménagé entre 2 et 4 ans**
+- P12_MEN_ANEM0509 : **Nombre de ménages ayant emménagé entre 5 et 9 ans**
+- P12_MEN_ANEM10P : **Nombre de ménages ayant emménagé depuis 10 ans ou plus**
+- P12_PMEN : **Population des ménages**
+- P12_PMEN_ANEM0002 : **Population des ménages ayant emménagé depuis moins de 2 ans**
+- P12_PMEN_ANEM0204 : **Population des ménages ayant emménagé entre 2 et 4 ans**
+- P12_PMEN_ANEM0509 : **Population des ménages ayant emménagé entre 5 et 9 ans**
+- P12_PMEN_ANEM10P : **Population des ménages ayant emménagé depuis 10 ans ou plus**
+P12_NBPI_RP_ANEM0002 : **Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis moins de 2 ans**
+- P12_NBPI_RP_ANEM0204 : **Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 2 et 4 ans**
+- P12_NBPI_RP_ANEM0509 : **Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 5 et 9 ans**
+- P12_NBPI_RP_ANEM10P : **Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis 10 ans ou plus**
+- P12_RP_PROP : **Nombre de résidences principales occupées par des propriétaires**
+- P12_RP_LOC : **Nombre de résidences principales occupées par des locataires**
+- P12_RP_LOCHLMV : **Nombre de résidences principales HLM loué vide**
+- P12_RP_GRAT : **Nombre de résidences principales occupées gratuitement**
+- P12_NPER_RP : **Nombre de personnes des résidences principales**
+- P12_NPER_RP_PROP : **Nombre de personnes des résidences principales occupées par des propriétaires**
+- P12_NPER_RP_LOC : **Nombre de personnes des résidences principales occupées par des locataires**
+- P12_NPER_RP_LOCHLMV : **Nombre de personnes des résidences principales HLM louées vides**
+- P12_NPER_RP_GRAT : **Nombre de personnes des résidences principales occupées gratuitement**
+- P12_ANEM_RP : **Ancienneté totale d'emménagement dans les résidences principales en années**
+- P12_ANEM_RP_PROP : **Ancienneté totale d'emménagement dans les résidences principales occupées par des propriétaires en années**
+- P12_ANEM_RP_LOC : **Ancienneté totale d'emménagement dans les résidences principales occupées par des locataires en années**
+- P12_ANEM_RP_LOCHLMV : **Ancienneté totale d'emménagement dans les résidences principales HLM louées vides en années**
+- P12_ANEM_RP_GRAT : **Ancienneté totale d'emménagement dans les résidences principales occupées gratuitement en années**
+- P12_RP_SDB : **Nombre de résidences principales avec salle de bain dotée de baignoire ou douche**
+- P12_RP_CCCOLL : **Nombre de résidences principales avec chauffage central collectif**
+- P12_RP_CCIND : **Nombre de résidences principales avec chauffage central individuel**
+- P12_RP_CINDELEC : **Nombre de résidences principales avec chauffage individuel électrique**
+- P12_RP_ELEC : **Nombre de résidences principales avec électricité dans le logement**
+- P12_RP_EAUCH : **Nombre de résidences principales avec eau chaude dans le logement**
+- P12_RP_BDWC : **Nombre de résidences principales avec baignoire ou douche et WC à l'intérieur du logement**
+- P12_RP_CHOS : **Nombre de résidences principales avec chauffe-eau solaire**
+- P12_RP_CLIM : **Nombre de résidences principales avec pièce climatisée**
+- P12_RP_TTEGOU : **Nombre de résidences principales avec tout à l'égout**
+- P12_RP_GARL : **Nombre de ménages disposant au moins d'un emplacement réservé au stationnement**
+- P12_RP_VOIT1P : **Nombre de ménages disposant au moins d'une voiture**
+- P12_RP_VOIT1 : **Nombre de ménages disposant d'une voiture**
+- P12_RP_VOIT2P : **Nombre de ménages disposant de deux voitures ou plus**
+- P12_RP_HABFOR : **Nombre de résidences principales habitations de fortune**
+- P12_RP_CASE : **Nombre de résidences principales cases traditionnelles**
+- P12_RP_MIBOIS : **Nombre de résidences principales maisons ou immeubles en bois**
+- P12_RP_MIDUR : **Nombre de résidences principales maisons ou immeubles en dur**
