@@ -54,6 +54,21 @@ download:
 	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-activite-resident-11
 	@wget -O data/infra-activite-resident-2011.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2011/infracommunal/infra-activite-resident-11/infra-activite-resident-2011.zip
 	@unzip data/infra-activite-resident-2011.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-logement-12
+	@wget -O data/infra-logement-2012.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2012/infracommunal/infra-logement-12/infra-logement-2012.zip
+	@unzip data/infra-logement-2012.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-formation-12
+	@wget -O data/infra-formation-2012.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2012/infracommunal/infra-formation-12/infra-formation-2012.zip
+	@unzip data/infra-formation-2012.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-famille-12
+	@wget -O data/infra-famille-2012.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2012/infracommunal/infra-famille-12/infra-famille-2012.zip
+	@unzip data/infra-famille-2012.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-population-12
+	@wget -O data/infra-population-2012.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2012/infracommunal/infra-population-12/infra-population-2012.zip
+	@unzip data/infra-population-2012.zip -d data/
+	# http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=infra-activite-resident-12
+	@wget -O data/infra-activite-resident-2012.zip http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/rp2012/infracommunal/infra-activite-resident-12/infra-activite-resident-2012.zip
+	@unzip data/infra-activite-resident-2012.zip -d data/
 	
 
 convert:

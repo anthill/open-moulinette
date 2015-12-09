@@ -31,16 +31,12 @@ sport.columns = header
 sport = sport[5:]
 # creating new feature : sum all features non aggregated
 features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
-sport['nb_sport'] =  sport[['NB_F101', 'NB_F102', 'NB_F103', 'NB_F104', 'NB_F105',
-                            'NB_F106', 'NB_F107', 'NB_F108', 'NB_F109', 'NB_F110', 
-                            'NB_F111', 'NB_F112', 'NB_F113', 'NB_F114', 'NB_F115',
-                            'NB_F117', 'NB_F118']].applymap(lambda x: float(x)).sum(axis=1)
-sport['nb_airjeu_sport'] =  sport[['NB_F101_NB_AIREJEU', 'NB_F102_NB_AIREJEU', 'NB_F103_NB_AIREJEU',
-                                    'NB_F104_NB_AIREJEU', 'NB_F105_NB_AIREJEU', 'NB_F106_NB_AIREJEU', 
-                                    'NB_F107_NB_AIREJEU', 'NB_F108_NB_AIREJEU', 'NB_F108_NB_AIREJEU', 
-                                    'NB_F110_NB_AIREJEU', 'NB_F111_NB_AIREJEU', 'NB_F112_NB_AIREJEU', 
-                                    'NB_F113_NB_AIREJEU', 'NB_F114_NB_AIREJEU', 'NB_F115_NB_AIREJEU', 
-                                    'NB_F116_NB_AIREJEU', 'NB_F117_NB_AIREJEU', 'NB_F118_NB_AIREJEU']].applymap(lambda x: float(x)).sum(axis=1)
+# Sum NB_F101 to NB_F118
+sport['nb_sport'] = sport[[x for x in sport.columns if x[:5] == 'NB_F1' and len(x) == 7]]\
+                    .applymap(lambda x: float(x)).sum(axis=1)
+# Sum NB_F101_NB_AIREJEU to NB_F118_NB_AIREJEU
+sport['nb_airjeu_sport'] =  sport[[x for x in sport.columns if x[:5] == 'NB_F1' and x[-10:] == 'NB_AIREJEU']]\
+                                .applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_sport', 'CODGEO']]
 print "il y a  %d iris différentes pour le sport et %d features" % (len(sport.CODGEO.unique()), len(features) - 1)
 
@@ -56,8 +52,9 @@ enseignement_1.columns = header
 enseignement_1 = enseignement_1[5:]
 # creating new feature : sum all features non aggregated
 features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
-enseignement_1['nb_enseignement_1'] =  enseignement_1[['NB_C101', 'NB_C102', 'NB_C104',
-                                                        'NB_C105']].applymap(lambda x: float(x)).sum(axis=1)
+# Sum NB_C101 to NB_C105
+enseignement_1['nb_enseignement_1'] = enseignement_1[[x for x in enseignement_1.columns if x[:5] == 'NB_C1' and len(x) == 7]]\
+                                        .applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_enseignement_1', 'CODGEO']]
 print "il y a  %d iris différentes pour l'enseignement du 1er degré et %d features" % (len(enseignement_1.CODGEO.unique()), len(features) - 1)
 
@@ -73,8 +70,9 @@ enseignement_2.columns = header
 enseignement_2 = enseignement_2[5:]
 # creating new feature : sum all features non aggregated
 features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
-enseignement_2['nb_enseignement_2'] =  enseignement_2[['NB_C201', 'NB_C301', 'NB_C302',
-                                                        'NB_C303', 'NB_C304', 'NB_C305']].applymap(lambda x: float(x)).sum(axis=1)
+# Sum NB_C201 to NB_C305
+enseignement_2['nb_enseignement_2'] = enseignement_2[[x for x in enseignement_2.columns if x[:4] == 'NB_C' and len(x) == 7]]\
+                                        .applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_enseignement_2', 'CODGEO']]
 print "il y a  %d iris différentes pour l'enseignement du second degré et %d features" % (len(enseignement_2.CODGEO.unique()), len(features) - 1)
 
@@ -90,6 +88,7 @@ enseignement_sup.columns = header
 enseignement_sup = enseignement_sup[5:]
 # creating new feature : sum all features non aggregated
 features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
+# Sum special columns
 enseignement_sup['nb_enseignement_sup'] =  enseignement_sup[['NB_C401', 'NB_C402', 'NB_C403',
                                                             'NB_C409', 'NB_C501', 'NB_C502', 
                                                             'NB_C503', 'NB_C504', 'NB_C509', 
@@ -252,77 +251,83 @@ print "il y a  %d iris différentes pour le transport touristique et %d features
 data = pd.merge(data, transport_tourisme[features], on='CODGEO', how='outer')
 
 ############################################################
-####                CENSUS FILES
+####                CENSUS FILES 2011
 ############################################################
 
-## Logement
-logement = pd.read_excel('data/base-ic-logement-2011.xls', sheetname='IRIS')
+## Logement 2011
+logement11 = pd.read_excel('data/base-ic-logement-2011.xls', sheetname='IRIS')
 # creating header from file
-header = logement.loc[4].tolist()
-logement.columns = header
-logement.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+header = logement11.loc[4].tolist()
+logement11.columns = header
+logement11.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
 # to get real values
-logement = logement[5:]
+logement11 = logement11[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P11_PMEN') # P11_PMEN is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010']       
-print "il y a  %d iris différentes pour le logement et %d features" % (len(logement.CODGEO.unique()), len(features) - 1)
+print "il y a  %d iris différentes pour le logement 2011 et %d features" % (len(logement11.CODGEO.unique()), len(features) - 1)
 
-data = pd.merge(data, logement[features], on=key, how='outer')
+data = pd.merge(data, logement11[features], on=key, how='outer')
 
 
-## Diplome
-diplome = pd.read_excel('data/base-ic-diplomes-formation-2011.xls', sheetname='IRIS')
+## Diplome 2011
+diplome11 = pd.read_excel('data/base-ic-diplomes-formation-2011.xls', sheetname='IRIS')
 # creating header from file
-header = diplome.loc[4].tolist()
-diplome.columns = header
-diplome.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+header = diplome11.loc[4].tolist()
+diplome11.columns = header
+diplome11.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
 # to get real values
-diplome = diplome[5:]
+diplome11 = diplome11[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P11_POP0610') # P11_POP0610 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
+features.remove('P11_POP1824') # P11_POP1824 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
        'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
-print "il y a  %d iris différentes pour les diplomes et %d features" % (len(diplome.CODGEO.unique()), len(features) - 1)
+print "il y a  %d iris différentes pour les diplomes 2011 et %d features" % (len(diplome11.CODGEO.unique()), len(features) - 1)
 
-data = pd.merge(data, diplome[features], on=key, how='outer')
+data = pd.merge(data, diplome11[features], on=key, how='outer')
 
 
-## Famille
-famille = pd.read_excel('data/base-ic-couples-familles-menages-2011.xls', sheetname='IRIS')
+## Famille 2011
+famille11 = pd.read_excel('data/base-ic-couples-familles-menages-2011.xls', sheetname='IRIS')
 # creating header from file
-header = famille.loc[4].tolist()
-famille.columns = header
-famille.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+header = famille11.loc[4].tolist()
+famille11.columns = header
+famille11.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
 # to get real values
-famille = famille[5:]
+famille11 = famille11[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P11_POP1524') # P11_POP1524 is already in Activité file (https://github.com/anthill/open-moulinette/issues/18)
+features.remove('P11_POP2554') # P11_POP2554 is already in Activité file (https://github.com/anthill/open-moulinette/issues/18)
+features.remove('P11_POP80P') # P11_POP80P is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
        'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
                
-print "il y a  %d iris différentes pour les familles et %d features" % (len(famille.CODGEO.unique()), len(features) - 1)
+print "il y a  %d iris différentes pour les familles 2011 et %d features" % (len(famille11.CODGEO.unique()), len(features) - 1)
 
-data = pd.merge(data, famille[features], on=key, how='outer')
+data = pd.merge(data, famille11[features], on=key, how='outer')
 
 
-## Population
-population = pd.read_excel('data/base-ic-evol-struct-pop-2011.xls', sheetname='IRIS')
+## Population 2011
+population11 = pd.read_excel('data/base-ic-evol-struct-pop-2011.xls', sheetname='IRIS')
 # creating header from file
-header = population.loc[4].tolist()
-population.columns = header
-population.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+header = population11.loc[4].tolist()
+population11.columns = header
+population11.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
 # to get real values
-population = population[5:]
+population11 = population11[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
@@ -331,29 +336,210 @@ features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
        'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
                  
-print "il y a  %d iris différentes pour le population et %d features" % (len(population.CODGEO.unique()), len(features) - 1)
-data = pd.merge(data, population[features], on=key, how='outer')
+print "il y a  %d iris différentes pour le population 2011 et %d features" % (len(population11.CODGEO.unique()), len(features) - 1)
+data = pd.merge(data, population11[features], on=key, how='outer')
 
 
-## Activité
-activite = pd.read_excel('data/base-ic-activite-residents-2011.xls', sheetname='IRIS')
+## Activité 2011
+activite11 = pd.read_excel('data/base-ic-activite-residents-2011.xls', sheetname='IRIS')
 # creating header from file
-header = activite.loc[4].tolist()
-activite.columns = header
-activite.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+header = activite11.loc[4].tolist()
+activite11.columns = header
+activite11.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
 # to get real values
-activite = activite[5:]
+activite11 = activite11[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P11_POP5564') # P11_POP5564 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
        'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
                  
-print "il y a  %d iris différentes pour l'activité et %d features" % (len(activite.CODGEO.unique()), len(features) - 1)
-data = pd.merge(data, activite[features], on=key, how='outer')
+print "il y a  %d iris différentes pour l'activité 2011 et %d features" % (len(activite11.CODGEO.unique()), len(features) - 1)
+data = pd.merge(data, activite11[features], on=key, how='outer')
 
+
+
+# 110 rows are NaN for this label
+data.dropna(subset=[u'LIBGEO',
+                     u'COM',
+                     u'LIBCOM',
+                     u'REG',
+                     u'DEP',
+                     u'UU2010'], how='all', inplace=True)
+
+############################################################
+####                CENSUS FILES 2012
+############################################################
+
+# New Region Code (REG2016)
+
+new_reg_dict = {'01' : '01',
+                '02' : '02',
+                '03' : '03',
+                '04' : '04',
+                '11' : '11',
+                '21' : '44',
+                '22' : '32',
+                '23' : '28',
+                '24' : '24',
+                '25' : '28',
+                '26' : '27',
+                '31' : '32',
+                '41' : '44',
+                '42' : '44',
+                '43' : '27',
+                '52' : '52',
+                '53' : '53',
+                '54' : '75',
+                '72' : '75',
+                '73' : '76',
+                '74' : '75',
+                '82' : '84',
+                '83' : '84',
+                '91' : '76',
+                '93' : '93',
+                '94' : '94'}
+                
+data['REG2016'] = data.REG.map(new_reg_dict)
+
+def fix_LIBGEO_12(x):
+    """
+    LIBGEO change between 2011 & 2012. It prevent merge (LIBGEO is a key)
+    2011 : "Awala-Yalimapo"
+    2012 : "Awala-Yalimapo (commune non irisée)"
+    
+    input: string
+    output : Return string without " (commune non irisée)".
+    """
+    try:
+        return x.encode('utf-8').replace(" (commune non irisée)", '').decode('utf-8')
+    except Exception as er:
+        print "Erreur : " + x + str(er)
+        return x
+
+
+# Logement 2012
+logement12 = pd.read_excel('data/base-ic-logement-2012.xls', sheetname='IRIS')
+# creating header from file
+header = logement12.loc[4].tolist()
+logement12.columns = header
+logement12.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+# to get real values
+logement12 = logement12[5:]
+
+# Adding CODGEO (iris ID) and other geo features witch are not in data
+features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P12_PMEN') # P12_PMEN is already in Population file
+[features.append(i) for i in ['CODGEO', 'LIBGEO']]
+
+key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'REG2016', 'LAB_IRIS',
+       'DEP', 'UU2010', 'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS']       
+print "il y a  %d iris différentes pour le logement 2012 et %d features" % (len(logement12.CODGEO.unique()), len(features) - 1)
+
+logement12.LIBGEO = logement12.LIBGEO.apply(fix_LIBGEO_12)
+
+data = pd.merge(data, logement12[features], on=key, how='outer')
+
+
+## Diplome 2012
+diplome12 = pd.read_excel('data/base-ic-diplomes-formation-2012.xls', sheetname='IRIS')
+# creating header from file
+header = diplome12.loc[4].tolist()
+diplome12.columns = header
+diplome12.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+# to get real values
+diplome12 = diplome12[5:]
+
+# Adding CODGEO (iris ID) and other geo features witch are not in data
+features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P12_POP0610') # P12_POP0610 is already in PopPulation file
+features.remove('P12_POP1824') # P12_POP1824 is already in Population file
+[features.append(i) for i in ['CODGEO', 'LIBGEO']]
+
+key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] 
+
+print "il y a  %d iris différentes pour le diplome 2012 et %d features" % (len(diplome12.CODGEO.unique()), len(features) - 1)
+
+diplome12.LIBGEO = diplome12.LIBGEO.apply(fix_LIBGEO_12)
+
+data = pd.merge(data, diplome12[features], on=key, how='outer')
+
+
+## Famille 2012
+famille12 = pd.read_excel('data/base-ic-couples-familles-menages-2012.xls', sheetname='IRIS')
+# creating header from file
+header = famille12.loc[4].tolist()
+famille12.columns = header
+famille12.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+# to get real values
+famille12 = famille12[5:]
+
+# Adding CODGEO (iris ID) and other geo features witch are not in data
+features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P12_POP1524') # P12_POP1524 is already in Activité file
+features.remove('P12_POP2554') # P12_POP2554 is already in Activité file
+features.remove('P12_POP80P') # P12_POP80P is already in Population file
+[features.append(i) for i in ['CODGEO', 'LIBGEO']]
+
+key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] 
+               
+print "il y a  %d iris différentes pour les familles 2012 et %d features" % (len(famille12.CODGEO.unique()), len(features) - 1)
+
+famille12.LIBGEO = famille12.LIBGEO.apply(fix_LIBGEO_12)
+
+data = pd.merge(data, famille12[features], on=key, how='outer')
+
+
+## Population 2012
+population12 = pd.read_excel('data/base-ic-evol-struct-pop-2012.xls', sheetname='IRIS')
+# creating header from file
+header = population12.loc[4].tolist()
+population12.columns = header
+population12.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+# to get real values
+population12 = population12[5:]
+
+# Adding CODGEO (iris ID) and other geo features witch are not in data
+features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+[features.append(i) for i in ['CODGEO', 'LIBGEO']]
+
+key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
+                 
+print "il y a  %d iris différentes pour le population 2012 et %d features" % (len(population12.CODGEO.unique()), len(features) - 1)
+
+population12.LIBGEO = population12.LIBGEO.apply(fix_LIBGEO_12)
+
+data = pd.merge(data, population12[features], on=key, how='outer')
+
+
+## Activité 2012
+activite12 = pd.read_excel('data/base-ic-activite-residents-2012.xls', sheetname='IRIS')
+# creating header from file
+header = activite12.loc[4].tolist()
+activite12.columns = header
+activite12.rename(columns={'IRIS':'CODGEO', 'LIBIRIS': 'LIBGEO'}, inplace=True)
+# to get real values
+activite12 = activite12[5:]
+
+# Adding CODGEO (iris ID) and other geo features witch are not in data
+features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
+features.remove('P12_POP5564') # P12_POP5564 is already in Population file
+[features.append(i) for i in ['CODGEO', 'LIBGEO']]
+
+key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
+                 
+print "il y a  %d iris différentes pour l'activité 2012 et %d features" % (len(activite12.CODGEO.unique()), len(features) - 1)
+
+activite12.LIBGEO = activite12.LIBGEO.apply(fix_LIBGEO_12)
+
+data = pd.merge(data, activite12[features], on=key, how='outer')
 
 # Extract 
 print "Extracting file in /data/output.csv"
