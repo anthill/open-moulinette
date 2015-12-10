@@ -23,9 +23,8 @@ cd /open-moulinette/dashboard
 npm install
 ```
 
-# start Docker containers for deployment
-
 ```
+# start Docker containers for deployment
 docker-compose up
 ```
 
