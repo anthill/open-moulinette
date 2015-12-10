@@ -142,13 +142,18 @@ var parseShapeFile = function(file){
                   }
 
                   var coord = record.geometry.coordinates[0];
-                  
+         
                   if(record.geometry.type === 'Polygon') {
                      var newCoord = coord.map(function(c){return adaptedProjection.forward(c)});
                   } else { // for MultiPolygon
                      var newCoord = coord.map(function(p){return p.map(function(c){return adaptedProjection.forward(c)})});
                   }
-                  record.geometry.coordinates = [newCoord];
+
+                  var reducedCoords = newCoord.map(function(coords){
+                     return reduceLonLat(coords);
+                  });
+
+                  record.geometry.coordinates = [reducedCoords];
                   output.push(JSON.stringify(record));
                }
             };
@@ -158,4 +163,10 @@ var parseShapeFile = function(file){
   });
 };
 
+function reduceLonLat(list){
+   var accuracy = Math.pow(10, 8); // for millimeter precision
+   return list.map(function(item){
+      return Math.round(item * accuracy) / accuracy; 
+   });
+}
 
