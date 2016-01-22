@@ -2,7 +2,7 @@
 # pip install -r requirements.txt
 
 # pandas
-pandas==0.16.2
+pandas>=0.16.2
 
 # pyprind
 pyprind==2.9.3
