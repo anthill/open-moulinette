@@ -140,6 +140,7 @@ features = [x for x in header if x not in ['IRIS','LIBIRIS','COM','LIBCOM','REG'
 features.append('CODGEO')
 print "il y a  %d iris différentes pour le revenu par personne et %d features" % (len(revenu_personne.CODGEO.unique()), len(features) - 1)
 
+revenu_personne['LIBCOM'] = revenu_personne['LIBCOM'].str.replace(u' - ', u'-')
 data = fillna_with_other_table(data, revenu_personne, 'CODGEO')
 compare_geo(data, revenu_personne)
 data = pd.merge(data, revenu_personne[features], on='CODGEO', how='outer')
