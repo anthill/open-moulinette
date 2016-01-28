@@ -503,7 +503,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 print "il y a  %d iris différentes pour le diplome 2012 et %d features" % (len(diplome12.CODGEO.unique()), len(features) - 1)
 
 diplome12.LIBGEO = diplome12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
-compare_geo(data, diplome12)
+#compare_geo(data, diplome12)
 data = pd.merge(data, diplome12[features], on=key, how='outer')
 
 
@@ -529,7 +529,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 print "il y a  %d iris différentes pour les familles 2012 et %d features" % (len(famille12.CODGEO.unique()), len(features) - 1)
 
 famille12.LIBGEO = famille12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
-compare_geo(data, famille12)
+#compare_geo(data, famille12)
 # recommandation: merge on CODGEO only and take 2012 LIBGEO.
 # LIBGEO12 seems an update of LIBGEO11
 # examples : Mendela => Mandela; Anne Franck => Anne Frank,...
@@ -556,7 +556,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 print "il y a  %d iris différentes pour le population 2012 et %d features" % (len(population12.CODGEO.unique()), len(features) - 1)
 
 population12.LIBGEO = population12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
-compare_geo(data, population12)
+#compare_geo(data, population12)
 # recommandation: merge on CODGEO only and take 2012 LIBGEO.
 # LIBGEO12 seems an update of LIBGEO11
 # examples : Mendela => Mandela; Anne Franck => Anne Frank,...
@@ -584,7 +584,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 print "il y a  %d iris différentes pour l'activité 2012 et %d features" % (len(activite12.CODGEO.unique()), len(features) - 1)
 
 activite12.LIBGEO = activite12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
-compare_geo(data, activite12)
+#compare_geo(data, activite12)
 # recommandation: merge on CODGEO only and take 2012 LIBGEO.
 # LIBGEO12 seems an update of LIBGEO11
 # examples : Mendela => Mandela; Anne Franck => Anne Frank,...
