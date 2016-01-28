@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
+from comparison import compare_geo, fillna_with_other_table
 
 print "Initialisation..."
 
@@ -40,10 +41,11 @@ sport['nb_airjeu_sport'] =  sport[[x for x in sport.columns if x[:5] == 'NB_F1' 
 [features.append(i) for i in ['nb_sport', 'CODGEO']]
 print "il y a  %d iris différentes pour le sport et %d features" % (len(sport.CODGEO.unique()), len(features) - 1)
 
+compare_geo(data, sport)
 data = pd.merge(data, sport[features], on='CODGEO', how='outer')
 
 
-## Enseignement 1er degré 
+## Enseignement 1er degré
 enseignement_1 = pd.read_excel('data/equip-serv-ens-1er-degre-infra.xls', sheetname='IRIS')
 # creating header from file
 header = enseignement_1.loc[4].tolist()
@@ -58,10 +60,11 @@ enseignement_1['nb_enseignement_1'] = enseignement_1[[x for x in enseignement_1.
 [features.append(i) for i in ['nb_enseignement_1', 'CODGEO']]
 print "il y a  %d iris différentes pour l'enseignement du 1er degré et %d features" % (len(enseignement_1.CODGEO.unique()), len(features) - 1)
 
+compare_geo(data, enseignement_1)
 data = pd.merge(data, enseignement_1[features], on='CODGEO', how='outer')
 
 
-## Enseignement du second degré 
+## Enseignement du second degré
 enseignement_2 = pd.read_excel('data/equip-serv-ens-2eme-degre-infra.xls', sheetname='IRIS')
 # creating header from file
 header = enseignement_2.loc[4].tolist()
@@ -76,10 +79,11 @@ enseignement_2['nb_enseignement_2'] = enseignement_2[[x for x in enseignement_2.
 [features.append(i) for i in ['nb_enseignement_2', 'CODGEO']]
 print "il y a  %d iris différentes pour l'enseignement du second degré et %d features" % (len(enseignement_2.CODGEO.unique()), len(features) - 1)
 
+compare_geo(data, enseignement_2)
 data = pd.merge(data, enseignement_2[features], on='CODGEO', how='outer')
 
 
-## Enseignement supérieur 
+## Enseignement supérieur
 enseignement_sup = pd.read_excel('data/equip-serv-ens-sup-form-serv-infra.xls', sheetname='IRIS')
 # creating header from file
 header = enseignement_sup.loc[4].tolist()
@@ -90,13 +94,14 @@ enseignement_sup = enseignement_sup[5:]
 features = [x for x in header if x not in ['CODGEO','LIBGEO','COM','LIBCOM','REG','DEP','ARR','CV','ZE2010','UU2010']]
 # Sum special columns
 enseignement_sup['nb_enseignement_sup'] =  enseignement_sup[['NB_C401', 'NB_C402', 'NB_C403',
-                                                            'NB_C409', 'NB_C501', 'NB_C502', 
-                                                            'NB_C503', 'NB_C504', 'NB_C509', 
-                                                            'NB_C601', 'NB_C602', 'NB_C603', 
+                                                            'NB_C409', 'NB_C501', 'NB_C502',
+                                                            'NB_C503', 'NB_C504', 'NB_C509',
+                                                            'NB_C601', 'NB_C602', 'NB_C603',
                                                             'NB_C604', 'NB_C605', 'NB_C609']].applymap(lambda x: float(x)).sum(axis=1)
 [features.append(i) for i in ['nb_enseignement_sup', 'CODGEO']]
 print "il y a  %d iris différentes pour l'enseignement du supérieur et %d features" % (len(enseignement_sup.CODGEO.unique()), len(features) - 1)
 
+compare_geo(data, enseignement_sup)
 data = pd.merge(data, enseignement_sup[features], on='CODGEO', how='outer')
 
 
@@ -117,6 +122,8 @@ features = [x for x in header if x not in ['IRIS','LIBIRIS','COM','LIBCOM','REG'
 features.append('CODGEO')
 print "il y a  %d iris différentes pour le revenu par ménage et %d features" % (len(revenu_menage.CODGEO.unique()), len(features) - 1)
 
+revenu_menage['LIBCOM'] = revenu_menage['LIBCOM'].str.replace(' - ', '-')
+compare_geo(data, revenu_menage)
 data = pd.merge(data, revenu_menage[features], on='CODGEO', how='outer')
 
 ## Revenu par personne
@@ -133,6 +140,8 @@ features = [x for x in header if x not in ['IRIS','LIBIRIS','COM','LIBCOM','REG'
 features.append('CODGEO')
 print "il y a  %d iris différentes pour le revenu par personne et %d features" % (len(revenu_personne.CODGEO.unique()), len(features) - 1)
 
+data = fillna_with_other_table(data, revenu_personne, 'CODGEO')
+compare_geo(data, revenu_personne)
 data = pd.merge(data, revenu_personne[features], on='CODGEO', how='outer')
 
 
@@ -150,6 +159,8 @@ features = [x for x in header if x not in ['IRIS','LIBIRIS','COM','LIBCOM','REG'
 features.append('CODGEO')
 print "il y a  %d iris différentes pour le revenu par unité de consomation et %d features" % (len(revenu_uc.CODGEO.unique()), len(features) - 1)
 
+revenu_uc['LIBCOM'] = revenu_uc['LIBCOM'].str.replace(u' - ', u'-')
+compare_geo(data, revenu_uc, debug=True)
 data = pd.merge(data, revenu_uc[features], on='CODGEO', how='outer')
 
 ## Revenu % imposé + détails (% ménage imposé, dont traitement salaire etc..)
@@ -166,13 +177,15 @@ features = [x for x in header if x not in ['IRIS','LIBIRIS','COM','LIBCOM','REG'
 features.append('CODGEO')
 print "il y a  %d iris différentes pour le revenu par ménage imposé et %d features" % (len(revenu_impose.CODGEO.unique()), len(features) - 1)
 
+revenu_impose['LIBCOM'] = revenu_impose['LIBCOM'].str.replace(u' - ', u'-')
+compare_geo(data, revenu_impose)
 data = pd.merge(data, revenu_impose[features], on='CODGEO', how='outer')
 
 ### Fin de revenu
 #-------------------------------------------------------------------------
 
 
-## Equipement social 
+## Equipement social
 equipement_social = pd.read_excel('data/equip-serv-action-sociale-infra.xls', sheetname='IRIS')
 # creating header from file
 header = equipement_social.loc[4].tolist()
@@ -185,6 +198,7 @@ equipement_social['nb_equipement_social'] =  equipement_social[features].applyma
 [features.append(i) for i in ['nb_equipement_social', 'CODGEO']]
 print "il y a  %d iris différentes pour l'équipement social et %d features" % (len(equipement_social.CODGEO.unique()), len(features) - 1)
 
+compare_geo(data, equipement_social)
 data = pd.merge(data, equipement_social[features], on='CODGEO', how='outer')
 
 
@@ -201,6 +215,7 @@ equipement_sante['nb_equipement_sante'] =  equipement_sante[features].applymap(l
 [features.append(i) for i in ['nb_equipement_sante', 'CODGEO']]
 print "il y a  %d iris différentes pour l'équipement de santé et %d features" % (len(equipement_sante.CODGEO.unique()), len(features) - 1)
 
+compare_geo(data, equipement_sante)
 data = pd.merge(data, equipement_sante[features], on='CODGEO', how='outer')
 
 
@@ -217,6 +232,7 @@ fonction_medical['nb_fonction_medical'] =  fonction_medical[features].applymap(l
 [features.append(i) for i in ['nb_fonction_medical', 'CODGEO']]
 print "il y a  %d iris différentes pour les fonctions médical et %d features" % (len(fonction_medical.CODGEO.unique()), len(features) - 1)
 
+compare_geo(data, fonction_medical)
 data = pd.merge(data, fonction_medical[features], on='CODGEO', how='outer')
 
 ## Service pour les particuliers
@@ -232,6 +248,7 @@ service_particulier['nb_service_particulier'] =  service_particulier[features].a
 [features.append(i) for i in ['nb_service_particulier', 'CODGEO']]
 print "il y a  %d iris différentes pour les services aux particulier et %d features" % (len(service_particulier.CODGEO.unique()), len(features) - 1)
 
+compare_geo(data, service_particulier)
 data = pd.merge(data, service_particulier[features], on='CODGEO', how='outer')
 
 
@@ -248,6 +265,7 @@ transport_tourisme['nb_transport_tourisme'] =  transport_tourisme[features].appl
 [features.append(i) for i in ['nb_transport_tourisme', 'CODGEO']]
 print "il y a  %d iris différentes pour le transport touristique et %d features" % (len(transport_tourisme.CODGEO.unique()), len(features) - 1)
 
+compare_geo(data, transport_tourisme)
 data = pd.merge(data, transport_tourisme[features], on='CODGEO', how='outer')
 
 ############################################################
@@ -268,9 +286,18 @@ features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
 features.remove('P11_PMEN') # P11_PMEN is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
-key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010']       
+key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010']
 print "il y a  %d iris différentes pour le logement 2011 et %d features" % (len(logement11.CODGEO.unique()), len(features) - 1)
 
+logement11['LIBGEO'] = logement11['LIBGEO'].str.title()
+#des fautes d'accent ou de virgule mineures
+logement11['LIBGEO'] = logement11['LIBGEO'].str.replace(u"Jean Bart Guynemer", u"Jean Bart,Guynemer")
+logement11['LIBGEO'] = logement11['LIBGEO'].str.replace(u"Nouveau Siècle", u"Nouveau Siecle")
+logement11['LIBGEO'] = logement11['LIBGEO'].str.replace(u"Labuissière", u"Labuissiere")
+data['LIBGEO'] = data['LIBGEO'].str.title()
+
+data = fillna_with_other_table(data, logement11, 'CODGEO')
+compare_geo(data, logement11)
 data = pd.merge(data, logement11[features], on=key, how='outer')
 
 
@@ -290,9 +317,15 @@ features.remove('P11_POP1824') # P11_POP1824 is already in Population file (http
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
-       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file
 print "il y a  %d iris différentes pour les diplomes 2011 et %d features" % (len(diplome11.CODGEO.unique()), len(features) - 1)
 
+diplome11['LIBGEO'] = diplome11['LIBGEO'].str.title()
+#des fautes d'accent ou de virgule mineures
+diplome11['LIBGEO'] = diplome11['LIBGEO'].str.replace(u"Jean Bart Guynemer", u"Jean Bart,Guynemer")
+diplome11['LIBGEO'] = diplome11['LIBGEO'].str.replace(u"Nouveau Siècle", u"Nouveau Siecle")
+diplome11['LIBGEO'] = diplome11['LIBGEO'].str.replace(u"Labuissière", u"Labuissiere")
+compare_geo(data, diplome11)
 data = pd.merge(data, diplome11[features], on=key, how='outer')
 
 
@@ -313,10 +346,15 @@ features.remove('P11_POP80P') # P11_POP80P is already in Population file (https:
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
-       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
-               
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file
+
 print "il y a  %d iris différentes pour les familles 2011 et %d features" % (len(famille11.CODGEO.unique()), len(features) - 1)
 
+famille11['LIBGEO'] = famille11['LIBGEO'].str.title()
+famille11['LIBGEO'] = famille11['LIBGEO'].str.replace(u"Jean Bart Guynemer", u"Jean Bart,Guynemer")
+famille11['LIBGEO'] = famille11['LIBGEO'].str.replace(u"Nouveau Siècle", u"Nouveau Siecle")
+famille11['LIBGEO'] = famille11['LIBGEO'].str.replace(u"Labuissière", u"Labuissiere")
+compare_geo(data, famille11)
 data = pd.merge(data, famille11[features], on=key, how='outer')
 
 
@@ -334,9 +372,14 @@ features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
-       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
-                 
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file
+
 print "il y a  %d iris différentes pour le population 2011 et %d features" % (len(population11.CODGEO.unique()), len(features) - 1)
+population11['LIBGEO'] = population11['LIBGEO'].str.title()
+population11['LIBGEO'] = population11['LIBGEO'].str.replace(u"Jean Bart Guynemer", u"Jean Bart,Guynemer")
+population11['LIBGEO'] = population11['LIBGEO'].str.replace(u"Nouveau Siècle", u"Nouveau Siecle")
+population11['LIBGEO'] = population11['LIBGEO'].str.replace(u"Labuissière", u"Labuissiere")
+compare_geo(data, population11)
 data = pd.merge(data, population11[features], on=key, how='outer')
 
 
@@ -355,20 +398,25 @@ features.remove('P11_POP5564') # P11_POP5564 is already in Population file (http
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
-       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
-                 
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file
+
 print "il y a  %d iris différentes pour l'activité 2011 et %d features" % (len(activite11.CODGEO.unique()), len(features) - 1)
+activite11['LIBGEO'] = activite11['LIBGEO'].str.title()
+activite11['LIBGEO'] = activite11['LIBGEO'].str.replace(u"Jean Bart Guynemer", u"Jean Bart,Guynemer")
+activite11['LIBGEO'] = activite11['LIBGEO'].str.replace(u"Nouveau Siècle", u"Nouveau Siecle")
+activite11['LIBGEO'] = activite11['LIBGEO'].str.replace(u"Labuissière", u"Labuissiere")
+compare_geo(data, activite11)
 data = pd.merge(data, activite11[features], on=key, how='outer')
 
 
 
-# 110 rows are NaN for this label
-data.dropna(subset=[u'LIBGEO',
-                     u'COM',
-                     u'LIBCOM',
-                     u'REG',
-                     u'DEP',
-                     u'UU2010'], how='all', inplace=True)
+# 110 rows are NaN for this label #corrected with fillna_with_other_table
+#data.dropna(subset=[u'LIBGEO',
+#                     u'COM',
+#                     u'LIBCOM',
+#                     u'REG',
+#                     u'DEP',
+#                     u'UU2010'], how='all', inplace=True)
 
 ############################################################
 ####                CENSUS FILES 2012
@@ -402,7 +450,7 @@ new_reg_dict = {'01' : '01',
                 '91' : '76',
                 '93' : '93',
                 '94' : '94'}
-                
+
 data['REG2016'] = data.REG.map(new_reg_dict)
 
 def fix_LIBGEO_12(x):
@@ -410,7 +458,7 @@ def fix_LIBGEO_12(x):
     LIBGEO change between 2011 & 2012. It prevent merge (LIBGEO is a key)
     2011 : "Awala-Yalimapo"
     2012 : "Awala-Yalimapo (commune non irisée)"
-    
+
     input: string
     output : Return string without " (commune non irisée)".
     """
@@ -436,7 +484,7 @@ features.remove('P12_PMEN') # P12_PMEN is already in Population file
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'REG2016', 'LAB_IRIS',
-       'DEP', 'UU2010', 'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS']       
+       'DEP', 'UU2010', 'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS']
 print "il y a  %d iris différentes pour le logement 2012 et %d features" % (len(logement12.CODGEO.unique()), len(features) - 1)
 
 logement12.LIBGEO = logement12.LIBGEO.apply(fix_LIBGEO_12)
@@ -460,7 +508,7 @@ features.remove('P12_POP1824') # P12_POP1824 is already in Population file
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
-       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] 
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']
 
 print "il y a  %d iris différentes pour le diplome 2012 et %d features" % (len(diplome12.CODGEO.unique()), len(features) - 1)
 
@@ -486,8 +534,8 @@ features.remove('P12_POP80P') # P12_POP80P is already in Population file
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
-       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] 
-               
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']
+
 print "il y a  %d iris différentes pour les familles 2012 et %d features" % (len(famille12.CODGEO.unique()), len(features) - 1)
 
 famille12.LIBGEO = famille12.LIBGEO.apply(fix_LIBGEO_12)
@@ -509,8 +557,8 @@ features = [x for x in header if x not in ['IRIS', 'LIBIRIS']]
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
-       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
-                 
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file
+
 print "il y a  %d iris différentes pour le population 2012 et %d features" % (len(population12.CODGEO.unique()), len(features) - 1)
 
 population12.LIBGEO = population12.LIBGEO.apply(fix_LIBGEO_12)
@@ -533,15 +581,15 @@ features.remove('P12_POP5564') # P12_POP5564 is already in Population file
 [features.append(i) for i in ['CODGEO', 'LIBGEO']]
 
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
-       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file 
-                 
+       'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file
+
 print "il y a  %d iris différentes pour l'activité 2012 et %d features" % (len(activite12.CODGEO.unique()), len(features) - 1)
 
 activite12.LIBGEO = activite12.LIBGEO.apply(fix_LIBGEO_12)
 
 data = pd.merge(data, activite12[features], on=key, how='outer')
 
-# Extract 
+# Extract
 print "Extracting file in /data/output.csv"
 data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
 
