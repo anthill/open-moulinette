@@ -453,21 +453,6 @@ new_reg_dict = {'01' : '01',
 
 data['REG2016'] = data.REG.map(new_reg_dict)
 
-def fix_LIBGEO_12(x):
-    """
-    LIBGEO change between 2011 & 2012. It prevent merge (LIBGEO is a key)
-    2011 : "Awala-Yalimapo"
-    2012 : "Awala-Yalimapo (commune non irisée)"
-
-    input: string
-    output : Return string without " (commune non irisée)".
-    """
-    try:
-        return x.encode('utf-8').replace(" (commune non irisée)", '').decode('utf-8')
-    except Exception as er:
-        print "Erreur : " + x + str(er)
-        return x
-
 
 # Logement 2012
 logement12 = pd.read_excel('data/base-ic-logement-2012.xls', sheetname='IRIS')
@@ -487,7 +472,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'REG2016', 'LAB_IRIS',
        'DEP', 'UU2010', 'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS']
 print "il y a  %d iris différentes pour le logement 2012 et %d features" % (len(logement12.CODGEO.unique()), len(features) - 1)
 
-logement12.LIBGEO = logement12.LIBGEO.apply(fix_LIBGEO_12)
+logement12.LIBGEO = logement12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
 
 data = pd.merge(data, logement12[features], on=key, how='outer')
 
@@ -512,7 +497,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 
 print "il y a  %d iris différentes pour le diplome 2012 et %d features" % (len(diplome12.CODGEO.unique()), len(features) - 1)
 
-diplome12.LIBGEO = diplome12.LIBGEO.apply(fix_LIBGEO_12)
+diplome12.LIBGEO = diplome12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
 
 data = pd.merge(data, diplome12[features], on=key, how='outer')
 
@@ -538,7 +523,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 
 print "il y a  %d iris différentes pour les familles 2012 et %d features" % (len(famille12.CODGEO.unique()), len(features) - 1)
 
-famille12.LIBGEO = famille12.LIBGEO.apply(fix_LIBGEO_12)
+famille12.LIBGEO = famille12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
 
 data = pd.merge(data, famille12[features], on=key, how='outer')
 
@@ -561,7 +546,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 
 print "il y a  %d iris différentes pour le population 2012 et %d features" % (len(population12.CODGEO.unique()), len(features) - 1)
 
-population12.LIBGEO = population12.LIBGEO.apply(fix_LIBGEO_12)
+population12.LIBGEO = population12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
 
 data = pd.merge(data, population12[features], on=key, how='outer')
 
@@ -585,7 +570,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 
 print "il y a  %d iris différentes pour l'activité 2012 et %d features" % (len(activite12.CODGEO.unique()), len(features) - 1)
 
-activite12.LIBGEO = activite12.LIBGEO.apply(fix_LIBGEO_12)
+activite12.LIBGEO = activite12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
 
 data = pd.merge(data, activite12[features], on=key, how='outer')
 
