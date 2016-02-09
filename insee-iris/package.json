@@ -10,7 +10,7 @@
   "dependencies": {
     "es6-map": "^0.1.1",
     "es6-shim": "^0.31.0",
-    "node-7z": "^0.3.0",
+    "glob": "^6.0.4",
     "proj4": "^2.3.6",
     "shapefile": "^0.3.0"
   }

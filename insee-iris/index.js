@@ -3,6 +3,7 @@
 require("es6-shim");
 
 var fs =  require("fs");
+var glob = require("glob");
 var shapefile = require('shapefile');
 var Map = require('es6-map');
 var proj4 = require('proj4');
@@ -34,18 +35,19 @@ var output = fs.createWriteStream("data/iris.json");
 output.write('{"type": "FeatureCollection", "features": [\n');
  
 
-// unzip files
-var Zip = require('node-7z'); // Name the class as you want!
-var unzipTask = new Zip();
-
 var shapefiles = [];
 
-unzipTask.extractFull('data/iris-france.7z', 'data/iris')
-   .progress(function (file) {
+(new Promise(function (resolve, reject) {
+   glob("data/**/*.shp", {}, function (err, files) {
+      if (err) {
+         reject(err);
+      } else {
+         resolve(files);
+      }
+   });
+})).then(function (file) {
       file.forEach(function(fileName) {
-         if (/\.shp$/.test(fileName)) {
-            shapefiles.push("data/iris/" + fileName);
-         }   
+         shapefiles.push(fileName);
       })
    })
    .then(function () {
