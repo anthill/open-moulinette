@@ -6,13 +6,14 @@ from comparison import compare_geo, fillna_with_other_table
 print "Initialisation..."
 
 def _correct_LIBGEO(data):
+    #spécifique 2012
+    data['LIBGEO'] = data['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
+    # on le met avant le titl()
     data['LIBGEO'] = data['LIBGEO'].str.title()
     #des fautes d'accent ou de virgule mineures
     data['LIBGEO'] = data['LIBGEO'].str.replace(u"Jean Bart Guynemer", u"Jean Bart,Guynemer")
     data['LIBGEO'] = data['LIBGEO'].str.replace(u"Nouveau Siècle", u"Nouveau Siecle")
     data['LIBGEO'] = data['LIBGEO'].str.replace(u"Labuissière", u"Labuissiere")
-    #spécifique 2012
-    data['LIBGEO'] = data['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
     return data
 
 
@@ -304,6 +305,7 @@ print "il y a  %d iris différentes pour le logement 2011 et %d features" % (len
 logement11 = _correct_LIBGEO(logement11)
 
 data = fillna_with_other_table(data, logement11, 'CODGEO')
+data = _correct_LIBGEO(data)
 compare_geo(data, logement11)
 data = pd.merge(data, logement11[features], on=key, how='outer')
 
