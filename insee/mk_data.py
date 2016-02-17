@@ -5,6 +5,17 @@ from comparison import compare_geo, fillna_with_other_table
 
 print "Initialisation..."
 
+def _correct_LIBGEO(data):
+    data['LIBGEO'] = data['LIBGEO'].str.title()
+    #des fautes d'accent ou de virgule mineures
+    data['LIBGEO'] = data['LIBGEO'].str.replace(u"Jean Bart Guynemer", u"Jean Bart,Guynemer")
+    data['LIBGEO'] = data['LIBGEO'].str.replace(u"Nouveau Siècle", u"Nouveau Siecle")
+    data['LIBGEO'] = data['LIBGEO'].str.replace(u"Labuissière", u"Labuissiere")
+    #spécifique 2012
+    data['LIBGEO'] = data['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
+    return data
+
+
 ## Commerce
 commerce = pd.read_excel('data/equip-serv-commerce-infra.xls', sheetname='IRIS')
 # creating header from file
@@ -290,12 +301,7 @@ features.remove('P11_PMEN') # P11_PMEN is already in Population file (https://gi
 key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010']
 print "il y a  %d iris différentes pour le logement 2011 et %d features" % (len(logement11.CODGEO.unique()), len(features) - 1)
 
-logement11['LIBGEO'] = logement11['LIBGEO'].str.title()
-#des fautes d'accent ou de virgule mineures
-logement11['LIBGEO'] = logement11['LIBGEO'].str.replace(u"Jean Bart Guynemer", u"Jean Bart,Guynemer")
-logement11['LIBGEO'] = logement11['LIBGEO'].str.replace(u"Nouveau Siècle", u"Nouveau Siecle")
-logement11['LIBGEO'] = logement11['LIBGEO'].str.replace(u"Labuissière", u"Labuissiere")
-data['LIBGEO'] = data['LIBGEO'].str.title()
+logement11 = _correct_LIBGEO(logement11)
 
 data = fillna_with_other_table(data, logement11, 'CODGEO')
 compare_geo(data, logement11)
@@ -321,11 +327,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
        'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file
 print "il y a  %d iris différentes pour les diplomes 2011 et %d features" % (len(diplome11.CODGEO.unique()), len(features) - 1)
 
-diplome11['LIBGEO'] = diplome11['LIBGEO'].str.title()
-#des fautes d'accent ou de virgule mineures
-diplome11['LIBGEO'] = diplome11['LIBGEO'].str.replace(u"Jean Bart Guynemer", u"Jean Bart,Guynemer")
-diplome11['LIBGEO'] = diplome11['LIBGEO'].str.replace(u"Nouveau Siècle", u"Nouveau Siecle")
-diplome11['LIBGEO'] = diplome11['LIBGEO'].str.replace(u"Labuissière", u"Labuissiere")
+diplome11 = _correct_LIBGEO(diplome11)
 compare_geo(data, diplome11)
 data = pd.merge(data, diplome11[features], on=key, how='outer')
 
@@ -351,10 +353,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
 
 print "il y a  %d iris différentes pour les familles 2011 et %d features" % (len(famille11.CODGEO.unique()), len(features) - 1)
 
-famille11['LIBGEO'] = famille11['LIBGEO'].str.title()
-famille11['LIBGEO'] = famille11['LIBGEO'].str.replace(u"Jean Bart Guynemer", u"Jean Bart,Guynemer")
-famille11['LIBGEO'] = famille11['LIBGEO'].str.replace(u"Nouveau Siècle", u"Nouveau Siecle")
-famille11['LIBGEO'] = famille11['LIBGEO'].str.replace(u"Labuissière", u"Labuissiere")
+famille11 = _correct_LIBGEO(famille11)
 compare_geo(data, famille11)
 data = pd.merge(data, famille11[features], on=key, how='outer')
 
@@ -376,10 +375,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
        'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file
 
 print "il y a  %d iris différentes pour le population 2011 et %d features" % (len(population11.CODGEO.unique()), len(features) - 1)
-population11['LIBGEO'] = population11['LIBGEO'].str.title()
-population11['LIBGEO'] = population11['LIBGEO'].str.replace(u"Jean Bart Guynemer", u"Jean Bart,Guynemer")
-population11['LIBGEO'] = population11['LIBGEO'].str.replace(u"Nouveau Siècle", u"Nouveau Siecle")
-population11['LIBGEO'] = population11['LIBGEO'].str.replace(u"Labuissière", u"Labuissiere")
+population11 = _correct_LIBGEO(population11)
 compare_geo(data, population11)
 data = pd.merge(data, population11[features], on=key, how='outer')
 
@@ -402,10 +398,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010',
        'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS'] # This line has been load with Logement file
 
 print "il y a  %d iris différentes pour l'activité 2011 et %d features" % (len(activite11.CODGEO.unique()), len(features) - 1)
-activite11['LIBGEO'] = activite11['LIBGEO'].str.title()
-activite11['LIBGEO'] = activite11['LIBGEO'].str.replace(u"Jean Bart Guynemer", u"Jean Bart,Guynemer")
-activite11['LIBGEO'] = activite11['LIBGEO'].str.replace(u"Nouveau Siècle", u"Nouveau Siecle")
-activite11['LIBGEO'] = activite11['LIBGEO'].str.replace(u"Labuissière", u"Labuissiere")
+activite11 = _correct_LIBGEO(activite11)
 compare_geo(data, activite11)
 data = pd.merge(data, activite11[features], on=key, how='outer')
 
@@ -451,7 +444,6 @@ new_reg_dict = {'01' : '01',
                 '91' : '76',
                 '93' : '93',
                 '94' : '94'}
-
 data['REG2016'] = data.REG.map(new_reg_dict)
 
 
@@ -473,7 +465,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'REG2016', 'LAB_IRIS',
        'DEP', 'UU2010', 'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS']
 print "il y a  %d iris différentes pour le logement 2012 et %d features" % (len(logement12.CODGEO.unique()), len(features) - 1)
 
-logement12.LIBGEO = logement12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
+logement12 = _correct_LIBGEO(logement12)
 compare_geo(data, logement12)
 # recommandation: merge on CODGEO only and take 2012 LIBGEO.
 # LIBGEO12 seems an update of LIBGEO11
@@ -502,7 +494,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 
 print "il y a  %d iris différentes pour le diplome 2012 et %d features" % (len(diplome12.CODGEO.unique()), len(features) - 1)
 
-diplome12.LIBGEO = diplome12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
+diplome12 = _correct_LIBGEO(diplome12)
 #compare_geo(data, diplome12)
 data = pd.merge(data, diplome12[features], on=key, how='outer')
 
@@ -528,7 +520,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 
 print "il y a  %d iris différentes pour les familles 2012 et %d features" % (len(famille12.CODGEO.unique()), len(features) - 1)
 
-famille12.LIBGEO = famille12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
+famille12 = _correct_LIBGEO(famille12)
 #compare_geo(data, famille12)
 # recommandation: merge on CODGEO only and take 2012 LIBGEO.
 # LIBGEO12 seems an update of LIBGEO11
@@ -555,7 +547,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 
 print "il y a  %d iris différentes pour le population 2012 et %d features" % (len(population12.CODGEO.unique()), len(features) - 1)
 
-population12.LIBGEO = population12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
+population12 = _correct_LIBGEO(population12)
 #compare_geo(data, population12)
 # recommandation: merge on CODGEO only and take 2012 LIBGEO.
 # LIBGEO12 seems an update of LIBGEO11
@@ -583,7 +575,7 @@ key = ['CODGEO', 'LIBGEO', 'COM', 'LIBCOM', 'REG', 'DEP', 'UU2010', 'REG2016',
 
 print "il y a  %d iris différentes pour l'activité 2012 et %d features" % (len(activite12.CODGEO.unique()), len(features) - 1)
 
-activite12.LIBGEO = activite12['LIBGEO'].str.replace(u' \(commune non irisée\)', '')
+activite12 = _correct_LIBGEO(activite12)
 #compare_geo(data, activite12)
 # recommandation: merge on CODGEO only and take 2012 LIBGEO.
 # LIBGEO12 seems an update of LIBGEO11
