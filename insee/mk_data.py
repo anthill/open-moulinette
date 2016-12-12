@@ -33,6 +33,7 @@ commerce['nb_commerce'] =  commerce[features].applymap(lambda x: float(x)).sum(a
 
 data = commerce
 print "il y a  %d iris différentes pour le commerce et %d features" % (len(commerce.IRIS.unique()), len(features))
+del commerce
 
 
 ## Sport
@@ -55,6 +56,7 @@ print "il y a  %d iris différentes pour le sport et %d features" % (len(sport.I
 
 compare_geo(data, sport)
 data = pd.merge(data, sport[features], on='IRIS', how='outer')
+del sport
 
 
 ## Enseignement 1er degré
@@ -74,6 +76,7 @@ print "il y a  %d iris différentes pour l'enseignement du 1er degré et %d feat
 
 compare_geo(data, enseignement_1)
 data = pd.merge(data, enseignement_1[features], on='IRIS', how='outer')
+del enseignement_1
 
 
 ## Enseignement du second degré
@@ -93,6 +96,7 @@ print "il y a  %d iris différentes pour l'enseignement du second degré et %d f
 
 compare_geo(data, enseignement_2)
 data = pd.merge(data, enseignement_2[features], on='IRIS', how='outer')
+del enseignement_2
 
 
 ## Enseignement supérieur
@@ -115,6 +119,7 @@ print "il y a  %d iris différentes pour l'enseignement du supérieur et %d feat
 
 compare_geo(data, enseignement_sup)
 data = pd.merge(data, enseignement_sup[features], on='IRIS', how='outer')
+del enseignement_sup
 
 
 ### Revenu have 4 files [ménage, personne, unité de consomation, ensemble]
@@ -136,6 +141,7 @@ print "il y a  %d iris différentes pour le revenu par ménage et %d features" %
 revenu_menage['LIBCOM'] = revenu_menage['LIBCOM'].str.replace(' - ', '-')
 compare_geo(data, revenu_menage)
 data = pd.merge(data, revenu_menage[features], on='IRIS', how='outer')
+del revenu_menage
 
 ## Revenu par personne
 revenu_personne = pd.read_excel('data/RFDP2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
@@ -154,6 +160,7 @@ revenu_personne['LIBCOM'] = revenu_personne['LIBCOM'].str.replace(u' - ', u'-')
 data = fillna_with_other_table(data, revenu_personne, 'IRIS')
 compare_geo(data, revenu_personne)
 data = pd.merge(data, revenu_personne[features], on='IRIS', how='outer')
+del revenu_personne
 
 
 ## Revenu par unité de consomation
@@ -172,6 +179,7 @@ print "il y a  %d iris différentes pour le revenu par unité de consomation et 
 revenu_uc['LIBCOM'] = revenu_uc['LIBCOM'].str.replace(u' - ', u'-')
 compare_geo(data, revenu_uc, debug=True)
 data = pd.merge(data, revenu_uc[features], on='IRIS', how='outer')
+del revenu_uc
 
 ## Revenu % imposé + détails (% ménage imposé, dont traitement salaire etc..)
 revenu_impose = pd.read_excel('data/RFST2011IRI.xls', sheetname=1) #using int cause name of sheetname have some "é"
@@ -189,6 +197,7 @@ print "il y a  %d iris différentes pour le revenu par ménage imposé et %d fea
 revenu_impose['LIBCOM'] = revenu_impose['LIBCOM'].str.replace(u' - ', u'-')
 compare_geo(data, revenu_impose)
 data = pd.merge(data, revenu_impose[features], on='IRIS', how='outer')
+del revenu_impose
 
 ### Fin de revenu
 #-------------------------------------------------------------------------
@@ -209,6 +218,7 @@ print "il y a  %d iris différentes pour l'équipement social et %d features" % 
 
 compare_geo(data, equipement_social)
 data = pd.merge(data, equipement_social[features], on='IRIS', how='outer')
+del equipement_social
 
 
 ## Equipement santé
@@ -226,6 +236,7 @@ print "il y a  %d iris différentes pour l'équipement de santé et %d features"
 
 compare_geo(data, equipement_sante)
 data = pd.merge(data, equipement_sante[features], on='IRIS', how='outer')
+del equipement_sante
 
 
 ## Fonction médical
@@ -243,6 +254,7 @@ print "il y a  %d iris différentes pour les fonctions médical et %d features" 
 
 compare_geo(data, fonction_medical)
 data = pd.merge(data, fonction_medical[features], on='IRIS', how='outer')
+del fonction_medical
 
 ## Service pour les particuliers
 service_particulier = pd.read_excel('data/equip-serv-particuliers-infra-2015.xls', sheetname='IRIS')
@@ -259,6 +271,7 @@ print "il y a  %d iris différentes pour les services aux particulier et %d feat
 
 compare_geo(data, service_particulier)
 data = pd.merge(data, service_particulier[features], on='IRIS', how='outer')
+del service_particulier
 
 
 ## Transport touristique
@@ -276,6 +289,7 @@ print "il y a  %d iris différentes pour le transport touristique et %d features
 
 compare_geo(data, transport_tourisme)
 data = pd.merge(data, transport_tourisme[features], on='IRIS', how='outer')
+del transport_tourisme
 
 ############################################################
 ####                CENSUS FILES 2011
@@ -305,6 +319,7 @@ data = _correct_LIBGEO(data)
 compare_geo(data, logement11)
 data = pd.merge(data, logement11[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del logement11
 
 
 ## Diplome 2011
@@ -330,6 +345,7 @@ diplome11 = _correct_LIBGEO(diplome11)
 compare_geo(data, diplome11)
 data = pd.merge(data, diplome11[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del diplome11
 
 
 ## Famille 2011
@@ -357,6 +373,7 @@ famille11 = _correct_LIBGEO(famille11)
 compare_geo(data, famille11)
 data = pd.merge(data, famille11[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del famille11
 
 
 ## Population 2011
@@ -380,6 +397,7 @@ population11 = _correct_LIBGEO(population11)
 compare_geo(data, population11)
 data = pd.merge(data, population11[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del population11
 
 
 ## Activité 2011
@@ -404,6 +422,7 @@ activite11 = _correct_LIBGEO(activite11)
 compare_geo(data, activite11)
 data = pd.merge(data, activite11[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del activite11
 
 
 # 110 rows are NaN for this label #corrected with fillna_with_other_table
@@ -475,6 +494,7 @@ compare_geo(data, logement12)
 # pareil pour LIBCOM ?
 data = pd.merge(data, logement12[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del logement12
 
 
 ## Diplome 2012
@@ -501,6 +521,7 @@ diplome12 = _correct_LIBGEO(diplome12)
 #compare_geo(data, diplome12)
 data = pd.merge(data, diplome12[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del diplome12
 
 
 ## Famille 2012
@@ -532,6 +553,7 @@ famille12 = _correct_LIBGEO(famille12)
 # pareil pour LIBCOM ?
 data = pd.merge(data, famille12[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del famille12
 
 
 ## Population 2012
@@ -560,6 +582,7 @@ population12 = _correct_LIBGEO(population12)
 # pareil pour LIBCOM ?
 data = pd.merge(data, population12[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del population12
 
 
 ## Activité 2012
@@ -589,6 +612,7 @@ activite12 = _correct_LIBGEO(activite12)
 # pareil pour LIBCOM ?
 data = pd.merge(data, activite12[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del activite12
 
 
 ############################################################
@@ -617,6 +641,7 @@ logement13 = _correct_LIBGEO(logement13)
 compare_geo(data, logement13)
 data = pd.merge(data, logement13[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del logement13
 
 
 ## Diplome 2013
@@ -643,6 +668,7 @@ diplome13 = _correct_LIBGEO(diplome13)
 #compare_geo(data, diplome13)
 data = pd.merge(data, diplome13[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del diplome13
 
 
 ## Famille 2013
@@ -669,6 +695,7 @@ print "il y a  %d iris différentes pour les familles 2013 et %d features" % (le
 famille13 = _correct_LIBGEO(famille13)
 data = pd.merge(data, famille13[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del famille13
 
 
 ## Population 2013
@@ -692,6 +719,7 @@ print "il y a  %d iris différentes pour le population 2013 et %d features" % (l
 population13 = _correct_LIBGEO(population13)
 data = pd.merge(data, population13[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del population13
 
 
 ## Activité 2013
@@ -716,6 +744,7 @@ print "il y a  %d iris différentes pour l'activité 2013 et %d features" % (len
 activite13 = _correct_LIBGEO(activite13)
 data = pd.merge(data, activite13[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del activite13
 
 
 ############################################################
@@ -744,6 +773,7 @@ logement10 = _correct_LIBGEO(logement10)
 compare_geo(data, logement10)
 data = pd.merge(data, logement10[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del logement10
 
 
 ## Diplome 2010
@@ -770,6 +800,7 @@ diplome10 = _correct_LIBGEO(diplome10)
 #compare_geo(data, diplome10)
 data = pd.merge(data, diplome10[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del diplome10
 
 
 ## Famille 2010
@@ -796,6 +827,7 @@ print "il y a  %d iris différentes pour les familles 2010 et %d features" % (le
 famille10 = _correct_LIBGEO(famille10)
 data = pd.merge(data, famille10[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del famille10
 
 
 ## Population 2010
@@ -819,6 +851,7 @@ print "il y a  %d iris différentes pour le population 2010 et %d features" % (l
 population10 = _correct_LIBGEO(population10)
 data = pd.merge(data, population10[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del population10
 
 
 ## Activité 2010
@@ -843,6 +876,7 @@ print "il y a  %d iris différentes pour l'activité 2010 et %d features" % (len
 activite10 = _correct_LIBGEO(activite10)
 data = pd.merge(data, activite10[features], on=key, how='outer')
 data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+del activite10
 
 
 # Extract
