@@ -39,18 +39,6 @@ download:
 	# https://www.insee.fr/fr/statistiques/1893234
 	@wget -O data/equip-tour-transp-infra-15.zip https://www.insee.fr/fr/statistiques/fichier/1893234/equip-tour-transp-infra-2015.zip
 	@unzip data/equip-tour-transp-infra-15.zip -d data/
-	# https://www.insee.fr/fr/statistiques/2028562
-	@wget -O data/infra-logement-2006.zip https://www.insee.fr/fr/statistiques/fichier/2028562/BTX_IC_LOG_2006.zip
-	@unzip data/infra-logement-2006.zip -d data/
-	# https://www.insee.fr/fr/statistiques/2028560
-	@wget -O data/infra-logement-2007.zip https://www.insee.fr/fr/statistiques/fichier/2028560/BTX_IC_LOG_2007.zip
-	@unzip data/infra-logement-2007.zip -d data/
-	# https://www.insee.fr/fr/statistiques/2028558
-	@wget -O data/infra-logement-2008.zip https://www.insee.fr/fr/statistiques/fichier/2028558/BTX_IC_LOG_2008.zip
-	@unzip data/infra-logement-2008.zip -d data/
-	# https://www.insee.fr/fr/statistiques/2028556
-	@wget -O data/infra-logement-2009.zip https://www.insee.fr/fr/statistiques/fichier/2028556/BTX_IC_LOG_2009.zip
-	@unzip data/infra-logement-2009.zip -d data/
 	# https://www.insee.fr/fr/statistiques/2028271
 	@wget -O data/infra-logement-2010.zip https://www.insee.fr/fr/statistiques/fichier/2028271/infra-logement-2010.zip
 	@unzip data/infra-logement-2010.zip -d data/
@@ -75,6 +63,12 @@ download:
 	# https://www.insee.fr/fr/statistiques/2386698
 	@wget -O data/infra-formation-2013.zip https://www.insee.fr/fr/statistiques/fichier/2386698/base-ic-diplomes-formation-2013.zip
 	@unzip data/infra-formation-2013.zip -d data/
+	# https://www.insee.fr/fr/statistiques/2028571
+	@wget -O data/infra-famille-2010.zip https://www.insee.fr/fr/statistiques/fichier/2028571/infra-famille-2010.zip
+	@unzip data/infra-famille-2010.zip -d data/
+	# https://www.insee.fr/fr/statistiques/2386664
+	@wget -O data/infra-famille-2011.zip https://www.insee.fr/fr/statistiques/fichier/2028567/infra-famille-2011.zip
+	@unzip data/infra-famille-2011.zip -d data/
 	# https://www.insee.fr/fr/statistiques/2028569
 	@wget -O data/infra-famille-2012.zip https://www.insee.fr/fr/statistiques/fichier/2028569/infra-famille-2012.zip
 	@unzip data/infra-famille-2012.zip -d data/
@@ -93,15 +87,6 @@ download:
 	# https://www.insee.fr/fr/statistiques/2386737
 	@wget -O data/infra-population-2013.zip https://www.insee.fr/fr/statistiques/fichier/2386737/base-ic-evol-struct-pop-2013.zip
 	@unzip data/infra-population-2013.zip -d data/
-	# https://www.insee.fr/fr/statistiques/2028680
-	@wget -O data/infra-activite-resident-2006.zip https://www.insee.fr/fr/statistiques/fichier/2028680/BTX_IC_ACT_2006.zip
-	@unzip data/infra-activite-resident-2006.zip -d data/
-	# https://www.insee.fr/fr/statistiques/2028678
-	@wget -O data/infra-activite-resident-2007.zip https://www.insee.fr/fr/statistiques/fichier/2028678/BTX_IC_ACT_2007.zip
-	@unzip data/infra-activite-resident-2007.zip -d data/
-	# https://www.insee.fr/fr/statistiques/2028672
-	@wget -O data/infra-activite-resident-2009.zip https://www.insee.fr/fr/statistiques/fichier/2028672/BTX_IC_ACT_2009.zip
-	@unzip data/infra-activite-resident-2009.zip -d data/
 	# https://www.insee.fr/fr/statistiques/2028670
 	@wget -O data/infra-activite-resident-2010.zip https://www.insee.fr/fr/statistiques/fichier/2028670/infra-activite-resident-10.zip
 	@unzip data/infra-activite-resident-2010.zip -d data/
