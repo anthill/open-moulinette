@@ -11,8 +11,13 @@ import glob
 
 df = pd.read_csv('source/BasrevenuCom2009.csv', sep=";")
 
-df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009', 
-              'ALL_bas_revenu_2009', 'Pers_bas_revenu_2009']
+
+# Old Columns parsing : https://github.com/anthill/open-moulinette/pull/40
+#df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009', 
+#              'ALL_bas_revenu_2009', 'Pers_bas_revenu_2009']
+
+df.columns = ['Communes', 'Codes_Insee', 'ALL_bas_revenu_2009', 
+              'Pers_bas_revenu_2009', 'NB_pers_couv_ress_2009',  'NB_allocataires_2009']
 
 files = glob.glob('source/BasrevenuCom*')
 
@@ -24,7 +29,7 @@ for path_file in files:
         # Rename Col with year
         year_col = ['Communes', 'Codes_Insee']
         features_col = []
-        for col in df_temp.columns[-3:]:
+        for col in df_temp.columns[-4:]:
             year_col.append(col +"_"+ year)
             features_col.append(col +"_"+ year)
         
@@ -46,14 +51,16 @@ df.columns = list_col
 df.to_csv('data/full_BasrevenuCom.csv', encoding='utf-8', index=False)
 
 ## Features 
-#u'NB_Allocataires_2009_BC',
-#       u'ALL_bas_revenu_2009', u'Pers_bas_revenu_2009',
-#       u'NB_allocataires_2010_BC', u'ALL_bas_revenu_2010',
-#       u'Pers_bas_revenu_2010', u'NB_allocataires_2011_BC',
-#       u'ALL_bas_revenu_2011', u'Pers_bas_revenu_2011',
-#       u'NB_allocataires_2012_BC', u'ALL_bas_revenu_2012',
-#       u'Pers_bas_revenu_2012', u'NB_allocataires_2013_BC',
-#       u'ALL_bas_revenu_2013', u'Pers_bas_revenu_2013',
-#       u'NB_allocataires_2014_BC', u'ALL_bas_revenu_2014',
-#       u'Pers_bas_revenu_2014'
-
+#u'ALL_bas_revenu_2009',
+#       u'Pers_bas_revenu_2009', u'NB_pers_couv_ress_2009',
+#       u'NB_allocataires_2009_BC', u'ALL_bas_revenu_2010',
+#       u'Pers_bas_revenu_2010', u'NB_pers_couv_ress_2010',
+#       u'NB_allocataires_ress_2010_BC', u'ALL_bas_revenu_2011',
+#       u'Pers_bas_revenu_2011', u'NB_pers_couv_ress_2011',
+#       u'NB_allocataires_ress_2011_BC', u'ALL_bas_revenu_2012',
+#       u'Pers_bas_revenu_2012', u'NB_pers_couv_ress_2012',
+#       u'NB_allocataires_ress_2012_BC', u'ALL_bas_revenu_2013',
+#       u'Pers_bas_revenu_2013', u'NB_pers_couv_ress_2013',
+#       u'NB_allocataires_ress_2013_BC', u'ALL_bas_revenu_2014',
+#       u'Pers_bas_revenu_2014', u'NB_pers_couv_ress_2014',
+#       u'NB_allocataires_ress_2014_BC'
