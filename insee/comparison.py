@@ -31,8 +31,8 @@ def fillna_with_other_table(tab1, tab2, var, columns=None):
 def compare_var(tab1, tab2, var):
     assert max(tab1[var].value_counts()) == 1
     assert max(tab2[var].value_counts()) == 1
-    cond_1_in_2 = tab1[var].isin(tab2.CODGEO)
-    cond_2_in_1 = tab2[var].isin(tab1.CODGEO)
+    cond_1_in_2 = tab1[var].isin(tab2.IRIS)
+    cond_2_in_1 = tab2[var].isin(tab1.IRIS)
     in_1_not_in_2 = tab1[var][~cond_1_in_2]
     in_2_not_in_1 = tab2[var][~cond_2_in_1]
     print("il y a " + str(len(in_1_not_in_2)) + " " + var + " dans 1 et pas dans 2")
@@ -52,7 +52,7 @@ def compare_inner(tab1, tab2, var, common_cols=None):
     return tab1_commun, tab2_commun
 
 # une table de comparaison
-def compare_geo(tab1, tab2, var='CODGEO', debug=False):
+def compare_geo(tab1, tab2, var='IRIS', debug=False):
     compare_var(tab1, tab2, var)
     tab1_commun, tab2_commun = compare_inner(tab1, tab2, var)
 
@@ -74,7 +74,7 @@ def compare_geo(tab1, tab2, var='CODGEO', debug=False):
                   u" pour LIBCOM et COM")
             return
 
-    col_diff = ['CODGEO']
+    col_diff = ['IRIS']
     for col in commun_col:
         diff = tab1_commun[col] != tab2_commun[col]
         if diff.sum() == 0:
