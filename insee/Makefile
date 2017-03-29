@@ -64,8 +64,7 @@ download:
 	@wget -O data/infra-formation-2013.zip https://www.insee.fr/fr/statistiques/fichier/2386698/base-ic-diplomes-formation-2013.zip
 	@unzip data/infra-formation-2013.zip -d data/
 	# https://www.insee.fr/fr/statistiques/2028571
-	@wget -O data/infra-famille-2010.zip https://www.insee.fr/fr/statistiques/fichier/2028571/infra-famille-2010.zip
-	@unzip data/infra-famille-2010.zip -d data/
+	@wget -O data/base-ic-couples-familles-menages-2010.xls https://www.insee.fr/fr/statistiques/fichier/2028571/base-ic-couples-familles-menages-2010.xls
 	# https://www.insee.fr/fr/statistiques/2386664
 	@wget -O data/infra-famille-2011.zip https://www.insee.fr/fr/statistiques/fichier/2028567/infra-famille-2011.zip
 	@unzip data/infra-famille-2011.zip -d data/
