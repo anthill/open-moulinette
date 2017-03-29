@@ -90,6 +90,8 @@ En 2009, 2010 et 2011, la première ligne (code 99999) recouvre, en plus des ré
 
  - **ALL_bas_revenu_yyyy** : nombre total de foyers allocataires bas revenus.
  - **Pers_bas_revenu_yyyy** : nombre total de personnes couvertes par les foyers bas revenus.
+ - **NB_allocataires_ress_yyyy** : nombre de foyers allocataires de référence pour le calcul des "bas revenus"
+ - **NB_pers_couv_ress_yyyy** : nombre de personnes couvertes de référence pour le calcul des "bas revenus"
 
 [source](http://data.caf.fr/dataset/beneficiaire-bas-revenus)
 
