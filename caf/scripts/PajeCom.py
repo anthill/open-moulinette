@@ -54,9 +54,11 @@ df.to_csv('data/full_PageCom.csv', encoding='utf-8', index=False)
 #       u'ALL_PRIM_2011', u'ALL_BASEP_2011', u'ALL_ASMA_2011',
 #       u'ALL_Clca_Colca_2011', u'NB_Allocataires_2012_PC', u'ALL_PAJE_2012',
 #       u'ALL_PRIM_2012', u'ALL_BASEP_2012', u'ALL_ASMA_2012',
-#       u'ALL_Clca_Colca_2012', u'NB_Allocataires_2013_PgC', u'ALL_PAJE_2013',
+#       u'ALL_Clca_Colca_2012', u'NB_Allocataires_2013_PC', u'ALL_PAJE_2013',
 #       u'ALL_PRIM_2013', u'ALL_BASEP_2013', u'ALL_ASMA_2013',
 #       u'ALL_Clca_Colca_2013', u'NB_Allocataires_2014_PC', u'ALL_PAJE_2014',
 #       u'ALL_PRIM_2014', u'ALL_BASEP_2014', u'ALL_CMG_2014',
 #       u'ALL_CMG_ASMA_2014', u'ALL_CMG_DOM_2014', u'ALL_CMG_A_2014',
-#       u'ALL_Clca_Colca_2014'
+#       u'ALL_Clca_Colca_2014', u'NB_Allocataires_2015_PC', u'ALL_PAJE_2015',
+#       u'ALL_PRIM_2015', u'ALL_BASEP_2015', u'ALL_ASMA_2015',
+#       u'ALL_Clca_Colca_2015'
