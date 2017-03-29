@@ -1,11 +1,15 @@
 ## Caf
 
 
-This script dowload (90 files) and concatenate all the features from [CAF open-data](http://data.caf.fr/site/) files in one clean csv (more than 80 multiply by 6 years actually) at city level. 
+This script dowload (100 files) and concatenate all the features from [CAF open-data](http://data.caf.fr/site/) files in one clean csv (more than 80 multiply by 7 years actually) at city level. 
 
 For a better reuse, we add geo spatial and city's features.
 
 See [documentation](https://github.com/armgilles/open-moulinette/blob/master/caf/documentation.md) for details
+
+## Edit :
+
+- 29/03/2017 : There are now 2015 files
 
 ## Dependency
 
