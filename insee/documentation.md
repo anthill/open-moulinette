@@ -7,17 +7,17 @@ In the `output.csv` the column names are like `NB_B314`  (which is the number of
 
 ## List of file :
 
-- [Nombre d'équipements et de services dans le domaine du commerce en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-du-commerce-en-2013)
-- [Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-du-sport-des-loisirs-et-de-la-culture-en-2013)
-- [Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-de-lenseignement-du-1er-degr%C3%A9-en-2013)
--  [Nombre d'équipements et de services dans le domaine de l'enseignement du second degré en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-de-lenseignement-du-second-degr%C3%A9-en-2013)
--  [Nombre d'équipements et de services dans le domaine de l'enseignement supérieur, de la formation et des services de l'éducation en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-de-lenseignement-sup%C3%A9rieur-de-la-formation-et-des-services-de-l%C3%A9ducation-en-2013)
--  [Indicateurs de structure et de distribution des revenus](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#indicateurs-de-structure-et-de-distribution-des-revenus)
--  [Nombre d'équipements et de services dans le domaine de l'action sociale en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-de-laction-sociale-en-2013)
--  [Nombre d'équipements et de services de santé en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-de-sant%C3%A9-en-2013)
--  [Nombre de fonctions médicales et paramédicales en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-de-fonctions-m%C3%A9dicales-et-param%C3%A9dicales-en-2013)
--   [Nombre d'équipements des services aux particuliers en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-des-services-aux-particuliers-en-2013)
--   [Nombre d'équipements et de services dans le domaine du tourisme et du transport en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#nombre-d%C3%A9quipements-et-de-services-dans-le-domaine-du-tourisme-et-du-transport-en-2013)
+- [Nombre d'équipements et de services dans le domaine du commerce en 2013](#nombre-déquipements-et-de-services-dans-le-domaine-du-commerce-en-2013)
+- [Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013](#nombre-déquipements-et-de-services-dans-le-domaine-du-sport-des-loisirs-et-de-la-culture-en-2013)
+- [Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013](#nombre-déquipements-et-de-services-dans-le-domaine-de-lenseignement-du-1er-degré-en-2013)
+-  [Nombre d'équipements et de services dans le domaine de l'enseignement du second degré en 2013](#nombre-déquipements-et-de-services-dans-le-domaine-de-lenseignement-du-second-degré-en-2013)
+-  [Nombre d'équipements et de services dans le domaine de l'enseignement supérieur, de la formation et des services de l'éducation en 2013](#nombre-déquipements-et-de-services-dans-le-domaine-de-lenseignement-supérieur-de-la-formation-et-des-services-de-léducation-en-2013)
+-  [Indicateurs de structure et de distribution des revenus](#indicateurs-de-structure-et-de-distribution-des-revenus)
+-  [Nombre d'équipements et de services dans le domaine de l'action sociale en 2013](#nombre-déquipements-et-de-services-dans-le-domaine-de-laction-sociale-en-2013)
+-  [Nombre d'équipements et de services de santé en 2013](#nombre-déquipements-et-de-services-de-santé-en-2013)
+-  [Nombre de fonctions médicales et paramédicales en 2013](#nombre-de-fonctions-médicales-et-paramédicales-en-2013)
+-  [Nombre d'équipements des services aux particuliers en 2013](#nombre-déquipements-des-services-aux-particuliers-en-2013)
+-  [Nombre d'équipements et de services dans le domaine du tourisme et du transport en 2013](#nombre-déquipements-et-de-services-dans-le-domaine-du-tourisme-et-du-transport-en-2013)
 
 ### Recensement 2010
 
@@ -29,7 +29,7 @@ In the `output.csv` the column names are like `NB_B314`  (which is the number of
 
 ### Recensement 2011
 
--	[Base de données infracommunales : logement en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--logement-en-2011)
+-	[Base de données infracommunales : logement en 2011](#base-de-données-infracommunales--logement-en-2011)
 -	[Base de données infracommunales : diplômes - formation en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--diplômes---formation-en-2011)
 -	[Base de données infracommunales : couples - familles - ménages en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--couples---familles---ménages-en-2011)
 -	[Base de données infracommunales : population en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--population-en-2011)
