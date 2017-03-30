@@ -21,35 +21,35 @@ In the `output.csv` the column names are like `NB_B314`  (which is the number of
 
 ### Recensement 2010
 
--	[Base de données infracommunales : logement en 2010](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--logement-en-2010)
--	[Base de données infracommunales : diplômes - formation en 2010](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--diplômes---formation-en-2010)
--	[Base de données infracommunales : couples - familles - ménages en 2010](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--couples---familles---ménages-en-2010)
--	[Base de données infracommunales : population en 2010](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--population-en-2010)
--	[Base de données infracommunales : activité des résidents en 2010](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--activité-des-résidents-en-2010)
+-	[Base de données infracommunales : logement en 2010](#base-de-données-infracommunales--logement-en-2010)
+-	[Base de données infracommunales : diplômes - formation en 2010](#base-de-données-infracommunales--diplômes---formation-en-2010)
+-	[Base de données infracommunales : couples - familles - ménages en 2010](#base-de-données-infracommunales--couples---familles---ménages-en-2010)
+-	[Base de données infracommunales : population en 2010](#base-de-données-infracommunales--population-en-2010)
+-	[Base de données infracommunales : activité des résidents en 2010](#base-de-données-infracommunales--activité-des-résidents-en-2010)
 
 ### Recensement 2011
 
 -	[Base de données infracommunales : logement en 2011](#base-de-données-infracommunales--logement-en-2011)
--	[Base de données infracommunales : diplômes - formation en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--diplômes---formation-en-2011)
--	[Base de données infracommunales : couples - familles - ménages en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--couples---familles---ménages-en-2011)
--	[Base de données infracommunales : population en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--population-en-2011)
--	[Base de données infracommunales : activité des résidents en 2011](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--activité-des-résidents-en-2011)
+-	[Base de données infracommunales : diplômes - formation en 2011](#base-de-données-infracommunales--diplômes---formation-en-2011)
+-	[Base de données infracommunales : couples - familles - ménages en 2011](#base-de-données-infracommunales--couples---familles---ménages-en-2011)
+-	[Base de données infracommunales : population en 2011](#base-de-données-infracommunales--population-en-2011)
+-	[Base de données infracommunales : activité des résidents en 2011](#base-de-données-infracommunales--activité-des-résidents-en-2011)
 
 ### Recensement 2012
 
--	[Base de données infracommunales : logement en 2012](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--logement-en-2012)
--	[Base de données infracommunales : diplômes - formation en 2012](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--diplômes---formation-en-2012)
--	[Base de données infracommunales : couples - familles - ménages en 2012](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--couples---familles---ménages-en-2012)
--	[Base de données infracommunales : population en 2012](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--population-en-2012)
--	[Base de données infracommunales : activité des résidents en 2012](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--activité-des-résidents-en-2012)
+-	[Base de données infracommunales : logement en 2012](#base-de-données-infracommunales--logement-en-2012)
+-	[Base de données infracommunales : diplômes - formation en 2012](#base-de-données-infracommunales--diplômes---formation-en-2012)
+-	[Base de données infracommunales : couples - familles - ménages en 2012](#base-de-données-infracommunales--couples---familles---ménages-en-2012)
+-	[Base de données infracommunales : population en 2012](#base-de-données-infracommunales--population-en-2012)
+-	[Base de données infracommunales : activité des résidents en 2012](#base-de-données-infracommunales--activité-des-résidents-en-2012)
 
 ### Recensement 2013
 
--	[Base de données infracommunales : logement en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--logement-en-2013)
--	[Base de données infracommunales : diplômes - formation en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--diplômes---formation-en-2013)
--	[Base de données infracommunales : couples - familles - ménages en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--couples---familles---ménages-en-2013)
--	[Base de données infracommunales : population en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--population-en-2013)
--	[Base de données infracommunales : activité des résidents en 2013](https://github.com/armgilles/open-moulinette/blob/insee/insee/documentation.md#base-de-données-infracommunales--activité-des-résidents-en-2013)
+-	[Base de données infracommunales : logement en 2013](#base-de-données-infracommunales--logement-en-2013)
+-	[Base de données infracommunales : diplômes - formation en 2013](#base-de-données-infracommunales--diplômes---formation-en-2013)
+-	[Base de données infracommunales : couples - familles - ménages en 2013](#base-de-données-infracommunales--couples---familles---ménages-en-2013)
+-	[Base de données infracommunales : population en 2013](#base-de-données-infracommunales--population-en-2013)
+-	[Base de données infracommunales : activité des résidents en 2013](#base-de-données-infracommunales--activité-des-résidents-en-2013)
 
 ## Description géographique
 
