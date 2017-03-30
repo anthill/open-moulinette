@@ -1,6 +1,6 @@
 # Documentation
 
-Insee's files are often in xls format and not easy to reuse (with different pages, header lines etc). This script aggregates the 650 indicators available for each Iris in one single clean file.
+Insee's files are often in xls format and not easy to reuse (with different pages, header lines etc). This script aggregates more than 1700 indicators available for each Iris in one single clean file.
 
 In the `output.csv` the column names are like `NB_B314`  (which is the number of gas station by iris) so **this document enumerates each column and explains it**. Decription is in French as all the data concerne French's city.
 
@@ -85,20 +85,6 @@ Certains indicateurs sont en doublons (ils apparaissent dans plusieurs fichiers)
 - PYY_POP5564
 
 *YY : Pour l'année (11 : 2011, 12 : 2012)*. Ils ont été dédoublonner dans le fichier final car ils ont strictement les même valeurs suivant leurs fichiers d'origines. Cependant ces doublons ont été garder dans cette documentation pour une meilleur compréhension.
-
-**Doublon sur le code Iris :**
-
-Il y a 143 doublons (code Iris), cela provient des changements effectuer entre 2011 et 2012 (nom, type d'Iris...) :
-
-```
-CODGEO      LIBGEO     COM     LIBCOM    REG DEP   UU2010  REG2016  TRIRIS  GRD_QUART \
-591831301  Dessinguez  59183  Dunkerque  31  59    59602      32    590381  5918313     
-591831301  Dessinguez  59183  Dunkerque  31  59    59602      32    590381  5918313   
-TYP_IRIS  MODIF_IRIS LAB_IRIS
-   H         00         1
-   H         00         2
-```
-
 
 ## Nombre d'équipements et de services dans le domaine du commerce en 2013
 
