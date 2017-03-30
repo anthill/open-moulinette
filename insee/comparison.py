@@ -81,7 +81,7 @@ def compare_geo(tab1, tab2, var='IRIS', debug=False):
             print(u"aucune différence sur " + col)
         else:
             count = diff.sum()
-            print(u"il y a " + str(count) + u" problèmes pour " + col)
+            print(u"[WARNING] Il y a " + str(count) + u" problèmes pour " + col)
             col_diff += [col]
 
     if debug:
