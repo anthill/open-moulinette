@@ -100,7 +100,7 @@ TYP_IRIS  MODIF_IRIS LAB_IRIS
 ```
 
 
-##Nombre d'équipements et de services dans le domaine du commerce en 2013
+## Nombre d'équipements et de services dans le domaine du commerce en 2013
 
  - NB_B101 : **Hypermarché**. Surface de vente déclarée supérieure à 2500 m²
  - NB_B102 : **Supermarché**. Surface de vente déclarée entre 400 et 2500 m². La NAF a conservé le seuil inférieur de 400m², différent du seuil administratif de la DGCCRF fixé à 300m²
@@ -130,7 +130,7 @@ Ne comprend plus la vente d'instruments de musique ou de disques, bandes et cass
  - NB_B314 : **Station service**. Commerce de détail de carburant ayant vendu au moins 500 000 litres de carburant au cours de l’année.
  - - nb_commerce : somme de l'ensemble des indicateurs du fichiers.
 
-##Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013
+## Nombre d'équipements et de services dans le domaine du sport, des loisirs et de la culture en 2013
 
  - NB_F101 : **Bassin de natation**. Bassins de natation, sportive et/ou ludique
  - NB_F101_NB_AIREJEU : **Bassin de natation - nombre de bassins**
@@ -228,7 +228,7 @@ exemple pour les bassins de natation de la commune de Marseille
 Il en va de même pour les autres installations sportive **NB_F1..**
 
 
-##Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013
+## Nombre d'équipements et de services dans le domaine de l'enseignement du 1er degré en 2013
 
 **Note** : Le fichier contient 3 onglets, un onglet général et deux onglet publique et privé afin de faire la distinction de secteur. Actuellement seulement les données générales (publiques + privées) sont présent.
 
@@ -255,7 +255,7 @@ Appartenance à un réseau d’éducation prioritaire (définition Éducation na
  - nb_enseignement_1 : Somme de l'ensemble des indicateurs non détaillés : uniquement sur les **C1..**
 
 
-##Nombre d'équipements et de services dans le domaine de l'enseignement du second degré en 2013 
+## Nombre d'équipements et de services dans le domaine de l'enseignement du second degré en 2013 
 
 **Note** : Le fichier contient 3 onglets, un onglet général et deux onglet publique et privé afin de faire la distinction de secteur. Actuellement seulement les données générales (publiques + privées) sont présent.
 
@@ -284,7 +284,7 @@ Appartenance à un réseau d’éducation prioritaire (définition Éducation na
  - nb_enseignement_2 : Somme de l'ensemble des indicateurs non détaillés : uniquement sur les **NB_C2..** et **NB_C3..**
 
 
-##Nombre d'équipements et de services dans le domaine de l'enseignement supérieur, de la formation et des services de l'éducation en 2013
+## Nombre d'équipements et de services dans le domaine de l'enseignement supérieur, de la formation et des services de l'éducation en 2013
 
 **Note** : Le fichier contient 3 onglets, un onglet général et deux onglet publique et privé afin de faire la distinction de secteur. Actuellement seulement les données générales (publiques + privées) sont présent.
 
@@ -308,7 +308,7 @@ Appartenance à un réseau d’éducation prioritaire (définition Éducation na
  - C702 : **Restaurant universitaire**.
  - nb_enseignement_sup : Somme de l'ensemble des indicateurs non détaillés (C605_NB_INT, C701, C702 sont exclus).
 
-##Indicateurs de structure et de distribution des revenus
+## Indicateurs de structure et de distribution des revenus
 
 Les revenus fiscaux localisés des ménages sont établis à partir des fichiers exhaustifs des déclarations de revenus des personnes physiques, de la taxe d'habitation et du fichier d’imposition des personnes physiques fournis à l'Insee par la Direction générale des finances publiques.
 
@@ -317,7 +317,7 @@ Les revenus fiscaux localisés des ménages sont établis à partir des fichiers
  - 2 indicateurs pour les zones de 50 ménages fiscaux à moins de 2 000 personnes au sens du ménage fiscal.
  - 23 indicateurs pour les zones de 2 000 personnes ou plus au sens du ménage fiscal
 
-###Par ménage :
+### Par ménage :
 
 Le revenu fiscal par ménage correspond à l'ensemble des revenus déclarés par les foyers fiscaux qui composent le ménage fiscal. Cette unité d'observation permet de raisonner en termes de "masse" des revenus déclarés au sein d'une zone.
 
@@ -337,7 +337,7 @@ Le revenu fiscal par ménage correspond à l'ensemble des revenus déclarés par
  - RFMRD11 : **Rapport interdécile**
  - RFMET11 : **Ecart-type (€)**
 
-###Par personne :
+### Par personne :
 
 Le revenu fiscal par personne est le revenu du ménage rapporté au nombre de personnes qui le composent. Le nombre de personnes du ménage fiscal est obtenu par cumul des personnes inscrites sur les déclarations de revenus qui le composent. On adopte le terme de personne et non celui d'habitant pour marquer le fait que toute personne rattachée fiscalement à un ménage ne vit pas forcément au sein de celui-ci : elle peut habiter ailleurs, cas fréquent chez les étudiants (rattachés fiscalement à leurs parents tout en occupant un logement indépendant).
 
@@ -357,7 +357,7 @@ Le revenu fiscal par personne est le revenu du ménage rapporté au nombre de pe
  - RFPRD11 : **Rapport interdécile**
  - RFPET11 : **Ecart-type (€)**
 
-###Par Unité de consommation :
+### Par Unité de consommation :
 
 Le revenu fiscal par unité de consommation (UC) est le revenu du ménage rapporté au nombre d'unités de consommation qui le composent. Par convention, le nombre d'unités de consommation d'un " ménage fiscal " est évalué de la manière suivante :
 - le premier adulte du ménage compte pour une unité de consommation ; 
@@ -384,7 +384,7 @@ Le revenu fiscal exprimé par UC présente l'avantage de prendre en compte les d
  - RFUCET11 : **Ecart-type (€)**
  - RFUCGI11 : **Indice de Gini**. Indicateur du degré de concentration des revenus fiscaux par UC parmi les personnes de la zone étudiée. Il est compris entre 0 (concentration minimale lorsque toutes les personnes présentent un revenu identique) et 1 (concentration maximale lorsqu’une seule personne concentre la totalité des revenus de la zone).
 
-###Indicateur de structure :
+### Indicateur de structure :
 
  - PMIMP11 : **Part des ménages imposés (%)**
  - PTSA11 : **Part des traitements/ salaires (%)**. Pourcentage que représentent les revenus d'activités salariées dans le total des revenus fiscaux de la zone. Les revenus d'activités salariées incluent les salaires, indemnités journalières de maladie, indemnités de chômage, avantages en nature, certaines préretraites mais aussi les revenus perçus à l’étranger par des résidents en France (ces revenus sont comptés par défaut dans les revenus d'activités salariées car la déclaration de revenus ne permet pas de les ventiler par catégorie)
@@ -393,7 +393,7 @@ Le revenu fiscal exprimé par UC présente l'avantage de prendre en compte les d
  - PBEN11 : **Part des bénéfices (%)**. Pourcentage que représentent les revenus des activités non salariées dans le total des revenus fiscaux de la zone, net de déficits. Il s’agit des revenus nets de déficits et hors plus-values des indépendants. Ils comprennent les Bénéfices Agricoles (BA), les Bénéfices Industriels et Commerciaux professionnels (BIC) et les Bénéfices Non Commerciaux professionnels (BNC). Sur la déclaration, les indépendants relevant du régime micro-entreprise pour les BIC et du régime déclaratif spécial pour les BNC reportent le montant hors taxes du chiffre d’affaires ou des recettes. Pour les autres régimes, c’est un bénéfice net de déficit qui est reporté.
  - PAUT11 : **Part des autres revenus (%)**. Pourcentage que représentent les revenus du patrimoine déclarés et autres revenus dans le total des revenus fiscaux de la zone. Ils comprennent essentiellement des revenus du patrimoine : les revenus des valeurs et capitaux mobiliers imposables au titre de l’IRPP ainsi que les produits de placement soumis à prélèvement libératoire indiqués sur la déclaration de revenus (ce qui exclut les revenus défiscalisés comme le livret A et une partie des produits de placements soumis à prélèvement libératoire non déclarés), les revenus fonciers nets (loyers, fermages, parts de SCI, affichage), les revenus accessoires (Bénéfices Industriels et Commerciaux (BIC) non professionnels, des Bénéfices Non Commerciaux (BNC) non professionnels, et recettes brutes de locations meublées non professionnelles).
 
-##Nombre d'équipements et de services dans le domaine de l'action sociale en 2013
+## Nombre d'équipements et de services dans le domaine de l'action sociale en 2013
 
  - NB_D401 : **Personnes âgées : hébergement**. Etablissement d'hébergement pour personnes âgées. Hospices, maisons de retraite, logements foyers et résidences d'hébergement temporaire. 
  - NB_D402 : **Personnes âgées : soins à domicile**. Services de soins à domicile et centres de jour pour personnes âgées. Localisé au siège du service.
@@ -415,7 +415,7 @@ Le revenu fiscal exprimé par UC présente l'avantage de prendre en compte les d
  - nb_equipement_social :  Somme de l'ensemble des indicateurs.
 
 
-##Nombre d'équipements et de services de santé en 2013
+## Nombre d'équipements et de services de santé en 2013
 
  - NB_D101 : **Etablissement santé court séjour**. Etablissement hospitalier (y compris cliniques privées) exerçant des soins de courte durée en médecine et/ou chirurgie. Contient centres hospitaliers et hôpitaux locaux, hôpitaux des armées. Les syndicats inter-hospitalier avec discipline de soins et les autres établissements de la loi hospitalière figurent dans ce groupe. Les établissements de soins du Service de santé des armées ne sont pas suivis (cat 115). Non compris les maternités autonomes classées en NB_D107. On trouve à la même adresse établissements hospitaliers et syndicat inter-hospitalier ou unités de médecine et de chirurgie ou unités avec adresse "administrative" commune.
  - NB_D102 : **Etablissement santé moyen séjour**. Etablissement hospitalier (y compris cliniques privées) exerçant des soins de suite et de réadaptation (ou moyen séjour). Contient les mêmes établissements que NB_D101 s'ils disposent d'un tel service de soins, plus les maisons de régime (cat=119) et les établissements de lutte contre la tuberculose (cat=144), les établissements de convalescence et de repos et ceux de réadaptation fonctionnelle. Sont rajoutés les établissements d'enfants à caractère sanitaire, estimés de moyen séjour (Maisons d'enfants et pouponnières). Pour la catégorie 114 -Hôpital des armées, il n'y a pas moyen de savoir s'il y a du moyen séjour. Ils n'ont été retenus qu'en court séjour (variable NB_D101).
@@ -438,7 +438,7 @@ Le revenu fiscal exprimé par UC présente l'avantage de prendre en compte les d
  - ~~NB_D306 : **Etablissement lutte contre l'alcoolisme**. Centre de postcure pour alcooliques et centres de soins spécialisés pour toxicomanes~~ (plus utilisé dans le fichier 2015).
  - nb_equipement_sante : Somme de l'ensemble des indicateurs.
  
-##Nombre de fonctions médicales et paramédicales en 2013
+## Nombre de fonctions médicales et paramédicales en 2013
 
 **Note** : 
 - NB_D201 à NB_D213 sont retenus les praticiens exerçant leur activité en dehors d'un établissement sanitaire, puisque ceux-ci sont appréhendés dans FINESS. Sont donc exclus par exemple les médecins fonctionnaires et les médecins salariés exerçant en établissement sanitaire ou leur partie d'activité y est exercée. Dans la source peuvent être mentionnées plusieurs adresses d'exercice. Sont seules retenues celles répondant aux critères en tête de colonne. Ainsi un salarié hospitalier exerçant aussi en cabinet libéral à une autre adresse que celle de l'hôpital (ou de la clinique) ne sera retenu qu'à l'adresse(s) du cabinet. 
@@ -471,7 +471,7 @@ Ne sont retenues que les spécialités proposées par la DREES, les plus importa
 - nb_fonction_medical : Somme de l'ensemble des indicateurs.
 
 
-##Nombre d'équipements des services aux particuliers en 2013
+## Nombre d'équipements des services aux particuliers en 2013
 
 - NB_A101 : **Police**. Ces services de la sécurité publique (hors CRS, police de l'air et des frontières, services régionaux des renseignements généraux, services de contrôle de l'immigration, services généraux d'administration de la police) ne comprennent pas les services nationaux, et non plus les services de police municipale (peu nombreux).
 - NB_A104 : **Gendarmerie**. Unité de gendarmerie recevant du public. Comprend les brigades territoriales autonomes, les brigades territoriales de proximité, les communautés de brigades.
@@ -522,7 +522,7 @@ Elle offre une grande partie des produits et services délivrés à la populatio
 - NB_A507 : **Soins de beauté**. Soins esthétiques, de manucure et de pédicure.
 - nb_service_particulier : Somme de l'ensemble des indicateurs.
 
-##Nombre d'équipements et de services dans le domaine du tourisme et du transport en 2013
+## Nombre d'équipements et de services dans le domaine du tourisme et du transport en 2013
 
  - NB_E101 : **Taxi**
  - NB_E102 : **Aéroport** en activité avec plus de 1 000 passagers (mouvement commercial au départ ou à l’arrivée de l’aéroport hors transit).
@@ -536,8 +536,6 @@ Elle offre une grande partie des produits et services délivrés à la populatio
 Non compris services de réservation et activités liées.
  - NB_G104 : **Information Touristique**. Comprend les services de réservation et d'information touristique.
  - nb_transport_tourisme : Somme de l'ensemble des indicateurs.
-
-## 2010 RECEN
 
 ## Base de données infracommunales : logement en 2010
 
@@ -982,7 +980,7 @@ Non compris services de réservation et activités liées.
  - P11_RP_MIBOIS : **Maisons ou Immeubles en bois (DOM) en 2011 (princ)**
  - P11_RP_MIDUR : **Maisons ou Immeubles en dur (DOM) en 2011 (princ)**
 
-##Base de données infracommunales : diplômes - formation en 2011
+## Base de données infracommunales : diplômes - formation en 2011
 
 - **La population non scolarisée** comprend les personnes non inscrites dans un établissement d'enseignement.
 
@@ -1029,7 +1027,7 @@ Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs ré
 - P11_FNSCOL15P_BACP2 : **Femmes 15 ans ou plus non scol. Enseignement sup court en 2011 (princ)**
 - P11_FNSCOL15P_SUP : **Femmes 15 ans ou plus non scol. Enseignement sup long en 2011 (princ)**
 
-##Base de données infracommunales : couples - familles - ménages en 2011
+## Base de données infracommunales : couples - familles - ménages en 2011
 
  - C11_MEN : **Ménages en 2011 (compl)**
  - C11_MENPSEUL : **Ménages 1 personne en 2011 (compl)**
@@ -1094,7 +1092,7 @@ Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs ré
  - C11_NE24F3 : **Fam 3 enfants moins 25 ans en 2011 (compl)**
  - C11_NE24F4P : **Fam 4 enfants ou plus moins 25 ans en 2011 (compl)**
 
- ##Base de données infracommunales : population en 2011
+ ## Base de données infracommunales : population en 2011
 
  - P11_POP : **population en 2011**
  - P11_POP0002 : **nombre de personnes de 0 à 2 ans**
@@ -1173,7 +1171,7 @@ Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs ré
  - C11_H15P_CS7 : **nombre d'hommes de 15 ans ou plus Retraités**
  - C11_H15P_CS8 : **nombre d'hommes de 15 ans ou plus Autres sans activité professionnelle**
 
-##Base de données infracommunales : activité des résidents en 2011
+## Base de données infracommunales : activité des résidents en 2011
 
  - P11_POP1564 : **Pop 15-64 ans en 2011 (princ)**
  - P11_POP1524 : **Pop 15-24 ans en 2011 (princ)**
@@ -1278,7 +1276,7 @@ Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs ré
  - C11_ACTOCC15P_VOIT : **Actif occ 15 ans ou plus voiture, camion en 2011 (compl)**
  - C11_ACTOCC15P_TCOM : **Actif occ 15 ans ou plus transport en commun en 2011 (compl)**
 
-##Base de données infracommunales : logement en 2012
+## Base de données infracommunales : logement en 2012
 
  - P12_LOG : **Nombre de logements**
  - P12_RP : **Nombre de résidences principales**
@@ -1358,7 +1356,7 @@ Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs ré
  - P12_RP_MIBOIS : **Nombre de résidences principales maisons ou immeubles en bois**
  - P12_RP_MIDUR : **Nombre de résidences principales maisons ou immeubles en dur**
 
-##Base de données infracommunales : diplômes - formation en 2012
+## Base de données infracommunales : diplômes - formation en 2012
 
  - P12_POP0205 : **Nombre de personnes de 2 à 5 ans**
  - P12_POP0610 : **Nombre de personnes de 6 à 10 ans**
@@ -1399,7 +1397,7 @@ Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs ré
  - P12_FNSCOL15P_BACP2 : **Nombre de femmes non scolarisées de 15 ans ou plus titulaires d'un diplôme de l'enseignement supérieur court**
  - P12_FNSCOL15P_SUP : **Nombre de femmes non scolarisées de 15 ans ou plus titulaires d'un diplôme de l'enseignement supérieur long**
 
-##Base de données infracommunales : couples - familles - ménages en 2012
+## Base de données infracommunales : couples - familles - ménages en 2012
 
  - C12_MEN : **Nombre de ménages**
  - C12_MENPSEUL : **Nombre de ménages d'une personne**
@@ -1464,7 +1462,7 @@ Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs ré
  - C12_NE24F3 : **Nombre de familles avec 3 enfants de moins de 25 ans**
  - C12_NE24F4P : **Nombre de familles avec 4 enfants ou plus de moins de 25 ans**
  
-##Base de données infracommunales : population en 2012
+## Base de données infracommunales : population en 2012
 
  - P12_POP : **Population**
  - P12_POP0002 : **Nombre de personnes de 0 à 2 ans**
@@ -1539,7 +1537,7 @@ Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs ré
  - P12_PMEN : **Population des ménages**
  - P12_PHORMEN : **Population hors ménages**
 
-##Base de données infracommunales : activité des résidents en 2012
+## Base de données infracommunales : activité des résidents en 2012
 
  - P12_POP1564 : **Nombre de personnes de 15 à 64 ans**
  - P12_POP1524 : **Nombre de personnes de 15 à 24 ans**
@@ -1646,7 +1644,7 @@ Remarque(s). Depuis 2004, avec le recensement rénové. Les élèves mineurs ré
  - C12_ACTOCC15P_TCOM : **Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement les transports en commun pour aller travailler**
 
 
-##Base de données infracommunales : logement en 2013
+## Base de données infracommunales : logement en 2013
 
  - P13_RP : **nombre de résidences principales**
  - P13_RP_1P : **nombre de résidences principales d'1 pièce**
