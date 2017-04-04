@@ -52,8 +52,7 @@ download_commune:
 	@wget -O source/TrancheAge2010.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/8137ac83-32ca-48e4-a23e-d8f6263601fc/download/trancheage2010.csv
 	@wget -O source/TrancheAge2011.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/02dc20f2-3a3d-4272-9893-07912fe563fd/download/trancheage2011.csv
 	@wget -O source/TrancheAge2012.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/0f9dd215-eb6d-4479-90e0-0b0d951d5dec/download/trancheage2012.csv
-	#https://github.com/anthill/open-moulinette/issues/46
-	#@wget -O source/TrancheAge2013.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/a6283267-9635-4452-b30e-35fe8a5cdbe2/download/trancheage2013.csv
+	@wget -O source/TrancheAge2013.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/a6283267-9635-4452-b30e-35fe8a5cdbe2/download/trancheage2013.csv
 	@wget -O source/TrancheAge2014.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/b46e67ea-66f9-4855-bc01-70690c1809dd/download/trancheage2014.csv
 	@wget -O source/TrancheAge2015.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/7fbaf1b1-3b31-4fbb-bfbb-c1a897afd80b/download/trancheage2015.csv
 
