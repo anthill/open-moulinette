@@ -15,7 +15,7 @@ Le fichier de recensement des éléments d’imposition à la fiscalité directe
 - la taxe sur les surfaces commerciales (Tascom)
 - Il comprend aussi les informations concernant les taxes annexes au profit des chambres d'agriculture, de la caisse d'assurance des accidents agricoles, des chambres de commerce et d'industrie et des chambres des métiers
 
-Il y a plus de 800 variables sur les années 2013, 2014 et 2015. Une documentation est à votre disposition pour mieux comprendre les noms des variables.
+Il y a plus de 800 variables sur les années 2013, 2014 et 2015. Une [documentation](https://github.com/anthill/open-moulinette/blob/master/impot_locaux/documentation.md)  est à votre disposition pour mieux comprendre les noms des variables.
 
 [Source data.gouv.fr](https://www.data.gouv.fr/fr/datasets/impots-locaux-fichier-de-recensement-des-elements-dimposition-a-la-fiscalite-directe-locale-rei-3/)
 
