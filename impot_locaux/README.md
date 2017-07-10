@@ -4,18 +4,20 @@ Impôts locaux : fichier de recensement des éléments d'imposition à la fiscal
 
 Le fichier de recensement des éléments d’imposition à la fiscalité directe locale (REI) est un fichier agrégé au niveau communal. Il détaille l'ensemble des données de fiscalité directe locale par taxe et par collectivité bénéficiaire (commune, syndicats et assimilés, intercommunalité, département, région). Ces données concernent exclusivement les impositions primitives, c’est-à-dire ne tiennent pas compte des impositions supplémentaires consécutives à des omissions ou insuffisances de l'imposition initiale. Ce fichier contient notamment les informations relatives aux principaux impôts locaux suivants :
 
-la taxe foncière sur les propriétés non bâties (TFPNB) ;
-la taxe foncière sur les propriétés bâties (TFPB) ;
-la taxe d'habitation (TH) ;
-la cotisation foncière des entreprises (CFE) ;
-la cotisation sur la valeur ajoutée des entreprises (CVAE) ;
-la taxe spéciale d'équipement au profit de la région d'Île-de-France et d'établissements publics (TSE) ;
-la taxe d'enlèvement des ordures ménagères (TEOM) ;
-les impositions forfaitaires sur les entreprises de réseaux (Ifer) ;
-la taxe sur les surfaces commerciales (Tascom).
-Il comprend aussi les informations concernant les taxes annexes au profit des chambres d'agriculture, de la caisse d'assurance des accidents agricoles, des chambres de commerce et d'industrie et des chambres des métiers.
+- la taxe foncière sur les propriétés non bâties (TFPNB)
+- la taxe foncière sur les propriétés bâties (TFPB)
+- la taxe d'habitation (TH)
+- la cotisation foncière des entreprises (CFE)
+- la cotisation sur la valeur ajoutée des entreprises (CVAE)
+- la taxe spéciale d'équipement au profit de la région d'Île-de-France et d'établissements publics (TSE)
+- la taxe d'enlèvement des ordures ménagères (TEOM)
+- les impositions forfaitaires sur les entreprises de réseaux (Ifer)
+- la taxe sur les surfaces commerciales (Tascom)
+- Il comprend aussi les informations concernant les taxes annexes au profit des chambres d'agriculture, de la caisse d'assurance des accidents agricoles, des chambres de commerce et d'industrie et des chambres des métiers
 
-[Source](https://www.data.gouv.fr/fr/datasets/impots-locaux-fichier-de-recensement-des-elements-dimposition-a-la-fiscalite-directe-locale-rei-3/)
+Il y a plus de 800 variables sur les années 2013, 2014 et 2015. Une documentation est à votre disposition pour mieux comprendre les noms des variables.
+
+[Source data.gouv.fr](https://www.data.gouv.fr/fr/datasets/impots-locaux-fichier-de-recensement-des-elements-dimposition-a-la-fiscalite-directe-locale-rei-3/)
 
 The size of the output is 286 Mo. It take about 20 minutes to run. 
 
