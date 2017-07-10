@@ -8,8 +8,6 @@ Created on Mon Jui 10 09:09:54 2017
 import pandas as pd
 import glob
 
-import time
-
 
 import_files = glob.glob('data/*.xlsx')
 
@@ -18,8 +16,6 @@ geo_features = ['DEP', 'DIR', 'COM', 'REC', 'Q02','SIREPCI','Q03', 'OPTEPCI',
 
 # Loop on impot's file
 for file_path in import_files:
-    
-    start_time = time.time()
     # Check file's year
     file_year = file_path.split('_')[1][0:4]    # 2013
     small_year = file_year[2:]                  # 13
@@ -64,8 +60,6 @@ for file_path in import_files:
         # IDCOM change with year so we have to left-join to keep histo
         df = df.merge(df_temp[merge_feature], on="IDCOM", how='left')
         #0.00023 / 11 sec
-
-    print("--- %s seconds ---" % (time.time() - start_time))
     
 print "Export reslult in : data/impot_ouput.csv"    
 df.to_csv('data/impot_ouput.csv', index=False, encoding='utf-8')
