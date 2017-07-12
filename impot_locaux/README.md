@@ -11,15 +11,18 @@ Le fichier de recensement des éléments d’imposition à la fiscalité directe
 - la cotisation sur la valeur ajoutée des entreprises (CVAE)
 - la taxe spéciale d'équipement au profit de la région d'Île-de-France et d'établissements publics (TSE)
 - la taxe d'enlèvement des ordures ménagères (TEOM)
-- les impositions forfaitaires sur les entreprises de réseaux (Ifer)
-- la taxe sur les surfaces commerciales (Tascom)
+- les impositions forfaitaires sur les entreprises de réseaux (IFER)
+- la taxe sur les surfaces commerciales (TASCOM)
 - Il comprend aussi les informations concernant les taxes annexes au profit des chambres d'agriculture, de la caisse d'assurance des accidents agricoles, des chambres de commerce et d'industrie et des chambres des métiers
+- La taxe pour la gestion des milieux aquatiques et la prévention des inondations (GEMAPI) - uniquement 2016
+- la taxe additionnelle spéciale annuelle instituée au profit de la région Île-de-France
+(TASARIF) - uniquement 2016
 
-Il y a plus de 800 variables sur les années 2013, 2014 et 2015. Une [documentation](https://github.com/anthill/open-moulinette/blob/master/impot_locaux/documentation.md)  est à votre disposition pour mieux comprendre les noms des variables.
+Il y a plus de 900 variables sur les années 2013, 2014, 2015 et 2016. Une [documentation](https://github.com/anthill/open-moulinette/blob/master/impot_locaux/documentation.md)  est à votre disposition pour mieux comprendre les noms des variables.
 
 [Source data.gouv.fr](https://www.data.gouv.fr/fr/datasets/impots-locaux-fichier-de-recensement-des-elements-dimposition-a-la-fiscalite-directe-locale-rei-3/)
 
-The size of the output is 286 Mo. It take about 20 minutes to run. 
+The size of the output is 400 Mo. It take about 25 minutes to run. 
 
 ## Dependency
 
