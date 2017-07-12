@@ -1,13 +1,31 @@
 ## Documentation
 
-Le script permet d'aggréger les données des impots locaux par communes sur 3 années (2013, 2014 et 2015). Chaque variable (hormis les variables géographiques) sont sous la forme de **NOM_VARRIABLE_YY** ou **YY** représente l'année (13 pour 2013). Il y'a plus de 800 variables différentes par années.
+Le script permet d'aggréger les données des impots locaux par communes sur 4 années (2013, 2014, 2015 et 2016). Chaque variable (hormis les variables géographiques) sont sous la forme de **NOM_VARRIABLE_YY** ou **YY** représente l'année (13 pour 2013). Il y'a plus de 900 variables différentes par années.
+
+*Certaines variables ne sont pas présentes pour toutes les années. Exemple ```WC52``` est uniquement présent pour l'année 2016 --> ```WC52_16```*
 
 ## List of files
 - REI_2013.xlsx
 - REI_2014.xlsx
 - REI_2015.xlsx
+- REI_2016.xlsx
 
-[Source data.gouv.fr](https://www.data.gouv.fr/fr/datasets/impots-locaux-fichier-de-recensement-des-elements-dimposition-a-la-fiscalite-directe-locale-rei-3/)
+[Source data.gouv.fr](https://www.data.gouv.fr/fr/datasets/impots-locaux-fichier-de-recensement-des-elements-dimposition-a-la-fiscalite-directe-locale-rei-3/) et [impot.gouv.fr](https://www.impots.gouv.fr/portail/statistiques/recensement-des-elements-dimposition-la-fiscalite-directe-locale-rei)
+
+## Type de variables
+
+- La taxe foncière sur les propriétés non bâties (TFPNB)
+- La taxe foncière sur les propriétés bâties (TFPB)
+- La taxe d'habitation (TH)
+- La cotisation foncière des entreprises (CFE)
+- La cotisation sur la valeur ajoutée des entreprises (CVAE)
+- La taxe spéciale d'équipement au profit de la région d'Île-de-France et d'établissements publics (TSE)
+- La taxe d'enlèvement des ordures ménagères (TEOM)
+- Les impositions forfaitaires sur les entreprises de réseaux (IFER)
+- La taxe sur les surfaces commerciales (TASCOM)
+- Il comprend aussi les informations concernant les taxes annexes au profit des chambres d'agriculture, de la caisse d'assurance des accidents agricoles, des chambres de commerce et d'industrie et des chambres des métiers
+- La taxe pour la gestion des milieux aquatiques et la prévention des inondations (GEMAPI) - uniquement 2016
+- la taxe additionnelle spéciale annuelle instituée au profit de la région Île-de-France (TASARIF) - uniquement 2016
 
 
 ## Description géographique
@@ -879,3 +897,68 @@ Le script permet d'aggréger les données des impots locaux par communes sur 3 a
 - **WD50MGL_yy** : DOTATION TP EXONERATION ZFU3 DEPARTEMENT QUOTE PART MGL
 - **WDEPMGLTH_yy** : TH - SOMME DES ALLOCATIONS COMPENSATRICES / DEP QUOTE-PART METROPOLE DE LYON
 - **WDEPMGLTP_yy** : TP - SOMME DES ALLOCATIONS COMPENSATRICES / DEP QUOTE PART METROPOLE DE LYON
+- **B33MGPTAFNB** : TAFNB - MGP / MONTANT NET
+- **WC52** : CFE - ALLOCATION COMPENSATRICE - EXO dans les QPV / COMMUNE
+- **J86** : TH - NOMBRE DE BENEFICIAIRES DE L ABATTEMENT SPECIAL A LA BASE / GEMAPI
+- **L16** : TH - BASES NETTES INTERCOMMUNALES EXONEREES (ANCIENS DO TOTAUX) - MONTANT
+- **L15VP** : TH - BASES NETTES COMMUNALES EXONEREES VIEUX PARENTS - MONTANT
+- **X382** : CFE -   EXONERATION QPV TPE CREATION D ENTREPRISES (EXO 53C) / BASES EXONEREES / SYNDICAT
+- **AOG12** : TH - PERSONNES A CHARGE DE RANG 1 ET 2 - TOTAL DES ABATTEMENTS (GEMAPI)
+- **B32MGPTAFNB** : TAFNB - MGP / TAUX NET
+- **SIREPT** : NUMERO SIREN DE L EPT
+- **WC70** : FB - ALLOCATION COMPENSATRICE - EXO dans les QPV / COMMUNE
+- **AOG3** : TH - PERSONNES A CHARGE A PARTIR DE LA 3EME - TOTAL DES ABATTEMENT (GEMAPI)
+- **E54gGeMAPI** : FB - GEMAPI / NOMBRE D ARTICLES INTERCOMMUNALITE
+- **ZN3** : CFE -  EXONERATION QPV TPE CREATION D ENTREPRISES (EXO 53C) / INTERCOMMUNALITE / NOMBRE ARTICLES
+- **X363** : CFE -  ABATTEMENT RECHERCHE INDUSTRIELLE (EXO 9) / BASES EXONEREES / INTERCOMMUNALITE
+- **WC12CV** : FB - ALLOCATION COMPENSATRICE - Exo logements faisant l'objet d'une convention de patrimoine avec l'Etat (CV ex-ZT) / COMMUNE
+- **X366** : CFE -  ABATTEMENT RECHERCHE INDUSTRIELLE (EXO 9) / BASES EXONEREES / CCI
+- **H52cGEMAPI** : TH - TAUX COMMUNAL TAXE GEMAPI
+- **H53cGEMAPILV** : TH - MONTANT NET COMMUNAL DES LOGEMENTS VACANTS TAXE GEMAPI
+- **X383** : CFE -  EXONERATION QPV TPE CREATION D ENTREPRISES (EXO 53C) / BASES EXONEREES / INTERCOMMUNALITE
+- **ZO2** : CFE -  EXONERATION METHANISATION AGRICOLE (EXO 22) / SYNDICAT / NOMBRE ARTICLES
+- **X381** : CFE - EXONERATION QPV TPE CREATION D ENTREPRISES (EXO 53C) / BASES EXONEREES / COMMUNE
+- **WE12CV** : FB - ALLOCATION COMPENSATRICE - Exo logements faisant l'objet d'une convention de patrimoine avec l'Etat (CV ex-ZT) / INTERCOMMUNALITE
+- **ZO1** : CFE -  EXONERATION METHANISATION AGRICOLE (EXO 22) / COMMUNE / NOMBRE ARTICLES
+- **L16VP** : TH - BASES NETTES INTERCOMMUNALES EXONEREES VIEUX PARENTS - MONTANT
+- **ZO3** : CFE -  EXONERATION METHANISATION AGRICOLE (EXO 22) / INTERCOMMUNALITE / NOMBRE ARTICLES
+- **ZO6** : CFE -  EXONERATION METHANISATION AGRICOLE (EXO 22) / CCI / NOMBRE ARTICLES
+- **ZO7** : CFE -  EXONERATION METHANISATION AGRICOLE (EXO 22) / CMA / NOMBRE ARTICLES
+- **ZM2** : CFE -  EXONERATION QPV TPE (EXO 53A) / SYNDICAT / NOMBRE ARTICLES
+- **ZM3** : CFE -  EXONERATION QPV TPE (EXO 53A) / INTERCOMMUNALITE / NOMBRE ARTICLES
+- **ZM1** : CFE -  EXONERATION QPV TPE (EXO 53A) / COMMUNE / NOMBRE ARTICLES
+- **ZK1** : CFE - EXONERATION DIFFUSEURS PRESSE SPECIALISTES (EXO 8) / COMMUNE / NOMBRE ARTICLES
+- **H53cGEMAPI** : TH - MONTANT NET COMMUNAL TAXE GEMAPI
+- **ZK3** : CFE - EXONERATION DIFFUSEURS PRESSE SPECIALISTES (EXO 8) / INTERCOMMUNALITE / NOMBRE ARTICLES
+- **X361** : CFE - ABATTEMENT RECHERCHE INDUSTRIELLE (EXO 9) / BASES EXONEREES / COMMUNE
+- **TRANSCOM** : Trans-commune ou commune peste issue du sabordage de son EPCI
+- **COMQPV** : Commune avec quartier(s) prioritaire(s)
+- **WE70** : FB - ALLOCATION COMPENSATRICE - EXONERATIONS dans les QPV / INTERCOMMUNALITE
+- **AGBG** : TH - ABATTEMENT GENERAL A LA BASE - TOTAL DES ABATTEMENTS (GEMAPI)
+- **ASBG** : TH - ABATTEMENT SPECIAL A LA BASE - TOTAL DES ABATTEMENTS (GEMAPI)
+- **WD12CV** : FB - ALLOCATION COMPENSATRICE - Exo logements faisant l'objet d'une convention de patrimoine avec l'Etat (CV ex-ZT) FB / DEPARTEMENT
+- **NBVP** : TH - BASES BRUTES EXONEREES VIEUX PARENTS - NOMBRE
+- **X372** : CFE -   EXONERATION QPV TPE (EXO 53A) / BASES EXONEREES / SYNDICAT
+- **X373** : CFE -  EXONERATION QPV TPE (EXO 53A) / BASES EXONEREES / INTERCOMMUNALITE
+- **H53gGEMAPILV** : TH - MONTANT NET INTERCOMMUNAL DES LOGEMENTS VACANTS TAXE GEMAPI
+- **X371** : CFE - EXONERATION QPV TPE (EXO 53A) / BASES EXONEREES / COMMUNE
+- **WD70** : FB - ALLOCATION COMPENSATRICE - EXONERATION dans les QPV / DEPARTEMENT
+- **WE52** : CFE - ALLOCATION COMPENSATRICE - EXONERATION DANS LES QPV / INTERCOMMUNALITE
+- **LIBEPT** : NOM DE L EPT
+- **X397** : CFE -  EXONERATION METHANISATION AGRICOLE (EXO 22) / BASES EXONEREES / CMA
+- **X391** : CFE - EXONERATION METHANISATION AGRICOLE (EXO 22) / BASES EXONEREES / COMMUNE
+- **X392** : CFE -   EXONERATION METHANISATION AGRICOLE (EXO 22) / BASES EXONEREES / SYNDICAT
+- **X393** : CFE -  EXONERATION METHANISATION AGRICOLE (EXO 22) / BASES EXONEREES / INTERCOMMUNALITE
+- **B31MGPTAFNB** : TAFNB - BASE TAXABLE MGP
+- **ZN2** : CFE -  EXONERATION QPV TPE CREATION D ENTREPRISES (EXO 53C) / SYNDICAT / NOMBRE ARTICLES
+- **ZN1** : CFE -  EXONERATION QPV TPE CREATION D ENTREPRISES (EXO 53C) / COMMUNE / NOMBRE ARTICLES
+- **ZL6** : CFE - ABATTEMENT RECHERCHE INDUSTRIELLE (EXO 9) / CCI / NOMBRE ARTICLES
+- **ZL1** : CFE -  ABATTEMENT RECHERCHE INDUSTRIELLE (EXO 9) / COMMUNE / NOMBRE ARTICLES
+- **COMMGP** : Commune membre de la MGP
+- **ZL3** : CFE - ABATTEMENT RECHERCHE INDUSTRIELLE (EXO 9) / INTERCOMMUNALITE / NOMBRE ARTICLES
+- **EPCIQPV** : EPCI à QPPV (quartiers prioritaires)
+- **X351** : CFE - EXONERATION DIFFUSEURS PRESSE SPECIALISTES (EXO 8) / BASES EXONEREES / COMMUNE
+- **X353** : CFE - EXONERATION DIFFUSEURS PRESSE SPECIALISTES (EXO 8) / BASES EXONEREES / INTERCOMMUNALITE
+- **X396** : CFE -  EXONERATION METHANISATION AGRICOLE (EXO 22) / BASES EXONEREES / CCI
+- **ASHG** : TH - ABATTEMENT SPECIAL HANDICAPES A LA BASE - TOTAL DES ABATTEMENTS (GEMAPI)
+- **COMTHRS** : Commune en surtaxe des résidences secondaires
