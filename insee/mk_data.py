@@ -117,7 +117,7 @@ print "il y a  %d iris différentes pour l'enseignement du 1er degré et %d feat
 
 compare_geo(data, enseignement_1)
 data = pd.merge(data, enseignement_1[features], on='IRIS', how='outer')
-_check_data(data, "Enseignement 1er degré 15")
+_check_data(data, "Enseignement 1er degré 16")
 del enseignement_1
 
 
@@ -138,7 +138,7 @@ print "il y a  %d iris différentes pour l'enseignement du second degré et %d f
 
 compare_geo(data, enseignement_2)
 data = pd.merge(data, enseignement_2[features], on='IRIS', how='outer')
-_check_data(data, "Enseignement 2nd degré 15")
+_check_data(data, "Enseignement 2nd degré 16")
 del enseignement_2
 
 
@@ -162,7 +162,7 @@ print "il y a  %d iris différentes pour l'enseignement du supérieur et %d feat
 
 compare_geo(data, enseignement_sup)
 data = pd.merge(data, enseignement_sup[features], on='IRIS', how='outer')
-_check_data(data, "Enseignement supérieur 15")
+_check_data(data, "Enseignement supérieur 16")
 del enseignement_sup
 
 
@@ -266,7 +266,7 @@ print "il y a  %d iris différentes pour l'équipement social et %d features" % 
 
 compare_geo(data, equipement_social)
 data = pd.merge(data, equipement_social[features], on='IRIS', how='outer')
-_check_data(data, "Equipement social 15")
+_check_data(data, "Equipement social 16")
 del equipement_social
 
 
@@ -285,7 +285,7 @@ print "il y a  %d iris différentes pour l'équipement de santé et %d features"
 
 compare_geo(data, equipement_sante)
 data = pd.merge(data, equipement_sante[features], on='IRIS', how='outer')
-_check_data(data, "Equipement santé 15")
+_check_data(data, "Equipement santé 16")
 del equipement_sante
 
 
@@ -304,7 +304,7 @@ print "il y a  %d iris différentes pour les fonctions médical et %d features" 
 
 compare_geo(data, fonction_medical)
 data = pd.merge(data, fonction_medical[features], on='IRIS', how='outer')
-_check_data(data, "Fonction médical 15")
+_check_data(data, "Fonction médical 16")
 del fonction_medical
 
 ## Service pour les particuliers
@@ -322,7 +322,7 @@ print "il y a  %d iris différentes pour les services aux particulier et %d feat
 
 compare_geo(data, service_particulier)
 data = pd.merge(data, service_particulier[features], on='IRIS', how='outer')
-_check_data(data, "Service pour les particuliers 15")
+_check_data(data, "Service pour les particuliers 16")
 del service_particulier
 
 
@@ -341,7 +341,7 @@ print "il y a  %d iris différentes pour le transport touristique et %d features
 
 compare_geo(data, transport_tourisme)
 data = pd.merge(data, transport_tourisme[features], on='IRIS', how='outer')
-_check_data(data, "Transport touristique 15")
+_check_data(data, "Transport touristique 16")
 del transport_tourisme
 
 ############################################################
