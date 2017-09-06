@@ -58,7 +58,7 @@ def _correct_LIBGEO(data):
 
 
 ## Commerce
-commerce = pd.read_excel('data/equip-serv-commerce-infra-2015.xls', sheetname='IRIS')
+commerce = pd.read_excel('data/equip-serv-commerce-infra-2016.xls', sheetname='IRIS')
 # creating header from file
 header = commerce.loc[4].tolist()
 commerce.columns = header
@@ -77,7 +77,7 @@ del commerce
 
 
 ## Sport
-sport = pd.read_excel('data/equip-sport-loisir-socio-infra-2015.xls', sheetname='IRIS')
+sport = pd.read_excel('data/equip-sport-loisir-socio-infra-2016.xls', sheetname='IRIS')
 # creating header from file
 header = sport.loc[4].tolist()
 sport.columns = header
@@ -101,7 +101,7 @@ del sport
 
 
 ## Enseignement 1er degré
-enseignement_1 = pd.read_excel('data/equip-serv-ens-1er-degre-infra-2015.xls', sheetname='IRIS')
+enseignement_1 = pd.read_excel('data/equip-serv-ens-1er-degre-infra-2016.xls', sheetname='IRIS')
 # creating header from file
 header = enseignement_1.loc[4].tolist()
 enseignement_1.columns = header
@@ -122,7 +122,7 @@ del enseignement_1
 
 
 ## Enseignement du second degré
-enseignement_2 = pd.read_excel('data/equip-serv-ens-2eme-degre-infra-2015.xls', sheetname='IRIS')
+enseignement_2 = pd.read_excel('data/equip-serv-ens-2e-degre-infra-2016.xls', sheetname='IRIS')
 # creating header from file
 header = enseignement_2.loc[4].tolist()
 enseignement_2.columns = header
@@ -143,7 +143,7 @@ del enseignement_2
 
 
 ## Enseignement supérieur
-enseignement_sup = pd.read_excel('data/equip-serv-ens-sup-form-serv-infra-2015.xls', sheetname='IRIS')
+enseignement_sup = pd.read_excel('data/equip-serv-ens-sup-form-serv-infra-2016.xls', sheetname='IRIS')
 # creating header from file
 header = enseignement_sup.loc[4].tolist()
 enseignement_sup.columns = header
@@ -252,7 +252,7 @@ del revenu_impose
 
 
 ## Equipement social
-equipement_social = pd.read_excel('data/equip-serv-action-sociale-infra-2015.xls', sheetname='IRIS')
+equipement_social = pd.read_excel('data/equip-serv-action-sociale-infra-2016.xls', sheetname='IRIS')
 # creating header from file
 header = equipement_social.loc[4].tolist()
 equipement_social.columns = header
@@ -271,7 +271,7 @@ del equipement_social
 
 
 ## Equipement santé
-equipement_sante = pd.read_excel('data/equip-serv-sante-infra-2015.xls', sheetname='IRIS')
+equipement_sante = pd.read_excel('data/equip-serv-sante-infra-2016.xls', sheetname='IRIS')
 # creating header from file
 header = equipement_sante.loc[4].tolist()
 equipement_sante.columns = header
@@ -290,7 +290,7 @@ del equipement_sante
 
 
 ## Fonction médical
-fonction_medical = pd.read_excel('data/equip-serv-medical-para-infra-2015.xls', sheetname='IRIS')
+fonction_medical = pd.read_excel('data/equip-serv-medical-para-infra-2016.xls', sheetname='IRIS')
 # creating header from file
 header = fonction_medical.loc[4].tolist()
 fonction_medical.columns = header
@@ -308,7 +308,7 @@ _check_data(data, "Fonction médical 15")
 del fonction_medical
 
 ## Service pour les particuliers
-service_particulier = pd.read_excel('data/equip-serv-particuliers-infra-2015.xls', sheetname='IRIS')
+service_particulier = pd.read_excel('data/equip-serv-particuliers-infra-2016.xls', sheetname='IRIS')
 # creating header from file
 header = service_particulier.loc[4].tolist()
 service_particulier.columns = header
@@ -327,7 +327,7 @@ del service_particulier
 
 
 ## Transport touristique
-transport_tourisme = pd.read_excel('data/equip-tour-transp-infra-2015.xls', sheetname='IRIS')
+transport_tourisme = pd.read_excel('data/equip-tour-transp-infra-2016.xls', sheetname='IRIS')
 # creating header from file
 header = transport_tourisme.loc[4].tolist()
 transport_tourisme.columns = header
