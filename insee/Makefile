@@ -6,42 +6,41 @@ download:
 	@rm -rf data
 	@mkdir data
 	# https://www.insee.fr/fr/statistiques/1893259
-	@wget -O data/equip-serv-commerce-infra-15.zip https://www.insee.fr/fr/statistiques/fichier/1893259/equip-serv-commerce-infra-2015.zip
-	@unzip data/equip-serv-commerce-infra-15.zip -d data/
+	@wget -O data/equip-serv-commerce-infra-16.zip https://www.insee.fr/fr/statistiques/fichier/1893259/equip-serv-commerce-infra-2016.zip
+	@unzip data/equip-serv-commerce-infra-16.zip -d data/
 	# https://www.insee.fr/fr/statistiques/1893257
-	@wget -O data/equip-sport-loisir-socio-infra-15.zip https://www.insee.fr/fr/statistiques/fichier/1893257/equip-sport-loisir-socio-infra-2015.zip
-	@unzip data/equip-sport-loisir-socio-infra-15.zip -d data/
+	@wget -O data/equip-sport-loisir-socio-infra-16.zip https://www.insee.fr/fr/statistiques/fichier/1893257/equip-sport-loisir-socio-infra-2016.zip
+	@unzip data/equip-sport-loisir-socio-infra-16.zip -d data/
 	# https://www.insee.fr/fr/statistiques/1893261
-	@wget -O data/equip-serv-ens-1er-degre-infra-15.zip https://www.insee.fr/fr/statistiques/fichier/1893261/equip-serv-ens-1er-degre-infra-2015.zip
-	@unzip data/equip-serv-ens-1er-degre-infra-15.zip -d data/
+	@wget -O data/equip-serv-ens-1er-degre-infra-16.zip https://www.insee.fr/fr/statistiques/fichier/1893261/equip-serv-ens-1er-degre-infra-2016.zip
+	@unzip data/equip-serv-ens-1er-degre-infra-16.zip -d data/
 	# https://www.insee.fr/fr/statistiques/1893263
-	@wget -O data/equip-serv-ens-2eme-degre-infra-15.zip https://www.insee.fr/fr/statistiques/fichier/1893263/equip-serv-ens-2eme-degre-infra-2015.zip
-	@unzip data/equip-serv-ens-2eme-degre-infra-15.zip -d data/
+	@wget -O data/equip-serv-ens-2eme-degre-infra-16.zip https://www.insee.fr/fr/statistiques/fichier/1893263/equip-serv-ens-2e-degre-infra-2016.zip
+	@unzip data/equip-serv-ens-2eme-degre-infra-16.zip -d data/
 	# https://www.insee.fr/fr/statistiques/1893265
-	@wget -O data/equip-serv-ens-sup-form-serv-infra-15.zip https://www.insee.fr/fr/statistiques/fichier/1893265/equip-serv-ens-sup-form-serv-infra-2015.zip
-	@unzip data/equip-serv-ens-sup-form-serv-infra-15.zip -d data/
+	@wget -O data/equip-serv-ens-sup-form-serv-infra-16.zip https://www.insee.fr/fr/statistiques/fichier/1893265/equip-serv-ens-sup-form-serv-infra-2016.zip
+	@unzip data/equip-serv-ens-sup-form-serv-infra-16.zip -d data/
 	# https://www.insee.fr/fr/statistiques/1893301
 	# 4 files for this insee'files
 	@wget -O data/structure-distrib-revenus-iris-2011.zip https://www.insee.fr/fr/statistiques/fichier/1893301/structure-distrib-revenus-iris-2011.zip
 	@unzip data/structure-distrib-revenus-iris-2011.zip -d data/
 	# https://www.insee.fr/fr/statistiques/1893249
-	@wget -O data/equip-serv-action-sociale-infra-15.zip https://www.insee.fr/fr/statistiques/fichier/1893249/equip-serv-action-sociale-infra-2015.zip
-	@unzip data/equip-serv-action-sociale-infra-15.zip -d data/	
+	@wget -O data/equip-serv-action-sociale-infra-16.zip https://www.insee.fr/fr/statistiques/fichier/1893249/equip-serv-action-sociale-infra-2016.zip
+	@unzip data/equip-serv-action-sociale-infra-16.zip -d data/
 	# https://www.insee.fr/fr/statistiques/1893247
-	@wget -O data/equip-serv-sante-infra-15.zip https://www.insee.fr/fr/statistiques/fichier/1893247/equip-serv-sante-infra-2015.zip
-	@unzip data/equip-serv-sante-infra-15.zip -d data/
+	@wget -O data/equip-serv-sante-infra-16.zip https://www.insee.fr/fr/statistiques/fichier/1893247/equip-serv-sante-infra-2016.zip
+	@unzip data/equip-serv-sante-infra-16.zip -d data/
 	# https://www.insee.fr/fr/statistiques/1893251
-	@wget -O data/equip-serv-medical-para-infra-15.zip https://www.insee.fr/fr/statistiques/fichier/1893251/equip-serv-medical-para-infra-2015.zip
-	@unzip data/equip-serv-medical-para-infra-15.zip -d data/
+	@wget -O data/equip-serv-medical-para-infra-16.zip https://www.insee.fr/fr/statistiques/fichier/1893251/equip-serv-medical-para-infra-2016.zip
+	@unzip data/equip-serv-medical-para-infra-16.zip -d data/
 	# https://www.insee.fr/fr/statistiques/1896402
-	@wget -O data/equip-serv-particuliers-infra-15.zip https://www.insee.fr/fr/statistiques/fichier/1896402/equip-serv-particuliers-infra-2015.zip
-	@unzip data/equip-serv-particuliers-infra-15.zip -d data/
+	@wget -O data/equip-serv-particuliers-infra-16.zip https://www.insee.fr/fr/statistiques/fichier/1896402/equip-serv-particuliers-infra-2016.zip
+	@unzip data/equip-serv-particuliers-infra-16.zip -d data/
 	# https://www.insee.fr/fr/statistiques/1893234
-	@wget -O data/equip-tour-transp-infra-15.zip https://www.insee.fr/fr/statistiques/fichier/1893234/equip-tour-transp-infra-2015.zip
-	@unzip data/equip-tour-transp-infra-15.zip -d data/
+	@wget -O data/equip-tour-transp-infra-16.zip https://www.insee.fr/fr/statistiques/fichier/1893234/equip-tour-transp-infra-2016.zip
+	@unzip data/equip-tour-transp-infra-16.zip -d data/
 	# https://www.insee.fr/fr/statistiques/2028271
-	@wget -O data/infra-logement-2010.zip https://www.insee.fr/fr/statistiques/fichier/2028271/infra-logement-2010.zip
-	@unzip data/infra-logement-2010.zip -d data/
+	@wget -O data/base-ic-logement-2010.xls https://www.insee.fr/fr/statistiques/fichier/2028271/base-ic-logement-2010.xls
 	# https://www.insee.fr/fr/statistiques/2028269
 	@wget -O data/infra-logement-2011.zip https://www.insee.fr/fr/statistiques/fichier/2028269/infra-logement-2011.zip
 	@unzip data/infra-logement-2011.zip -d data/
@@ -52,8 +51,7 @@ download:
 	@wget -O data/infra-logement-2013.zip https://www.insee.fr/fr/statistiques/fichier/2386703/base-ic-logement-2013.zip
 	@unzip data/infra-logement-2013.zip -d data/
 	# https://www.insee.fr/fr/statistiques/2028259
-	@wget -O data/infra-formation-2010.zip https://www.insee.fr/fr/statistiques/fichier/2028259/infra-formation-2010.zip
-	@unzip data/infra-formation-2010.zip -d data/
+	@wget -O data/base-ic-diplomes-formation-2010.xls https://www.insee.fr/fr/statistiques/fichier/2028259/base-ic-diplomes-formation-2010.xls
 	# https://www.insee.fr/fr/statistiques/2028261
 	@wget -O data/infra-formation-2011.zip https://www.insee.fr/fr/statistiques/fichier/2028261/infra-formation-2011.zip
 	@unzip data/infra-formation-2011.zip -d data/
@@ -64,7 +62,8 @@ download:
 	@wget -O data/infra-formation-2013.zip https://www.insee.fr/fr/statistiques/fichier/2386698/base-ic-diplomes-formation-2013.zip
 	@unzip data/infra-formation-2013.zip -d data/
 	# https://www.insee.fr/fr/statistiques/2028571
-	@wget -O data/base-ic-couples-familles-menages-2010.xls https://www.insee.fr/fr/statistiques/fichier/2028571/base-ic-couples-familles-menages-2010.xls
+	@wget -O data/base-ic-couples-familles-menages-2010.zip https://www.insee.fr/fr/statistiques/fichier/2028571/base-ic-couples-familles-menages-2010.zip
+	@unzip data/base-ic-couples-familles-menages-2010.zip -d data/
 	# https://www.insee.fr/fr/statistiques/2386664
 	@wget -O data/infra-famille-2011.zip https://www.insee.fr/fr/statistiques/fichier/2028567/infra-famille-2011.zip
 	@unzip data/infra-famille-2011.zip -d data/
@@ -72,8 +71,7 @@ download:
 	@wget -O data/infra-famille-2012.zip https://www.insee.fr/fr/statistiques/fichier/2028569/infra-famille-2012.zip
 	@unzip data/infra-famille-2012.zip -d data/
 	# https://www.insee.fr/fr/statistiques/2386664
-	@wget -O data/infra-famille-2013.zip https://www.insee.fr/fr/statistiques/fichier/2386664/base-ic-couples-familles-menages-2013.zip
-	@unzip data/infra-famille-2013.zip -d data/
+	@wget -O data/base-ic-couples-familles-menages-2013.xls https://www.insee.fr/fr/statistiques/fichier/2386664/base-ic-couples-familles-menages-2013.xls
 	# https://www.insee.fr/fr/statistiques/2028604
 	@wget -O data/infra-population-2010.zip https://www.insee.fr/fr/statistiques/fichier/2028604/infra-population-2010.zip
 	@unzip data/infra-population-2010.zip -d data/
