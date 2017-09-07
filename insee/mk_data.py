@@ -11,7 +11,21 @@ def _check_data(data, file_name):
     """
     _check_iris_doublon(data, file_name)
     _check_bad_merge_feature(data, file_name)
+    _check_geo_nan(data, file_name)
     
+def _check_geo_nan(data, file_name):
+    """
+    Check if they are some NaN geo features
+    """
+    geo_features = ['IRIS', 'COM', 'DEP', 'REG']
+    
+    for col in geo_features:
+        col_nan = pd.isnull(data[col]).sum()
+        if col_nan == 0:
+            "[OK] No NaN value for "+ col + " in " + file_name
+        else:
+            print(u"[WARNING] Il y a " + str(col_nan) + u" NaN pour " + col)
+            
 
 def _check_iris_doublon(data, file_name):
     """
@@ -57,6 +71,39 @@ def _correct_LIBGEO(data):
     return data
 
 
+
+# New Region Code (REG2016)
+
+new_reg_dict = {'01' : '01',
+                '02' : '02',
+                '03' : '03',
+                '04' : '04',
+                '11' : '11',
+                '21' : '44',
+                '22' : '32',
+                '23' : '28',
+                '24' : '24',
+                '25' : '28',
+                '26' : '27',
+                '31' : '32',
+                '41' : '44',
+                '42' : '44',
+                '43' : '27',
+                '52' : '52',
+                '53' : '53',
+                '54' : '75',
+                '72' : '75',
+                '73' : '76',
+                '74' : '75',
+                '82' : '84',
+                '83' : '84',
+                '91' : '76',
+                '93' : '93',
+                '94' : '94'}
+
+
+## FILES
+
 ## Commerce
 commerce = pd.read_excel('data/equip-serv-commerce-infra-2016.xls', sheetname='IRIS')
 # creating header from file
@@ -96,7 +143,9 @@ print "il y a  %d iris différentes pour le sport et %d features" % (len(sport.I
 
 compare_geo(data, sport)
 data = pd.merge(data, sport[features], on='IRIS', how='outer')
-_check_data(data, "Sport 15")
+# Adding new IRIS, filling geo information with new files
+data = fillna_with_other_table(data, sport, 'IRIS', columns=['COM', 'DEP', 'REG'])
+_check_data(data, "Sport 16")
 del sport
 
 
@@ -183,8 +232,12 @@ features.append('IRIS')
 print "il y a  %d iris différentes pour le revenu par ménage et %d features" % (len(revenu_menage.IRIS.unique()), len(features) - 1)
 
 revenu_menage['LIBCOM'] = revenu_menage['LIBCOM'].str.replace(' - ', '-')
+# Transform old REG code whit the new one (REG 2016)
+revenu_menage['REG'] = revenu_menage.REG.map(new_reg_dict)
 compare_geo(data, revenu_menage)
+
 data = pd.merge(data, revenu_menage[features], on='IRIS', how='outer')
+data = fillna_with_other_table(data, revenu_menage, 'IRIS', columns=['COM', 'DEP', 'REG'])
 _check_data(data, "Revenu Ménage 11")
 del revenu_menage
 
@@ -202,7 +255,10 @@ features.append('IRIS')
 print "il y a  %d iris différentes pour le revenu par personne et %d features" % (len(revenu_personne.IRIS.unique()), len(features) - 1)
 
 revenu_personne['LIBCOM'] = revenu_personne['LIBCOM'].str.replace(u' - ', u'-')
-data = fillna_with_other_table(data, revenu_personne, 'IRIS')
+# Transform old REG code whit the new one (REG 2016)
+revenu_personne['REG'] = revenu_personne.REG.map(new_reg_dict)
+## TO CHANGE ??
+##data = fillna_with_other_table(data, revenu_personne, 'IRIS') # have to fill some NaN value
 compare_geo(data, revenu_personne)
 data = pd.merge(data, revenu_personne[features], on='IRIS', how='outer')
 _check_data(data, "Revenu par personne 11")
@@ -223,7 +279,9 @@ features.append('IRIS')
 print "il y a  %d iris différentes pour le revenu par unité de consomation et %d features" % (len(revenu_uc.IRIS.unique()), len(features) - 1)
 
 revenu_uc['LIBCOM'] = revenu_uc['LIBCOM'].str.replace(u' - ', u'-')
-compare_geo(data, revenu_uc, debug=True)
+# Transform old REG code whit the new one (REG 2016)
+revenu_uc['REG'] = revenu_uc.REG.map(new_reg_dict)
+compare_geo(data, revenu_uc)
 data = pd.merge(data, revenu_uc[features], on='IRIS', how='outer')
 _check_data(data, "Revenu par unité de consomation 11")
 del revenu_uc
@@ -242,9 +300,11 @@ features.append('IRIS')
 print "il y a  %d iris différentes pour le revenu par ménage imposé et %d features" % (len(revenu_impose.IRIS.unique()), len(features) - 1)
 
 revenu_impose['LIBCOM'] = revenu_impose['LIBCOM'].str.replace(u' - ', u'-')
+# Transform old REG code whit the new one (REG 2016)
+revenu_impose['REG'] = revenu_impose.REG.map(new_reg_dict)
 compare_geo(data, revenu_impose)
 data = pd.merge(data, revenu_impose[features], on='IRIS', how='outer')
-_check_data(data, "Revenu impsé et détails 11")
+_check_data(data, "Revenu imposé et détails 11")
 del revenu_impose
 
 ### Fin de revenu
@@ -266,6 +326,8 @@ print "il y a  %d iris différentes pour l'équipement social et %d features" % 
 
 compare_geo(data, equipement_social)
 data = pd.merge(data, equipement_social[features], on='IRIS', how='outer')
+# Adding new IRIS, filling geo information with new files
+data = fillna_with_other_table(data, equipement_social, 'IRIS', columns=['COM', 'DEP', 'REG'])
 _check_data(data, "Equipement social 16")
 del equipement_social
 
@@ -348,6 +410,18 @@ del transport_tourisme
 ####                CENSUS FILES 2011
 ############################################################
 
+# COM 2016 are not the same for some IRIS -> Update COM 2011 to COM 2016
+com_change_11_iris = {"132090103" : "13055",
+                    "132110502" : "13055",
+                    "132110706" : "13055",
+                    "132140405" : "13055",
+                    "693830101" : "69123",
+                    "693890601" : "69123",
+                    "693890602" : "69123",
+                    "693890603" : "69123",
+                    "751124888" : "75056",
+                    "751166499" : "75056"}
+
 ### Logement 2011
 logement11 = pd.read_excel('data/base-ic-logement-2011.xls', sheetname='IRIS')
 # creating header from file
@@ -358,18 +432,27 @@ logement11.rename(columns={'LIBIRIS': 'LIB_IRIS', 'LIBCOM': 'LIB_COM'}, inplace=
 logement11 = logement11[5:]
 
 # Adding IRIS (iris ID) and other geo features witch are not in data
-features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'LIB_IRIS']]
+features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'LIB_IRIS',
+                                           'REG', 'DEP']]
 features.remove('P11_PMEN') # P11_PMEN is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 
-key = ['IRIS', 'REG', 'DEP']
 print "il y a  %d iris différentes pour le logement 2011 et %d features" % (len(logement11.IRIS.unique()), len(features) - 1)
 
 logement11 = _correct_LIBGEO(logement11)
+# Transform old REG code with the new one (REG 2016)
+logement11['REG'] = logement11.REG.map(new_reg_dict)
 
-data = fillna_with_other_table(data, logement11, 'IRIS')
+# Transform COM 2011 to COM 2016
+for iris in com_change_11_iris.keys():
+    logement11.loc[logement11.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+
 data = _correct_LIBGEO(data)
 compare_geo(data, logement11)
-data = pd.merge(data, logement11[features], on=key, how='outer')
+
+data = pd.merge(data, logement11[features], on="IRIS", how='outer')
+# TO fill news rows with geo data
+data = fillna_with_other_table(data, logement11, 'IRIS', columns=['COM', 'DEP', 'REG',
+                                                                  'LIB_IRIS', 'LIB_COM'])
 _check_data(data, "Logement 2011")
 del logement11
 
@@ -384,14 +467,18 @@ diplome11 = diplome11[5:]
 
 # Adding IRIS (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']] # This line has been load with Logement file
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P11_POP0610') # P11_POP0610 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 features.remove('P11_POP1824') # P11_POP1824 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
        
-key = ['IRIS', 'REG', 'DEP']
 print "il y a  %d iris différentes pour les diplomes 2011 et %d features" % (len(diplome11.IRIS.unique()), len(features) - 1)
+
+# Transform old REG code with the new one (REG 2016)
+diplome11['REG'] = diplome11.REG.map(new_reg_dict)
+
 compare_geo(data, diplome11)
-data = pd.merge(data, diplome11[features], on=key, how='outer')
+data = pd.merge(data, diplome11[features], on="IRIS", how='outer')
 _check_data(data, "Diplome 2011")
 del diplome11
 
@@ -404,17 +491,19 @@ famille11.columns = header
 famille11 = famille11[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']] # This line has been load with Logement file
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P11_POP1524') # P11_POP1524 is already in Activité file (https://github.com/anthill/open-moulinette/issues/18)
 features.remove('P11_POP2554') # P11_POP2554 is already in Activité file (https://github.com/anthill/open-moulinette/issues/18)
-features.remove('P11_POP80P') # P11_POP80P is already in Population file (https://github.com/anthill/open-moulinette/issues/18))))
-
-key = ['IRIS', 'REG', 'DEP']
+features.remove('P11_POP80P') # P11_POP80P is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 
 print "il y a  %d iris différentes pour les familles 2011 et %d features" % (len(famille11.IRIS.unique()), len(features) - 1)
 
+# Transform old REG code with the new one (REG 2016)
+famille11['REG'] = famille11.REG.map(new_reg_dict)
+
 compare_geo(data, famille11)
-data = pd.merge(data, famille11[features], on=key, how='outer')
+data = pd.merge(data, famille11[features], on="IRIS", how='outer')
 _check_data(data, "Famille 2011")
 del famille11
 
@@ -428,14 +517,16 @@ population11.columns = header
 population11 = population11[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']] # This line has been load with Logement file
-
-key = ['IRIS', 'REG', 'DEP']
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 
 print "il y a  %d iris différentes pour le population 2011 et %d features" % (len(population11.IRIS.unique()), len(features) - 1)
 
+# Transform old REG code with the new one (REG 2016)
+population11['REG'] = population11.REG.map(new_reg_dict)
+
 compare_geo(data, population11)
-data = pd.merge(data, population11[features], on=key, how='outer')
+data = pd.merge(data, population11[features], on="IRIS", how='outer')
 _check_data(data, "Population 2011")
 del population11
 
@@ -449,15 +540,19 @@ activite11.columns = header
 activite11 = activite11[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS']] # This line has been load with Logement file
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
+                                           
 features.remove('P11_POP5564') # P11_POP5564 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 
-key = ['IRIS', 'REG', 'DEP']
 
 print "il y a  %d iris différentes pour l'activité 2011 et %d features" % (len(activite11.IRIS.unique()), len(features) - 1)
 
+# Transform old REG code with the new one (REG 2016)
+activite11['REG'] = activite11.REG.map(new_reg_dict)
+
 compare_geo(data, activite11)
-data = pd.merge(data, activite11[features], on=key, how='outer')
+data = pd.merge(data, activite11[features], on="IRIS", how='outer')
 _check_data(data, "Activité 2011")
 del activite11
 
@@ -466,35 +561,7 @@ del activite11
 #####                CENSUS FILES 2012
 #############################################################
 
-# New Region Code (REG2016)
 
-new_reg_dict = {'01' : '01',
-                '02' : '02',
-                '03' : '03',
-                '04' : '04',
-                '11' : '11',
-                '21' : '44',
-                '22' : '32',
-                '23' : '28',
-                '24' : '24',
-                '25' : '28',
-                '26' : '27',
-                '31' : '32',
-                '41' : '44',
-                '42' : '44',
-                '43' : '27',
-                '52' : '52',
-                '53' : '53',
-                '54' : '75',
-                '72' : '75',
-                '73' : '76',
-                '74' : '75',
-                '82' : '84',
-                '83' : '84',
-                '91' : '76',
-                '93' : '93',
-                '94' : '94'}
-data['REG2016'] = data.REG.map(new_reg_dict)
 
 
 # Logement 2012
@@ -506,15 +573,22 @@ logement12.columns = header
 logement12 = logement12[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
-key = ['IRIS', 'REG', 'DEP']
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 
 print "il y a  %d iris différentes pour le logement 2012 et %d features" % (len(logement12.IRIS.unique()), len(features) - 1)
 
-compare_geo(data, logement12)
+# Transform old REG code with the new one (REG 2016)
+logement12['REG'] = logement12.REG.map(new_reg_dict)
 
-data = pd.merge(data, logement12[features], on=key, how='outer')
+# Transform COM 2012 to COM 2016 (idem as 2011)
+for iris in com_change_11_iris.keys():
+    logement12.loc[logement12.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+
+compare_geo(data, logement12)
+data = pd.merge(data, logement12[features], on="IRIS", how='outer')
+# TO fill news rows with geo data
+data = fillna_with_other_table(data, logement12, 'IRIS', columns=['COM', 'DEP', 'REG'])
 _check_data(data, "Logement 2012")
 del logement12
 
@@ -528,17 +602,23 @@ diplome12.columns = header
 diplome12 = diplome12[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P12_POP0610') # P12_POP0610 is already in PopPulation file
 features.remove('P12_POP1824') # P12_POP1824 is already in Population file
-
-key = ['IRIS', 'REG', 'DEP']
+features.remove('REG2016') # We use "REG2016" style on "REG"
 
 print "il y a  %d iris différentes pour le diplome 2012 et %d features" % (len(diplome12.IRIS.unique()), len(features) - 1)
 
+# Transform old REG code with the new one (REG 2016)
+diplome12['REG'] = diplome12.REG.map(new_reg_dict)
+
+# Transform COM 2012 to COM 2016 (idem as 2011)
+for iris in com_change_11_iris.keys():
+    diplome12.loc[diplome12.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+
 compare_geo(data, diplome12)
-data = pd.merge(data, diplome12[features], on=key, how='outer')
+data = pd.merge(data, diplome12[features], on="IRIS", how='outer')
 _check_data(data, "Diplome 2012")
 del diplome12
 
@@ -552,19 +632,24 @@ famille12.columns = header
 famille12 = famille12[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P12_POP1524') # P12_POP1524 is already in Activité file
 features.remove('P12_POP2554') # P12_POP2554 is already in Activité file
 features.remove('P12_POP80P') # P12_POP80P is already in Population file
-
-
-key = ['IRIS', 'REG', 'DEP']
+features.remove('REG2016') # We use "REG2016" style on "REG"
 
 print "il y a  %d iris différentes pour les familles 2012 et %d features" % (len(famille12.IRIS.unique()), len(features) - 1)
 
+# Transform old REG code with the new one (REG 2016)
+famille12['REG'] = famille12.REG.map(new_reg_dict)
+
+# Transform COM 2012 to COM 2016 (idem as 2011)
+for iris in com_change_11_iris.keys():
+    famille12.loc[famille12.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+
 compare_geo(data, famille12)
-data = pd.merge(data, famille12[features], on=key, how='outer')
+data = pd.merge(data, famille12[features], on="IRIS", how='outer')
 _check_data(data, "Famille 2012")
 del famille12
 
@@ -578,16 +663,22 @@ population12.columns = header
 population12 = population12[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P12_PMEN')  # Already in data
-
-key = ['IRIS', 'REG', 'DEP']
+features.remove('REG2016') # We use "REG2016" style on "REG"
 
 print "il y a  %d iris différentes pour le population 2012 et %d features" % (len(population12.IRIS.unique()), len(features) - 1)
 
+# Transform old REG code with the new one (REG 2016)
+population12['REG'] = population12.REG.map(new_reg_dict)
+
+# Transform COM 2012 to COM 2016 (idem as 2011)
+for iris in com_change_11_iris.keys():
+    population12.loc[population12.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+
 compare_geo(data, population12)
-data = pd.merge(data, population12[features], on=key, how='outer')
+data = pd.merge(data, population12[features], on="IRIS", how='outer')
 _check_data(data, "Population 2012")
 del population12
 
@@ -601,16 +692,22 @@ activite12.columns = header
 activite12 = activite12[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P12_POP5564')  # Already in data
-
-key = ['IRIS', 'REG', 'DEP']
+features.remove('REG2016') # We use "REG2016" style on "REG"
 
 print "il y a  %d iris différentes pour l'activité 2012 et %d features" % (len(activite12.IRIS.unique()), len(features) - 1)
 
+# Transform old REG code with the new one (REG 2016)
+activite12['REG'] = activite12.REG.map(new_reg_dict)
+
+# Transform COM 2012 to COM 2016 (idem as 2011)
+for iris in com_change_11_iris.keys():
+    activite12.loc[activite12.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+
 compare_geo(data, activite12)
-data = pd.merge(data, activite12[features], on=key, how='outer')
+data = pd.merge(data, activite12[features], on="IRIS", how='outer')
 _check_data(data, "Activité 2012")
 del activite12
 
@@ -618,6 +715,8 @@ del activite12
 #############################################################
 #####                CENSUS FILES 2013
 #############################################################
+
+
 
 # Logement 2013
 logement13 = pd.read_excel('data/base-ic-logement-2013.xls', sheetname='IRIS')
@@ -628,15 +727,23 @@ logement13.columns = header
 logement13 = logement13[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
-
-key = ['IRIS', 'REG', 'DEP']
-
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
+features.remove('REG2016') # We use "REG2016" style on "REG"
+                                           
 print "il y a  %d iris différentes pour le logement 2013 et %d features" % (len(logement13.IRIS.unique()), len(features) - 1)
 
+# Transform old REG code with the new one (REG 2016)
+logement13['REG'] = logement13.REG.map(new_reg_dict)
+
+# Transform COM 2012 to COM 2016 (idem as 2011)
+for iris in com_change_11_iris.keys():
+    logement13.loc[logement13.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+
 compare_geo(data, logement13)
-data = pd.merge(data, logement13[features], on=key, how='outer')
+data = pd.merge(data, logement13[features], on="IRIS", how='outer')
+# TO fill news rows with geo data
+data = fillna_with_other_table(data, logement13, 'IRIS', columns=['COM', 'DEP', 'REG'])
 _check_data(data, "Logement 2013")
 del logement13
 
@@ -650,18 +757,23 @@ diplome13.columns = header
 diplome13 = diplome13[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 
 features.remove('P13_POP0610') # P13_POP0610 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 features.remove('P13_POP1824') # P13_POP1824 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
-
-key = ['IRIS', 'REG', 'DEP']
+features.remove('REG2016') # We use "REG2016" style on "REG"
 
 print "il y a  %d iris différentes pour le diplome 2013 et %d features" % (len(diplome13.IRIS.unique()), len(features) - 1)
 
+# Transform old REG code with the new one (REG 2016)
+diplome13['REG'] = diplome13.REG.map(new_reg_dict)
+
+for iris in com_change_11_iris.keys():
+    diplome13.loc[diplome13.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+
 compare_geo(data, diplome13)
-data = pd.merge(data, diplome13[features], on=key, how='outer')
+data = pd.merge(data, diplome13[features], on="IRIS", how='outer')
 _check_data(data, "Diplome 2013")
 del diplome13
 
@@ -675,19 +787,23 @@ famille13.columns = header
 famille13 = famille13[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P13_POP1524') # P13_POP1524 is already in Activité file
 features.remove('P13_POP2554') # P13_POP2554 is already in Activité file
 features.remove('P13_POP80P') # P13_POP80P is already in Population file
-
-
-key = ['IRIS', 'REG', 'DEP']
+features.remove('REG2016') # We use "REG2016" style on "REG"
 
 print "il y a  %d iris différentes pour les familles 2013 et %d features" % (len(famille13.IRIS.unique()), len(features) - 1)
 
+# Transform old REG code with the new one (REG 2016)
+famille13['REG'] = famille13.REG.map(new_reg_dict)
+
+for iris in com_change_11_iris.keys():
+    famille13.loc[famille13.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+
 compare_geo(data, famille13)
-data = pd.merge(data, famille13[features], on=key, how='outer')
+data = pd.merge(data, famille13[features], on="IRIS", how='outer')
 _check_data(data, "Famille 2013")
 del famille13
 
@@ -701,19 +817,20 @@ population13.columns = header
 population13 = population13[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P13_PMEN') # P13_POP1524 is already in Activité file
-
-
-key = ['IRIS', 'REG', 'DEP']
+features.remove('REG2016') # We use "REG2016" style on "REG"
 
 print "il y a  %d iris différentes pour le population 2013 et %d features" % (len(population13.IRIS.unique()), len(features) - 1)
+# Transform old REG code with the new one (REG 2016)
+population13['REG'] = population13.REG.map(new_reg_dict)
 
+for iris in com_change_11_iris.keys():
+    population13.loc[population13.IRIS == iris, 'COM'] = com_change_11_iris[iris]
 
 compare_geo(data, population13)
-data = pd.merge(data, population13[features], on=key, how='outer')
-data.drop_duplicates(subset='IRIS', keep='first', inplace=True)
+data = pd.merge(data, population13[features], on="IRIS", how='outer')
 _check_data(data, "Population 2013")
 del population13
 
@@ -727,16 +844,20 @@ activite13.columns = header
 activite13 = activite13[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P13_POP5564') # P13_POP5564 is already in Population file
-
-key = ['IRIS', 'REG', 'DEP']
+features.remove('REG2016') # We use "REG2016" style on "REG"
 
 print "il y a  %d iris différentes pour l'activité 2013 et %d features" % (len(activite13.IRIS.unique()), len(features) - 1)
+# Transform old REG code with the new one (REG 2016)
+activite13['REG'] = activite13.REG.map(new_reg_dict)
+
+for iris in com_change_11_iris.keys():
+    activite13.loc[activite13.IRIS == iris, 'COM'] = com_change_11_iris[iris]
 
 compare_geo(data, activite13)
-data = pd.merge(data, activite13[features], on=key, how='outer')
+data = pd.merge(data, activite13[features], on='IRIS', how='outer')
 _check_data(data, "Activité 2013")
 del activite13
 
@@ -755,17 +876,18 @@ logement10 = logement10[5:]
 
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P10_PMEN') # P10_PMEN is already in Population file
-
-
-key = ['IRIS', 'REG', 'DEP']       
        
 print "il y a  %d iris différentes pour le logement 2010 et %d features" % (len(logement10.IRIS.unique()), len(features) - 1)
+# Transform old REG code with the new one (REG 2016)
+logement10['REG'] = logement10.REG.map(new_reg_dict)
+
 
 compare_geo(data, logement10)
-data = pd.merge(data, logement10[features], on=key, how='outer')
+data = pd.merge(data, logement10[features], on='IRIS', how='outer')
+data = fillna_with_other_table(data, logement10, 'IRIS', columns=['COM', 'DEP', 'REG'])
 _check_data(data, "Logement 2010")
 del logement10
 
@@ -778,17 +900,17 @@ diplome10.columns = header
 diplome10 = diplome10[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P10_POP0610') # P10_POP0610 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 features.remove('P10_POP1824') # P10_POP1824 is already in Population file (https://github.com/anthill/open-moulinette/issues/18)
 
-key = ['IRIS', 'REG', 'DEP']
-
 print "il y a  %d iris différentes pour le diplome 2010 et %d features" % (len(diplome10.IRIS.unique()), len(features) - 1)
+# Transform old REG code with the new one (REG 2016)
+diplome10['REG'] = diplome10.REG.map(new_reg_dict)
 
 compare_geo(data, diplome10)
-data = pd.merge(data, diplome10[features], on=key, how='outer')
+data = pd.merge(data, diplome10[features], on="IRIS", how='outer')
 _check_data(data, "Diplome 2010")
 del diplome10
 
@@ -802,18 +924,18 @@ famille10.columns = header
 famille10 = famille10[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P10_POP1524') # P10_POP1524 is already in Activité file
 features.remove('P10_POP2554') # P10_POP2554 is already in Activité file
 features.remove('P10_POP80P') # P10_POP80P is already in Population file
 
-key = ['IRIS', 'REG', 'DEP']
-
 print "il y a  %d iris différentes pour les familles 2010 et %d features" % (len(famille10.IRIS.unique()), len(features) - 1)
+# Transform old REG code with the new one (REG 2016)
+famille10['REG'] = famille10.REG.map(new_reg_dict)
 
 compare_geo(data, famille10)
-data = pd.merge(data, famille10[features], on=key, how='outer')
+data = pd.merge(data, famille10[features], on='IRIS', how='outer')
 _check_data(data, "Famille 2010")
 del famille10
 
@@ -827,15 +949,15 @@ population10.columns = header
 population10 = population10[5:]
 
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
-
-key = ['IRIS', 'REG', 'DEP']
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 
 print "il y a  %d iris différentes pour le population 2010 et %d features" % (len(population10.IRIS.unique()), len(features) - 1)
+# Transform old REG code with the new one (REG 2016)
+population10['REG'] = population10.REG.map(new_reg_dict)
 
 compare_geo(data, population10)
-data = pd.merge(data, population10[features], on=key, how='outer')
+data = pd.merge(data, population10[features], on="IRIS", how='outer')
 _check_data(data, "Population 2010")
 del population10
 
@@ -850,21 +972,21 @@ activite10 = activite10[5:]
 
 # Adding CODGEO (iris ID) and other geo features witch are not in data
 features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010', 'TRIRIS',
-                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', # This line has been load with Logement file
-                                           'REG2016']]
+                                           'GRD_QUART', 'TYP_IRIS', 'MODIF_IRIS', 'LAB_IRIS', 
+                                           'REG', 'DEP']] # This line has been load with Logement file
 features.remove('P10_POP5564') # P10_POP5564 is already in Population file
 
 
-key = ['IRIS', 'REG', 'DEP']
-
 print "il y a  %d iris différentes pour l'activité 2010 et %d features" % (len(activite10.IRIS.unique()), len(features) - 1)
+# Transform old REG code with the new one (REG 2016)
+activite10['REG'] = activite10.REG.map(new_reg_dict)
 
 compare_geo(data, activite10)
-data = pd.merge(data, activite10[features], on=key, how='outer')
+data = pd.merge(data, activite10[features], on="IRIS", how='outer')
 _check_data(data, "Activité 2010")
 del activite10
 
 
 # Extract
-print "Extracting file in /data/output.csv"
-data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
+#print "Extracting file in /data/output.csv"
+#data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
