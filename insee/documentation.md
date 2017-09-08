@@ -74,6 +74,20 @@ d'IRIS n'ait toujours été modifié.
 
 **Note :** Si vous souhaitez aggréger les données sur une ville / département ou région. Nous vous conseillons de le faire sur le code Insse (COM), le code du département (DEP) ou le codé région (REG). A noté que le code région est celui de 2016 (nouvelle région).
 
+### Qualité de l'information de l'IRIS :
+
+Afin d'avoir un indicateur de qualité sur la quantité d'information disponible sur un IRIS, nous avons calculer le nombre de d'information absente par IRIS ```nan_count``` (plus ce nombre est elévé, plus l'absence d'information est importante). Nous  en déduisons 4 groupes de qualité (1 > 2 > 3 > 4) ```iris_quality```.
+
+- Groupe qualité IRIS 1 : 50738 IRIS
+- Groupe qualité IRIS 2 : 124 IRIS
+- Groupe qualité IRIS 3 : 18 IRIS
+- Groupe qualité IRIS 4 : 1042 IRIS
+
+Représentation des groupes de qualité des IRIS par rapport à l'absence d'information (nan_count) :
+
+<img width="702" alt="capture d ecran 2017-09-08 a 16 10 10" src="https://user-images.githubusercontent.com/8374843/30215408-3a7ec15c-94b0-11e7-90d7-0f6f0d89bb52.png">
+
+
 ## Précisions
 
 Certains indicateurs sont en doublons (ils apparaissent dans plusieurs fichiers) :
@@ -85,7 +99,7 @@ Certains indicateurs sont en doublons (ils apparaissent dans plusieurs fichiers)
 - PYY_POP80P
 - PYY_POP5564
 
-*YY : Pour l'année (11 : 2011, 12 : 2012)*. Ils ont été dédoublonner dans le fichier final car ils ont strictement les même valeurs suivant leurs fichiers d'origines. Cependant ces doublons ont été garder dans cette documentation pour une meilleur compréhension.
+*YY : Pour l'année (11 : 2011, 12 : 2012, 13 : 2013)*. Ils ont été dédoublonner dans le fichier final car ils ont strictement les même valeurs suivant leurs fichiers d'origines. Cependant ces doublons ont été garder dans cette documentation pour une meilleur compréhension.
 
 ## Nombre d'équipements et de services dans le domaine du commerce en 2016
 
