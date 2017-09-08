@@ -57,13 +57,12 @@ In the `output.csv` the column names are like `NB_B314`  (which is the number of
 - LIB_IRIS : Libellé de l'IRIS, si celui-ci n'est pas identifible le libéllé sera égal à "non localisé à l'iris".
 - COM : Code commune
 - LIB_COM : Libellé de commune.
-- REG : Région
+- REG : Région [Code région 2016](http://www.insee.fr/fr/methodes/default.asp?page=nomenclatures/cog/codes_regions_2016.htm)
 - DEP : Département
 - ARR : Arrondissement
 - CV : Canton ville
 - ZE2010 : Zone d'emploi
 - UU2010 : Unité urbaine
-- REG2016 : [Code région 2016](http://www.insee.fr/fr/methodes/default.asp?page=nomenclatures/cog/codes_regions_2016.htm)
 - TRIRIS : Code du département suivi d'un numéro d'ordre à l'intérieur du département sur trois positions puis d'un indicateur de TRIRIS
 - GRD_QUART : Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille suivi du numéro de grand quartier
 - TYP_IRIS :  le type d'IRIS qui permet de distinguer les IRIS d'habitat 'H' des IRIS d'activité 'A' et des IRIS divers 'D'. Le type d'IRIS est 'Z' pour les communes non découpées en IRIS. Le type d'IRIS a été déterminé lors de la création des IRIS, en 1999. Depuis, les caractéristiques de l'IRIS ont pu évoluer (population, nombre d'emplois, …) sans que le type
