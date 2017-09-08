@@ -5,6 +5,11 @@ from comparison import compare_geo, fillna_with_other_table
 
 print "Initialisation..."
 
+
+############################################################
+####                    FUNCIONS
+############################################################
+
 def _check_data(data, file_name):
     """
     Call _check_iris_doublon & _check_bad_merge_feature
@@ -71,6 +76,10 @@ def _correct_LIBGEO(data):
     return data
 
 
+############################################################
+####                    VARIABLES
+############################################################
+
 
 # New Region Code (REG2016)
 
@@ -100,6 +109,19 @@ new_reg_dict = {'01' : '01',
                 '91' : '76',
                 '93' : '93',
                 '94' : '94'}
+
+# COM 2016 are not the same for some IRIS -> Update old COM to COM 2016
+# IRIS -> COM
+com_2016_iris = {"132090103" : "13055",
+                 "132110502" : "13055",
+                 "132110706" : "13055",
+                 "132140405" : "13055",
+                 "693830101" : "69123",
+                 "693890601" : "69123",
+                 "693890602" : "69123",
+                 "693890603" : "69123",
+                 "751124888" : "75056",
+                 "751166499" : "75056"}
 
 
 ## FILES
@@ -410,17 +432,7 @@ del transport_tourisme
 ####                CENSUS FILES 2011
 ############################################################
 
-# COM 2016 are not the same for some IRIS -> Update COM 2011 to COM 2016
-com_change_11_iris = {"132090103" : "13055",
-                    "132110502" : "13055",
-                    "132110706" : "13055",
-                    "132140405" : "13055",
-                    "693830101" : "69123",
-                    "693890601" : "69123",
-                    "693890602" : "69123",
-                    "693890603" : "69123",
-                    "751124888" : "75056",
-                    "751166499" : "75056"}
+
 
 ### Logement 2011
 logement11 = pd.read_excel('data/base-ic-logement-2011.xls', sheetname='IRIS')
@@ -442,9 +454,9 @@ logement11 = _correct_LIBGEO(logement11)
 # Transform old REG code with the new one (REG 2016)
 logement11['REG'] = logement11.REG.map(new_reg_dict)
 
-# Transform COM 2011 to COM 2016
-for iris in com_change_11_iris.keys():
-    logement11.loc[logement11.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    logement11.loc[logement11.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 data = _correct_LIBGEO(data)
 compare_geo(data, logement11)
@@ -581,9 +593,9 @@ print "il y a  %d iris différentes pour le logement 2012 et %d features" % (len
 # Transform old REG code with the new one (REG 2016)
 logement12['REG'] = logement12.REG.map(new_reg_dict)
 
-# Transform COM 2012 to COM 2016 (idem as 2011)
-for iris in com_change_11_iris.keys():
-    logement12.loc[logement12.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    logement12.loc[logement12.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 compare_geo(data, logement12)
 data = pd.merge(data, logement12[features], on="IRIS", how='outer')
@@ -613,9 +625,9 @@ print "il y a  %d iris différentes pour le diplome 2012 et %d features" % (len(
 # Transform old REG code with the new one (REG 2016)
 diplome12['REG'] = diplome12.REG.map(new_reg_dict)
 
-# Transform COM 2012 to COM 2016 (idem as 2011)
-for iris in com_change_11_iris.keys():
-    diplome12.loc[diplome12.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    diplome12.loc[diplome12.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 compare_geo(data, diplome12)
 data = pd.merge(data, diplome12[features], on="IRIS", how='outer')
@@ -644,9 +656,9 @@ print "il y a  %d iris différentes pour les familles 2012 et %d features" % (le
 # Transform old REG code with the new one (REG 2016)
 famille12['REG'] = famille12.REG.map(new_reg_dict)
 
-# Transform COM 2012 to COM 2016 (idem as 2011)
-for iris in com_change_11_iris.keys():
-    famille12.loc[famille12.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    famille12.loc[famille12.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 compare_geo(data, famille12)
 data = pd.merge(data, famille12[features], on="IRIS", how='outer')
@@ -673,9 +685,9 @@ print "il y a  %d iris différentes pour le population 2012 et %d features" % (l
 # Transform old REG code with the new one (REG 2016)
 population12['REG'] = population12.REG.map(new_reg_dict)
 
-# Transform COM 2012 to COM 2016 (idem as 2011)
-for iris in com_change_11_iris.keys():
-    population12.loc[population12.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    population12.loc[population12.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 compare_geo(data, population12)
 data = pd.merge(data, population12[features], on="IRIS", how='outer')
@@ -702,9 +714,9 @@ print "il y a  %d iris différentes pour l'activité 2012 et %d features" % (len
 # Transform old REG code with the new one (REG 2016)
 activite12['REG'] = activite12.REG.map(new_reg_dict)
 
-# Transform COM 2012 to COM 2016 (idem as 2011)
-for iris in com_change_11_iris.keys():
-    activite12.loc[activite12.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    activite12.loc[activite12.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 compare_geo(data, activite12)
 data = pd.merge(data, activite12[features], on="IRIS", how='outer')
@@ -736,9 +748,9 @@ print "il y a  %d iris différentes pour le logement 2013 et %d features" % (len
 # Transform old REG code with the new one (REG 2016)
 logement13['REG'] = logement13.REG.map(new_reg_dict)
 
-# Transform COM 2012 to COM 2016 (idem as 2011)
-for iris in com_change_11_iris.keys():
-    logement13.loc[logement13.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    logement13.loc[logement13.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 compare_geo(data, logement13)
 data = pd.merge(data, logement13[features], on="IRIS", how='outer')
@@ -769,8 +781,9 @@ print "il y a  %d iris différentes pour le diplome 2013 et %d features" % (len(
 # Transform old REG code with the new one (REG 2016)
 diplome13['REG'] = diplome13.REG.map(new_reg_dict)
 
-for iris in com_change_11_iris.keys():
-    diplome13.loc[diplome13.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    diplome13.loc[diplome13.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 compare_geo(data, diplome13)
 data = pd.merge(data, diplome13[features], on="IRIS", how='outer')
@@ -799,8 +812,9 @@ print "il y a  %d iris différentes pour les familles 2013 et %d features" % (le
 # Transform old REG code with the new one (REG 2016)
 famille13['REG'] = famille13.REG.map(new_reg_dict)
 
-for iris in com_change_11_iris.keys():
-    famille13.loc[famille13.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    famille13.loc[famille13.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 compare_geo(data, famille13)
 data = pd.merge(data, famille13[features], on="IRIS", how='outer')
@@ -826,8 +840,9 @@ print "il y a  %d iris différentes pour le population 2013 et %d features" % (l
 # Transform old REG code with the new one (REG 2016)
 population13['REG'] = population13.REG.map(new_reg_dict)
 
-for iris in com_change_11_iris.keys():
-    population13.loc[population13.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    population13.loc[population13.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 compare_geo(data, population13)
 data = pd.merge(data, population13[features], on="IRIS", how='outer')
@@ -853,8 +868,9 @@ print "il y a  %d iris différentes pour l'activité 2013 et %d features" % (len
 # Transform old REG code with the new one (REG 2016)
 activite13['REG'] = activite13.REG.map(new_reg_dict)
 
-for iris in com_change_11_iris.keys():
-    activite13.loc[activite13.IRIS == iris, 'COM'] = com_change_11_iris[iris]
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    activite13.loc[activite13.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 compare_geo(data, activite13)
 data = pd.merge(data, activite13[features], on='IRIS', how='outer')
@@ -884,6 +900,10 @@ print "il y a  %d iris différentes pour le logement 2010 et %d features" % (len
 # Transform old REG code with the new one (REG 2016)
 logement10['REG'] = logement10.REG.map(new_reg_dict)
 
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    logement10.loc[logement10.IRIS == iris, 'COM'] = com_2016_iris[iris]
+
 
 compare_geo(data, logement10)
 data = pd.merge(data, logement10[features], on='IRIS', how='outer')
@@ -908,6 +928,10 @@ features.remove('P10_POP1824') # P10_POP1824 is already in Population file (http
 print "il y a  %d iris différentes pour le diplome 2010 et %d features" % (len(diplome10.IRIS.unique()), len(features) - 1)
 # Transform old REG code with the new one (REG 2016)
 diplome10['REG'] = diplome10.REG.map(new_reg_dict)
+
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    diplome10.loc[diplome10.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 compare_geo(data, diplome10)
 data = pd.merge(data, diplome10[features], on="IRIS", how='outer')
@@ -934,6 +958,10 @@ print "il y a  %d iris différentes pour les familles 2010 et %d features" % (le
 # Transform old REG code with the new one (REG 2016)
 famille10['REG'] = famille10.REG.map(new_reg_dict)
 
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    famille10.loc[famille10.IRIS == iris, 'COM'] = com_2016_iris[iris]
+
 compare_geo(data, famille10)
 data = pd.merge(data, famille10[features], on='IRIS', how='outer')
 _check_data(data, "Famille 2010")
@@ -955,6 +983,10 @@ features = [x for x in header if x not in ['LIBIRIS', 'LIBCOM', 'COM', 'UU2010',
 print "il y a  %d iris différentes pour le population 2010 et %d features" % (len(population10.IRIS.unique()), len(features) - 1)
 # Transform old REG code with the new one (REG 2016)
 population10['REG'] = population10.REG.map(new_reg_dict)
+
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    population10.loc[population10.IRIS == iris, 'COM'] = com_2016_iris[iris]
 
 compare_geo(data, population10)
 data = pd.merge(data, population10[features], on="IRIS", how='outer')
@@ -981,6 +1013,10 @@ print "il y a  %d iris différentes pour l'activité 2010 et %d features" % (len
 # Transform old REG code with the new one (REG 2016)
 activite10['REG'] = activite10.REG.map(new_reg_dict)
 
+# update old COM (Insse code) to new one (2016)
+for iris in com_2016_iris.keys():
+    activite10.loc[activite10.IRIS == iris, 'COM'] = com_2016_iris[iris]
+
 compare_geo(data, activite10)
 data = pd.merge(data, activite10[features], on="IRIS", how='outer')
 _check_data(data, "Activité 2010")
@@ -988,5 +1024,5 @@ del activite10
 
 
 # Extract
-#print "Extracting file in /data/output.csv"
-#data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
+print "Extracting file in /data/output.csv"
+data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
