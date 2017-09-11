@@ -1023,6 +1023,32 @@ _check_data(data, "Activité 2010")
 del activite10
 
 
+############################################################
+####                IRIS QUALITY
+############################################################
+
+# More features are fill by Iris, more this Iris is good
+
+# Geo features
+geo_features = ['IRIS', 'LIB_IRIS', 'COM', 'LIB_COM', 'REG', 'DEP', 'ARR',
+                'CV', 'ZE2010', 'UU2010', 'TRIRIS', 'GRD_QUART', 'TYP_IRIS', 
+                'MODIF_IRIS', 'LAB_IRIS']
+
+# Kpi features
+iris_features = [x for x in data.columns if x not in geo_features]
+
+# Count number of NaN by row for each Iris
+data['nan_count'] = data[iris_features].apply(lambda x: pd.isnull(x).sum(), axis=1)
+
+# Create 4 group of Iris Quality
+data['iris_quality'] = pd.cut(data['nan_count'], 4, labels=range(1, 5))
+
+#1    50738
+#2      124
+#3       18
+#4     1042
+
+
 # Extract
 print "Extracting file in /data/output.csv"
 data.to_csv('data/output.csv', sep=';', index=False, encoding='utf-8')
