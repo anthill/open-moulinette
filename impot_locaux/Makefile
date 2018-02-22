@@ -14,7 +14,7 @@ download:
 	# Download 2015 data
 	@wget -O data/rei_2015.zip https://www.impots.gouv.fr/portail/www2/fichiers/statistiques/base_de_donnees/rei/rei_2015.zip
 	@unzip data/rei_2015.zip -d data/
-	# Download 2015 data
+	# Download 2016 data
 	@wget -O data/rei_2016.zip https://www.impots.gouv.fr/portail/www2/fichiers/statistiques/base_de_donnees/rei/rei_2016.zip
 	@unzip data/rei_2016.zip -d data/
 	
