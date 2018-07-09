@@ -155,7 +155,7 @@ data_commune:
 	python scripts/NivComTotal.py
 	python scripts/ConfigFamiliale.py
 	python scripts/TrancheAge.py
-	python scripts/LOGCom.py
+	python scripts/LogCom.py
 	python scripts/PajeCom.py
 	python scripts/RsaPersCom.py
 	python scripts/AAHCom.py
